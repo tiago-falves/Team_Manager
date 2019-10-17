@@ -7,6 +7,11 @@
 
 
 class Employee {
+    string name;
+    Date bdate;
+    string funcao;
+    float salary;
+public:
 
 };
 
