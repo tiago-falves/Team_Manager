@@ -69,22 +69,9 @@ CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Main.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Main.cpp.s
 
-CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
-CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.obj: ../Convocatoria.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.obj"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Convocatoria.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Convocatoria.cpp"
-
-CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.i"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Convocatoria.cpp" > CMakeFiles\AEDA_Team_Manager.dir\Convocatoria.cpp.i
-
-CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.s"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Convocatoria.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Convocatoria.cpp.s
-
 CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
 CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj: ../Date.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Date.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Date.cpp"
 
 CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.i: cmake_force
@@ -95,22 +82,9 @@ CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Date.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Date.cpp.s
 
-CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
-CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.obj: ../Employee.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.obj"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Employee.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Employee.cpp"
-
-CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.i"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Employee.cpp" > CMakeFiles\AEDA_Team_Manager.dir\Employee.cpp.i
-
-CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.s"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Employee.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Employee.cpp.s
-
 CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
 CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj: ../FootbalPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\FootbalPlayer.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootbalPlayer.cpp"
 
 CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.i: cmake_force
@@ -123,7 +97,7 @@ CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.s: cmake_force
 
 CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
 CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj: ../Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Game.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Game.cpp"
 
 CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.i: cmake_force
@@ -134,22 +108,9 @@ CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Game.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Game.cpp.s
 
-CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
-CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.obj: ../GameStats.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.obj"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\GameStats.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\GameStats.cpp"
-
-CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.i"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\GameStats.cpp" > CMakeFiles\AEDA_Team_Manager.dir\GameStats.cpp.i
-
-CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.s"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\GameStats.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\GameStats.cpp.s
-
 CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
 CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj: ../Person.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Person.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Person.cpp"
 
 CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.i: cmake_force
@@ -160,22 +121,22 @@ CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Person.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Person.cpp.s
 
-CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
-CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.obj: ../TechnicalTeam.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.obj"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\TechnicalTeam.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\TechnicalTeam.cpp"
+CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
+CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj: ../Technician.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Technician.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Technician.cpp"
 
-CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.i"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\TechnicalTeam.cpp" > CMakeFiles\AEDA_Team_Manager.dir\TechnicalTeam.cpp.i
+CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.i"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Technician.cpp" > CMakeFiles\AEDA_Team_Manager.dir\Technician.cpp.i
 
-CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.s"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\TechnicalTeam.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\TechnicalTeam.cpp.s
+CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.s"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Technician.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Technician.cpp.s
 
 CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
 CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj: ../StringManipulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\StringManipulator.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\StringManipulator.cpp"
 
 CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.i: cmake_force
@@ -186,32 +147,71 @@ CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\StringManipulator.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\StringManipulator.cpp.s
 
+CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
+CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Team.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\Team.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Team.cpp"
+
+CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.i"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Team.cpp" > CMakeFiles\AEDA_Team_Manager.dir\Team.cpp.i
+
+CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.s"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Team.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Team.cpp.s
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
+CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../CallUp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\CallUp.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUp.cpp"
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.i"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUp.cpp" > CMakeFiles\AEDA_Team_Manager.dir\CallUp.cpp.i
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUp.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\CallUp.cpp.s
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj: ../CallUpPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\CallUpPlayer.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUpPlayer.cpp"
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.i"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUpPlayer.cpp" > CMakeFiles\AEDA_Team_Manager.dir\CallUpPlayer.cpp.i
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.s"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUpPlayer.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\CallUpPlayer.cpp.s
+
 # Object files for target AEDA_Team_Manager
 AEDA_Team_Manager_OBJECTS = \
 "CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj"
+"CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj" \
+"CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj" \
+"CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj" \
+"CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj" \
+"CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj"
 
 # External object files for target AEDA_Team_Manager
 AEDA_Team_Manager_EXTERNAL_OBJECTS =
 
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj
-AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj
-AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj
-AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj
-AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.obj
+AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj
+AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj
+AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj
+AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/build.make
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/linklibs.rsp
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/objects1.rsp

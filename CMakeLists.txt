@@ -4,6 +4,6 @@ project(AEDA_Team_Manager)
 set(CMAKE_CXX_STANDARD 11)
 
 
-add_executable(AEDA_Team_Manager Main.cpp  Convocatoria.cpp  Convocatoria.h Date.cpp Date.h Employee.cpp Employee.h FootbalPlayer.cpp FootbalPlayer.h Game.cpp Game.h GameStats.cpp GameStats.h Person.cpp Person.h TechnicalTeam.cpp TechnicalTeam.h StringManipulator.cpp StringManipulator.h)
+add_executable(AEDA_Team_Manager Main.cpp  Date.cpp Date.h FootbalPlayer.cpp FootbalPlayer.h Game.cpp Game.h Person.cpp Person.h Technician.cpp Technician.h StringManipulator.cpp StringManipulator.h Team.cpp Team.h CallUp.cpp CallUp.h CallUpPlayer.cpp CallUpPlayer.h)
 
 target_link_libraries(AEDA_Team_Manager)

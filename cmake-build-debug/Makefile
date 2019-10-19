@@ -122,32 +122,59 @@ AEDA_Team_Manager/fast:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/build
 .PHONY : AEDA_Team_Manager/fast
 
-Convocatoria.obj: Convocatoria.cpp.obj
+CallUp.obj: CallUp.cpp.obj
 
-.PHONY : Convocatoria.obj
+.PHONY : CallUp.obj
 
 # target to build an object file
-Convocatoria.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.obj
-.PHONY : Convocatoria.cpp.obj
+CallUp.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj
+.PHONY : CallUp.cpp.obj
 
-Convocatoria.i: Convocatoria.cpp.i
+CallUp.i: CallUp.cpp.i
 
-.PHONY : Convocatoria.i
+.PHONY : CallUp.i
 
 # target to preprocess a source file
-Convocatoria.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.i
-.PHONY : Convocatoria.cpp.i
+CallUp.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.i
+.PHONY : CallUp.cpp.i
 
-Convocatoria.s: Convocatoria.cpp.s
+CallUp.s: CallUp.cpp.s
 
-.PHONY : Convocatoria.s
+.PHONY : CallUp.s
 
 # target to generate assembly for a file
-Convocatoria.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Convocatoria.cpp.s
-.PHONY : Convocatoria.cpp.s
+CallUp.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s
+.PHONY : CallUp.cpp.s
+
+CallUpPlayer.obj: CallUpPlayer.cpp.obj
+
+.PHONY : CallUpPlayer.obj
+
+# target to build an object file
+CallUpPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj
+.PHONY : CallUpPlayer.cpp.obj
+
+CallUpPlayer.i: CallUpPlayer.cpp.i
+
+.PHONY : CallUpPlayer.i
+
+# target to preprocess a source file
+CallUpPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.i
+.PHONY : CallUpPlayer.cpp.i
+
+CallUpPlayer.s: CallUpPlayer.cpp.s
+
+.PHONY : CallUpPlayer.s
+
+# target to generate assembly for a file
+CallUpPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.s
+.PHONY : CallUpPlayer.cpp.s
 
 Date.obj: Date.cpp.obj
 
@@ -175,33 +202,6 @@ Date.s: Date.cpp.s
 Date.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s
 .PHONY : Date.cpp.s
-
-Employee.obj: Employee.cpp.obj
-
-.PHONY : Employee.obj
-
-# target to build an object file
-Employee.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.obj
-.PHONY : Employee.cpp.obj
-
-Employee.i: Employee.cpp.i
-
-.PHONY : Employee.i
-
-# target to preprocess a source file
-Employee.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.i
-.PHONY : Employee.cpp.i
-
-Employee.s: Employee.cpp.s
-
-.PHONY : Employee.s
-
-# target to generate assembly for a file
-Employee.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Employee.cpp.s
-.PHONY : Employee.cpp.s
 
 FootbalPlayer.obj: FootbalPlayer.cpp.obj
 
@@ -256,33 +256,6 @@ Game.s: Game.cpp.s
 Game.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.s
 .PHONY : Game.cpp.s
-
-GameStats.obj: GameStats.cpp.obj
-
-.PHONY : GameStats.obj
-
-# target to build an object file
-GameStats.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.obj
-.PHONY : GameStats.cpp.obj
-
-GameStats.i: GameStats.cpp.i
-
-.PHONY : GameStats.i
-
-# target to preprocess a source file
-GameStats.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.i
-.PHONY : GameStats.cpp.i
-
-GameStats.s: GameStats.cpp.s
-
-.PHONY : GameStats.s
-
-# target to generate assembly for a file
-GameStats.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/GameStats.cpp.s
-.PHONY : GameStats.cpp.s
 
 Main.obj: Main.cpp.obj
 
@@ -365,32 +338,59 @@ StringManipulator.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.s
 .PHONY : StringManipulator.cpp.s
 
-TechnicalTeam.obj: TechnicalTeam.cpp.obj
+Team.obj: Team.cpp.obj
 
-.PHONY : TechnicalTeam.obj
+.PHONY : Team.obj
 
 # target to build an object file
-TechnicalTeam.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.obj
-.PHONY : TechnicalTeam.cpp.obj
+Team.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj
+.PHONY : Team.cpp.obj
 
-TechnicalTeam.i: TechnicalTeam.cpp.i
+Team.i: Team.cpp.i
 
-.PHONY : TechnicalTeam.i
+.PHONY : Team.i
 
 # target to preprocess a source file
-TechnicalTeam.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.i
-.PHONY : TechnicalTeam.cpp.i
+Team.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.i
+.PHONY : Team.cpp.i
 
-TechnicalTeam.s: TechnicalTeam.cpp.s
+Team.s: Team.cpp.s
 
-.PHONY : TechnicalTeam.s
+.PHONY : Team.s
 
 # target to generate assembly for a file
-TechnicalTeam.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/TechnicalTeam.cpp.s
-.PHONY : TechnicalTeam.cpp.s
+Team.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.s
+.PHONY : Team.cpp.s
+
+Technician.obj: Technician.cpp.obj
+
+.PHONY : Technician.obj
+
+# target to build an object file
+Technician.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj
+.PHONY : Technician.cpp.obj
+
+Technician.i: Technician.cpp.i
+
+.PHONY : Technician.i
+
+# target to preprocess a source file
+Technician.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.i
+.PHONY : Technician.cpp.i
+
+Technician.s: Technician.cpp.s
+
+.PHONY : Technician.s
+
+# target to generate assembly for a file
+Technician.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.s
+.PHONY : Technician.cpp.s
 
 # Help Target
 help:
@@ -401,24 +401,21 @@ help:
 	@echo ... AEDA_Team_Manager
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Convocatoria.obj
-	@echo ... Convocatoria.i
-	@echo ... Convocatoria.s
+	@echo ... CallUp.obj
+	@echo ... CallUp.i
+	@echo ... CallUp.s
+	@echo ... CallUpPlayer.obj
+	@echo ... CallUpPlayer.i
+	@echo ... CallUpPlayer.s
 	@echo ... Date.obj
 	@echo ... Date.i
 	@echo ... Date.s
-	@echo ... Employee.obj
-	@echo ... Employee.i
-	@echo ... Employee.s
 	@echo ... FootbalPlayer.obj
 	@echo ... FootbalPlayer.i
 	@echo ... FootbalPlayer.s
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s
-	@echo ... GameStats.obj
-	@echo ... GameStats.i
-	@echo ... GameStats.s
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
@@ -428,9 +425,12 @@ help:
 	@echo ... StringManipulator.obj
 	@echo ... StringManipulator.i
 	@echo ... StringManipulator.s
-	@echo ... TechnicalTeam.obj
-	@echo ... TechnicalTeam.i
-	@echo ... TechnicalTeam.s
+	@echo ... Team.obj
+	@echo ... Team.i
+	@echo ... Team.s
+	@echo ... Technician.obj
+	@echo ... Technician.i
+	@echo ... Technician.s
 .PHONY : help
 
 

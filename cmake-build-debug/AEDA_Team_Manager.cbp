@@ -80,22 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Convocatoria.cpp">
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUp.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Convocatoria.h">
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUp.h">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUpPlayer.cpp">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUpPlayer.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Employee.cpp">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Employee.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/FootbalPlayer.cpp">
@@ -108,12 +108,6 @@
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Game.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/GameStats.cpp">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/GameStats.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Main.cpp">
@@ -131,10 +125,16 @@
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/StringManipulator.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/TechnicalTeam.cpp">
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/TechnicalTeam.h">
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.h">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Technician.cpp">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Technician.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CMakeLists.txt">
