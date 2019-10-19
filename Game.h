@@ -9,8 +9,8 @@
 
 class Game {
     string city, country, stadium;
-    vector<FootbalPlayer> convocados;
-    vetor<GameStats> stats;
+    //vector<FootbalPlayer> convocados;
+    //vector<GameStats> stats;
     //referees
 public:
 };

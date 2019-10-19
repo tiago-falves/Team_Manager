@@ -7,6 +7,7 @@
 #include "Date.h"
 #include "Convocatoria.h"
 #include "Game.h"
+#include <vector>
 
 class FootbalPlayer {
     string name;
@@ -17,8 +18,8 @@ class FootbalPlayer {
     float height;
     float pass_value;
     bool injury;
-    vector<Convocatoria> convocatoria;
-    vector<Game> games;
+    //vector<Convocatoria> convocatoria;
+    //vector<Game> games;
 public:
 };
 

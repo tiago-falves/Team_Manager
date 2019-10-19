@@ -4,6 +4,8 @@
 
 #ifndef AEDA_TEAM_MANAGER_EMPLOYEE_H
 #define AEDA_TEAM_MANAGER_EMPLOYEE_H
+#include <string>
+#include "Date.h"
 
 
 class Employee {
