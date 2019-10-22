@@ -149,33 +149,6 @@ CallUp.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s
 .PHONY : CallUp.cpp.s
 
-CallUpPlayer.obj: CallUpPlayer.cpp.obj
-
-.PHONY : CallUpPlayer.obj
-
-# target to build an object file
-CallUpPlayer.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj
-.PHONY : CallUpPlayer.cpp.obj
-
-CallUpPlayer.i: CallUpPlayer.cpp.i
-
-.PHONY : CallUpPlayer.i
-
-# target to preprocess a source file
-CallUpPlayer.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.i
-.PHONY : CallUpPlayer.cpp.i
-
-CallUpPlayer.s: CallUpPlayer.cpp.s
-
-.PHONY : CallUpPlayer.s
-
-# target to generate assembly for a file
-CallUpPlayer.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.s
-.PHONY : CallUpPlayer.cpp.s
-
 Date.obj: Date.cpp.obj
 
 .PHONY : Date.obj
@@ -311,6 +284,33 @@ Person.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.s
 .PHONY : Person.cpp.s
 
+PlayerGameStatistics.obj: PlayerGameStatistics.cpp.obj
+
+.PHONY : PlayerGameStatistics.obj
+
+# target to build an object file
+PlayerGameStatistics.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj
+.PHONY : PlayerGameStatistics.cpp.obj
+
+PlayerGameStatistics.i: PlayerGameStatistics.cpp.i
+
+.PHONY : PlayerGameStatistics.i
+
+# target to preprocess a source file
+PlayerGameStatistics.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.i
+.PHONY : PlayerGameStatistics.cpp.i
+
+PlayerGameStatistics.s: PlayerGameStatistics.cpp.s
+
+.PHONY : PlayerGameStatistics.s
+
+# target to generate assembly for a file
+PlayerGameStatistics.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.s
+.PHONY : PlayerGameStatistics.cpp.s
+
 StringManipulator.obj: StringManipulator.cpp.obj
 
 .PHONY : StringManipulator.obj
@@ -404,9 +404,6 @@ help:
 	@echo ... CallUp.obj
 	@echo ... CallUp.i
 	@echo ... CallUp.s
-	@echo ... CallUpPlayer.obj
-	@echo ... CallUpPlayer.i
-	@echo ... CallUpPlayer.s
 	@echo ... Date.obj
 	@echo ... Date.i
 	@echo ... Date.s
@@ -422,6 +419,9 @@ help:
 	@echo ... Person.obj
 	@echo ... Person.i
 	@echo ... Person.s
+	@echo ... PlayerGameStatistics.obj
+	@echo ... PlayerGameStatistics.i
+	@echo ... PlayerGameStatistics.s
 	@echo ... StringManipulator.obj
 	@echo ... StringManipulator.i
 	@echo ... StringManipulator.s

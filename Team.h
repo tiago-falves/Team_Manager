@@ -9,7 +9,6 @@
 class Team {
 private:
     vector<Person> people;
-
 };
 
 

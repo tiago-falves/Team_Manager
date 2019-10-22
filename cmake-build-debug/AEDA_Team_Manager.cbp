@@ -86,12 +86,6 @@
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUp.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUpPlayer.cpp">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUpPlayer.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
@@ -117,6 +111,12 @@
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Person.h">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/PlayerGameStatistics.cpp">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/PlayerGameStatistics.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/StringManipulator.cpp">

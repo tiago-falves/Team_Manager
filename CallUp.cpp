@@ -4,8 +4,8 @@
 
 #include "CallUp.h"
 
-CallUp::CallUp(/*vector<Game> games,*/ Date begginingDate, Date endDate) {
-    //this->games=games;
+CallUp::CallUp(vector<Game> games, Date begginingDate, Date endDate) {
+    this->games=games;
     this->begginingDate=begginingDate;
     this->endDate=endDate;
 

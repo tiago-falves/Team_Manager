@@ -6,16 +6,14 @@
 #define AEDA_TEAM_MANAGER_CALLUPPLAYER_H
 #pragma once
 
-#include "CallUp.h"
-//#include "FootbalPlayer.h"
+
 #include "Date.h"
 using namespace std;
 
 
-class CallUpPlayer {
+class PlayerGameStatistics {
 private:
-    //FootbalPlayer player;
-    //CallUp callUp;
+
     Date beginDate;
     Date endDate;
     int numberOfGoals;
@@ -23,7 +21,7 @@ private:
     int kilometers;
 
 public:
-    CallUpPlayer(/*CallUp callUp, FootbalPlayer player,*/ Date beginDate, Date endDate, int numberOfGoals, int minutesPlayed, int kilometers);
+    PlayerGameStatistics(/*CallUp callUp, FootbalPlayer player,*/ Date beginDate, Date endDate, int numberOfGoals, int minutesPlayed, int kilometers);
 };
 
 

@@ -173,18 +173,18 @@ CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUp.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\CallUp.cpp.s
 
-CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
-CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj: ../CallUpPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\CallUpPlayer.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUpPlayer.cpp"
+CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
+CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../PlayerGameStatistics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\PlayerGameStatistics.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\PlayerGameStatistics.cpp"
 
-CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.i"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUpPlayer.cpp" > CMakeFiles\AEDA_Team_Manager.dir\CallUpPlayer.cpp.i
+CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.i"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\PlayerGameStatistics.cpp" > CMakeFiles\AEDA_Team_Manager.dir\PlayerGameStatistics.cpp.i
 
-CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.s"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\CallUpPlayer.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\CallUpPlayer.cpp.s
+CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.s"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\PlayerGameStatistics.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\PlayerGameStatistics.cpp.s
 
 # Object files for target AEDA_Team_Manager
 AEDA_Team_Manager_OBJECTS = \
@@ -197,7 +197,7 @@ AEDA_Team_Manager_OBJECTS = \
 "CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj"
+"CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj"
 
 # External object files for target AEDA_Team_Manager
 AEDA_Team_Manager_EXTERNAL_OBJECTS =
@@ -211,7 +211,7 @@ AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj
-AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayer.cpp.obj
+AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/build.make
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/linklibs.rsp
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/objects1.rsp
