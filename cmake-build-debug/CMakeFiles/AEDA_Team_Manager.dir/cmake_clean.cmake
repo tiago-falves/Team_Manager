@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "AEDA_Team_Manager.exe.manifest"
   "AEDA_Team_Manager.pdb"
   "CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj"
+  "CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj"

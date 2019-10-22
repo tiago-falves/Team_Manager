@@ -7,21 +7,18 @@
 #pragma once
 
 
-#include "Date.h"
+
 using namespace std;
 
 
 class PlayerGameStatistics {
 private:
-
-    Date beginDate;
-    Date endDate;
     int numberOfGoals;
     int minutesPlayed;
     int kilometers;
 
 public:
-    PlayerGameStatistics(/*CallUp callUp, FootbalPlayer player,*/ Date beginDate, Date endDate, int numberOfGoals, int minutesPlayed, int kilometers);
+    PlayerGameStatistics(int numberOfGoals, int minutesPlayed, int kilometers);
 };
 
 

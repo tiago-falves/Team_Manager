@@ -3,12 +3,18 @@
 
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../CallUp.cpp
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../CallUp.h
+CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../CallUpPlayerStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../Date.h
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../FootbalPlayer.h
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../Game.h
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../Person.h
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj: ../StringManipulator.h
+
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj: ../CallUpPlayerStatistics.cpp
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj: ../CallUpPlayerStatistics.h
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj: ../Date.h
+CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj: ../StringManipulator.h
 
 CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj: ../Date.cpp
 CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj: ../Date.h
@@ -38,10 +44,8 @@ CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj: ../Person.cpp
 CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj: ../Person.h
 CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj: ../StringManipulator.h
 
-CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../Date.h
 CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../PlayerGameStatistics.cpp
 CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../PlayerGameStatistics.h
-CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../StringManipulator.h
 
 CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj: ../StringManipulator.cpp
 CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj: ../StringManipulator.h

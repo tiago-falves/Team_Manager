@@ -149,6 +149,33 @@ CallUp.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.s
 .PHONY : CallUp.cpp.s
 
+CallUpPlayerStatistics.obj: CallUpPlayerStatistics.cpp.obj
+
+.PHONY : CallUpPlayerStatistics.obj
+
+# target to build an object file
+CallUpPlayerStatistics.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj
+.PHONY : CallUpPlayerStatistics.cpp.obj
+
+CallUpPlayerStatistics.i: CallUpPlayerStatistics.cpp.i
+
+.PHONY : CallUpPlayerStatistics.i
+
+# target to preprocess a source file
+CallUpPlayerStatistics.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.i
+.PHONY : CallUpPlayerStatistics.cpp.i
+
+CallUpPlayerStatistics.s: CallUpPlayerStatistics.cpp.s
+
+.PHONY : CallUpPlayerStatistics.s
+
+# target to generate assembly for a file
+CallUpPlayerStatistics.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.s
+.PHONY : CallUpPlayerStatistics.cpp.s
+
 Date.obj: Date.cpp.obj
 
 .PHONY : Date.obj
@@ -404,6 +431,9 @@ help:
 	@echo ... CallUp.obj
 	@echo ... CallUp.i
 	@echo ... CallUp.s
+	@echo ... CallUpPlayerStatistics.obj
+	@echo ... CallUpPlayerStatistics.i
+	@echo ... CallUpPlayerStatistics.s
 	@echo ... Date.obj
 	@echo ... Date.i
 	@echo ... Date.s

@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUp.cpp" "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/cmake-build-debug/CMakeFiles/AEDA_Team_Manager.dir/CallUp.cpp.obj"
+  "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CallUpPlayerStatistics.cpp" "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/cmake-build-debug/CMakeFiles/AEDA_Team_Manager.dir/CallUpPlayerStatistics.cpp.obj"
   "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.cpp" "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/cmake-build-debug/CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj"
   "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/FootbalPlayer.cpp" "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/cmake-build-debug/CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj"
   "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Game.cpp" "C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/cmake-build-debug/CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj"

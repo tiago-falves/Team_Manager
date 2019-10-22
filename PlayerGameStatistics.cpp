@@ -4,13 +4,8 @@
 
 #include "PlayerGameStatistics.h"
 
-PlayerGameStatistics::PlayerGameStatistics(/*CallUp callUp, FootbalPlayer player,*/ Date beginDate, Date endDate, int numberOfGoals,int minutesPlayed, int kilometers) {
-    //this->callUp=callUp;
-    //this->player = player;
-    this->beginDate=beginDate;
-    this->endDate=endDate;
+PlayerGameStatistics::PlayerGameStatistics(int numberOfGoals,int minutesPlayed, int kilometers) {
     this->numberOfGoals=numberOfGoals;
     this->minutesPlayed=minutesPlayed;
     this->kilometers=kilometers;
-
 }
