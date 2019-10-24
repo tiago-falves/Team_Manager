@@ -338,33 +338,6 @@ PlayerGameStatistics.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.s
 .PHONY : PlayerGameStatistics.cpp.s
 
-StringManipulator.obj: StringManipulator.cpp.obj
-
-.PHONY : StringManipulator.obj
-
-# target to build an object file
-StringManipulator.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj
-.PHONY : StringManipulator.cpp.obj
-
-StringManipulator.i: StringManipulator.cpp.i
-
-.PHONY : StringManipulator.i
-
-# target to preprocess a source file
-StringManipulator.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.i
-.PHONY : StringManipulator.cpp.i
-
-StringManipulator.s: StringManipulator.cpp.s
-
-.PHONY : StringManipulator.s
-
-# target to generate assembly for a file
-StringManipulator.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.s
-.PHONY : StringManipulator.cpp.s
-
 Team.obj: Team.cpp.obj
 
 .PHONY : Team.obj
@@ -419,6 +392,33 @@ Technician.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.s
 .PHONY : Technician.cpp.s
 
+Utilities.obj: Utilities.cpp.obj
+
+.PHONY : Utilities.obj
+
+# target to build an object file
+Utilities.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.obj
+.PHONY : Utilities.cpp.obj
+
+Utilities.i: Utilities.cpp.i
+
+.PHONY : Utilities.i
+
+# target to preprocess a source file
+Utilities.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.i
+.PHONY : Utilities.cpp.i
+
+Utilities.s: Utilities.cpp.s
+
+.PHONY : Utilities.s
+
+# target to generate assembly for a file
+Utilities.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.s
+.PHONY : Utilities.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -452,15 +452,15 @@ help:
 	@echo ... PlayerGameStatistics.obj
 	@echo ... PlayerGameStatistics.i
 	@echo ... PlayerGameStatistics.s
-	@echo ... StringManipulator.obj
-	@echo ... StringManipulator.i
-	@echo ... StringManipulator.s
 	@echo ... Team.obj
 	@echo ... Team.i
 	@echo ... Team.s
 	@echo ... Technician.obj
 	@echo ... Technician.i
 	@echo ... Technician.s
+	@echo ... Utilities.obj
+	@echo ... Utilities.i
+	@echo ... Utilities.s
 .PHONY : help
 
 

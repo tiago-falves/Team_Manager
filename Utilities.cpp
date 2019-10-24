@@ -1,7 +1,13 @@
-#include "StringManipulator.h"
+//
+// Created by tiago on 24/10/2019.
+//
 
+#include "Utilities.h"
 using namespace std;
 
+//String Operations
+
+//Trim
 void trimRight(string &s) {
 	s.erase(s.find_last_not_of(" ") + 1);
 }
@@ -12,11 +18,13 @@ void trim(string &s) {
 	trimRight(s);
 	trimLeft(s);
 }
+
+//Separate a string using a certain char and put it in a int vector
 vector<int> separateCharacterInt(string s, char ch) {
 	vector<int> vetor;
 	if (s == "")
 		return vetor;
-	while (s.find_first_of(ch) != s.npos)	{
+	while (s.find_first_of(ch) != s.npos) {
 		vetor.push_back(stoi(s.substr(0, s.find_first_of(ch))));
 		s.erase(0, s.find_first_of(ch) + 1);
 	}
@@ -24,6 +32,7 @@ vector<int> separateCharacterInt(string s, char ch) {
 	return vetor;
 }
 
+//Separate a string using a certain char and put it in a string vector
 vector<string> separateCharacterStr(string s, char ch) {
 	vector<string> vetor;
 	string aux;
@@ -39,9 +48,10 @@ vector<string> separateCharacterStr(string s, char ch) {
 	return vetor;
 }
 
-bool stringIsNumber(string number){
+//Returns true if a string is a number
+bool stringIsNumber(string number) {
 	int count = 0;
-	for (int i = 0; i < number.size(); i++)	{
+	for (int i = 0; i < number.size(); i++) {
 		if (!isdigit(number[i]))
 			return false;
 	}

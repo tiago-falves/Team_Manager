@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-#include "StringManipulator.h"
+#include "Utilities.h"
 
 
 using namespace std;

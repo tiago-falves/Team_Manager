@@ -18,10 +18,41 @@ private:
     float height;
     float pass_value;
     bool injury;
-    //Para os jogadores,suponha que estes não recebem salários diretamente, mas que a seleção tem de pagar seguros que dependem
-    //do número de dias do jogador na seleção e do respetivo valor do passe.
+    float salary;
+
+public:
+    const string &getClub() const;
+    void setClub(const string &club);
+
+    float getWeight() const;
+
+    void setWeight(float weight);
+
+    float getHeight() const;
+
+    void setHeight(float height);
+
+    float getPassValue() const;
+
+    void setPassValue(float passValue);
+
+    bool isInjury() const;
+
+    void setInjury(bool injury);
+
+    float getSalary() const;
+
+    void setSalary(float salary);
+
+    const string &getPosition() const;
+
+    void setPosition(const string &position);
+
+
+
 public:
     FootbalPlayer(string position, string club, const float weight, const float height,  float pass_value,bool injury);
+
 };
 
 

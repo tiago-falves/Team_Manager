@@ -10,9 +10,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj"
-  "CMakeFiles/AEDA_Team_Manager.dir/StringManipulator.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj"
+  "CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.obj"
   "libAEDA_Team_Manager.dll.a"
 )
 
