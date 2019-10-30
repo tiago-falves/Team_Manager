@@ -1,0 +1,135 @@
+//
+// Created by tiago on 09/10/2019.
+//
+
+#include "FootballPlayer.h"
+
+FootballPlayer::FootballPlayer(int id, string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(id,name,birthdayDate) {
+
+    this->id = id;
+    this->name = name;
+    this->birthdayDate = birthdayDate;
+    this->position=position;
+    this->club = club;
+    this->weight= weight;
+    this->height = height;
+    this->pass_value = pass_value;
+    this->injury= injury;
+
+}
+FootballPlayer::FootballPlayer():Person(id,name,birthdayDate) {
+    this->id = 0;
+    this->name = "";
+    this->birthdayDate = Date(1,1,2000);
+    this->position="";
+    this->club = "";
+    this->weight= 0;
+    this->height = 0;
+    this->pass_value = 0.0;
+    this->injury= false;
+
+}
+
+string FootballPlayer::type() const {
+    return "Football Player";
+}
+void FootballPlayer::print() const{
+    Person::print();
+    cout << "\tPosition: " << position << endl;
+    cout << "\tClub: " << club << endl;
+    cout << "\tWeight: " << to_string(weight) << endl;
+    cout << "\tHeight: " << to_string(height) << endl;
+    cout << "\tPass Value: " << to_string(pass_value) << endl;
+    cout << "\tSalary: " << to_string(salary) << endl;
+    cout << "\tHealth: ";
+    if(injury) cout << "Is Injured";
+    else cout << "Perfectly Healthy";
+
+}
+
+
+const string &FootballPlayer::getPosition() const {
+    return position;
+}
+
+void FootballPlayer::setPosition(const string &position) {
+    FootballPlayer::position = position;
+}
+
+const string &FootballPlayer::getClub() const {
+    return club;
+}
+
+void FootballPlayer::setClub(const string &club) {
+    FootballPlayer::club = club;
+}
+
+float FootballPlayer::getWeight() const {
+    return weight;
+}
+
+void FootballPlayer::setWeight(float weight) {
+    FootballPlayer::weight = weight;
+}
+
+float FootballPlayer::getHeight() const {
+    return height;
+}
+
+void FootballPlayer::setHeight(float height) {
+    FootballPlayer::height = height;
+}
+
+float FootballPlayer::getPassValue() const {
+    return pass_value;
+}
+
+void FootballPlayer::setPassValue(float passValue) {
+    pass_value = passValue;
+}
+
+bool FootballPlayer::isInjury() const {
+    return injury;
+}
+
+void FootballPlayer::setInjury(bool injury) {
+    FootballPlayer::injury = injury;
+}
+
+float FootballPlayer::getSalary() const {
+    return salary;
+}
+
+void FootballPlayer::setSalary(float salary) {
+    FootballPlayer::salary = salary;
+}
+
+bool FootballPlayer::addFootballPlayer(vector<FootballPlayer*> &players) {
+    insert_sorted(players,this);
+    return true;
+}
+
+
+bool FootballPlayer::removeFootballPlayer(vector<FootballPlayer*> &players) {
+    int index = playerPosition(players);
+    if(index != -1){
+        players.erase(players.begin()+index);
+        return true;
+    }
+    else return false;
+}
+
+
+bool FootballPlayer::modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer) {
+    int index = this->playerPosition(players);
+    if(index !=-1){
+        players[index] = newFootballPlayer;
+        return true;
+    }
+    return false;
+}
+
+int FootballPlayer::playerPosition(vector<FootballPlayer*> &people){
+    int index = BinarySearch(people,this);
+    return index;
+}

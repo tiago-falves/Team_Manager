@@ -11,7 +11,7 @@ Person::Person(int id,string name, Date birthdayDate){
     this->name = name;
 }
 
-Person::Person(string peopleFile, vector<Person> people) {
+Person::Person(string peopleFile, vector<Person*> people) {
 
 }
 
@@ -26,12 +26,12 @@ void Person::setName(string name) { this->name = name;}
 void Person::setBirthday(Date birthday){ this->birthdayDate = birthday;}
 
 
-bool Person::addPerson(vector<Person> &people) {
-    insert_sorted(people,*this);
+bool Person::addPerson(vector<Person*> &people) {
+    insert_sorted(people,this);
     return true;
 }
 
-bool Person::removePerson(vector<Person> &people) {
+bool Person::removePerson(vector<Person*> &people) {
     int index = personPosition(people);
     if(index != -1){
         people.erase(people.begin()+index);
@@ -41,15 +41,16 @@ bool Person::removePerson(vector<Person> &people) {
 }
 
 
-bool Person::modifyPerson(vector<Person> &people, Person newPerson) {
+bool Person::modifyPerson(vector<Person*> &people, Person *newPerson) {
     int index = this->personPosition(people);
     if(index !=-1){
         people[index] = newPerson;
+        return true;
     }
+    return false;
 }
-int Person::personPosition(vector<Person> &people){
-    cout << (*this).getName();
-    int index = BinarySearch(people,*this);
+int Person::personPosition(vector<Person*> &people){
+    int index = BinarySearch(people,this);
     return index;
 }
 
@@ -60,6 +61,11 @@ int Person::personPosition(vector<Person> &people){
 bool Person::operator<(const Person &person) const {
     return id < person.id;
 }
+
+bool Person::operator<(const Person* &person) const {
+    return id < person->id;
+}
+
 bool Person::operator>(const Person &person) const {
     return id > person.id;
 }
@@ -72,3 +78,16 @@ bool Person::operator!=(const Person &person) const {
     return !(person == *this);
 }
 
+string Person::type() const{
+    return "Person";
+}
+
+
+//Prints person to the screen
+void Person::print() const{
+    cout << type() << endl;
+    cout << "\tName:" << name << endl;
+    cout << "\tBirthday:" << birthdayDate.toString() << endl;
+    cout << "\tId: " << to_string(id) << endl;
+
+}

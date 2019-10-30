@@ -82,18 +82,18 @@ CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s"
 	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\Date.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\Date.cpp.s
 
-CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
-CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj: ../FootbalPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\FootbalPlayer.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootbalPlayer.cpp"
+CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
+CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj: ../FootballPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDA_Team_Manager.dir\FootballPlayer.cpp.obj -c "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootballPlayer.cpp"
 
-CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.i"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootbalPlayer.cpp" > CMakeFiles\AEDA_Team_Manager.dir\FootbalPlayer.cpp.i
+CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.i"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootballPlayer.cpp" > CMakeFiles\AEDA_Team_Manager.dir\FootballPlayer.cpp.i
 
-CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.s"
-	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootbalPlayer.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\FootbalPlayer.cpp.s
+CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.s"
+	C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tiago\OneDrive\Ambiente de Trabalho\FEUP\Informatica\2\1S\AEDA\AEDA_Team_Manager\FootballPlayer.cpp" -o CMakeFiles\AEDA_Team_Manager.dir\FootballPlayer.cpp.s
 
 CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj: CMakeFiles/AEDA_Team_Manager.dir/flags.make
 CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj: ../Game.cpp
@@ -203,7 +203,7 @@ CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.s: cmake_force
 AEDA_Team_Manager_OBJECTS = \
 "CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj" \
-"CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj" \
+"CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj" \
 "CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj" \
@@ -218,7 +218,7 @@ AEDA_Team_Manager_EXTERNAL_OBJECTS =
 
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.obj
-AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj
+AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj
 AEDA_Team_Manager.exe: CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj

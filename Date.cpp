@@ -32,7 +32,7 @@ void Date::setYear(unsigned year){this -> year = year;}
 //Other methods
 
 //Converts a date to a string in the format "day/month/year"
-string Date::toString() {
+string Date::toString() const {
     return to_string(day) + "/" + to_string(month) + "/" + to_string(year) ;
 }
 

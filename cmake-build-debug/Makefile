@@ -203,32 +203,32 @@ Date.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s
 .PHONY : Date.cpp.s
 
-FootbalPlayer.obj: FootbalPlayer.cpp.obj
+FootballPlayer.obj: FootballPlayer.cpp.obj
 
-.PHONY : FootbalPlayer.obj
+.PHONY : FootballPlayer.obj
 
 # target to build an object file
-FootbalPlayer.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.obj
-.PHONY : FootbalPlayer.cpp.obj
+FootballPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj
+.PHONY : FootballPlayer.cpp.obj
 
-FootbalPlayer.i: FootbalPlayer.cpp.i
+FootballPlayer.i: FootballPlayer.cpp.i
 
-.PHONY : FootbalPlayer.i
+.PHONY : FootballPlayer.i
 
 # target to preprocess a source file
-FootbalPlayer.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.i
-.PHONY : FootbalPlayer.cpp.i
+FootballPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.i
+.PHONY : FootballPlayer.cpp.i
 
-FootbalPlayer.s: FootbalPlayer.cpp.s
+FootballPlayer.s: FootballPlayer.cpp.s
 
-.PHONY : FootbalPlayer.s
+.PHONY : FootballPlayer.s
 
 # target to generate assembly for a file
-FootbalPlayer.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootbalPlayer.cpp.s
-.PHONY : FootbalPlayer.cpp.s
+FootballPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.s
+.PHONY : FootballPlayer.cpp.s
 
 Game.obj: Game.cpp.obj
 
@@ -437,9 +437,9 @@ help:
 	@echo ... Date.obj
 	@echo ... Date.i
 	@echo ... Date.s
-	@echo ... FootbalPlayer.obj
-	@echo ... FootbalPlayer.i
-	@echo ... FootbalPlayer.s
+	@echo ... FootballPlayer.obj
+	@echo ... FootballPlayer.i
+	@echo ... FootballPlayer.s
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s

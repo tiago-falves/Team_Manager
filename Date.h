@@ -44,7 +44,7 @@ public:
     @param - /
     @return string - the date in a string
     */
-    string toString();
+    string toString() const;
 
     /*Verifies if a Date is valid (months have 1 - 31 days, etc.)
     @param - /

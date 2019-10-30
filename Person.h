@@ -15,7 +15,9 @@ protected:
     Date birthdayDate;
 public:
     Person(int id,string name, Date birthdayDate);
-    Person(string peopleFile, vector<Person> people);
+    Person(string peopleFile, vector<Person*> people);
+    virtual string type() const ;
+
     int getId() const;
     string getName() const;
     Date getBirthday() const;
@@ -26,16 +28,22 @@ public:
     void setBirthday(Date birthdayDate);
 
 
-    bool addPerson(vector<Person> &people);
-    bool removePerson(vector<Person> &people);
-    bool modifyPerson(vector<Person> &people, Person newPerson);
-    int personPosition(vector<Person> &people);
+
+
+    bool addPerson(vector<Person*> &people);
+    bool removePerson(vector<Person*> &people);
+    bool modifyPerson(vector<Person*> &people, Person *newPerson);
+    int personPosition(vector<Person*> &people);
 
 
     bool operator<(const Person &person) const;
+    bool operator<(const Person* &person) const;
+
     bool operator>(const Person &person) const;
     bool operator==(const Person &rhs) const;
     bool operator!=(const Person &rhs) const;
+
+    virtual void print() const;
 };
 
 

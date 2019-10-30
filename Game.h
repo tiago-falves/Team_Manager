@@ -4,7 +4,7 @@
 
 #include <string>
 #include <vector>
-#include "FootbalPlayer.h"
+#include "FootballPlayer.h"
 #include "PlayerGameStatistics.h"
 
 
@@ -17,7 +17,7 @@ private:
     string country;
     string stadium;
     vector<PlayerGameStatistics> playerStatistics;
-    vector<FootbalPlayer> players;
+    vector<FootballPlayer> players;
     vector<Person> referees;
 
 

@@ -1,5 +1,5 @@
-#ifndef AEDA_TEAM_MANAGER_FOOTBALPLAYER_H
-#define AEDA_TEAM_MANAGER_FOOTBALPLAYER_H
+#ifndef AEDA_TEAM_MANAGER_FootballPlayer_H
+#define AEDA_TEAM_MANAGER_FootballPlayer_H
 #pragma once
 #include "Date.h"
 #include "Person.h"
@@ -10,7 +10,7 @@
 #include <vector>
 using namespace std;
 
-class FootbalPlayer: public Person {
+class FootballPlayer: public Person {
 private:
     string position;
     string club;
@@ -22,9 +22,22 @@ private:
 
 public:
 
-    FootbalPlayer(int id, string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
-    FootbalPlayer();
+    FootballPlayer(int id, string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
+    FootballPlayer();
+
+    bool addFootballPlayer(vector<FootballPlayer*> &players);
+
+    bool removeFootballPlayer(vector<FootballPlayer*> &players);
+
+    bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer);
+
+    int playerPosition(vector<FootballPlayer*> &players);
+
+    virtual void print() const;
+
+
+    virtual string type() const;
 
     const string &getClub() const;
 
@@ -59,4 +72,4 @@ public:
 };
 
 
-#endif //AEDA_TEAM_MANAGER_FOOTBALPLAYER_H
+#endif //AEDA_TEAM_MANAGER_FootballPlayer_H
