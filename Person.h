@@ -8,25 +8,30 @@
 
 class Person {
 
-
 protected:
     int id;
     string name;
     Date birthdayDate;
+    float salary;
+    static int lastId;
 public:
-    Person(int id,string name, Date birthdayDate);
+    Person(string name, Date birthdayDate);
     Person(string peopleFile, vector<Person*> people);
     virtual string type() const ;
+    static int getLastId();
+
+
 
     int getId() const;
     string getName() const;
     Date getBirthday() const;
+    float getSalary() const;
 
 
     void setId(int id);
     void setName(string name);
     void setBirthday(Date birthdayDate);
-
+    void setSalary(float salary);
 
 
 
@@ -35,6 +40,10 @@ public:
     bool modifyPerson(vector<Person*> &people, Person *newPerson);
     int personPosition(vector<Person*> &people);
 
+    static void sortByID(vector<Person*> &people);
+    static void sortByName(vector<Person*> &people);
+
+    static vector<Person*> searchByName(vector<Person*> people, string name);
 
     bool operator<(const Person &person) const;
     bool operator<(const Person* &person) const;
@@ -45,6 +54,7 @@ public:
 
     virtual void print() const;
 };
+
 
 
 #endif //AEDA_TEAM_MANAGER_PERSON_H

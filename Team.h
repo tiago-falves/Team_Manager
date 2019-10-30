@@ -10,9 +10,9 @@
 class Team {
 private:
 public:
-    vector<Person> people;
+    vector<Person*> people;
 
-    Team(vector<Person> &people);
+    Team(vector<Person*> &people);
 
 
 

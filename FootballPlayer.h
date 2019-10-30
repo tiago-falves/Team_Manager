@@ -22,7 +22,7 @@ private:
 
 public:
 
-    FootballPlayer(int id, string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
+    FootballPlayer(string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
     FootballPlayer();
 

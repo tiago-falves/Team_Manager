@@ -4,9 +4,8 @@
 
 #include "FootballPlayer.h"
 
-FootballPlayer::FootballPlayer(int id, string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(id,name,birthdayDate) {
+FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate) {
 
-    this->id = id;
     this->name = name;
     this->birthdayDate = birthdayDate;
     this->position=position;
@@ -17,8 +16,7 @@ FootballPlayer::FootballPlayer(int id, string name, Date birthdayDate,string pos
     this->injury= injury;
 
 }
-FootballPlayer::FootballPlayer():Person(id,name,birthdayDate) {
-    this->id = 0;
+FootballPlayer::FootballPlayer():Person(name,birthdayDate) {
     this->name = "";
     this->birthdayDate = Date(1,1,2000);
     this->position="";
@@ -123,7 +121,15 @@ bool FootballPlayer::removeFootballPlayer(vector<FootballPlayer*> &players) {
 bool FootballPlayer::modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer) {
     int index = this->playerPosition(players);
     if(index !=-1){
-        players[index] = newFootballPlayer;
+        players[index]->setSalary(newFootballPlayer->getSalary());
+        players[index]->setBirthday(newFootballPlayer->getBirthday());
+        players[index]->setName(newFootballPlayer->getName());
+        players[index]->setClub(newFootballPlayer->getClub());
+        players[index]->setHeight(newFootballPlayer->getHeight());
+        players[index]->setInjury(newFootballPlayer->isInjury());
+        players[index]->setPassValue(newFootballPlayer->getPassValue());
+        players[index]->setPosition(newFootballPlayer->getPosition());
+        players[index]->setWeight(newFootballPlayer->getWeight());
         return true;
     }
     return false;

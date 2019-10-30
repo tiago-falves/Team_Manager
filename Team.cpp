@@ -6,7 +6,7 @@ using namespace std;
 
 
 //Constructor
-Team::Team(vector<Person> &people) {
+Team::Team(vector<Person*> &people) {
     this->people = people;
 
 }
