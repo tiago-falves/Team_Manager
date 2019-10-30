@@ -21,7 +21,13 @@ private:
     float salary;
 
 public:
+
+    FootbalPlayer(int id, string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
+    FootbalPlayer();
+
+
     const string &getClub() const;
+
     void setClub(const string &club);
 
     float getWeight() const;
@@ -49,9 +55,6 @@ public:
     void setPosition(const string &position);
 
 
-
-public:
-    FootbalPlayer(string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
 };
 

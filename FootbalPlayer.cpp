@@ -4,13 +4,29 @@
 
 #include "FootbalPlayer.h"
 
-FootbalPlayer::FootbalPlayer(string position, string club, const float weight, const float height, float pass_value,bool injury):Person(id,name,birthdayDate) {
+FootbalPlayer::FootbalPlayer(int id, string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(id,name,birthdayDate) {
+
+    this->id = id;
+    this->name = name;
+    this->birthdayDate = birthdayDate;
     this->position=position;
     this->club = club;
     this->weight= weight;
     this->height = height;
     this->pass_value = pass_value;
     this->injury= injury;
+
+}
+FootbalPlayer::FootbalPlayer():Person(id,name,birthdayDate) {
+    this->id = 0;
+    this->name = "Joao";
+    this->birthdayDate = Date(1,1,2000);
+    this->position="zas";
+    this->club = "";
+    this->weight= 0;
+    this->height = 0;
+    this->pass_value = 0.0;
+    this->injury= false;
 
 }
 

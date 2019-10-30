@@ -11,6 +11,12 @@ Person::Person(int id,string name, Date birthdayDate){
     this->name = name;
 }
 
+Person::Person(string peopleFile, vector<Person> people) {
+
+}
+
+
+
 int Person::getId() const{ return id;}
 string Person::getName() const{ return name;}
 Date Person::getBirthday() const { return birthdayDate;}
@@ -18,6 +24,38 @@ Date Person::getBirthday() const { return birthdayDate;}
 void Person::setId(int id) {this->id = id;}
 void Person::setName(string name) { this->name = name;}
 void Person::setBirthday(Date birthday){ this->birthdayDate = birthday;}
+
+
+bool Person::addPerson(vector<Person> &people) {
+    insert_sorted(people,*this);
+    return true;
+}
+
+bool Person::removePerson(vector<Person> &people) {
+    int index = personPosition(people);
+    if(index != -1){
+        people.erase(people.begin()+index);
+        return true;
+    }
+    else return false;
+}
+
+
+bool Person::modifyPerson(vector<Person> &people, Person newPerson) {
+    int index = this->personPosition(people);
+    if(index !=-1){
+        people[index] = newPerson;
+    }
+}
+int Person::personPosition(vector<Person> &people){
+    cout << (*this).getName();
+    int index = BinarySearch(people,*this);
+    return index;
+}
+
+
+
+
 
 bool Person::operator<(const Person &person) const {
     return id < person.id;
@@ -33,3 +71,4 @@ bool Person::operator==(const Person &person) const {
 bool Person::operator!=(const Person &person) const {
     return !(person == *this);
 }
+

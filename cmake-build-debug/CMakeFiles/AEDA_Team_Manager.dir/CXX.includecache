@@ -16,19 +16,33 @@ vector
 Utilities.h
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Utilities.h
 
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/FootbalPlayer.h
+Date.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.h
+Person.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Person.h
+vector
+-
+
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Main.cpp
+iostream
+-
+Person.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Person.h
+Team.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.h
+FootbalPlayer.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/FootbalPlayer.h
+Date.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.h
+Utilities.h
+C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Utilities.h
+
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Person.h
 Date.h
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.h
 string
 -
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.cpp
-algorithm
--
-Team.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.h
-Utilities.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Utilities.h
 
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.h
 vector

@@ -14,9 +14,7 @@ public:
 
     Team(vector<Person> &people);
 
-    bool addPerson(const Person &person);
-    bool removePerson(const Person &person);
-    int personPosition(const Person &person);
+
 
 
 };
