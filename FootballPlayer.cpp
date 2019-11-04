@@ -42,6 +42,7 @@ void FootballPlayer::print() const{
     cout << "\tHealth: ";
     if(injury) cout << "Is Injured";
     else cout << "Perfectly Healthy";
+    cout << endl;
 
 }
 

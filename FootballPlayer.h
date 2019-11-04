@@ -4,9 +4,6 @@
 #include "Date.h"
 #include "Person.h"
 
-
-
-
 #include <vector>
 using namespace std;
 

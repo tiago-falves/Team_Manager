@@ -28,6 +28,17 @@ private:
 public:
     Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<Person> referees);
 
+    string getCity() const;
+    string getCountry() const;
+    string getStadium() const;
+    vector<FootballPlayer> getPlayers() const;
+
+    void setCity(string city);
+    void setCountry(string country);
+    void setStadium(string stadium);
+    void setCalled_players(vector<FootballPlayer> vec);
+
+    friend ostream& operator<< (ostream& out, const Game& game);
 };
 
 
