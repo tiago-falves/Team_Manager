@@ -6,6 +6,7 @@
 #include <string>
 
 
+
 class Person {
 
 protected:
@@ -16,11 +17,10 @@ protected:
     static int lastId;
 public:
     Person(string name, Date birthdayDate);
-    Person(string peopleFile, vector<Person*> people);
+    Person();
+
     virtual string type() const ;
     static int getLastId();
-
-
 
     int getId() const;
     string getName() const;

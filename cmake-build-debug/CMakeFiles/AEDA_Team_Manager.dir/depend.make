@@ -39,6 +39,7 @@ CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../FootballPlayer.h
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Main.cpp
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Person.h
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Team.h
+CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Technician.h
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Utilities.h
 
 CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj: ../Date.h
@@ -50,9 +51,11 @@ CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../PlayerGameStat
 CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj: ../PlayerGameStatistics.h
 
 CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Date.h
+CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../FootballPlayer.h
 CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Person.h
 CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Team.cpp
 CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Team.h
+CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Technician.h
 CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj: ../Utilities.h
 
 CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj: ../Date.h

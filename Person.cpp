@@ -9,10 +9,13 @@ Person::Person(string name, Date birthdayDate): id(lastId++){
     this->birthdayDate = birthdayDate;
     this->name = name;
 }
-
-Person::Person(string peopleFile, vector<Person*> people) {
+Person::Person() {
+    this->name = "";
+    this->birthdayDate = Date(1,1,2000);
+    this->salary = 0;
 
 }
+
 
 
 
@@ -148,6 +151,8 @@ vector<Person*> Person::searchByName(vector<Person *> people,string name) { //De
 
 
 int Person::lastId = 0;
+
+
 
 
 

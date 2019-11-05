@@ -3,6 +3,8 @@
 #pragma once
 #include <vector>
 #include "Person.h"
+#include "FootballPlayer.h"
+#include "Technician.h"
 
 
 
@@ -11,8 +13,11 @@ class Team {
 private:
 public:
     vector<Person*> people;
+    vector<FootballPlayer*> players;
+    vector<Technician*> technicians;
 
-    Team(vector<Person*> &people);
+    Team(string fileName);
+    static bool readFile(string fileName);
 
 
 

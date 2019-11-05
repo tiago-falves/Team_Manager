@@ -1,14 +1,28 @@
 
 #include <algorithm>
+#include <fstream>
 #include "Team.h"
-#include "Utilities.h"
 using namespace std;
 
 
-//Constructor
-Team::Team(vector<Person*> &people) {
-    this->people = people;
-
+Team::Team(string fileName) {
+    readFile(fileName);
 }
 
+bool Team::readFile(string fileName) {
+    string personText;
+    ifstream peopleFile;
+    int line= 0;
 
+    peopleFile.open(fileName);
+    if(peopleFile.fail()){
+        cout << "Error Opening";
+        return false;
+    }
+    else{
+
+    }
+
+
+    return false;
+}
