@@ -14,13 +14,13 @@ protected:
     string name;
     Date birthdayDate;
     float salary;
-    static int lastId;
+    //static int lastId;
 public:
     Person(string name, Date birthdayDate);
     Person();
 
     virtual string type() const ;
-    static int getLastId();
+    //static int getLastId();
 
     int getId() const;
     string getName() const;

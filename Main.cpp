@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Person.h"
-#include "Team.h"
 #include "FootballPlayer.h"
 #include "Date.h"
+#include "NationalTeam.h"
 #include "Utilities.h"
 using namespace std;
 
@@ -106,10 +106,19 @@ void testPlayers(){
 
 }
 
+void testNationalTeam(){
+    NationalTeam team = NationalTeam("FootballPlayers.txt");
+    for (int i = 0; i < team.players.size() ; ++i) {
+        cout << team.players[i];
+    }
+
+}
+
 int main() {
 
     //testPerson();
     //testPlayers();
+    testNationalTeam();
 
 
     system("Pause");

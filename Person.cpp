@@ -5,7 +5,7 @@
 #include "Person.h"
 using namespace std;
 
-Person::Person(string name, Date birthdayDate): id(lastId++){
+Person::Person(string name, Date birthdayDate){
     this->birthdayDate = birthdayDate;
     this->name = name;
 }
@@ -17,13 +17,11 @@ Person::Person() {
 }
 
 
-
-
 int Person::getId() const{ return id;}
 string Person::getName() const{ return name;}
 Date Person::getBirthday() const { return birthdayDate;}
 float Person::getSalary() const { return salary;}
-int Person::getLastId() {return lastId;}
+//int Person::getLastId() {return lastId;}
 
 
 void Person::setId(int id) {this->id = id;}
@@ -62,8 +60,6 @@ int Person::personPosition(vector<Person*> &people){
     int index = BinarySearch(people,this);
     return index;
 }
-
-
 
 
 bool Person::operator<(const Person &person) const {
@@ -150,7 +146,7 @@ vector<Person*> Person::searchByName(vector<Person *> people,string name) { //De
 }
 
 
-int Person::lastId = 0;
+//int Person::lastId = 0;
 
 
 

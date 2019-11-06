@@ -16,7 +16,7 @@ FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, s
     this->injury= injury;
 
 }
-FootballPlayer::FootballPlayer():Person(name,birthdayDate) {
+FootballPlayer::FootballPlayer(string name,Date birtdayDate):Person(name,birthdayDate) {
     this->name = "";
     this->birthdayDate = Date(1,1,2000);
     this->position="";

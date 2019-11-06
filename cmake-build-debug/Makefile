@@ -284,6 +284,33 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
+NationalTeam.obj: NationalTeam.cpp.obj
+
+.PHONY : NationalTeam.obj
+
+# target to build an object file
+NationalTeam.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.obj
+.PHONY : NationalTeam.cpp.obj
+
+NationalTeam.i: NationalTeam.cpp.i
+
+.PHONY : NationalTeam.i
+
+# target to preprocess a source file
+NationalTeam.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.i
+.PHONY : NationalTeam.cpp.i
+
+NationalTeam.s: NationalTeam.cpp.s
+
+.PHONY : NationalTeam.s
+
+# target to generate assembly for a file
+NationalTeam.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.s
+.PHONY : NationalTeam.cpp.s
+
 Person.obj: Person.cpp.obj
 
 .PHONY : Person.obj
@@ -337,33 +364,6 @@ PlayerGameStatistics.s: PlayerGameStatistics.cpp.s
 PlayerGameStatistics.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.s
 .PHONY : PlayerGameStatistics.cpp.s
-
-Team.obj: Team.cpp.obj
-
-.PHONY : Team.obj
-
-# target to build an object file
-Team.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.obj
-.PHONY : Team.cpp.obj
-
-Team.i: Team.cpp.i
-
-.PHONY : Team.i
-
-# target to preprocess a source file
-Team.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.i
-.PHONY : Team.cpp.i
-
-Team.s: Team.cpp.s
-
-.PHONY : Team.s
-
-# target to generate assembly for a file
-Team.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Team.cpp.s
-.PHONY : Team.cpp.s
 
 Technician.obj: Technician.cpp.obj
 
@@ -446,15 +446,15 @@ help:
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
+	@echo ... NationalTeam.obj
+	@echo ... NationalTeam.i
+	@echo ... NationalTeam.s
 	@echo ... Person.obj
 	@echo ... Person.i
 	@echo ... Person.s
 	@echo ... PlayerGameStatistics.obj
 	@echo ... PlayerGameStatistics.i
 	@echo ... PlayerGameStatistics.s
-	@echo ... Team.obj
-	@echo ... Team.i
-	@echo ... Team.s
 	@echo ... Technician.obj
 	@echo ... Technician.i
 	@echo ... Technician.s

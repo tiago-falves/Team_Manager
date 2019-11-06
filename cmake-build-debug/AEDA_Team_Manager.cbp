@@ -113,6 +113,12 @@
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Main.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.cpp">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.h">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Person.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
@@ -123,12 +129,6 @@
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/PlayerGameStatistics.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.cpp">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Team.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Technician.cpp">

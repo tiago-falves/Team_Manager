@@ -1,0 +1,24 @@
+Main Coach
+Joseph Mourinho
+1/2/2000
+1000.3
+::::::::::
+Secondary Coach
+Marcelo Rebelo de Sousa
+1/2/2000
+200.0
+::::::::::
+Manager
+Susana Sousa
+1/2/2000
+300.9
+::::::::::
+President
+Afonso Lopes
+1/2/2000
+12000
+::::::::::
+Vice-President
+Pedro Gomes
+1/2/2000
+643.5

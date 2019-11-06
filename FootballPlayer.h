@@ -15,13 +15,12 @@ private:
     float height;
     float pass_value;
     bool injury;
-    float salary;
 
 public:
 
     FootballPlayer(string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
-    FootballPlayer();
+    FootballPlayer(string name, Date birthdayDate);
 
     bool addFootballPlayer(vector<FootballPlayer*> &players);
 
