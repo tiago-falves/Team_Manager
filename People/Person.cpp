@@ -116,8 +116,12 @@ void Person::read(ifstream *file) {
     try {birthdayDate = birthday.dateTextConverter(text);}
     catch (InvalidDate) {cerr << "Invalid date " << text << " for: " << name;}
 
+
     getline(*file,text);
-    salary = stof(text);
+    try {salary = stof(text);}
+    catch (std::invalid_argument ia){ cerr << "Invalid salary " << text << " for: " << name; throw;}
+
+
 }
 
 bool nameComparable(const Person* person1, const Person* person2){

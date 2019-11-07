@@ -108,5 +108,10 @@ bool stringIsNumber(string number);
 
 vector<string> separateCharacterStr(string s, char ch);
 
+bool isNumber(const std::string& s);
+
+bool isPositiveNumber(int n);
+
+void validFloat(string num);
 
 #endif //AEDA_TEAM_MANAGER_UTILITIES_H
