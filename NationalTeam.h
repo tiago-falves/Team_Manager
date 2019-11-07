@@ -20,8 +20,7 @@ public:
     vector<Person*> people;
     vector<FootballPlayer*> players;
     vector<Technician*> technicians;
-    NationalTeam(string fileName);
-    bool readTeam(string fileName);
+    NationalTeam();
     bool readPeople(string fileName);
 
 

@@ -2,25 +2,20 @@
 // Created by tiago on 09/10/2019.
 //
 
-#include <fstream>
+
 #include "FootballPlayer.h"
 
-FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate, salary) {
+FootballPlayer::FootballPlayer(string name, Date birthdayDate,float salary, string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate, salary) {
 
-    this->name = name;
-    this->birthdayDate = birthdayDate;
-    this->position=position;
     this->club = club;
+    this->position = position;
     this->weight= weight;
     this->height = height;
     this->pass_value = pass_value;
     this->injury= injury;
-
 }
+
 FootballPlayer::FootballPlayer():Person() {
-    this->name = "";
-    this->birthdayDate = Date(1,1,2000);
-    this->position="";
     this->club = "";
     this->weight= 0;
     this->height = 0;

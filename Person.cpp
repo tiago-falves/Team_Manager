@@ -2,14 +2,13 @@
 // Created by tiago on 19/10/2019.
 //
 
-#include <fstream>
 #include "Person.h"
 using namespace std;
 
 Person::Person(string name, Date birthdayDate, float salary){
     this->birthdayDate = birthdayDate;
     this->name = name;
-    this->salary = 0.0;
+    this->salary = salary;
 }
 Person::Person() {
     this->name = "";
@@ -97,8 +96,7 @@ void Person::print() const{
     cout << "\tId: " << to_string(id) << endl;
     cout << "\tName:" << name << endl;
     cout << "\tBirthday:" << birthdayDate.toString() << endl;
-    cout << "\tSalary: " << to_string(salary)<< endl;
-
+    cout << "\tSalary: " << to_string(salary) << endl;
 }
 
 void Person::read(ifstream *file) {

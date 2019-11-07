@@ -1,9 +1,8 @@
 #ifndef AEDA_TEAM_MANAGER_FootballPlayer_H
 #define AEDA_TEAM_MANAGER_FootballPlayer_H
 #pragma once
-#include "Date.h"
-#include "Person.h"
 
+#include "Person.h"
 #include <vector>
 using namespace std;
 
@@ -18,7 +17,7 @@ private:
 
 public:
 
-    FootballPlayer(string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
+    FootballPlayer(string name, Date birthDay,float salary,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
     FootballPlayer();
 

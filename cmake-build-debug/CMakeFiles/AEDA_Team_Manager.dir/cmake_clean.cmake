@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Game.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj"
+  "CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj"

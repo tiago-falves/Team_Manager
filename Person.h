@@ -4,6 +4,7 @@
 #pragma once
 #include "Date.h"
 #include <string>
+#include <fstream>
 
 
 
@@ -19,7 +20,6 @@ public:
     Person(string name, Date birthdayDate, float salary);
     Person();
 
-    virtual string type() const ;
     //static int getLastId();
 
     int getId() const;
@@ -54,6 +54,8 @@ public:
 
     virtual void print() const;
     virtual void read(ifstream *file);
+    virtual string type() const ;
+
 };
 
 

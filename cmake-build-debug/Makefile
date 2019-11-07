@@ -284,6 +284,33 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
+Menu.obj: Menu.cpp.obj
+
+.PHONY : Menu.obj
+
+# target to build an object file
+Menu.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.obj
+.PHONY : Menu.cpp.obj
+
+Menu.i: Menu.cpp.i
+
+.PHONY : Menu.i
+
+# target to preprocess a source file
+Menu.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.i
+.PHONY : Menu.cpp.i
+
+Menu.s: Menu.cpp.s
+
+.PHONY : Menu.s
+
+# target to generate assembly for a file
+Menu.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.s
+.PHONY : Menu.cpp.s
+
 NationalTeam.obj: NationalTeam.cpp.obj
 
 .PHONY : NationalTeam.obj
@@ -446,6 +473,9 @@ help:
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
+	@echo ... Menu.obj
+	@echo ... Menu.i
+	@echo ... Menu.s
 	@echo ... NationalTeam.obj
 	@echo ... NationalTeam.i
 	@echo ... NationalTeam.s
