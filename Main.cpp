@@ -14,14 +14,14 @@ void testPerson(){
     Date date(1,1,3000);
 
     Date birthdayDate(1,2,2018);
-    Person *person1 = new Person("John Wick",birthdayDate);
-    Person *person2 = new Person("Terry Wick",birthdayDate);
+    Person *person1 = new Person("John Wick",birthdayDate,100);
+    Person *person2 = new Person("Terry Wick",birthdayDate,100);
     Person *footballPlayer = new FootballPlayer("name", date,"position", "club",50.0, 20.0, 5.0,false);
-    Person *person3 = new Person("Tiago Wick",birthdayDate);
-    Person *person4 = new Person("Richard Wick",birthdayDate);
-    Person *person5 = new Person("Bob Wick",birthdayDate);
-    Person *person6 = new Person("John Wick",birthdayDate);
-    Person *person7 = new Person("Bob Wick",birthdayDate);
+    Person *person3 = new Person("Tiago Wick",birthdayDate,200);
+    Person *person4 = new Person("Richard Wick",birthdayDate,300);
+    Person *person5 = new Person("Bob Wick",birthdayDate,100);
+    Person *person6 = new Person("John Wick",birthdayDate,300);
+    Person *person7 = new Person("Bob Wick",birthdayDate,200);
 
 
 

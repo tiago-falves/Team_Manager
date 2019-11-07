@@ -34,4 +34,5 @@ void Game::setCountry(string country) {
 
 ostream& operator<<(ostream &out, const Game& game) {
     out << "Location: " << game.stadium << ", " << game.city << ", " << game.country << endl << endl;
+    return out;
 }

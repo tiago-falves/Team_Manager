@@ -20,7 +20,7 @@ public:
 
     FootballPlayer(string name, Date birthDay,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
-    FootballPlayer(string name, Date birthdayDate);
+    FootballPlayer();
 
     bool addFootballPlayer(vector<FootballPlayer*> &players);
 

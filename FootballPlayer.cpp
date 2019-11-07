@@ -5,7 +5,7 @@
 #include <fstream>
 #include "FootballPlayer.h"
 
-FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate) {
+FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate, salary) {
 
     this->name = name;
     this->birthdayDate = birthdayDate;
@@ -17,7 +17,7 @@ FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, s
     this->injury= injury;
 
 }
-FootballPlayer::FootballPlayer(string name,Date birtdayDate):Person(name,birthdayDate) {
+FootballPlayer::FootballPlayer():Person() {
     this->name = "";
     this->birthdayDate = Date(1,1,2000);
     this->position="";

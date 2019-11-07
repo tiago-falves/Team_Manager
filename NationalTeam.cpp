@@ -18,7 +18,7 @@ bool NationalTeam::readTeam(string fileName) {
     string text;
     ifstream playersFile;
     int line= 0;
-    FootballPlayer *player = new FootballPlayer("",Date());
+    FootballPlayer *player = new FootballPlayer();
     Date birthday = Date();
 
     playersFile.open(fileName);
@@ -66,7 +66,7 @@ bool NationalTeam::readTeam(string fileName) {
                     line = -1;
                     players.push_back(player);
                     people.push_back(player);
-                    player = new FootballPlayer("",Date());
+                    player = new FootballPlayer();
                     break;
                 default:
                     break;
@@ -101,7 +101,7 @@ bool NationalTeam::readPeople(string fileName) {
         }
         else if(text == "Football Players File"){
             while(!peopleFile.eof()) {
-                FootballPlayer *player = new FootballPlayer("", birthday);
+                FootballPlayer *player = new FootballPlayer();
                 player->read(&peopleFile);
                 people.push_back((player));
                 players.push_back(player);
@@ -110,7 +110,7 @@ bool NationalTeam::readPeople(string fileName) {
         }
         else if(text == "Technicians File"){
             while(!peopleFile.eof()) {
-                Technician *technician = new Technician("", birthday);
+                Technician *technician = new Technician();
                 technician->read(&peopleFile);
                 people.push_back((technician));
                 technicians.push_back(technician);

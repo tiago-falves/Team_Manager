@@ -6,13 +6,14 @@
 #include "Person.h"
 using namespace std;
 
-Person::Person(string name, Date birthdayDate){
+Person::Person(string name, Date birthdayDate, float salary){
     this->birthdayDate = birthdayDate;
     this->name = name;
+    this->salary = 0.0;
 }
 Person::Person() {
     this->name = "";
-    this->birthdayDate = Date(1,1,2000);
+    this->birthdayDate = Date();
     this->salary = 0;
 
 }

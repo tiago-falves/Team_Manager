@@ -16,7 +16,7 @@ protected:
     float salary;
     //static int lastId;
 public:
-    Person(string name, Date birthdayDate);
+    Person(string name, Date birthdayDate, float salary);
     Person();
 
     virtual string type() const ;

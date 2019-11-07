@@ -4,7 +4,7 @@
 
 #include "Technician.h"
 
-Technician::Technician(string name, Date date): Person(name,date){
+Technician::Technician(): Person(){
     this->name = "";
     this->birthdayDate = Date();
 
