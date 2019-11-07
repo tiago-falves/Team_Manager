@@ -107,9 +107,9 @@ void testPlayers(){
 }
 
 void testNationalTeam(){
-    NationalTeam team = NationalTeam("FootballPlayers.txt");
-    for (int i = 0; i < team.players.size() ; ++i) {
-        cout << team.players[i];
+    NationalTeam team = NationalTeam("..\\FootballPlayers.txt");
+    for (int i = 0; i < team.players.size() ; i++) {
+        team.players[i]->print();
     }
 
 }

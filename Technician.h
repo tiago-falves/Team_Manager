@@ -10,6 +10,7 @@ class Technician: public Person{
     float salary;
 public:
 
+    Technician(string name, Date date);
 };
 
 

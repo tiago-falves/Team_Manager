@@ -2,6 +2,7 @@
 // Created by tiago on 09/10/2019.
 //
 
+#include <fstream>
 #include "FootballPlayer.h"
 
 FootballPlayer::FootballPlayer(string name, Date birthdayDate,string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate) {
@@ -38,7 +39,6 @@ void FootballPlayer::print() const{
     cout << "\tWeight: " << to_string(weight) << endl;
     cout << "\tHeight: " << to_string(height) << endl;
     cout << "\tPass Value: " << to_string(pass_value) << endl;
-    cout << "\tSalary: " << to_string(salary) << endl;
     cout << "\tHealth: ";
     if(injury) cout << "Is Injured";
     else cout << "Perfectly Healthy";
@@ -139,4 +139,23 @@ bool FootballPlayer::modifyFootballPlayer(vector<FootballPlayer*> &players, Foot
 int FootballPlayer::playerPosition(vector<FootballPlayer*> &people){
     int index = BinarySearch(people,this);
     return index;
+}
+
+void FootballPlayer::read(ifstream *file) {
+    Person::read(file);
+    string text;
+    getline(*file,text);
+    position = text;
+    getline(*file,text);
+    club = text;
+    getline(*file,text);
+    weight = stof(text);
+    getline(*file,text);
+    height = stof(text);
+    getline(*file,text);
+    pass_value = stof(text);
+    getline(*file,text);
+    bool isInjured;
+    if(text == "Healthy") isInjured= false;
+    if(text == "Injured") isInjured= true;
 }

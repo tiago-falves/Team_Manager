@@ -22,6 +22,7 @@ public:
     vector<Technician*> technicians;
     NationalTeam(string fileName);
     bool readTeam(string fileName);
+    bool readPeople(string fileName);
 
 
 

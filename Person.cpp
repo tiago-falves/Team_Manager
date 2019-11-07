@@ -2,6 +2,7 @@
 // Created by tiago on 19/10/2019.
 //
 
+#include <fstream>
 #include "Person.h"
 using namespace std;
 
@@ -87,13 +88,27 @@ string Person::type() const{
 }
 
 
+
+
 //Prints person to the screen
 void Person::print() const{
     cout << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
+    cout << "\tId: " << to_string(id) << endl;
     cout << "\tName:" << name << endl;
     cout << "\tBirthday:" << birthdayDate.toString() << endl;
-    cout << "\tId: " << to_string(id) << endl;
+    cout << "\tSalary: " << to_string(salary)<< endl;
 
+}
+
+void Person::read(ifstream *file) {
+    string text;
+    Date birthday = Date();
+    getline(*file,text);
+    name = text;
+    getline(*file,text);
+    birthdayDate = birthday.dateTextConverter(text);
+    getline(*file,text);
+    salary = stof(text);
 }
 
 bool nameComparable(const Person* person1, const Person* person2){

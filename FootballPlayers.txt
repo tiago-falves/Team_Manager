@@ -1,5 +1,5 @@
-1
-Rui Patrício
+Football Players File
+Rui Patricio
 1/2/2000
 643.5
 GoalKeeper
@@ -9,8 +9,7 @@ Porto
 5.0
 Healthy
 ::::::::::
-3
-José Sá
+Jose Sa
 1/3/2000
 700.5
 GoalKeeper
@@ -20,7 +19,6 @@ Porto
 4.0
 Healthy
 ::::::::::
-2
 Beto
 10/2/2000
 800.5
@@ -31,7 +29,6 @@ Porto
 10.0
 Healthy
 ::::::::::
-4
 Rui Dias
 8/2/2000
 643.5
@@ -42,7 +39,6 @@ Porto
 5.0
 Healthy
 ::::::::::
-5
 Rui Semedo
 31/12/2000
 643.5
@@ -53,8 +49,7 @@ Benfica
 5.0
 Injured
 ::::::::::
-6
-João Fonte
+Joao Fonte
 3/2/1987
 800.5
 Center Back
@@ -64,7 +59,6 @@ Porto
 5.0
 Injured
 ::::::::::
-7
 Pepe
 12/2/1997
 823.5
@@ -75,7 +69,6 @@ Sporting
 5.0
 Healthy
 ::::::::::
-8
 Manuel Rui
 12/2/1990
 803.5
@@ -86,7 +79,6 @@ Sporting
 5.0
 Healthy
 ::::::::::
-9
 Nuno Semedo
 12/4/1997
 825.5
@@ -97,7 +89,6 @@ Braga
 5.0
 Healthy
 ::::::::::
-10
 Rui Pereira
 12/2/1997
 823.5
@@ -108,7 +99,6 @@ Sporting
 5.0
 Healthy
 ::::::::::
-11
 Rui Neves
 12/2/1997
 823.5
@@ -119,7 +109,6 @@ Sporting
 5.0
 Healthy
 ::::::::::
-12
 Diogo Pereira
 1/5/1997
 823.5
@@ -130,7 +119,6 @@ Porto
 5.0
 Healthy
 ::::::::::
-13
 Andre Gomes
 12/2/1997
 823.5
@@ -141,7 +129,6 @@ Porto
 5.0
 Healthy
 ::::::::::
-14
 Joao Mario
 12/2/1997
 823.5
@@ -152,7 +139,6 @@ Porto
 5.0
 Healthy
 ::::::::::
-15
 Joap Moutinho
 12/2/1997
 823.5
@@ -163,7 +149,6 @@ Porto
 5.0
 Healthy
 ::::::::::
-16
 Pizzi
 2/5/1997
 823.5
@@ -174,7 +159,6 @@ Benfica
 5.0
 Healthy
 ::::::::::
-17
 Rui Guerreiro
 12/2/1997
 823.5
@@ -185,7 +169,6 @@ Porto
 5.0
 Healthy
 ::::::::::
-18
 Beto Fernandes
 12/2/1997
 823.5
@@ -196,7 +179,6 @@ Attacking Midfield
 5.0
 Healthy
 ::::::::::
-19
 Cristiano Ronaldo
 12/2/1997
 823.5
@@ -207,7 +189,6 @@ Sporting
 5.0
 Healthy
 ::::::::::
-20
 Goncalo Guedes
 12/2/1997
 823.5
@@ -217,9 +198,7 @@ Benfica
 189.3
 5.0
 Healthy
-674.
 ::::::::::
-21
 Bruma
 12/2/1997
 823.5
@@ -230,7 +209,6 @@ Benfica
 5.0
 Healthy
 ::::::::::
-22
 Beto Silva
 12/2/1997
 823.5
@@ -241,7 +219,6 @@ Benfica
 5.0
 Healthy
 ::::::::::
-23
 Joao Felix
 12/2/1997
 823.5
@@ -251,3 +228,4 @@ Benfica
 189.3
 5.0
 Healthy
+::::::::::

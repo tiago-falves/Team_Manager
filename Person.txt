@@ -1,26 +1,21 @@
-Technicians File
+People File
 Joseph Mourinho
 1/2/2000
 1000.3
-Main Coach
 ::::::::::
 Marcelo Rebelo de Sousa
 1/2/2000
 200.0
-Secondary Coach
 ::::::::::
 Susana Sousa
 1/2/2000
 300.9
-Manager
 ::::::::::
 Afonso Lopes
 1/2/2000
 12000
-President
 ::::::::::
 Pedro Gomes
-1/2/2000
+2/2/2000
 643.5
-Vice-President
 ::::::::::

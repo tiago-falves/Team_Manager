@@ -53,6 +53,7 @@ public:
     bool operator!=(const Person &rhs) const;
 
     virtual void print() const;
+    virtual void read(ifstream *file);
 };
 
 

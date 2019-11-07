@@ -3,3 +3,10 @@
 //
 
 #include "Technician.h"
+
+Technician::Technician(string name, Date date): Person(name,date){
+    this->name = "";
+    this->birthdayDate = Date();
+
+}
+

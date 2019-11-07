@@ -32,6 +32,8 @@ public:
 
     virtual void print() const;
 
+    virtual void read(ifstream *file);
+
 
     virtual string type() const;
 
