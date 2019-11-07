@@ -9,8 +9,9 @@ using namespace std;
 int main() {
 
     //testPerson();
+    //testExceptions();
     //testPlayers();
-    //testNationalTeam();
+    //testNationalTeam();;
 
     NationalTeam team;
     runMenu(team);

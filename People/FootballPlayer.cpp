@@ -27,17 +27,17 @@ FootballPlayer::FootballPlayer():Person() {
 string FootballPlayer::type() const {
     return "Football Player";
 }
-void FootballPlayer::print() const{
-    Person::print();
-    cout << "\tPosition: " << position << endl;
-    cout << "\tClub: " << club << endl;
-    cout << "\tWeight: " << to_string(weight) << endl;
-    cout << "\tHeight: " << to_string(height) << endl;
-    cout << "\tPass Value: " << to_string(pass_value) << endl;
-    cout << "\tHealth: ";
-    if(injury) cout << "Is Injured";
-    else cout << "Perfectly Healthy";
-    cout << endl;
+void FootballPlayer::print(ostream& out) const{
+    Person::print(cout);
+    out << "\tPosition: " << position << endl;
+    out << "\tClub: " << club << endl;
+    out << "\tWeight: " << to_string(weight) << endl;
+    out << "\tHeight: " << to_string(height) << endl;
+    out << "\tPass Value: " << to_string(pass_value) << endl;
+    out << "\tHealth: ";
+    if(injury) out << "Is Injured";
+    else out << "Perfectly Healthy";
+    out << endl;
 
 }
 

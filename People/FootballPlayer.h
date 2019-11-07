@@ -29,7 +29,7 @@ public:
 
     int playerPosition(vector<FootballPlayer*> &players);
 
-    virtual void print() const;
+    virtual void print(ostream& out) const;
 
     virtual void read(ifstream *file);
 

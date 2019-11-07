@@ -11,7 +11,6 @@ using namespace std;
 
 NationalTeam::NationalTeam() {
 
-
 }
 
 
@@ -19,7 +18,7 @@ bool NationalTeam::readPeople(string fileName) {
     string text;
     ifstream peopleFile;
     Date birthday = Date();
-    peopleFile.open("..//" + fileName);
+    peopleFile.open("..//Files//" + fileName);
     if(peopleFile.fail()){
         cout << "Error Opening File";
         return false;

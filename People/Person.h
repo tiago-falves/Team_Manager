@@ -2,9 +2,11 @@
 #ifndef AEDA_TEAM_MANAGER_PERSON_H
 #define AEDA_TEAM_MANAGER_PERSON_H
 #pragma once
-#include "Date.h"
+#include "..//Date.h"
 #include <string>
 #include <fstream>
+#include <ostream>
+#include "..//Utilities.h"
 
 
 
@@ -15,20 +17,18 @@ protected:
     string name;
     Date birthdayDate;
     float salary;
-    //static int lastId;
+    static int lastId;
 public:
     Person(string name, Date birthdayDate, float salary);
     Person();
 
-    //static int getLastId();
-
+    static int getLastId();
     int getId() const;
     string getName() const;
     Date getBirthday() const;
     float getSalary() const;
 
 
-    void setId(int id);
     void setName(string name);
     void setBirthday(Date birthdayDate);
     void setSalary(float salary);
@@ -52,7 +52,9 @@ public:
     bool operator==(const Person &rhs) const;
     bool operator!=(const Person &rhs) const;
 
-    virtual void print() const;
+    friend ostream &operator<<(ostream &os, const Person *person);
+
+    virtual void print(ostream& out) const;
     virtual void read(ifstream *file);
     virtual string type() const ;
 

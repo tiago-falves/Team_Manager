@@ -203,33 +203,6 @@ Date.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Date.cpp.s
 .PHONY : Date.cpp.s
 
-FootballPlayer.obj: FootballPlayer.cpp.obj
-
-.PHONY : FootballPlayer.obj
-
-# target to build an object file
-FootballPlayer.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.obj
-.PHONY : FootballPlayer.cpp.obj
-
-FootballPlayer.i: FootballPlayer.cpp.i
-
-.PHONY : FootballPlayer.i
-
-# target to preprocess a source file
-FootballPlayer.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.i
-.PHONY : FootballPlayer.cpp.i
-
-FootballPlayer.s: FootballPlayer.cpp.s
-
-.PHONY : FootballPlayer.s
-
-# target to generate assembly for a file
-FootballPlayer.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/FootballPlayer.cpp.s
-.PHONY : FootballPlayer.cpp.s
-
 Game.obj: Game.cpp.obj
 
 .PHONY : Game.obj
@@ -338,32 +311,86 @@ NationalTeam.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.s
 .PHONY : NationalTeam.cpp.s
 
-Person.obj: Person.cpp.obj
+People/FootballPlayer.obj: People/FootballPlayer.cpp.obj
 
-.PHONY : Person.obj
+.PHONY : People/FootballPlayer.obj
 
 # target to build an object file
-Person.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.obj
-.PHONY : Person.cpp.obj
+People/FootballPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/FootballPlayer.cpp.obj
+.PHONY : People/FootballPlayer.cpp.obj
 
-Person.i: Person.cpp.i
+People/FootballPlayer.i: People/FootballPlayer.cpp.i
 
-.PHONY : Person.i
+.PHONY : People/FootballPlayer.i
 
 # target to preprocess a source file
-Person.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.i
-.PHONY : Person.cpp.i
+People/FootballPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/FootballPlayer.cpp.i
+.PHONY : People/FootballPlayer.cpp.i
 
-Person.s: Person.cpp.s
+People/FootballPlayer.s: People/FootballPlayer.cpp.s
 
-.PHONY : Person.s
+.PHONY : People/FootballPlayer.s
 
 # target to generate assembly for a file
-Person.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Person.cpp.s
-.PHONY : Person.cpp.s
+People/FootballPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/FootballPlayer.cpp.s
+.PHONY : People/FootballPlayer.cpp.s
+
+People/Person.obj: People/Person.cpp.obj
+
+.PHONY : People/Person.obj
+
+# target to build an object file
+People/Person.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/Person.cpp.obj
+.PHONY : People/Person.cpp.obj
+
+People/Person.i: People/Person.cpp.i
+
+.PHONY : People/Person.i
+
+# target to preprocess a source file
+People/Person.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/Person.cpp.i
+.PHONY : People/Person.cpp.i
+
+People/Person.s: People/Person.cpp.s
+
+.PHONY : People/Person.s
+
+# target to generate assembly for a file
+People/Person.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/Person.cpp.s
+.PHONY : People/Person.cpp.s
+
+People/Technician.obj: People/Technician.cpp.obj
+
+.PHONY : People/Technician.obj
+
+# target to build an object file
+People/Technician.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/Technician.cpp.obj
+.PHONY : People/Technician.cpp.obj
+
+People/Technician.i: People/Technician.cpp.i
+
+.PHONY : People/Technician.i
+
+# target to preprocess a source file
+People/Technician.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/Technician.cpp.i
+.PHONY : People/Technician.cpp.i
+
+People/Technician.s: People/Technician.cpp.s
+
+.PHONY : People/Technician.s
+
+# target to generate assembly for a file
+People/Technician.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/People/Technician.cpp.s
+.PHONY : People/Technician.cpp.s
 
 PlayerGameStatistics.obj: PlayerGameStatistics.cpp.obj
 
@@ -391,33 +418,6 @@ PlayerGameStatistics.s: PlayerGameStatistics.cpp.s
 PlayerGameStatistics.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.s
 .PHONY : PlayerGameStatistics.cpp.s
-
-Technician.obj: Technician.cpp.obj
-
-.PHONY : Technician.obj
-
-# target to build an object file
-Technician.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.obj
-.PHONY : Technician.cpp.obj
-
-Technician.i: Technician.cpp.i
-
-.PHONY : Technician.i
-
-# target to preprocess a source file
-Technician.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.i
-.PHONY : Technician.cpp.i
-
-Technician.s: Technician.cpp.s
-
-.PHONY : Technician.s
-
-# target to generate assembly for a file
-Technician.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Technician.cpp.s
-.PHONY : Technician.cpp.s
 
 Utilities.obj: Utilities.cpp.obj
 
@@ -464,9 +464,6 @@ help:
 	@echo ... Date.obj
 	@echo ... Date.i
 	@echo ... Date.s
-	@echo ... FootballPlayer.obj
-	@echo ... FootballPlayer.i
-	@echo ... FootballPlayer.s
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s
@@ -479,15 +476,18 @@ help:
 	@echo ... NationalTeam.obj
 	@echo ... NationalTeam.i
 	@echo ... NationalTeam.s
-	@echo ... Person.obj
-	@echo ... Person.i
-	@echo ... Person.s
+	@echo ... People/FootballPlayer.obj
+	@echo ... People/FootballPlayer.i
+	@echo ... People/FootballPlayer.s
+	@echo ... People/Person.obj
+	@echo ... People/Person.i
+	@echo ... People/Person.s
+	@echo ... People/Technician.obj
+	@echo ... People/Technician.i
+	@echo ... People/Technician.s
 	@echo ... PlayerGameStatistics.obj
 	@echo ... PlayerGameStatistics.i
 	@echo ... PlayerGameStatistics.s
-	@echo ... Technician.obj
-	@echo ... Technician.i
-	@echo ... Technician.s
 	@echo ... Utilities.obj
 	@echo ... Utilities.i
 	@echo ... Utilities.s

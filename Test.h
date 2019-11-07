@@ -5,8 +5,9 @@
 #ifndef AEDA_TEAM_MANAGER_TEST_H
 #define AEDA_TEAM_MANAGER_TEST_H
 #include <iostream>
-#include "Person.h"
-#include "FootballPlayer.h"
+#include <sstream>
+#include "People//Person.h"
+#include "People//FootballPlayer.h"
 #include "Date.h"
 #include "NationalTeam.h"
 #include "Utilities.h"
@@ -70,13 +71,14 @@ void testPerson(){
     cout << index << endl;
     //cout << people[index]->type() << endl;
     //cout << people[6]->type() << endl;
-    people[index]->print();
-    people[index+1]->print();
-    people[index]->print();
 
 
-    footballPlayer->removePerson(people);
-    cout << footballPlayer->personPosition(people);
+    people[index]->print(cout);
+    cout << people[index];
+    //people[index+1]->print(cout);
+    //people[index]->print(cout);
+
+
 
 
 }
@@ -106,7 +108,7 @@ void testPlayers(){
     player7->addFootballPlayer(players);
 
     for (int i = 0; i < players.size() ; ++i) {
-        players[i]->print();
+        players[i]->print(cout);
 
     }
 
@@ -124,8 +126,40 @@ void testNationalTeam(){
     team.readPeople("FootballPlayers.txt");
     team.readPeople("Person.txt");
     for (int i = 0; i < team.people.size() ; i++) {
-        team.people[i]->print();
+        team.people[i]->print(cout);
     }
+
+}
+
+void testExceptions(){
+
+    //Invalid Date
+    /*try { Date date = Date(32,1,2000);}
+    catch (InvalidDate &a){cout << a.getMessage();
+        throw;
+    }*/
+
+
+
+    vector<Person*> people;
+    vector<Person*> people1;
+    Date date(1,1,3000);
+
+    Date birthdayDate(1,2,2018);
+    Person *person1 = new Person("John Wick",birthdayDate,100);
+    Person *person2 = new Person("Terry Wick",birthdayDate,100);
+    Person *footballPlayer = new FootballPlayer("name", date,200,"position", "club",50.0, 20.0, 5.0,false);
+    Person *person3 = new Person("Tiago Wick",birthdayDate,200);
+
+    person1->addPerson(people);
+    person2->addPerson(people);
+    footballPlayer->addPerson(people);
+
+    //Remove Element that doesnt exist
+    person1->removePerson(people);
+    person1->removePerson(people);
+
+
 
 }
 

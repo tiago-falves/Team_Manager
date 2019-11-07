@@ -23,9 +23,9 @@ void Technician::setRole(const string &role) {
     Technician::role = role;
 }
 
-void Technician::print() const{
-    Person::print();
-    cout << "\tRole: " << role << endl;
+void Technician::print(ostream& out) const{
+    Person::print(cout);
+    out << "\tRole: " << role << endl;
 }
 string Technician::type() const {
     return "Technician";

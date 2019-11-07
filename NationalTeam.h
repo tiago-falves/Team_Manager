@@ -7,9 +7,9 @@
 
 
 #include <vector>
-#include "Person.h"
-#include "FootballPlayer.h"
-#include "Technician.h"
+#include "People//Person.h"
+#include "People//FootballPlayer.h"
+#include "People//Technician.h"
 
 
 

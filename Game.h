@@ -4,7 +4,7 @@
 
 #include <string>
 #include <vector>
-#include "FootballPlayer.h"
+#include "People//FootballPlayer.h"
 #include "PlayerGameStatistics.h"
 
 

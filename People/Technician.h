@@ -16,7 +16,7 @@ public:
     Technician();
     Technician(string name, Date birthday, float salary, string role);
     virtual string type() const ;
-    virtual void print() const;
+    virtual void print(ostream& out) const;
     virtual void read(ifstream *file);
 
 };
