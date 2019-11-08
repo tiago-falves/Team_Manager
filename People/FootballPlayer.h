@@ -33,7 +33,6 @@ public:
 
     virtual void read(ifstream *file);
 
-
     virtual string type() const;
 
     const string &getClub() const;
