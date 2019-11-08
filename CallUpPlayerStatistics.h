@@ -8,6 +8,7 @@
 
 class CallUpPlayerStatistics {
 private:
+    int playerID;
     Date begginingDate;
     Date endDate;
 

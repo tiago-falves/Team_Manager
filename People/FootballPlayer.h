@@ -20,7 +20,7 @@ public:
     FootballPlayer(string name, Date birthDay,float salary,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
     FootballPlayer();
-
+/*
     bool addFootballPlayer(vector<FootballPlayer*> &players);
 
     bool removeFootballPlayer(vector<FootballPlayer*> &players);
@@ -28,7 +28,7 @@ public:
     bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer);
 
     int playerPosition(vector<FootballPlayer*> &players);
-
+*/
     virtual void print(ostream& out) const;
 
     virtual void read(ifstream *file);
@@ -62,9 +62,6 @@ public:
     const string &getPosition() const;
 
     void setPosition(const string &position);
-
-
-
 };
 
 

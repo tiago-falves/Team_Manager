@@ -83,8 +83,8 @@ void testPerson(){
 
 }
 
-
-
+//Untested when changed to National Team
+/*
 void testPlayers(){
 
     vector<FootballPlayer*> players;
@@ -120,7 +120,7 @@ void testPlayers(){
 
 
 }
-
+*/
 void testNationalTeam(){
     NationalTeam team = NationalTeam();
     team.readPeople("FootballPlayers.txt");

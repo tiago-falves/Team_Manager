@@ -97,7 +97,7 @@ float FootballPlayer::getSalary() const {
 void FootballPlayer::setSalary(float salary) {
     FootballPlayer::salary = salary;
 }
-
+/*
 bool FootballPlayer::addFootballPlayer(vector<FootballPlayer*> &players) {
     insert_sorted(players,this);
     return true;
@@ -135,7 +135,7 @@ int FootballPlayer::playerPosition(vector<FootballPlayer*> &people){
     int index = BinarySearch(people,this);
     return index;
 }
-
+*/
 void FootballPlayer::read(ifstream *file) {
     Person::read(file);
     string text;
