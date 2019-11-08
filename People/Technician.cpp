@@ -15,7 +15,7 @@ Technician::Technician(string name, Date birthday, float salary, string role):Pe
     this->role = role;
 }
 
-const string &Technician::getRole() const {
+const string Technician::getRole() const {
     return role;
 }
 

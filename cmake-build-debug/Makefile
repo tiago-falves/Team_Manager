@@ -257,33 +257,6 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
-Menu.obj: Menu.cpp.obj
-
-.PHONY : Menu.obj
-
-# target to build an object file
-Menu.cpp.obj:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.obj
-.PHONY : Menu.cpp.obj
-
-Menu.i: Menu.cpp.i
-
-.PHONY : Menu.i
-
-# target to preprocess a source file
-Menu.cpp.i:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.i
-.PHONY : Menu.cpp.i
-
-Menu.s: Menu.cpp.s
-
-.PHONY : Menu.s
-
-# target to generate assembly for a file
-Menu.cpp.s:
-	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Menu.cpp.s
-.PHONY : Menu.cpp.s
-
 NationalTeam.obj: NationalTeam.cpp.obj
 
 .PHONY : NationalTeam.obj
@@ -446,6 +419,114 @@ Utilities.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.s
 .PHONY : Utilities.cpp.s
 
+display/CallUpMenu.obj: display/CallUpMenu.cpp.obj
+
+.PHONY : display/CallUpMenu.obj
+
+# target to build an object file
+display/CallUpMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj
+.PHONY : display/CallUpMenu.cpp.obj
+
+display/CallUpMenu.i: display/CallUpMenu.cpp.i
+
+.PHONY : display/CallUpMenu.i
+
+# target to preprocess a source file
+display/CallUpMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.i
+.PHONY : display/CallUpMenu.cpp.i
+
+display/CallUpMenu.s: display/CallUpMenu.cpp.s
+
+.PHONY : display/CallUpMenu.s
+
+# target to generate assembly for a file
+display/CallUpMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.s
+.PHONY : display/CallUpMenu.cpp.s
+
+display/GameMenu.obj: display/GameMenu.cpp.obj
+
+.PHONY : display/GameMenu.obj
+
+# target to build an object file
+display/GameMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj
+.PHONY : display/GameMenu.cpp.obj
+
+display/GameMenu.i: display/GameMenu.cpp.i
+
+.PHONY : display/GameMenu.i
+
+# target to preprocess a source file
+display/GameMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.i
+.PHONY : display/GameMenu.cpp.i
+
+display/GameMenu.s: display/GameMenu.cpp.s
+
+.PHONY : display/GameMenu.s
+
+# target to generate assembly for a file
+display/GameMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.s
+.PHONY : display/GameMenu.cpp.s
+
+display/Menu.obj: display/Menu.cpp.obj
+
+.PHONY : display/Menu.obj
+
+# target to build an object file
+display/Menu.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj
+.PHONY : display/Menu.cpp.obj
+
+display/Menu.i: display/Menu.cpp.i
+
+.PHONY : display/Menu.i
+
+# target to preprocess a source file
+display/Menu.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.i
+.PHONY : display/Menu.cpp.i
+
+display/Menu.s: display/Menu.cpp.s
+
+.PHONY : display/Menu.s
+
+# target to generate assembly for a file
+display/Menu.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.s
+.PHONY : display/Menu.cpp.s
+
+display/PeopleMenu.obj: display/PeopleMenu.cpp.obj
+
+.PHONY : display/PeopleMenu.obj
+
+# target to build an object file
+display/PeopleMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj
+.PHONY : display/PeopleMenu.cpp.obj
+
+display/PeopleMenu.i: display/PeopleMenu.cpp.i
+
+.PHONY : display/PeopleMenu.i
+
+# target to preprocess a source file
+display/PeopleMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.i
+.PHONY : display/PeopleMenu.cpp.i
+
+display/PeopleMenu.s: display/PeopleMenu.cpp.s
+
+.PHONY : display/PeopleMenu.s
+
+# target to generate assembly for a file
+display/PeopleMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.s
+.PHONY : display/PeopleMenu.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -470,9 +551,6 @@ help:
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
-	@echo ... Menu.obj
-	@echo ... Menu.i
-	@echo ... Menu.s
 	@echo ... NationalTeam.obj
 	@echo ... NationalTeam.i
 	@echo ... NationalTeam.s
@@ -491,6 +569,18 @@ help:
 	@echo ... Utilities.obj
 	@echo ... Utilities.i
 	@echo ... Utilities.s
+	@echo ... display/CallUpMenu.obj
+	@echo ... display/CallUpMenu.i
+	@echo ... display/CallUpMenu.s
+	@echo ... display/GameMenu.obj
+	@echo ... display/GameMenu.i
+	@echo ... display/GameMenu.s
+	@echo ... display/Menu.obj
+	@echo ... display/Menu.i
+	@echo ... display/Menu.s
+	@echo ... display/PeopleMenu.obj
+	@echo ... display/PeopleMenu.i
+	@echo ... display/PeopleMenu.s
 .PHONY : help
 
 

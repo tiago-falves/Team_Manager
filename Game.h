@@ -7,9 +7,7 @@
 #include "People//FootballPlayer.h"
 #include "PlayerGameStatistics.h"
 
-
 using namespace std;
-
 
 class Game {
 private:

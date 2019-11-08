@@ -3,11 +3,15 @@
 //
 
 #include "Menu.h"
+#include "PeopleMenu.h"
+#include "GameMenu.h"
+#include "CallUpMenu.h"
+
 using namespace std;
 
 
 //Runs the main Menu
-void runMenu(NationalTeam &team) {
+void runMenu(/*NationalTeam &team*/) {
     int option;
 
     menuSeparator();
@@ -17,8 +21,8 @@ void runMenu(NationalTeam &team) {
 
     cout << "Exit                                                               [0]" << endl;
     cout << "People                                                             [1]" << endl;
-    cout << "Touristic Packs                                                    [2]" << endl;
-    cout << "Statistics                                                         [3]" << endl;
+    cout << "Games                                                              [2]" << endl;
+    cout << "Call Ups                                                           [3]" << endl;
     cout << "Save information and Exit                                          [4]" << endl << endl;
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
@@ -35,9 +39,9 @@ void runMenu(NationalTeam &team) {
     menuSeparator();
 
     if (option == 0) { exit(0);}
-    //else if (option == 1) {runClientsMenu(clientsVector,travelPacksVector,agency); }
-    //else if (option == 2) {runTravelPackMenu(clientsVector, travelPacksVector, agency); }
-    //else if (option == 3) {runStatisticsMenu(clientsVector, travelPacksVector, agency); }
+    else if (option == 1) {runPeopleMenu(); }
+    else if (option == 2) {runGameMenu(); }
+    else if (option == 3) {runCallUpMenu(); }
     //else if (option == 4) {saveAndExit(clientsVector, travelPacksVector, agency); }
 }
 

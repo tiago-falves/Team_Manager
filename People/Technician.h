@@ -10,7 +10,7 @@ class Technician: public Person{
     string role;
 public:
 
-    const string &getRole() const;
+    const string getRole() const;
     void setRole(const string &role);
 
     Technician();
