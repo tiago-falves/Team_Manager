@@ -1,0 +1,21 @@
+People File
+Joseph Mourinho
+1/2/2000
+1000.3
+::::::::::
+Marcelo Rebelo de Sousa
+1/2/2000
+200.0
+::::::::::
+Susana Sousa
+1/2/2000
+300.9
+::::::::::
+Afonso Lopes
+1/2/2000
+1200
+::::::::::
+Pedro Gomes
+2/2/2000
+643.5
+::::::::::

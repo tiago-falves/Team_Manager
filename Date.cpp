@@ -1,4 +1,5 @@
 #include "Date.h"
+#include "Utilities.h"
 
 
 Date::Date() {
@@ -8,12 +9,14 @@ Date::Date(unsigned short day, unsigned short month, unsigned year){
     this->day = day;
     this->month = month;
     this->year = year;
+    if(!isValid()) throw InvalidDate(day,month,year);
 }
 
 Date::Date(string date){
     this->day = stoi(date.substr(0, 2));
     this->month = stoi(date.substr(3, 2));
     this->year = stoi(date.substr(6, 4));
+    if(!isValid()) throw InvalidDate(day,month,year);
 }
 
 //GET methods
@@ -117,6 +120,7 @@ Date Date::dateTextConverter(string dateText) {
     date.day = dateVector[0];
     date.month = dateVector[1];
     date.year = dateVector[2];
+    if(!date.isValid()) throw InvalidDate(date.day,date.month,date.year);
     return date;
 }
 

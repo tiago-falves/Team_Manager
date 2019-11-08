@@ -9,7 +9,6 @@
 #include <string>
 #include <vector>
 
-#include "Utilities.h"
 
 
 using namespace std;
@@ -23,7 +22,7 @@ private:
 public:
 
     Date();
-    Date(string date); // Assuming "dd/mm/yyyy"
+    Date(string  date); // Assuming "dd/mm/yyyy"
     Date(unsigned short day, unsigned short month, unsigned year);
 
 
@@ -114,3 +113,16 @@ public:
     static bool validDateText(string dateText);
 
 };
+
+class InvalidDate {
+public:
+    int day;
+    int month;
+    int year;
+
+    const string getMessage() const {return "Invalid Date: " + to_string(day) + "/" + to_string(month) + "/" + to_string( year);}
+
+    InvalidDate(int d,int m, int y):day(d), month(m), year(y) {}
+
+};
+

@@ -3,27 +3,29 @@
 //
 
 #include "Person.h"
+
 using namespace std;
 
-Person::Person(string name, Date birthdayDate): id(lastId++){
+Person::Person(string name, Date birthdayDate, float salary):id(lastId++){
     this->birthdayDate = birthdayDate;
     this->name = name;
+    this->salary = salary;
 }
-
-Person::Person(string peopleFile, vector<Person*> people) {
+Person::Person(): id(lastId++){
+    this->name = "";
+    this->birthdayDate = Date();
+    this->salary = 0;
 
 }
-
 
 
 int Person::getId() const{ return id;}
 string Person::getName() const{ return name;}
 Date Person::getBirthday() const { return birthdayDate;}
 float Person::getSalary() const { return salary;}
-int Person::getLastId() {return lastId;}
+//int Person::getLastId() {return lastId;}
 
 
-void Person::setId(int id) {this->id = id;}
 void Person::setName(string name) { this->name = name;}
 void Person::setBirthday(Date birthday){ this->birthdayDate = birthday;}
 void Person::setSalary(float salary) { Person::salary = salary;
@@ -36,31 +38,36 @@ bool Person::addPerson(vector<Person*> &people) {
 }
 
 bool Person::removePerson(vector<Person*> &people) {
-    int index = personPosition(people);
-    if(index != -1){
-        people.erase(people.begin()+index);
-        return true;
+    int index;
+    try {index = personPosition(people);}
+    catch (out_of_range){
+        cerr << "Tried to remove Person that doesn't exist: " << name << endl;
+        return false;
     }
-    else return false;
+    people.erase(people.begin()+index);
+    return true;
+
 }
 
 bool Person::modifyPerson(vector<Person*> &people, Person *newPerson) {
-    int index = this->personPosition(people);
-    if(index !=-1){
-        people[index]->setName(newPerson->getName());
-        people[index]->setBirthday(newPerson->getBirthday());
-        people[index]->setSalary(newPerson->getSalary());
-        return true;
+    int index;
+    try {index = personPosition(people);}
+    catch (out_of_range){
+        cerr << "Tried to modify Person that doesn't exist: " << name << endl;
+        return false;
     }
-    return false;
+    people[index]->setName(newPerson->getName());
+    people[index]->setBirthday(newPerson->getBirthday());
+    people[index]->setSalary(newPerson->getSalary());
+    return true;
 }
+
 
 int Person::personPosition(vector<Person*> &people){
     int index = BinarySearch(people,this);
+    if(index==-1) throw out_of_range("Person not in vector");
     return index;
 }
-
-
 
 
 bool Person::operator<(const Person &person) const {
@@ -88,12 +95,32 @@ string Person::type() const{
 }
 
 
+
+
 //Prints person to the screen
-void Person::print() const{
-    cout << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
-    cout << "\tName:" << name << endl;
-    cout << "\tBirthday:" << birthdayDate.toString() << endl;
-    cout << "\tId: " << to_string(id) << endl;
+void Person::print(ostream& out) const{
+    out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
+    out << "\tId: " << to_string(id) << endl;
+    out << "\tName:" << name << endl;
+    out << "\tBirthday:" << birthdayDate.toString() << endl;
+    out << "\tSalary: " << to_string(salary) << endl;
+}
+
+void Person::read(ifstream *file) {
+    string text;
+    Date birthday = Date();
+    getline(*file,text);
+    name = text;
+
+    getline(*file,text);
+    try {birthdayDate = birthday.dateTextConverter(text);}
+    catch (InvalidDate) {cerr << "Invalid date " << text << " for: " << name;}
+
+
+    getline(*file,text);
+    try {salary = stof(text);}
+    catch (std::invalid_argument ia){ cerr << "Invalid salary " << text << " for: " << name; throw;}
+
 
 }
 
@@ -148,6 +175,13 @@ vector<Person*> Person::searchByName(vector<Person *> people,string name) { //De
 
 
 int Person::lastId = 0;
+
+ostream &operator<<(ostream &os, const Person *person){
+    person->print(os);
+    return os;
+}
+
+
 
 
 

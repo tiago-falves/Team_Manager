@@ -63,6 +63,13 @@ void Game::setCountry(string country) {
     this->country = country;
 }
 
+<<<<<<< HEAD
 void Game::setCalled_players(vector<FootballPlayer> vec) {
     this->players = vec;
 }
+=======
+ostream& operator<<(ostream &out, const Game& game) {
+    out << "Location: " << game.stadium << ", " << game.city << ", " << game.country << endl << endl;
+    return out;
+}
+>>>>>>> b9a5f9f822bf4b9677bddf6fa6abfae3875a475e
