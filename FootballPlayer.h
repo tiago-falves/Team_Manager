@@ -33,7 +33,6 @@ public:
 
     virtual void print() const;
 
-
     virtual string type() const;
 
     const string &getClub() const;

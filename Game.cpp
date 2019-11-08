@@ -12,6 +12,14 @@ Game::Game(string city, string country, string stadium, vector<PlayerGameStatist
     this->referees=referees;
 
 }
+
+ostream& operator<<(ostream &out, const Game& game) {
+    out << "Location: " << game.stadium << ", " << game.city << ", " << game.country << endl << endl;
+}
+
+/*****************************************************
+ *******************GET FUNCTIONS*********************
+ *****************************************************/
 string Game::getCountry() const {
     return country;
 }
@@ -20,6 +28,29 @@ string Game::getCity() const {
 }
 string Game::getStadium() const {
     return stadium;
+}
+
+vector<FootballPlayer> Game::getPlayers() const {
+    return vector<FootballPlayer>();
+}
+
+vector<PlayerGameStatistics> Game::getPlayerStatistics() const {
+    return vector<PlayerGameStatistics>();
+}
+
+vector<Person> Game::getReferees() {
+    return vector<Person>();
+}
+
+/*****************************************************
+ *******************SET FUNCTIONS*********************
+ *****************************************************/
+void Game::setPlayerStatistics(vector<PlayerGameStatistics> statistics){
+    this->playerStatistics = statistics;
+}
+
+void Game::setReferees(vector<Person> refs) {
+    this->referees = refs;
 }
 
 void Game::setCity(string city) {
@@ -32,6 +63,6 @@ void Game::setCountry(string country) {
     this->country = country;
 }
 
-ostream& operator<<(ostream &out, const Game& game) {
-    out << "Location: " << game.stadium << ", " << game.city << ", " << game.country << endl << endl;
+void Game::setCalled_players(vector<FootballPlayer> vec) {
+    this->players = vec;
 }

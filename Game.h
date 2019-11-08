@@ -32,11 +32,15 @@ public:
     string getCountry() const;
     string getStadium() const;
     vector<FootballPlayer> getPlayers() const;
+    vector<PlayerGameStatistics> getPlayerStatistics() const;
+    vector<Person> getReferees();
 
     void setCity(string city);
     void setCountry(string country);
     void setStadium(string stadium);
     void setCalled_players(vector<FootballPlayer> vec);
+    void setPlayerStatistics(vector<PlayerGameStatistics> statistics);
+    void setReferees(vector<Person> refs);
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };

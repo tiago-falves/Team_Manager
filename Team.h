@@ -13,10 +13,6 @@ public:
     vector<Person*> people;
 
     Team(vector<Person*> &people);
-
-
-
-
 };
 
 
