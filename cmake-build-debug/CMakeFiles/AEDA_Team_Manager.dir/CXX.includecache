@@ -50,16 +50,6 @@ C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Tea
 Test.h
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Test.h
 
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.cpp
-NationalTeam.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.h
-Date.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Date.h
-algorithm
--
-fstream
--
-
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.h
 vector
 -
@@ -122,63 +112,9 @@ vector
 algorithm
 -
 
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/CallUpMenu.cpp
-CallUpMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
-iostream
--
-Menu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/EconomiesMenu.cpp
-iomanip
--
-EconomiesMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h
-Menu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h
-../NationalTeam.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/GameMenu.cpp
-GameMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/GameMenu.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/GameMenu.h
-iostream
--
-Menu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.cpp
-Menu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h
-PeopleMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/PeopleMenu.h
-GameMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/GameMenu.h
-CallUpMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
-EconomiesMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h
-
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h
 iostream
 -
 ../NationalTeam.h
 C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/NationalTeam.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/PeopleMenu.cpp
-PeopleMenu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/PeopleMenu.h
-
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/PeopleMenu.h
-iostream
--
-Menu.h
-C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h
 

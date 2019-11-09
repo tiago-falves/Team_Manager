@@ -1,21 +1,283 @@
-People File
+Football Player
+Rui Patricio
+1/2/2000
+643.5
+GoalKeeper
+Porto
+84.3
+184.3
+5.0
+Healthy
+::::::::::
+Football Player
+Jose Sa
+1/3/2000
+700.5
+GoalKeeper
+Porto
+82.3
+182.3
+4.0
+Healthy
+::::::::::
+Football Player
+Beto
+10/2/2000
+800.5
+GoalKeeper
+Porto
+84.5
+174.5
+10.0
+Healthy
+::::::::::
+Football Player
+Rui Dias
+8/2/2000
+643.5
+Center Back
+Porto
+90.3
+190.3
+5.0
+Healthy
+::::::::::
+Football Player
+Rui Semedo
+31/12/2000
+643.5
+Center Back
+Benfica
+81.3
+181.3
+5.0
+Injured
+::::::::::
+Football Player
+Joao Fonte
+3/2/1987
+800.5
+Center Back
+Porto
+84.3
+184.3
+5.0
+Injured
+::::::::::
+Football Player
+Pepe
+12/2/1997
+823.5
+Center Back
+Sporting
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Manuel Rui
+12/2/1990
+803.5
+Left Back
+Sporting
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Nuno Semedo
+12/4/1997
+825.5
+Right-Back
+Braga
+92.3
+190.3
+5.0
+Healthy
+::::::::::
+Football Player
+Rui Pereira
+12/2/1997
+823.5
+Right-Back
+Sporting
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Rui Neves
+12/2/1997
+823.5
+Defensive Midfield
+Sporting
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Diogo Pereira
+1/5/1997
+823.5
+Defensive Midfield
+Porto
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Andre Gomes
+12/2/1997
+823.5
+Central Midfield
+Porto
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Joao Mario
+12/2/1997
+823.5
+Central Midflied
+Porto
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Joap Moutinho
+12/2/1997
+823.5
+Central Midfield
+Porto
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Pizzi
+2/5/1997
+823.5
+Right Midfield
+Benfica
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Rui Guerreiro
+12/2/1997
+823.5
+Left Midfield
+Porto
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Beto Fernandes
+12/2/1997
+823.5
+Sweeper
+Attacking Midfield
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Cristiano Ronaldo
+12/2/1997
+823.5
+Left Winger
+Sporting
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Goncalo Guedes
+12/2/1997
+823.5
+Left Winger
+Benfica
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Bruma
+12/2/1997
+823.5
+Left Winger
+Benfica
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Beto Silva
+12/2/1997
+823.5
+Right Winger
+Benfica
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Football Player
+Joao Felix
+12/2/1997
+823.5
+Second Stricker
+Benfica
+92.3
+189.3
+5.0
+Healthy
+::::::::::
+Technician
 Joseph Mourinho
 1/2/2000
 1000.3
+Main Coach
 ::::::::::
+Technician
 Marcelo Rebelo de Sousa
 1/2/2000
 200.0
+Secondary Coach
 ::::::::::
+Technician
 Susana Sousa
 1/2/2000
 300.9
+Manager
 ::::::::::
+Technician
 Afonso Lopes
 1/2/2000
-1200
+12000
+President
 ::::::::::
+Technician
 Pedro Gomes
-2/2/2000
+1/2/2000
 643.5
+Vice-President
 ::::::::::

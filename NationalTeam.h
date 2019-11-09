@@ -28,10 +28,10 @@ public:
     bool savePeople(string filename);
 
     //Handle people vector
-
+    //Alguem sabe por isto no cpp?
     template <class T>
     bool addPerson(vector<T> &people, T person){
-        insert_sorted(people,person);
+        people.push_back(person);
         return true;
     }
 

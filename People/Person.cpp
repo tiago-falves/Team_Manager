@@ -71,6 +71,7 @@ void Person::printNicely(ostream& out) const{
 }
 
 void Person::print(ostream &os) const {
+    os << type() << endl;
     os << id << endl;
     os << name << endl;
     os << birthdayDate <<endl;

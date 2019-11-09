@@ -16,34 +16,26 @@ NationalTeam::NationalTeam() {
 
 bool NationalTeam::readPeople(string fileName) {
     string text;
+    string id;
     ifstream peopleFile;
     Date birthday = Date();
     peopleFile.open("..//Files//" + fileName);
     if(peopleFile.fail()){
-        cout << "Error Opening File";
+        cerr << "Error Opening File";
         return false;
     }
     else{
-        getline(peopleFile, text);
-        if(text == "People File"){
-            while(!peopleFile.eof()){
-                Person *person = new Person();
-                person->read(&peopleFile);
-                people.push_back(person);
-                getline(peopleFile,text);
-            }
-        }
-        else if(text == "Football Players File"){
-            while(!peopleFile.eof()) {
+        while(!peopleFile.eof()){
+            getline(peopleFile, text);
+            //getline(peopleFile,id);
+            if(text == "Football Player"){
                 FootballPlayer *player = new FootballPlayer();
                 player->read(&peopleFile);
                 people.push_back((player));
                 players.push_back(player);
                 getline(peopleFile, text);
             }
-        }
-        else if(text == "Technicians File"){
-            while(!peopleFile.eof()) {
+            else if(text == "Technician"){
                 Technician *technician = new Technician();
                 technician->read(&peopleFile);
                 people.push_back((technician));
@@ -51,7 +43,6 @@ bool NationalTeam::readPeople(string fileName) {
                 getline(peopleFile, text);
             }
         }
-
     }
     peopleFile.close();
     return true;
@@ -87,10 +78,12 @@ void NationalTeam::read(ifstream *file) {
     //read files
 }
 
-bool NationalTeam::savePeople(string filename) {
-    ofstream content(filename);
+bool NationalTeam::savePeople(string fileName) {
+    ofstream content("..//Files//" + fileName);
     for (int i = 0; i < people.size(); ++i) {
-
+        content << people[i];
+        content << "::::::::::" << endl;
     }
+    content.close();
     return true;
 }

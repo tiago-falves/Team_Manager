@@ -8,10 +8,10 @@ using namespace std;
 
 int main() {
 
-    testPerson();
-    testExceptions();
-    testPlayers();
-    //testNationalTeam();;
+    //testPerson();
+    //testExceptions();
+    //testPlayers();
+    testNationalTeam();;
 
 
 

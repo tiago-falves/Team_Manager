@@ -101,6 +101,9 @@
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Exceptions.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
+		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Files/x.txt">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/Game.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
