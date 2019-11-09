@@ -23,9 +23,46 @@ public:
     vector<FootballPlayer*> players;
     vector<Technician*> technicians;
     vector<CallUp*> callUps;
+
     NationalTeam();
+
     bool readPeople(string fileName);
+
     bool savePeople(string filename);
+
+    void showEveryone(ostream& out);
+
+    void showPerson(ostream& out,int id);
+
+    //Meter Esta em template
+    void sortByID(vector<Person*> &people);
+
+    static bool nameComparable(const Person* person1, const Person* person2);
+
+    static bool idComparable(const Person* person1, const int id);
+
+    void sortByName(vector<Person*> &people);
+
+    vector<Person*> searchByName(vector<Person*> people, string name);
+
+
+    //Handle costs (sallaries + insurance)
+    //player costs
+    float playerCostCalculator(Date d1, Date d2, int playerID);
+    float playerCostCalculatorMonth(int monthNumber, int playerID);
+    //team costs
+    float teamCostCalculator(Date d1, Date d2);
+    float teamCostCalculatorMonth(int monthNumber);
+    //team+staff costs
+    float allCostCalculator(Date d1, Date d2);
+    float allCostCalculatorMonth(int monthNumber);
+
+    //Read CallUps
+    void read(ifstream *file,string peopleFile);
+
+    //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
+
+
 
     //Handle people vector
     //Alguem sabe por isto no cpp?
@@ -66,26 +103,7 @@ public:
         return index;
     }
 
-    void showEveryone(ostream& out);
-
-
-    //Handle costs (sallaries + insurance)
-    //player costs
-    float playerCostCalculator(Date d1, Date d2, int playerID);
-    float playerCostCalculatorMonth(int monthNumber, int playerID);
-    //team costs
-    float teamCostCalculator(Date d1, Date d2);
-    float teamCostCalculatorMonth(int monthNumber);
-    //team+staff costs
-    float allCostCalculator(Date d1, Date d2);
-    float allCostCalculatorMonth(int monthNumber);
-
-    //Read CallUps
-    void read(ifstream *file);
-
-    //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
+    Person* searchByID(vector<Person *> &people, int id);
 };
-
-
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H

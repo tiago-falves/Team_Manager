@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void runPeopleMenu(NationalTeam &team);
-void runPlayersMenu(NationalTeam &team);
+void runPeopleMenu();
+void runPlayersMenu();
 
 #endif //AEDA_TEAM_MANAGER_PEOPLEMENU_H

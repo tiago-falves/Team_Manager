@@ -53,7 +53,7 @@ void testPerson(){
     //footballPlayer->printNicely(cout);
     //person1->printNicely(cout);
 
-    vector<Person*> p = Person::searchByName(people,"Bob Wick");
+    vector<Person*> p = team.searchByName(people,"Bob Wick");
     //cout << p[0]->getName() << p.size() << endl;
 
 
@@ -124,6 +124,8 @@ void testNationalTeam(){
     }
     //Person *player1 = new FootballPlayer("name", date,200,"position", "club",50.0, 20.0, 5.0,false);
     //team.addPerson(team.people,player1);
+
+    //cout << team.searchByID(team.people,1);
     team.savePeople("Person.txt");
 
 }

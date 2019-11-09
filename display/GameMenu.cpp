@@ -4,7 +4,7 @@
 
 #include "GameMenu.h"
 
-void runGameMenu(NationalTeam &team) {
+void runGameMenu() {
     int option;
 
     cout << "Welcome to the Game Menu! Please choose what you want to do: ";
@@ -32,12 +32,12 @@ void runGameMenu(NationalTeam &team) {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(team); }
-    if (option == 1) { runMenu(team); }
-    if (option == 2) { runMenu(team); }
-    if (option == 3) { runMenu(team); }
-    if (option == 4) { runMenu(team); }
-    if (option == 5) { runMenu(team); }
+    if (option == 0) { runMenu(); }
+    if (option == 1) { runMenu(); }
+    if (option == 2) { runMenu(); }
+    if (option == 3) { runMenu(); }
+    if (option == 4) { runMenu(); }
+    if (option == 5) { runMenu(); }
 
 
 

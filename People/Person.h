@@ -35,10 +35,6 @@ public:
     void setSalary(float salary);
 
 
-    static void sortByID(vector<Person*> &people);
-    static void sortByName(vector<Person*> &people);
-
-    static vector<Person*> searchByName(vector<Person*> people, string name);
 
     virtual void modify(Person *newPerson);
 

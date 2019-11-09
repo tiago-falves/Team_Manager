@@ -4,7 +4,7 @@
 
 #include "CallUpMenu.h"
 
-void runCallUpMenu(NationalTeam &team) {
+void runCallUpMenu() {
     int option;
 
     cout << "Welcome to the Call Up menu! Please choose what you want to do: ";
@@ -31,12 +31,12 @@ void runCallUpMenu(NationalTeam &team) {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(team); }
-    if (option == 1) { runMenu(team); }
-    if (option == 2) { runMenu(team); }
-    if (option == 3) { runMenu(team); }
-    if (option == 4) { runMenu(team); }
-    if (option == 5) { runMenu(team); }
+    if (option == 0) { runMenu(); }
+    if (option == 1) { runMenu(); }
+    if (option == 2) { runMenu(); }
+    if (option == 3) { runMenu(); }
+    if (option == 4) { runMenu(); }
+    if (option == 5) { runMenu(); }
 
 
 

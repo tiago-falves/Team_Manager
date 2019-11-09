@@ -9,9 +9,10 @@
 #include "../NationalTeam.h"
 
 
-void runMenu(NationalTeam &team);
+void runMenu();
 void menuSeparator();
 void validCin(int &option);
+int askForId();
 
 
 #endif //AEDA_TEAM_MANAGER_MENU_H

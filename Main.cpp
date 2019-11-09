@@ -17,7 +17,7 @@ int main() {
 
     NationalTeam team;
     team.readPeople("Person.txt");
-    runMenu(team);
+    runMenu();
 
 
 
