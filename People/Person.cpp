@@ -2,6 +2,7 @@
 // Created by tiago on 19/10/2019.
 //
 
+
 #include "Person.h"
 
 using namespace std;
@@ -63,12 +64,14 @@ string Person::type() const{
 
 //Prints person to the screen
 void Person::printNicely(ostream& out) const{
-    out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
-    out << "\tId: " << to_string(id) << endl;
-    out << "\tName:" << name << endl;
-    out << "\tBirthday:" << birthdayDate.toString() << endl;
-    out << "\tSalary: " << to_string(salary) << endl;
+
+    out <<  left << setw(4)  << setfill(' ') << id << "|  ";
+    out <<  left << setw(30) << setfill(' ') << name  << "| ";
+    out <<  left << setw(9) << setfill(' ') <<  birthdayDate.toString()<< "| ";
+    out <<  left << setw(6) << setfill(' ') << salary<< "|  "  ;
+
 }
+
 
 void Person::print(ostream &os) const {
     os << type() << endl;

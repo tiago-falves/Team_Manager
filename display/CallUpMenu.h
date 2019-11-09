@@ -8,7 +8,7 @@
 #include "Menu.h"
 using namespace std;
 
-void runCallUpMenu();
+void runCallUpMenu(NationalTeam &team);
 
 
 #endif //AEDA_TEAM_MANAGER_CALLUPMENU_H

@@ -12,7 +12,7 @@ using namespace std;
 
 
 //Runs the main Menu
-void runMenu(/*NationalTeam &team*/) {
+void runMenu(NationalTeam &team) {
     int option;
 
     menuSeparator();
@@ -41,9 +41,9 @@ void runMenu(/*NationalTeam &team*/) {
     menuSeparator();
 
     if (option == 0) { exit(0);}
-    else if (option == 1) {runPeopleMenu(); }
-    else if (option == 2) {runGameMenu(); }
-    else if (option == 3) {runCallUpMenu(); }
+    else if (option == 1) {runPeopleMenu(team); }
+    else if (option == 2) {runGameMenu(team); }
+    else if (option == 3) {runCallUpMenu(team); }
     else if (option == 4) {runEconomiesMenu(); }
     //else if (option == 5) {saveAndExit(clientsVector, travelPacksVector, agency); }
 }

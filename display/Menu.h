@@ -9,7 +9,7 @@
 #include "../NationalTeam.h"
 
 
-void runMenu(/*NationalTeam &team*/);
+void runMenu(NationalTeam &team);
 void menuSeparator();
 void validCin(int &option);
 

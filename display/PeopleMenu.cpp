@@ -7,7 +7,7 @@
 //Prints all information and asks the user what option to choose
 
 
-void runPeopleMenu() {
+void runPeopleMenu(NationalTeam &team) {
     int option;
 
     cout << "Welcome to the People Menu! Please choose what you want to do: ";
@@ -33,12 +33,12 @@ void runPeopleMenu() {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(); }
-    if (option == 1) { runMenu(); }
-    if (option == 2) { runMenu(); }
-    if (option == 3) { runPlayersMenu(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
+    if (option == 0) { runMenu(team); }
+    if (option == 1) { team.showEveryone(cout) ; }
+    if (option == 2) { runMenu(team); }
+    if (option == 3) { runPlayersMenu(team); }
+    if (option == 4) { runMenu(team); }
+    if (option == 5) { runMenu(team); }
 
 
 
@@ -47,7 +47,7 @@ void runPeopleMenu() {
     //runMenu(clientsVector, travelPacksVector, agency);
 }
 
-void runPlayersMenu() {
+void runPlayersMenu(NationalTeam &team) {
     int option;
 
     cout << "Welcome to the players Menu! Please choose what you want to do: ";
@@ -74,19 +74,19 @@ void runPlayersMenu() {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(); }
-    if (option == 1) { runMenu(); }
-    if (option == 2) { runMenu(); }
-    if (option == 3) { runMenu(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
-    if (option == 6) { runMenu(); }
-    if (option == 7) { runMenu(); }
-    if (option == 8) { runMenu(); }
+    if (option == 0) { runMenu(team); }
+    if (option == 1) { runMenu(team); }
+    if (option == 2) { runMenu(team); }
+    if (option == 3) { runMenu(team); }
+    if (option == 4) { runMenu(team); }
+    if (option == 5) { runMenu(team); }
+    if (option == 6) { runMenu(team); }
+    if (option == 7) { runMenu(team); }
+    if (option == 8) { runMenu(team); }
 
     //runMenu(clientsVector, travelPacksVector, agency);
 }
-void runTechnicianMenu() {
+void runTechnicianMenu(NationalTeam &team) {
     int option;
 
     cout << "Welcome to the players Menu! Please choose what you want to do: ";
@@ -111,15 +111,15 @@ void runTechnicianMenu() {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(); }
-    if (option == 1) { runMenu(); }
-    if (option == 2) { runMenu(); }
-    if (option == 3) { runMenu(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
-    if (option == 6) { runMenu(); }
-    if (option == 7) { runMenu(); }
-    if (option == 8) { runMenu(); }
+    if (option == 0) { runMenu(team); }
+    if (option == 1) { runMenu(team); }
+    if (option == 2) { runMenu(team); }
+    if (option == 3) { runMenu(team); }
+    if (option == 4) { runMenu(team); }
+    if (option == 5) { runMenu(team); }
+    if (option == 6) { runMenu(team); }
+    if (option == 7) { runMenu(team); }
+    if (option == 8) { runMenu(team); }
 
     //runMenu(clientsVector, travelPacksVector, agency);
 }

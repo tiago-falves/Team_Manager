@@ -11,12 +11,13 @@ int main() {
     //testPerson();
     //testExceptions();
     //testPlayers();
-    testNationalTeam();;
+    //testNationalTeam();;
 
 
 
     NationalTeam team;
-    //runMenu(/*team*/);
+    team.readPeople("Person.txt");
+    runMenu(team);
 
 
 

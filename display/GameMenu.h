@@ -10,7 +10,7 @@
 #include "Menu.h"
 using namespace std;
 
-void runGameMenu();
+void runGameMenu(NationalTeam &team);
 
 
 #endif //AEDA_TEAM_MANAGER_GAMEMENU_H

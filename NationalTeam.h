@@ -66,6 +66,8 @@ public:
         return index;
     }
 
+    void showEveryone(ostream& out);
+
 
     //Handle costs (sallaries + insurance)
     //player costs

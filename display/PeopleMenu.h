@@ -7,9 +7,10 @@
 
 #include <iostream>
 #include "Menu.h"
+
 using namespace std;
 
-void runPeopleMenu();
-void runPlayersMenu();
+void runPeopleMenu(NationalTeam &team);
+void runPlayersMenu(NationalTeam &team);
 
 #endif //AEDA_TEAM_MANAGER_PEOPLEMENU_H

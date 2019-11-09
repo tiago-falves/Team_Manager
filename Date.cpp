@@ -78,7 +78,7 @@ bool operator<(const Date& date1, const Date& date2){
 
 
 ostream& operator<<(ostream	&out, const Date &date){
-    out << date.day << "/" << date.month << "/" << date.year;
+    out << to_string(date.day) << "/" << to_string(date.month) << "/" << to_string(date.year);
     return out;
 }
 

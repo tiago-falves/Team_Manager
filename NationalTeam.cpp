@@ -27,7 +27,7 @@ bool NationalTeam::readPeople(string fileName) {
     else{
         while(!peopleFile.eof()){
             getline(peopleFile, text);
-            //getline(peopleFile,id);
+            getline(peopleFile,id);
             if(text == "Football Player"){
                 FootballPlayer *player = new FootballPlayer();
                 player->read(&peopleFile);
@@ -87,3 +87,11 @@ bool NationalTeam::savePeople(string fileName) {
     content.close();
     return true;
 }
+
+void NationalTeam::showEveryone(ostream &out) {
+    for (int i = 0; i < people.size(); ++i) {
+        people[i]->printNicely(out);
+    }
+}
+
+

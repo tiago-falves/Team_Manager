@@ -28,15 +28,23 @@ string FootballPlayer::type() const {
     return "Football Player";
 }
 void FootballPlayer::printNicely(ostream &out) const {
+
     Person::printNicely(cout);
+    /*out <<  left << setw(10)  << setfill(' ') << position << "|  ";
+    out <<  left << setw(14) << setfill(' ') << club  << "| ";
+    out <<  left << setw(3) << setfill(' ') <<  weight<< "| ";
+    out <<  left << setw(5) << setfill(' ') <<  height<< "| ";
+    out <<  left << setw(5) << setfill(' ') << pass_value<< "| ";
+    if(injury) out <<  left << setw(5) << setfill(' ') << "Injured"<< "| ";
+    else out <<  left << setw(5) << setfill(' ') << "Healthy"<< "| ";*/
     out << "\tPosition: " << position << endl;
     out << "\tClub: " << club << endl;
     out << "\tWeight: " << to_string(weight) << endl;
     out << "\tHeight: " << to_string(height) << endl;
     out << "\tPass Value: " << to_string(pass_value) << endl;
     out << "\tHealth: ";
-    if(injury) out << "Is Injured";
-    else out << "Perfectly Healthy";
+    if(injury) out << "Injured";
+    else out << "Healthy";
     out << endl;
 
 }
@@ -121,45 +129,7 @@ void FootballPlayer::modify(Person *newPerson){
 
 
 }
-/*
-bool FootballPlayer::addFootballPlayer(vector<FootballPlayer*> &players) {
-    insert_sorted(players,this);
-    return true;
-}
 
-
-bool FootballPlayer::removeFootballPlayer(vector<FootballPlayer*> &players) {
-    int index = playerPosition(players);
-    if(index != -1){
-        players.erase(players.begin()+index);
-        return true;
-    }
-    else return false;
-}
-
-
-bool FootballPlayer::modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer) {
-    int index = this->playerPosition(players);
-    if(index !=-1){
-        players[index]->setSalary(newFootballPlayer->getSalary());
-        players[index]->setBirthday(newFootballPlayer->getBirthday());
-        players[index]->setName(newFootballPlayer->getName());
-        players[index]->setClub(newFootballPlayer->getClub());
-        players[index]->setHeight(newFootballPlayer->getHeight());
-        players[index]->setInjury(newFootballPlayer->isInjury());
-        players[index]->setPassValue(newFootballPlayer->getPassValue());
-        players[index]->setPosition(newFootballPlayer->getPosition());
-        players[index]->setWeight(newFootballPlayer->getWeight());
-        return true;
-    }
-    return false;
-}
-
-int FootballPlayer::playerPosition(vector<FootballPlayer*> &people){
-    int index = BinarySearch(people,this);
-    return index;
-}
-*/
 void FootballPlayer::read(ifstream *file) {
     Person::read(file);
     string text;

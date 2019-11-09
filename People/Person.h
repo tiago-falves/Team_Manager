@@ -6,6 +6,7 @@
 #include <string>
 #include <fstream>
 #include <ostream>
+#include <iomanip>
 #include "..//Utilities.h"
 
 
@@ -15,9 +16,6 @@ class Person {
 protected:
     int id;
     string name;
-
-
-protected:
     Date birthdayDate;
     float salary;
     static int lastId;
