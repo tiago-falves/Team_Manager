@@ -7,7 +7,7 @@
 void runCallUpMenu() {
     int option;
 
-    cout << "Welcome to the Game Menu! Please choose what you want to do: ";
+    cout << "Welcome to the Call Up menu! Please choose what you want to do: ";
     cout << endl << endl;
     cout << "0. Go back" << endl;
     cout << "1. See information from all Call Ups. " << endl;
@@ -18,7 +18,7 @@ void runCallUpMenu() {
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 
-    while (cin.fail() || option < 0 || option > 3)
+    while (cin.fail() || option < 0 || option > 5)
     {
         cout << "Invalid option, please insert the option again: ";
         cin.clear();
@@ -37,6 +37,7 @@ void runCallUpMenu() {
     if (option == 3) { runMenu(); }
     if (option == 4) { runMenu(); }
     if (option == 5) { runMenu(); }
+
 
 
 

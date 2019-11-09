@@ -115,6 +115,7 @@ CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../People/Technician.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../Utilities.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/CallUpMenu.h
+CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/EconomiesMenu.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/GameMenu.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/Menu.cpp
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/Menu.h

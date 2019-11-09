@@ -6,6 +6,7 @@
 #include "PeopleMenu.h"
 #include "GameMenu.h"
 #include "CallUpMenu.h"
+#include "EconomiesMenu.h"
 
 using namespace std;
 
@@ -23,7 +24,8 @@ void runMenu(/*NationalTeam &team*/) {
     cout << "People                                                             [1]" << endl;
     cout << "Games                                                              [2]" << endl;
     cout << "Call Ups                                                           [3]" << endl;
-    cout << "Save information and Exit                                          [4]" << endl << endl;
+    cout << "Economies                                                          [4]" << endl;
+    cout << "Save information and Exit                                          [5]" << endl << endl;
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 
@@ -42,7 +44,8 @@ void runMenu(/*NationalTeam &team*/) {
     else if (option == 1) {runPeopleMenu(); }
     else if (option == 2) {runGameMenu(); }
     else if (option == 3) {runCallUpMenu(); }
-    //else if (option == 4) {saveAndExit(clientsVector, travelPacksVector, agency); }
+    //else if (option == 4) {runEconomiesMenu(); } -->> ERRO AO DESCOMENTAR, NÃO SEI PORQUÊ
+    //else if (option == 5) {saveAndExit(clientsVector, travelPacksVector, agency); }
 }
 
 //Outputs a separator made of *

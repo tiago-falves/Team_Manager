@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUp.cpp
-CallUp.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUp.h
-
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUp.h
 vector
 -
@@ -17,10 +13,6 @@ Date.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Date.h
 Game.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Game.h
-CallUpPlayerStatistics.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUpPlayerStatistics.h
-
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUpPlayerStatistics.cpp
 CallUpPlayerStatistics.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUpPlayerStatistics.h
 
@@ -45,28 +37,6 @@ People/FootballPlayer.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/People/FootballPlayer.h
 PlayerGameStatistics.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/PlayerGameStatistics.h
-
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Main.cpp
-iostream
--
-NationalTeam.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
-Utilities.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Utilities.h
-display/Menu.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/Menu.h
-Test.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Test.h
-
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.cpp
-NationalTeam.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
-Date.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Date.h
-algorithm
--
-fstream
--
 
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
 vector
@@ -106,22 +76,6 @@ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_T
 
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/PlayerGameStatistics.h
 
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Test.h
-iostream
--
-sstream
--
-People/Person.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/People/Person.h
-People/FootballPlayer.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/People/FootballPlayer.h
-Date.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Date.h
-NationalTeam.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
-Utilities.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Utilities.h
-
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Utilities.h
 string
 -
@@ -130,19 +84,17 @@ vector
 algorithm
 -
 
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.cpp
-CallUpMenu.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
-
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
 iostream
 -
 Menu.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/Menu.h
 
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/GameMenu.cpp
-GameMenu.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/GameMenu.h
+C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h
+Menu.h
+C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/Menu.h
+../NationalTeam.h
+C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
 
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/GameMenu.h
 iostream
@@ -159,16 +111,14 @@ GameMenu.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/GameMenu.h
 CallUpMenu.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
+EconomiesMenu.h
+C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h
 
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/Menu.h
 iostream
 -
 ../NationalTeam.h
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
-
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/PeopleMenu.cpp
-PeopleMenu.h
-C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/PeopleMenu.h
 
 C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/PeopleMenu.h
 iostream

@@ -99,10 +99,6 @@ int NationalTeam::playerPosition(vector<FootballPlayer*> &people, FootballPlayer
 //HANDLE COSTS
 //player costs
 float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
-    if (players.size() < playerID){
-        //throw exception that player does not exist
-    }
-    //mostrar jogador e verificar se é para este jogador que quer ver os custos
 
     //guardar valor do pass
     //pesquisar no vetor de convocatorias
