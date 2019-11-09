@@ -33,10 +33,18 @@ public:
     int playerPosition(vector<FootballPlayer*> &players, FootballPlayer *player);
 
     //Handle people vector
-    bool addPerson(vector<Person*> &people, Person *person);
-    bool removePerson(vector<Person*> &people, Person *person);
-    bool modifyPerson(vector<Person*> &people, Person *person, Person *newPerson);
-    int personPosition(vector<Person*> &people, Person *person);
+
+    template <class T>
+    bool addPerson(vector<T> &people, T person);
+
+    template <class T>
+    bool removePerson(vector<T> &people, T person);
+
+    template <class T>
+    bool modifyPerson(vector<T> &people, T person, T newPerson);
+
+    template <class T>
+    int personPosition(vector<T> &people, T person);
 
 
     //Handle costs (sallaries + insurance)

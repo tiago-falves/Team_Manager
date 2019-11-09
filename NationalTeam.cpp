@@ -95,13 +95,14 @@ int NationalTeam::playerPosition(vector<FootballPlayer*> &people, FootballPlayer
     int index = BinarySearch(people, player);
     return index;
 }
-
-bool NationalTeam::addPerson(vector<Person*> &people, Person *person) {
+template <class T>
+bool NationalTeam::addPerson(vector<T> &people, T person) {
     insert_sorted(people,person);
     return true;
 }
 
-bool NationalTeam::removePerson(vector<Person*> &people, Person *person) {
+template <class T>
+bool NationalTeam::removePerson(vector<T> &people, T person) {
     int index;
     try {index = personPosition(people,person);}
     catch (out_of_range){
@@ -112,8 +113,8 @@ bool NationalTeam::removePerson(vector<Person*> &people, Person *person) {
     return true;
 
 }
-
-bool NationalTeam::modifyPerson(vector<Person*> &people, Person *person, Person *newPerson) {
+template <class T>
+bool NationalTeam::modifyPerson(vector<T> &people, T person, T newPerson) {
     int index;
     try {index = personPosition(people,person);}
     catch (out_of_range){
@@ -126,8 +127,8 @@ bool NationalTeam::modifyPerson(vector<Person*> &people, Person *person, Person 
     return true;
 }
 
-
-int NationalTeam::personPosition(vector<Person*> &people, Person *person){
+template <class T>
+int NationalTeam::personPosition(vector<T> &people, T person){
     int index = BinarySearch(people,person);
     if(index==-1) throw out_of_range("Person not in vector");
     return index;

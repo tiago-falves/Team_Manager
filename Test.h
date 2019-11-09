@@ -35,7 +35,7 @@ void testPerson(){
 
     NationalTeam team;
 
-
+    team.addPerson(people,person1);
     team.addPerson(people,person1);
     team.addPerson(people,person1);
     team.addPerson(people,person2);
