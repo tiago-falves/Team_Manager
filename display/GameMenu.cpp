@@ -44,5 +44,5 @@ void NationalTeam::runGameMenu() {
 
 
 
-    //runMenu(clientsVector, travelPacksVector, agency);
+    runMenu();
 }

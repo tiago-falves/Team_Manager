@@ -54,7 +54,7 @@ void NationalTeam::read(ifstream *file,string peopleFile) {
 bool NationalTeam::savePeople(string fileName) {
     ofstream content("..//Files//" + fileName);
     for (int i = 0; i < people.size(); ++i) {
-        content << people[i];
+        people[i]->printToFile(content);
         content << "::::::::::" << endl;
     }
     content.close();
@@ -63,7 +63,7 @@ bool NationalTeam::savePeople(string fileName) {
 
 void NationalTeam::showEveryone(ostream &out) {
     for (int i = 0; i < people.size(); ++i) {
-        people[i]->printNicely(out);
+        out << people[i];
     }
 }
 

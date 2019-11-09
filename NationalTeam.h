@@ -99,6 +99,7 @@ public:
     void menuSeparator();
     void validCin(int &option);
     int askForId();
+    void validOption(int &option,int optionsNumber);
 
     //People Menu
     void runPeopleMenu();

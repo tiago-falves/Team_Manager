@@ -25,16 +25,8 @@ void NationalTeam::runMenu() {
     cout << "Save information and Exit                                          [5]" << endl << endl;
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
+    validOption(option,5);
 
-    while (cin.fail() || option < 0 || option > 4)
-    {
-        cout << "Invalid option, please insert the option again: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> option;
-    }
-    cin.clear();
-    cin.ignore(10000, '\n');
     menuSeparator();
 
     if (option == 0) { exit(0);}
@@ -43,6 +35,18 @@ void NationalTeam::runMenu() {
     else if (option == 3) {runCallUpMenu(); }
     else if (option == 4) {runEconomiesMenu(); }
     //else if (option == 5) {saveAndExit(clientsVector, travelPacksVector, agency); }
+}
+
+void NationalTeam::validOption(int &option,int optionsNumber){
+    while (cin.fail() || option < 0 || option > optionsNumber)
+    {
+        cout << "Invalid option, please insert the option again: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cin >> option;
+    }
+    cin.clear();
+    cin.ignore(10000, '\n');
 }
 
 //Outputs a separator made of *

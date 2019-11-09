@@ -309,15 +309,3 @@ Pedro Gomes
 643.5
 Vice-President
 ::::::::::
-Football Player
-29
-name
-1/1/3000
-200
-position
-club
-50
-20
-5
-Healthy
-::::::::::

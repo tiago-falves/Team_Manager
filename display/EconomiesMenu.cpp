@@ -39,6 +39,8 @@ void NationalTeam::runEconomiesMenu(){
     else if (option == 4) {/*teamTimeMenu();*/}
     else if (option == 5) {/*staffMonthMenu();*/}
     else if (option == 6) {/*staffTimeMenu();*/}
+
+    runMenu();
 }
 /*
 void playerMonthMenu(){

@@ -11,7 +11,7 @@ int main() {
     //testPerson();
     //testExceptions();
     //testPlayers();
-    //testNationalTeam();;
+    testNationalTeam();;
 
 
 

@@ -1,11 +1,3 @@
-//
-// Created by tiago on 08/11/2019.
-//
-
-
-//Prints all information and asks the user what option to choose
-
-
 #include "../NationalTeam.h"
 
 void NationalTeam::runPeopleMenu() {
@@ -21,13 +13,7 @@ void NationalTeam::runPeopleMenu() {
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 
-    while (cin.fail() || option < 0 || option > 3)
-    {
-        cout << "Invalid option, please insert the option again: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> option;
-    }
+    validOption(option,4);
 
     cin.clear();
     cin.ignore(10000, '\n');
@@ -35,17 +21,14 @@ void NationalTeam::runPeopleMenu() {
     menuSeparator();
 
     if (option == 0) { runMenu(); }
-    if (option == 1) { /*showEveryone(cout) ;*/ }
-    if (option == 2) { runMenu(); }
+    if (option == 1) { showEveryone(cout) ; }
+    if (option == 2) { showSpecificClient(); }
     if (option == 3) { runPlayersMenu(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
+    if (option == 4) { runTechnicianMenu(); }
 
 
 
-
-
-    //runMenu(clientsVector, travelPacksVector, agency);
+    runPeopleMenu();
 }
 
 void NationalTeam::runPlayersMenu() {
@@ -62,16 +45,7 @@ void NationalTeam::runPlayersMenu() {
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 
-    while (cin.fail() || option < 0 || option > 8)
-    {
-        cout << "Invalid option, please insert the option again: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> option;
-    }
-
-    cin.clear();
-    cin.ignore(10000, '\n');
+    validOption(option,7);
 
     menuSeparator();
 
@@ -83,9 +57,9 @@ void NationalTeam::runPlayersMenu() {
     if (option == 5) { runMenu(); }
     if (option == 6) { runMenu(); }
     if (option == 7) { runMenu(); }
-    if (option == 8) { runMenu(); }
 
-    //runMenu(clientsVector, travelPacksVector, agency);
+
+    runPeopleMenu();
 }
 void NationalTeam::runTechnicianMenu() {
     int option;
@@ -99,16 +73,8 @@ void NationalTeam::runTechnicianMenu() {
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 
-    while (cin.fail() || option < 0 || option > 8)
-    {
-        cout << "Invalid option, please insert the option again: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> option;
-    }
+    validOption(option,3);
 
-    cin.clear();
-    cin.ignore(10000, '\n');
 
     menuSeparator();
 
@@ -122,9 +88,11 @@ void NationalTeam::runTechnicianMenu() {
     if (option == 7) { runMenu(); }
     if (option == 8) { runMenu(); }
 
-    //runMenu(clientsVector, travelPacksVector, agency);
+    runPeopleMenu();
 }
 
 void NationalTeam::showSpecificClient(){
-    int id = askForId();
+    int i = askForId();
+    cout << searchByID(people,i);
 }
+

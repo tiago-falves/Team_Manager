@@ -27,9 +27,9 @@ FootballPlayer::FootballPlayer():Person() {
 string FootballPlayer::type() const {
     return "Football Player";
 }
-void FootballPlayer::printNicely(ostream &out) const {
+void FootballPlayer::print(ostream &out) const {
 
-    Person::printNicely(cout);
+    Person::print(cout);
     /*out <<  left << setw(10)  << setfill(' ') << position << "|  ";
     out <<  left << setw(14) << setfill(' ') << club  << "| ";
     out <<  left << setw(3) << setfill(' ') <<  weight<< "| ";
@@ -49,8 +49,8 @@ void FootballPlayer::printNicely(ostream &out) const {
 
 }
 
-void FootballPlayer::print(ostream &os) const {
-    Person::print(os);
+void FootballPlayer::printToFile(ostream &os) const {
+    Person::printToFile(os);
     os << position << endl;
     os << club << endl;
     os << weight << endl;

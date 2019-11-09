@@ -40,9 +40,6 @@ void NationalTeam::runCallUpMenu() {
     if (option == 5) { runMenu(); }
 
 
+    runMenu();
 
-
-
-
-    //runMenu(clientsVector, travelPacksVector, agency);
 }

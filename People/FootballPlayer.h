@@ -31,9 +31,9 @@ public:
 
     int playerPosition(vector<FootballPlayer*> &players);
 */
-    virtual void printNicely(ostream& out) const;
+    virtual void print(ostream& out) const;
 
-    virtual void print(ostream &os) const;
+    virtual void printToFile(ostream &os) const;
 
     virtual void read(ifstream *file);
 

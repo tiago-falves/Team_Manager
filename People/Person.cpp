@@ -63,7 +63,7 @@ string Person::type() const{
 
 
 //Prints person to the screen
-void Person::printNicely(ostream& out) const{
+void Person::print(ostream& out) const{
 
     out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
     out << "\tId: " << to_string(id) << endl;
@@ -79,7 +79,7 @@ void Person::printNicely(ostream& out) const{
 }
 
 
-void Person::print(ostream &os) const {
+void Person::printToFile(ostream &os) const {
     os << type() << endl;
     os << id << endl;
     os << name << endl;

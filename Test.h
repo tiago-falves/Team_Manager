@@ -119,14 +119,12 @@ void testNationalTeam(){
 
     NationalTeam team = NationalTeam();
     team.readPeople("Person.txt");
-    for (int i = 0; i < team.people.size() ; i++) {
-        //team.people[i]->printNicely(cout);
-    }
-    //Person *player1 = new FootballPlayer("name", date,200,"position", "club",50.0, 20.0, 5.0,false);
-    //team.addPerson(team.people,player1);
 
-    //cout << team.searchByID(team.people,1);
-    team.savePeople("Person.txt");
+    /***************COMO E QUE E POSSIVEL ESTAR A FUNCIONAR AQUI MAS NAO NO MENU??*********************************/
+
+    //int i = team.askForId();
+    //cout << team.searchByID(team.people,i);
+    team.savePeople("x.txt");
 
 }
 
