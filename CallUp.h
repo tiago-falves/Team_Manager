@@ -29,6 +29,7 @@ public:
     void setEndDate(const Date &endDate);
     void setPlayerStatistics(const vector<CallUpPlayerStatistics*> playerStatistics);
 
+
 };
 
 #endif //AEDA_TEAM_MANAGER_CALLUP_H

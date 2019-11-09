@@ -87,6 +87,8 @@ public:
 
     //Read CallUps
     void read(ifstream *file);
+
+    //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
 };
 
 

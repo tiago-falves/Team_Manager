@@ -71,6 +71,11 @@ bool operator==(const Date& date1, const Date& date2) {
     return date1.day == date2.day && date1.month == date2.month && date1.year == date2.year;
 }
 
+bool operator<(const Date& date1, const Date& date2){
+    if (date1.dateToDays() <= date2.dateToDays()) return true;
+    else return false;
+}
+
 
 ostream& operator<<(ostream	&out, const Date &date){
     out << date.day << "/" << date.month << "/" << date.year;
@@ -158,10 +163,6 @@ bool Date::validDateText(string dateText)
 }
 
 //Converts date to days
-int Date::dateToDays() {
-    if (month == 2) return day + month*28 + year*365;
-    else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
-        return day + month*31 + year*365;
-    }
-    else return day + month*30 + year*365;
+int Date::dateToDays() const{
+    return day + daysInMonth(month, year)*month + year*365;
 }

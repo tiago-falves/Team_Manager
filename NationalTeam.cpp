@@ -148,7 +148,12 @@ float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
     //numero de dias que o jogador esteve em convocatória
     //pesquisar no vetor de convocatorias
     for (auto i = callUps.begin(); i < callUps.end(); i++){
-
+        for (auto j = (*i)->getPlayerStatistics().begin(); j < (*i)->getPlayerStatistics().end(); j++){
+            if ((*j)->getPlayerID() == playerID){
+                //found player in this call up
+                
+            }
+        }
     }
 
 

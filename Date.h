@@ -71,6 +71,7 @@ public:
 
     friend bool operator==(const Date& date1, const Date& date2);
     friend ostream& operator<<(ostream& out, const Date& date);
+    friend bool operator<(const Date& date1, const Date& date2);
 
     //Static Methods
 
@@ -113,7 +114,7 @@ public:
     static bool validDateText(string dateText);
 
     /*Converts date in string to days*/
-    int dateToDays();
+    int dateToDays() const;
 
 };
 

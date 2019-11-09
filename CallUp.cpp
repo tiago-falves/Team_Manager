@@ -39,3 +39,4 @@ void CallUp::setGames(const vector<Game *> &games) {
 void CallUp::setPlayerStatistics(const vector<CallUpPlayerStatistics *> playerStatistics) {
     this->playerStatistics = playerStatistics;
 }
+

@@ -11,6 +11,18 @@ private:
     int playerID;
     Date begginingDate;
     Date endDate;
+public:
+    CallUpPlayerStatistics(int playerID, Date begginingDate, Date endDate);
+
+    //GET METHODS
+    int getPlayerID() const;
+    Date getBegDate() const;
+    Date getEndDate() const;
+
+    //SET METHODS
+    void setPlayerID(const int &playerID);
+    void setBegDate(const Date &begginingDate);
+    void setEndDate(const Date &endDate);
 
 };
 
