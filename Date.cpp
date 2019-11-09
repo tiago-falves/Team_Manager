@@ -156,3 +156,12 @@ bool Date::validDateText(string dateText)
     }
     return true;
 }
+
+//Converts date to days
+int Date::dateToDays() {
+    if (month == 2) return day + month*28 + year*365;
+    else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+        return day + month*31 + year*365;
+    }
+    else return day + month*30 + year*365;
+}

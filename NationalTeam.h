@@ -35,16 +35,43 @@ public:
     //Handle people vector
 
     template <class T>
-    bool addPerson(vector<T> &people, T person);
+    bool addPerson(vector<T> &people, T person){
+        insert_sorted(people,person);
+        return true;
+    }
 
     template <class T>
-    bool removePerson(vector<T> &people, T person);
+    bool removePerson(vector<T> &people, T person){
+        int index;
+        try {index = personPosition(people,person);}
+        catch (out_of_range){
+            cerr << "Tried to remove Person that doesn't exist: " << person->getName() << endl;
+            return false;
+        }
+        people.erase(people.begin()+index);
+        return true;
+    }
 
     template <class T>
-    bool modifyPerson(vector<T> &people, T person, T newPerson);
+    bool modifyPerson(vector<T> &people, T person, T newPerson){
+        int index;
+        try {index = personPosition(people,person);}
+        catch (out_of_range){
+            cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
+            return false;
+        }
+        people[index]->setName(newPerson->getName());
+        people[index]->setBirthday(newPerson->getBirthday());
+        people[index]->setSalary(newPerson->getSalary());
+        return true;
+    }
 
     template <class T>
-    int personPosition(vector<T> &people, T person);
+    int personPosition(vector<T> &people, T person){
+        int index = BinarySearch(people,person);
+        if(index==-1) throw out_of_range("Person not in vector");
+        return index;
+    }
 
 
     //Handle costs (sallaries + insurance)
@@ -57,6 +84,9 @@ public:
     //team+staff costs
     float allCostCalculator(Date d1, Date d2);
     float allCostCalculatorMonth(int monthNumber);
+
+    //Read CallUps
+    void read(ifstream *file);
 };
 
 

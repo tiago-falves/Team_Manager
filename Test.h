@@ -36,8 +36,6 @@ void testPerson(){
     NationalTeam team;
 
     team.addPerson(people,person1);
-    team.addPerson(people,person1);
-    team.addPerson(people,person1);
     team.addPerson(people,person2);
     team.addPerson(people,person3);
     team.addPerson(people,person4);
@@ -70,8 +68,6 @@ void testPerson(){
 
 
 }
-
-//Untested when changed to National Team
 
 void testPlayers(){
     NationalTeam n;

@@ -112,6 +112,9 @@ public:
     */
     static bool validDateText(string dateText);
 
+    /*Converts date in string to days*/
+    int dateToDays();
+
 };
 
 class InvalidDate {

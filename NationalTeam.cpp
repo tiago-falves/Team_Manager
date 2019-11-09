@@ -95,6 +95,9 @@ int NationalTeam::playerPosition(vector<FootballPlayer*> &people, FootballPlayer
     int index = BinarySearch(people, player);
     return index;
 }
+
+//COMPILER WAS CALLING UNDEFINED REFERENCES
+/*
 template <class T>
 bool NationalTeam::addPerson(vector<T> &people, T person) {
     insert_sorted(people,person);
@@ -133,14 +136,28 @@ int NationalTeam::personPosition(vector<T> &people, T person){
     if(index==-1) throw out_of_range("Person not in vector");
     return index;
 }
-
+*/
 
 //HANDLE COSTS
 //player costs
 float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
 
     //guardar valor do pass
+    float pass = players[playerID-1]->getPassValue();
+
+    //numero de dias que o jogador esteve em convocatória
     //pesquisar no vetor de convocatorias
+    for (auto i = callUps.begin(); i < callUps.end(); i++){
+
+    }
+
+
     //pesquisar no vetor de playerCallUp
+
+
     return 0.0;
+}
+
+void NationalTeam::read(ifstream *file) {
+    //read files
 }
