@@ -32,6 +32,13 @@ public:
     bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer, FootballPlayer *previousFootbalPlayer);
     int playerPosition(vector<FootballPlayer*> &players, FootballPlayer *player);
 
+    //Handle people vector
+    bool addPerson(vector<Person*> &people, Person *person);
+    bool removePerson(vector<Person*> &people, Person *person);
+    bool modifyPerson(vector<Person*> &people, Person *person, Person *newPerson);
+    int personPosition(vector<Person*> &people, Person *person);
+
+
     //Handle costs (sallaries + insurance)
     //player costs
     float playerCostCalculator(Date d1, Date d2, int playerID);

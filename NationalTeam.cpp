@@ -96,6 +96,44 @@ int NationalTeam::playerPosition(vector<FootballPlayer*> &people, FootballPlayer
     return index;
 }
 
+bool NationalTeam::addPerson(vector<Person*> &people, Person *person) {
+    insert_sorted(people,person);
+    return true;
+}
+
+bool NationalTeam::removePerson(vector<Person*> &people, Person *person) {
+    int index;
+    try {index = personPosition(people,person);}
+    catch (out_of_range){
+        cerr << "Tried to remove Person that doesn't exist: " << person->getName() << endl;
+        return false;
+    }
+    people.erase(people.begin()+index);
+    return true;
+
+}
+
+bool NationalTeam::modifyPerson(vector<Person*> &people, Person *person, Person *newPerson) {
+    int index;
+    try {index = personPosition(people,person);}
+    catch (out_of_range){
+        cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
+        return false;
+    }
+    people[index]->setName(newPerson->getName());
+    people[index]->setBirthday(newPerson->getBirthday());
+    people[index]->setSalary(newPerson->getSalary());
+    return true;
+}
+
+
+int NationalTeam::personPosition(vector<Person*> &people, Person *person){
+    int index = BinarySearch(people,person);
+    if(index==-1) throw out_of_range("Person not in vector");
+    return index;
+}
+
+
 //HANDLE COSTS
 //player costs
 float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){

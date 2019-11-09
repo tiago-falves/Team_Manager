@@ -34,12 +34,6 @@ public:
     void setSalary(float salary);
 
 
-
-    bool addPerson(vector<Person*> &people);
-    bool removePerson(vector<Person*> &people);
-    bool modifyPerson(vector<Person*> &people, Person *newPerson);
-    int personPosition(vector<Person*> &people);
-
     static void sortByID(vector<Person*> &people);
     static void sortByName(vector<Person*> &people);
 

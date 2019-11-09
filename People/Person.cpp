@@ -32,42 +32,6 @@ void Person::setSalary(float salary) { Person::salary = salary;
 }
 
 
-bool Person::addPerson(vector<Person*> &people) {
-    insert_sorted(people,this);
-    return true;
-}
-
-bool Person::removePerson(vector<Person*> &people) {
-    int index;
-    try {index = personPosition(people);}
-    catch (out_of_range){
-        cerr << "Tried to remove Person that doesn't exist: " << name << endl;
-        return false;
-    }
-    people.erase(people.begin()+index);
-    return true;
-
-}
-
-bool Person::modifyPerson(vector<Person*> &people, Person *newPerson) {
-    int index;
-    try {index = personPosition(people);}
-    catch (out_of_range){
-        cerr << "Tried to modify Person that doesn't exist: " << name << endl;
-        return false;
-    }
-    people[index]->setName(newPerson->getName());
-    people[index]->setBirthday(newPerson->getBirthday());
-    people[index]->setSalary(newPerson->getSalary());
-    return true;
-}
-
-
-int Person::personPosition(vector<Person*> &people){
-    int index = BinarySearch(people,this);
-    if(index==-1) throw out_of_range("Person not in vector");
-    return index;
-}
 
 
 bool Person::operator<(const Person &person) const {

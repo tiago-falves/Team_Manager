@@ -33,30 +33,18 @@ void testPerson(){
     Person *person7 = new Person("Bob Wick",birthdayDate,200);
 
 
-
-    /*people1.push_back(person2);
-    people1.push_back(person5);
-    people1.push_back(person1);
-    for (int j = 0; j < people1.size(); ++j) {
-        cout << people1[j]->getName() << " ";
-    }
-    cout << endl;
-    Person::sortByName(people1);
-    for (int j = 0; j < people1.size(); ++j) {
-        cout << people1[j]->getName() << " ";
-    }
-    cout << endl;*/
+    NationalTeam team;
 
 
-    person1->addPerson(people);
-    person2->addPerson(people);
-    person3->addPerson(people);
-    person4->addPerson(people);
-    person5->addPerson(people);
-    person6->addPerson(people);
-    person7->addPerson(people);
+    team.addPerson(people,person1);
+    team.addPerson(people,person1);
+    team.addPerson(people,person2);
+    team.addPerson(people,person3);
+    team.addPerson(people,person4);
+    team.addPerson(people,person5);
+    team.addPerson(people,person6);
 
-    footballPlayer->addPerson(people);
+    team.addPerson(people,footballPlayer);
 
     vector<Person*> p = Person::searchByName(people,"Bob Wick");
     cout << p[0]->getName() << p.size() << endl;
@@ -67,7 +55,7 @@ void testPerson(){
     }
 
     //Verify Position Team
-    int index = footballPlayer->personPosition(people);
+    int index = team.personPosition(people,footballPlayer);
     cout << index << endl;
     //cout << people[index]->type() << endl;
     //cout << people[6]->type() << endl;
@@ -152,13 +140,15 @@ void testExceptions(){
     Person *footballPlayer = new FootballPlayer("name", date,200,"position", "club",50.0, 20.0, 5.0,false);
     Person *person3 = new Person("Tiago Wick",birthdayDate,200);
 
-    person1->addPerson(people);
-    person2->addPerson(people);
-    footballPlayer->addPerson(people);
+
+    NationalTeam team;
+    team.addPerson(people,person1);
+    team.addPerson(people,person2);
+    team.addPerson(people,footballPlayer);
 
     //Remove Element that doesnt exist
-    person1->removePerson(people);
-    person1->removePerson(people);
+    team.removePerson(people,person1);
+    team.removePerson(people,person1);
 
 
 
