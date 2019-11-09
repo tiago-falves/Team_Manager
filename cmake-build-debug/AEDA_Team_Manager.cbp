@@ -155,31 +155,16 @@
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/CallUpMenu.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/CallUpMenu.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/EconomiesMenu.cpp">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/GameMenu.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/GameMenu.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/Menu.h">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/PeopleMenu.cpp">
-			<Option target="AEDA_Team_Manager"/>
-		</Unit>
-		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/display/PeopleMenu.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
 		<Unit filename="C:/Users/tiago/OneDrive/Ambiente de Trabalho/FEUP/Informatica/2/1S/AEDA/AEDA_Team_Manager/CMakeLists.txt">

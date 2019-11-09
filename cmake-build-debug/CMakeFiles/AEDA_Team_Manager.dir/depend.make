@@ -39,7 +39,6 @@ CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../People/Technician.h
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Test.h
 CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../Utilities.h
-CMakeFiles/AEDA_Team_Manager.dir/Main.cpp.obj: ../display/Menu.h
 
 CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.obj: ../CallUp.h
 CMakeFiles/AEDA_Team_Manager.dir/NationalTeam.cpp.obj: ../CallUpPlayerStatistics.h
@@ -87,8 +86,6 @@ CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../People/Technicia
 CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../Utilities.h
 CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../display/CallUpMenu.cpp
-CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../display/CallUpMenu.h
-CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../display/Menu.h
 
 CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../CallUp.h
 CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../CallUpPlayerStatistics.h
@@ -101,8 +98,6 @@ CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../People/Techni
 CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../Utilities.h
 CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../display/EconomiesMenu.cpp
-CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../display/EconomiesMenu.h
-CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../display/Menu.h
 
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../CallUp.h
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../CallUpPlayerStatistics.h
@@ -115,8 +110,6 @@ CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../People/Technician.
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../Utilities.h
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../display/GameMenu.cpp
-CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../display/GameMenu.h
-CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../display/Menu.h
 
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../CallUp.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../CallUpPlayerStatistics.h
@@ -128,12 +121,7 @@ CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../People/Person.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../People/Technician.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../Utilities.h
-CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/CallUpMenu.h
-CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/EconomiesMenu.h
-CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/GameMenu.h
 CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/Menu.cpp
-CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/Menu.h
-CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj: ../display/PeopleMenu.h
 
 CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../CallUp.h
 CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../CallUpPlayerStatistics.h
@@ -145,7 +133,5 @@ CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../People/Person.h
 CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../People/Technician.h
 CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../PlayerGameStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../Utilities.h
-CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../display/Menu.h
 CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../display/PeopleMenu.cpp
-CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj: ../display/PeopleMenu.h
 

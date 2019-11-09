@@ -26,6 +26,10 @@ public:
 
     NationalTeam();
 
+    /****************************************************
+    *******************PEOPLE FUNCTIONS******************
+    *****************************************************/
+
     bool readPeople(string fileName);
 
     bool savePeople(string filename);
@@ -44,25 +48,6 @@ public:
     void sortByName(vector<Person*> &people);
 
     vector<Person*> searchByName(vector<Person*> people, string name);
-
-
-    //Handle costs (sallaries + insurance)
-    //player costs
-    float playerCostCalculator(Date d1, Date d2, int playerID);
-    float playerCostCalculatorMonth(int monthNumber, int playerID);
-    //team costs
-    float teamCostCalculator(Date d1, Date d2);
-    float teamCostCalculatorMonth(int monthNumber);
-    //team+staff costs
-    float allCostCalculator(Date d1, Date d2);
-    float allCostCalculatorMonth(int monthNumber);
-
-    //Read CallUps
-    void read(ifstream *file,string peopleFile);
-
-    //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
-
-
 
     //Handle people vector
     //Alguem sabe por isto no cpp?
@@ -104,6 +89,66 @@ public:
     }
 
     Person* searchByID(vector<Person *> &people, int id);
+
+    /****************************************************
+    *******************MENUS*****************************
+    *****************************************************/
+
+    //Menu
+    void runMenu();
+    void menuSeparator();
+    void validCin(int &option);
+    int askForId();
+
+    //People Menu
+    void runPeopleMenu();
+    void runPlayersMenu();
+    void runTechnicianMenu();
+    void showSpecificClient();
+
+    //Game Menu
+    void runGameMenu();
+
+    //Economies Menu
+    void playerMonthMenu();
+    void playerTimeMenu();
+    void teamMonthMenu();
+    void teamTimeMenu();
+    void staffMonthMenu();
+    void staffTimeMenu();
+    void runEconomiesMenu();
+
+    //Call Up Menu
+    void runCallUpMenu();
+
+
+
+
+    /****************************************************
+    *******************SALARY FUNCTIONS******************
+    *****************************************************/
+
+
+
+    //Handle costs (sallaries + insurance)
+    //player costs
+    float playerCostCalculator(Date d1, Date d2, int playerID);
+    float playerCostCalculatorMonth(int monthNumber, int playerID);
+    //team costs
+    float teamCostCalculator(Date d1, Date d2);
+    float teamCostCalculatorMonth(int monthNumber);
+    //team+staff costs
+    float allCostCalculator(Date d1, Date d2);
+    float allCostCalculatorMonth(int monthNumber);
+
+    //Read CallUps
+    void read(ifstream *file,string peopleFile);
+
+    //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
+
+
+
+
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H

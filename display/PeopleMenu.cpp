@@ -2,12 +2,13 @@
 // Created by tiago on 08/11/2019.
 //
 
-#include "PeopleMenu.h"
 
 //Prints all information and asks the user what option to choose
 
 
-void runPeopleMenu() {
+#include "../NationalTeam.h"
+
+void NationalTeam::runPeopleMenu() {
     int option;
 
     cout << "Welcome to the People Menu! Please choose what you want to do: ";
@@ -47,7 +48,7 @@ void runPeopleMenu() {
     //runMenu(clientsVector, travelPacksVector, agency);
 }
 
-void runPlayersMenu() {
+void NationalTeam::runPlayersMenu() {
     int option;
 
     cout << "Welcome to the players Menu! Please choose what you want to do: ";
@@ -86,7 +87,7 @@ void runPlayersMenu() {
 
     //runMenu(clientsVector, travelPacksVector, agency);
 }
-void runTechnicianMenu() {
+void NationalTeam::runTechnicianMenu() {
     int option;
 
     cout << "Welcome to the players Menu! Please choose what you want to do: ";
@@ -124,6 +125,6 @@ void runTechnicianMenu() {
     //runMenu(clientsVector, travelPacksVector, agency);
 }
 
-void showSpecificClient(){
+void NationalTeam::showSpecificClient(){
     int id = askForId();
 }

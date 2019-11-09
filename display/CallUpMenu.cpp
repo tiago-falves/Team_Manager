@@ -2,9 +2,10 @@
 // Created by tiago on 08/11/2019.
 //
 
-#include "CallUpMenu.h"
 
-void runCallUpMenu() {
+#include "../NationalTeam.h"
+
+void NationalTeam::runCallUpMenu() {
     int option;
 
     cout << "Welcome to the Call Up menu! Please choose what you want to do: ";

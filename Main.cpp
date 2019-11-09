@@ -1,7 +1,7 @@
 #include <iostream>
 #include "NationalTeam.h"
 #include "Utilities.h"
-#include "display/Menu.h"
+
 #include "Test.h"
 using namespace std;
 
@@ -17,7 +17,7 @@ int main() {
 
     NationalTeam team;
     team.readPeople("Person.txt");
-    runMenu();
+    team.runMenu();
 
 
 

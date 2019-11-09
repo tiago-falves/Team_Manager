@@ -4,10 +4,10 @@
 
 
 #include <iomanip>
-#include "EconomiesMenu.h"
+#include "../NationalTeam.h"
 
 
-void runEconomiesMenu(){
+void NationalTeam::runEconomiesMenu(){
     int option;
 
     //OPTION TO GO BACK IS MISSING

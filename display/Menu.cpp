@@ -2,17 +2,14 @@
 // Created by tiago on 07/11/2019.
 //
 
-#include "Menu.h"
-#include "PeopleMenu.h"
-#include "GameMenu.h"
-#include "CallUpMenu.h"
-#include "EconomiesMenu.h"
+
+#include "../NationalTeam.h"
 
 using namespace std;
 
 
 //Runs the main Menu
-void runMenu() {
+void NationalTeam::runMenu() {
     int option;
 
     menuSeparator();
@@ -49,14 +46,14 @@ void runMenu() {
 }
 
 //Outputs a separator made of *
-void menuSeparator() {
+void NationalTeam::menuSeparator() {
     cout << endl << endl;
     for (int i = 0; i < 70; i++) { cout << "="; }
     cout << endl;
 }
 
 //Asks for a valid int until the user inputs it
-void validCin(int &option) {
+void NationalTeam::validCin(int &option) {
 
     while (cin.fail())
     {
@@ -67,7 +64,7 @@ void validCin(int &option) {
     }
 }
 
-int askForId(){
+int NationalTeam::askForId(){
     int id;
     cout << "Please Insert an ID: ";
     cin >> id;

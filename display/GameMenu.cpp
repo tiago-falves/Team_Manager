@@ -2,9 +2,10 @@
 // Created by tiago on 08/11/2019.
 //
 
-#include "GameMenu.h"
 
-void runGameMenu() {
+#include "../NationalTeam.h"
+
+void NationalTeam::runGameMenu() {
     int option;
 
     cout << "Welcome to the Game Menu! Please choose what you want to do: ";
