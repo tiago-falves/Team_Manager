@@ -1,0 +1,48 @@
+digraph "CallUpPlayerStatistics.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="CallUpPlayerStatistics.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="CallUp.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_call_up_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CallUp.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_call_up_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NationalTeam.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_national_team_8h.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="display/Menu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_menu_8h.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="display/CallUpMenu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_call_up_menu_8h.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="display/CallUpMenu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_call_up_menu_8cpp.html",tooltip=" "];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="display/Menu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_menu_8cpp.html",tooltip=" "];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="display/EconomiesMenu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_economies_menu_8h.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="display/EconomiesMenu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_economies_menu_8cpp.html",tooltip=" "];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="display/GameMenu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_menu_8h.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="display/GameMenu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_menu_8cpp.html",tooltip=" "];
+  Node11 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="display/PeopleMenu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_people_menu_8h.html",tooltip=" "];
+  Node13 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="display/PeopleMenu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_people_menu_8cpp.html",tooltip=" "];
+  Node5 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="Main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_main_8cpp.html",tooltip=" "];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="Test.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_test_8h.html",tooltip=" "];
+  Node16 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="NationalTeam.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_national_team_8cpp.html",tooltip=" "];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="CallUpPlayerStatistics.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_call_up_player_statistics_8cpp.html",tooltip=" "];
+}
