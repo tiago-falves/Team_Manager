@@ -57,86 +57,6 @@ bool NationalTeam::readPeople(string fileName) {
     return true;
 }
 
-//HANDLE PLAYERS VECTOR
-bool NationalTeam::addFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer) {
-    insert_sorted(players, newFootballPlayer);
-    return true;
-}
-
-
-bool NationalTeam::removeFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *playerToRemove) {
-    int index = playerPosition(players, playerToRemove);
-    if(index != -1){
-        players.erase(players.begin()+index);
-        return true;
-    }
-    else return false;
-}
-
-
-bool NationalTeam::modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer, FootballPlayer *previousFootbalPlayer) {
-    int index = playerPosition(players, previousFootbalPlayer);
-    if(index !=-1){
-        players[index]->setSalary(newFootballPlayer->getSalary());
-        players[index]->setBirthday(newFootballPlayer->getBirthday());
-        players[index]->setName(newFootballPlayer->getName());
-        players[index]->setClub(newFootballPlayer->getClub());
-        players[index]->setHeight(newFootballPlayer->getHeight());
-        players[index]->setInjury(newFootballPlayer->isInjury());
-        players[index]->setPassValue(newFootballPlayer->getPassValue());
-        players[index]->setPosition(newFootballPlayer->getPosition());
-        players[index]->setWeight(newFootballPlayer->getWeight());
-        return true;
-    }
-    return false;
-}
-
-int NationalTeam::playerPosition(vector<FootballPlayer*> &people, FootballPlayer *player){
-    int index = BinarySearch(people, player);
-    return index;
-}
-
-//COMPILER WAS CALLING UNDEFINED REFERENCES
-/*
-template <class T>
-bool NationalTeam::addPerson(vector<T> &people, T person) {
-    insert_sorted(people,person);
-    return true;
-}
-
-template <class T>
-bool NationalTeam::removePerson(vector<T> &people, T person) {
-    int index;
-    try {index = personPosition(people,person);}
-    catch (out_of_range){
-        cerr << "Tried to remove Person that doesn't exist: " << person->getName() << endl;
-        return false;
-    }
-    people.erase(people.begin()+index);
-    return true;
-
-}
-template <class T>
-bool NationalTeam::modifyPerson(vector<T> &people, T person, T newPerson) {
-    int index;
-    try {index = personPosition(people,person);}
-    catch (out_of_range){
-        cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
-        return false;
-    }
-    people[index]->setName(newPerson->getName());
-    people[index]->setBirthday(newPerson->getBirthday());
-    people[index]->setSalary(newPerson->getSalary());
-    return true;
-}
-
-template <class T>
-int NationalTeam::personPosition(vector<T> &people, T person){
-    int index = BinarySearch(people,person);
-    if(index==-1) throw out_of_range("Person not in vector");
-    return index;
-}
-*/
 
 //HANDLE COSTS
 //player costs
@@ -165,4 +85,12 @@ float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
 
 void NationalTeam::read(ifstream *file) {
     //read files
+}
+
+bool NationalTeam::savePeople(string filename) {
+    ofstream content(filename);
+    for (int i = 0; i < people.size(); ++i) {
+
+    }
+    return true;
 }

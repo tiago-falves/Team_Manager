@@ -23,10 +23,16 @@ void Technician::setRole(const string &role) {
     Technician::role = role;
 }
 
-void Technician::print(ostream& out) const{
-    Person::print(cout);
+void Technician::printNicely(ostream &out) const {
+    Person::printNicely(cout);
     out << "\tRole: " << role << endl;
 }
+
+void Technician::print(ostream &out) const {
+    Person::print(out);
+    out << role << endl;
+}
+
 string Technician::type() const {
     return "Technician";
 }

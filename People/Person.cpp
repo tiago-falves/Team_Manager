@@ -62,12 +62,19 @@ string Person::type() const{
 
 
 //Prints person to the screen
-void Person::print(ostream& out) const{
+void Person::printNicely(ostream& out) const{
     out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
     out << "\tId: " << to_string(id) << endl;
     out << "\tName:" << name << endl;
     out << "\tBirthday:" << birthdayDate.toString() << endl;
     out << "\tSalary: " << to_string(salary) << endl;
+}
+
+void Person::print(ostream &os) const {
+    os << id << endl;
+    os << name << endl;
+    os << birthdayDate <<endl;
+    os  << salary << endl;
 }
 
 void Person::read(ifstream *file) {
@@ -100,6 +107,11 @@ void Person::sortByName(vector<Person *> &people) {
     sort(people.begin(),people.end(),nameComparable);
 }
 
+void Person::modify(Person *newPerson){
+    name = newPerson->getName();
+    salary = newPerson->getSalary();
+    birthdayDate= newPerson->getBirthday();
+}
 
 vector<Person*> Person::searchByName(vector<Person *> people,string name) { //Devo ordenar duas vezes?? ou mais vale usar a sequencial?
 
@@ -111,34 +123,12 @@ vector<Person*> Person::searchByName(vector<Person *> people,string name) { //De
     }
     return peopleName;
 
-
-    /*Person::sortByName(people);
-
-    bool found = false;
-
-    int middle = -1;
-    int left = 0, right = people.size() - 1;
-    while (left <= right)
-    {
-        middle = (left + right) / 2;
-        if (people[middle]->getName() < name)
-            left = middle + 1;
-        else if (name < people[middle]->getName())
-            right= middle - 1;
-        else{
-            found = true;
-            break; // encontrou
-        }
-    }
-    if (found){
-        return people[middle];
-    }
-    sortByID(people);*/
-
 }
 
 
-int Person::lastId = 0;
+int Person::lastId = 1;
+
+
 
 ostream &operator<<(ostream &os, const Person *person){
     person->print(os);

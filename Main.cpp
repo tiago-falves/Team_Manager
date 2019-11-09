@@ -8,8 +8,8 @@ using namespace std;
 
 int main() {
 
-    //testPerson();
-    //testExceptions();
+    testPerson();
+    testExceptions();
     testPlayers();
     //testNationalTeam();;
 

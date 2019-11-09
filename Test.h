@@ -31,6 +31,7 @@ void testPerson(){
     Person *person5 = new Person("Bob Wick",birthdayDate,100);
     Person *person6 = new Person("John Wick",birthdayDate,300);
     Person *person7 = new Person("Bob Wick",birthdayDate,200);
+    Person *tech = new Technician("John",birthdayDate,100,"Janitor");
 
 
     NationalTeam team;
@@ -43,29 +44,34 @@ void testPerson(){
     team.addPerson(people,person6);
 
     team.addPerson(people,footballPlayer);
+    team.addPerson(people,tech);
+
+    //cout << tech;
+    //cout << footballPlayer;
+    //cout << person1;
+    //tech->printNicely(cout);
+    //footballPlayer->printNicely(cout);
+    //person1->printNicely(cout);
 
     vector<Person*> p = Person::searchByName(people,"Bob Wick");
-    cout << p[0]->getName() << p.size() << endl;
+    //cout << p[0]->getName() << p.size() << endl;
 
 
     for (int i = 0; i < people.size(); ++i) {
-        cout << people[i]->getId() << endl;
+        //cout << people[i]->getId() << endl;
     }
 
     //Verify Position Team
     int index = team.personPosition(people,footballPlayer);
-    cout << index << endl;
+    //cout << index << endl;
     //cout << people[index]->type() << endl;
     //cout << people[6]->type() << endl;
 
 
-    people[index]->print(cout);
-    cout << people[index];
+    //people[index]->print(cout);
+    //cout << people[index];
     //people[index+1]->print(cout);
     //people[index]->print(cout);
-
-
-
 
 }
 
@@ -78,40 +84,41 @@ void testPlayers(){
 
     FootballPlayer *player1 = new FootballPlayer("name", date,200,"position", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player2 = new FootballPlayer("John", date,200,"position", "club",50.0, 20.0, 5.0,false);
-    FootballPlayer *player3 = new FootballPlayer("Ramalho", date,200,"position", "club",50.0, 20.0, 5.0,false);
+    FootballPlayer *player3 = new FootballPlayer("Ramalho", date,200,"pos", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player4 = new FootballPlayer("Diogo", date,200,"position", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player5 = new FootballPlayer("Tiago", date,200,"position", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player6 = new FootballPlayer("Terry", date,200,"position", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player7 = new FootballPlayer("Zas", date,300,"position", "club",40.0, 30.0, 4.0,true);
 
-    n.addFootballPlayer(players, player1);
-    n.addFootballPlayer(players, player2);
-    n.addFootballPlayer(players, player3);
-    n.addFootballPlayer(players, player4);
-    n.addFootballPlayer(players, player5);
-    n.addFootballPlayer(players, player6);
-    n.addFootballPlayer(players, player7);
+    n.addPerson(players, player1);
+    n.addPerson(players, player2);
+    n.addPerson(players, player3);
+    n.addPerson(players, player4);
+    n.addPerson(players, player5);
+    n.addPerson(players, player6);
+    n.addPerson(players, player7);
 
     for (int i = 0; i < players.size() ; ++i) {
-        players[i]->print(cout);
-
+        //players[i]->print(cout);
     }
 
-    cout << n.playerPosition(players, player3) << endl;
-    n.modifyFootballPlayer(players, player1, player3);
-    cout << player3->getName() << endl;
-    n.removeFootballPlayer(players, player3);
-    cout << n.playerPosition(players, player3) << endl;
+
+    //cout << n.personPosition(players, player3) << endl;
+    //player1->print(cout);
+    n.modifyPerson(players, player1, player3);
+    //player3->print(cout);
+    //n.removePerson(players, player3);
+    //cout << n.personPosition(players, player3) << endl;
 
 
 }
 
 void testNationalTeam(){
     NationalTeam team = NationalTeam();
-    team.readPeople("FootballPlayers.txt");
+    //team.readPeople("FootballPlayers.txt");
     team.readPeople("Person.txt");
     for (int i = 0; i < team.people.size() ; i++) {
-        team.people[i]->print(cout);
+        team.people[i]->printNicely(cout);
     }
 
 }
@@ -144,7 +151,7 @@ void testExceptions(){
 
     //Remove Element that doesnt exist
     team.removePerson(people,person1);
-    team.removePerson(people,person1);
+   // team.removePerson(people,person1);
 
 
 

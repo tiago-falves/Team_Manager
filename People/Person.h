@@ -15,6 +15,9 @@ class Person {
 protected:
     int id;
     string name;
+
+
+protected:
     Date birthdayDate;
     float salary;
     static int lastId;
@@ -39,16 +42,19 @@ public:
 
     static vector<Person*> searchByName(vector<Person*> people, string name);
 
+    virtual void modify(Person *newPerson);
+
+
     bool operator<(const Person &person) const;
     bool operator<(const Person* &person) const;
-
     bool operator>(const Person &person) const;
     bool operator==(const Person &rhs) const;
     bool operator!=(const Person &rhs) const;
 
     friend ostream &operator<<(ostream &os, const Person *person);
 
-    virtual void print(ostream& out) const;
+    virtual void printNicely(ostream& out) const;
+    virtual void print(ostream &os) const;
     virtual void read(ifstream *file);
     virtual string type() const ;
 

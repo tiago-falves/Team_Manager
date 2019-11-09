@@ -20,6 +20,8 @@ public:
     FootballPlayer(string name, Date birthDay,float salary,string position, string club, const float weight, const float height,  float pass_value,bool injury);
 
     FootballPlayer();
+
+    virtual void modify(Person *newPerson);
 /*
     bool addFootballPlayer(vector<FootballPlayer*> &players);
 
@@ -29,7 +31,9 @@ public:
 
     int playerPosition(vector<FootballPlayer*> &players);
 */
-    virtual void print(ostream& out) const;
+    virtual void printNicely(ostream& out) const;
+
+    virtual void print(ostream &os) const;
 
     virtual void read(ifstream *file);
 

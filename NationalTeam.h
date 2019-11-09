@@ -25,12 +25,7 @@ public:
     vector<CallUp*> callUps;
     NationalTeam();
     bool readPeople(string fileName);
-
-    //Handle players vector
-    bool addFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer);
-    bool removeFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *playerToRemove);
-    bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer, FootballPlayer *previousFootbalPlayer);
-    int playerPosition(vector<FootballPlayer*> &players, FootballPlayer *player);
+    bool savePeople(string filename);
 
     //Handle people vector
 
@@ -60,9 +55,7 @@ public:
             cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
             return false;
         }
-        people[index]->setName(newPerson->getName());
-        people[index]->setBirthday(newPerson->getBirthday());
-        people[index]->setSalary(newPerson->getSalary());
+        person->modify(newPerson);
         return true;
     }
 

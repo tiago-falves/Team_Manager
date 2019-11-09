@@ -27,8 +27,8 @@ FootballPlayer::FootballPlayer():Person() {
 string FootballPlayer::type() const {
     return "Football Player";
 }
-void FootballPlayer::print(ostream& out) const{
-    Person::print(cout);
+void FootballPlayer::printNicely(ostream &out) const {
+    Person::printNicely(cout);
     out << "\tPosition: " << position << endl;
     out << "\tClub: " << club << endl;
     out << "\tWeight: " << to_string(weight) << endl;
@@ -41,6 +41,17 @@ void FootballPlayer::print(ostream& out) const{
 
 }
 
+void FootballPlayer::print(ostream &os) const {
+    Person::print(os);
+    os << position << endl;
+    os << club << endl;
+    os << weight << endl;
+    os << height << endl;
+    os << pass_value << endl;
+    if (injury) os << "Injured";
+    else os << "Healthy";
+    os << endl;
+}
 
 const string &FootballPlayer::getPosition() const {
     return position;
@@ -96,6 +107,19 @@ float FootballPlayer::getSalary() const {
 
 void FootballPlayer::setSalary(float salary) {
     FootballPlayer::salary = salary;
+}
+
+void FootballPlayer::modify(Person *newPerson){
+    FootballPlayer *player = (FootballPlayer*) newPerson;
+    Person::modify(newPerson);
+    position = player->getPosition();
+    club = player->getClub();
+    weight= player->getWeight();
+    height = player->getHeight();
+    pass_value = player->getPassValue();
+    injury  = player->isInjury();
+
+
 }
 /*
 bool FootballPlayer::addFootballPlayer(vector<FootballPlayer*> &players) {
