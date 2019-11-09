@@ -44,7 +44,7 @@ void runMenu(/*NationalTeam &team*/) {
     else if (option == 1) {runPeopleMenu(); }
     else if (option == 2) {runGameMenu(); }
     else if (option == 3) {runCallUpMenu(); }
-    //else if (option == 4) {runEconomiesMenu(); } -->> ERRO AO DESCOMENTAR, NÃO SEI PORQUÊ
+    else if (option == 4) {runEconomiesMenu(); }
     //else if (option == 5) {saveAndExit(clientsVector, travelPacksVector, agency); }
 }
 

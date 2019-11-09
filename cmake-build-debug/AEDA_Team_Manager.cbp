@@ -155,6 +155,12 @@
 		<Unit filename="C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.h">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>
+		<Unit filename="C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/EconomiesMenu.cpp">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
+		<Unit filename="C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h">
+			<Option target="AEDA_Team_Manager"/>
+		</Unit>
 		<Unit filename="C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/GameMenu.cpp">
 			<Option target="AEDA_Team_Manager"/>
 		</Unit>

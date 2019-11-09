@@ -10,13 +10,13 @@ int main() {
 
     //testPerson();
     //testExceptions();
-    //testPlayers();
+    testPlayers();
     //testNationalTeam();;
 
 
 
     NationalTeam team;
-    runMenu(/*team*/);
+    //runMenu(/*team*/);
 
 
 

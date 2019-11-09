@@ -84,8 +84,9 @@ void testPerson(){
 }
 
 //Untested when changed to National Team
-/*
+
 void testPlayers(){
+    NationalTeam n;
 
     vector<FootballPlayer*> players;
     Date date(1,1,3000);
@@ -99,28 +100,28 @@ void testPlayers(){
     FootballPlayer *player6 = new FootballPlayer("Terry", date,200,"position", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player7 = new FootballPlayer("Zas", date,300,"position", "club",40.0, 30.0, 4.0,true);
 
-    player1->addFootballPlayer(players);
-    player2->addFootballPlayer(players);
-    player3->addFootballPlayer(players);
-    player4->addFootballPlayer(players);
-    player5->addFootballPlayer(players);
-    player6->addFootballPlayer(players);
-    player7->addFootballPlayer(players);
+    n.addFootballPlayer(players, player1);
+    n.addFootballPlayer(players, player2);
+    n.addFootballPlayer(players, player3);
+    n.addFootballPlayer(players, player4);
+    n.addFootballPlayer(players, player5);
+    n.addFootballPlayer(players, player6);
+    n.addFootballPlayer(players, player7);
 
     for (int i = 0; i < players.size() ; ++i) {
         players[i]->print(cout);
 
     }
 
-    cout << player3->playerPosition(players) << endl;
-    player3->modifyFootballPlayer(players, player1);
+    cout << n.playerPosition(players, player3) << endl;
+    n.modifyFootballPlayer(players, player1, player3);
     cout << player3->getName() << endl;
-    player3->removeFootballPlayer(players);
-    cout << player3->playerPosition(players) << endl;
+    n.removeFootballPlayer(players, player3);
+    cout << n.playerPosition(players, player3) << endl;
 
 
 }
-*/
+
 void testNationalTeam(){
     NationalTeam team = NationalTeam();
     team.readPeople("FootballPlayers.txt");

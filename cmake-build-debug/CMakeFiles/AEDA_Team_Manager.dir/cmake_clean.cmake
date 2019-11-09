@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AEDA_Team_Manager.dir/PlayerGameStatistics.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/Utilities.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj"
+  "CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/display/Menu.cpp.obj"
   "CMakeFiles/AEDA_Team_Manager.dir/display/PeopleMenu.cpp.obj"

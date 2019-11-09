@@ -8,6 +8,7 @@
 
 
 void runEconomiesMenu(){
+    int option;
 
     //OPTION TO GO BACK IS MISSING
     cout << "Exit                                                               [0]" << endl;
@@ -32,14 +33,14 @@ void runEconomiesMenu(){
     menuSeparator();
 
     if (option == 0) { exit(0);}
-    else if (option == 1) {playerMonthMenu();}
-    else if (option == 2) {playerTimeMenu();}
-    else if (option == 3) {teamMonthMenu();}
-    else if (option == 4) {teamTimeMenu();}
-    else if (option == 5) {staffMonthMenu();}
-    else if (option == 6) {staffTimeMenu();}
+    else if (option == 1) {/*playerMonthMenu();*/}
+    else if (option == 2) {/*playerTimeMenu();*/}
+    else if (option == 3) {/*teamMonthMenu();*/}
+    else if (option == 4) {/*teamTimeMenu();*/}
+    else if (option == 5) {/*staffMonthMenu();*/}
+    else if (option == 6) {/*staffTimeMenu();*/}
 }
-
+/*
 void playerMonthMenu(){
     //verify that the given ID is valid
     if (players.size() < playerID) {
@@ -97,5 +98,6 @@ void playerTimeMenu(){
 
     if (option == 0) exit(0);
     else if (option == 1) {}//go back
-    else if (option == 2) {}/*call between two dates function*/
+    else if (option == 2) {}/*call between two dates function
 }
+*/

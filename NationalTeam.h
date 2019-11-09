@@ -29,7 +29,7 @@ public:
     //Handle players vector
     bool addFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer);
     bool removeFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *playerToRemove);
-    bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer);
+    bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer, FootballPlayer *previousFootbalPlayer);
     int playerPosition(vector<FootballPlayer*> &players, FootballPlayer *player);
 
     //Handle costs (sallaries + insurance)

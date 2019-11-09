@@ -90,6 +90,20 @@ CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj
  C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.cpp
  C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/CallUpMenu.h
  C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/Menu.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUp.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUpPlayerStatistics.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Date.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Game.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/NationalTeam.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/People/FootballPlayer.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/People/Person.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/People/Technician.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/PlayerGameStatistics.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/Utilities.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/EconomiesMenu.cpp
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/EconomiesMenu.h
+ C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/display/Menu.h
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj
  C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUp.h
  C:/Users/digas/OneDrive/Documentos/FEUP/2o ano - 2019-20/1o Semestre/AEDA/AEDA_Team_Manager/CallUpPlayerStatistics.h

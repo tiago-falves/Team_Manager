@@ -446,6 +446,33 @@ display/CallUpMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.s
 .PHONY : display/CallUpMenu.cpp.s
 
+display/EconomiesMenu.obj: display/EconomiesMenu.cpp.obj
+
+.PHONY : display/EconomiesMenu.obj
+
+# target to build an object file
+display/EconomiesMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj
+.PHONY : display/EconomiesMenu.cpp.obj
+
+display/EconomiesMenu.i: display/EconomiesMenu.cpp.i
+
+.PHONY : display/EconomiesMenu.i
+
+# target to preprocess a source file
+display/EconomiesMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.i
+.PHONY : display/EconomiesMenu.cpp.i
+
+display/EconomiesMenu.s: display/EconomiesMenu.cpp.s
+
+.PHONY : display/EconomiesMenu.s
+
+# target to generate assembly for a file
+display/EconomiesMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\AEDA_Team_Manager.dir\build.make CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.s
+.PHONY : display/EconomiesMenu.cpp.s
+
 display/GameMenu.obj: display/GameMenu.cpp.obj
 
 .PHONY : display/GameMenu.obj
@@ -572,6 +599,9 @@ help:
 	@echo ... display/CallUpMenu.obj
 	@echo ... display/CallUpMenu.i
 	@echo ... display/CallUpMenu.s
+	@echo ... display/EconomiesMenu.obj
+	@echo ... display/EconomiesMenu.i
+	@echo ... display/EconomiesMenu.s
 	@echo ... display/GameMenu.obj
 	@echo ... display/GameMenu.i
 	@echo ... display/GameMenu.s

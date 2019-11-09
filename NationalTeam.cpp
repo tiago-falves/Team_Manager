@@ -74,8 +74,8 @@ bool NationalTeam::removeFootballPlayer(vector<FootballPlayer*> &players, Footba
 }
 
 
-bool NationalTeam::modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer) {
-    int index = playerPosition(players, newFootballPlayer);
+bool NationalTeam::modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer, FootballPlayer *previousFootbalPlayer) {
+    int index = playerPosition(players, previousFootbalPlayer);
     if(index !=-1){
         players[index]->setSalary(newFootballPlayer->getSalary());
         players[index]->setBirthday(newFootballPlayer->getBirthday());

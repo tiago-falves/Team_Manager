@@ -90,6 +90,20 @@ CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../display/CallUpMe
 CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../display/CallUpMenu.h
 CMakeFiles/AEDA_Team_Manager.dir/display/CallUpMenu.cpp.obj: ../display/Menu.h
 
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../CallUp.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../CallUpPlayerStatistics.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../Date.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../Game.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../NationalTeam.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../People/FootballPlayer.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../People/Person.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../People/Technician.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../PlayerGameStatistics.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../Utilities.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../display/EconomiesMenu.cpp
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../display/EconomiesMenu.h
+CMakeFiles/AEDA_Team_Manager.dir/display/EconomiesMenu.cpp.obj: ../display/Menu.h
+
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../CallUp.h
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../CallUpPlayerStatistics.h
 CMakeFiles/AEDA_Team_Manager.dir/display/GameMenu.cpp.obj: ../Date.h
