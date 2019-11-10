@@ -33,6 +33,21 @@ public:
     void setPlayerStatistics(const vector<CallUpPlayerStatistics*> playerStatistics);
 
 
+    //CHANGE CALLUP
+    void addGame(Game *game);
+    void removeGame(Game *game);
+
+    void addPlayer(int playerID, Date begDate, Date endDate);
+    void removePlayer(int playerID);
+
+    void changeBeginDate(Date beg);
+    void changeEndDate(Date end);
+
+    void changeDailyCost(float dailyCost);
+
+    //UTILITIES
+    bool gameExists(Game *game);
+    bool playerExists(int playerID);
 };
 
 #endif //AEDA_TEAM_MANAGER_CALLUP_H

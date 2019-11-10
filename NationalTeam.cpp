@@ -102,6 +102,82 @@ vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) 
 
 }
 
+//READ FROM TEXT FILE
+void NationalTeam::readCallUp(ifstream *file) {
+
+    //READ FROM FILE VARIABLES
+    string text;
+    stringstream ss;
+
+    //LIST OF GAME INDEXES
+    int index;
+
+    //VARIABLES TO CONSTRUCT CALLUP
+    Date begginingDate, endingDate;
+    float dailyCost;
+    vector<Game*> games;
+    vector<CallUpPlayerStatistics*> playerStatistics;
+
+    //VARIABLES TO CONSTRUCT CALLUPPLAYERSTATISTICS
+    int playerID;
+    Date begDate, endDate;
+
+    unsigned int counter = 0;
+
+    while(getline(*file, text)) {
+        //BEGINNING DATE
+        if (counter == 0) {
+            begginingDate.dateTextConverter(text);
+            counter++;
+        }
+
+        //END DATE
+        if (counter == 1) {
+            endingDate.dateTextConverter(text);
+            counter++;
+        }
+
+        //DAILY COST
+        if (counter == 2) {
+            dailyCost = stof(text);
+            counter++;
+        }
+
+        //VECTOR OF GAMES
+        if (counter == 3) {
+            while (ss << text) {
+                ss >> index;
+
+                //verify that game exists
+                for (auto i = games.begin(); i < games.end(); i++) {
+                    //if ((*i)->getID == index) -- need ID parameter in game
+                    insert_sorted(games, *i);
+                    break;
+                }
+            }
+            counter ++;
+        }
+        //CALLUP PLAYER STATISTICS VECTOR
+        if (counter == 4) {
+            while (getline(*file, text)) {
+                if (text == "::::::::::") break;
+                playerID = stoi(text);
+
+                getline(*file, text);
+                begDate.dateTextConverter(text);
+
+                getline(*file, text);
+                endDate.dateTextConverter(text);
+
+                insert_sorted(playerStatistics, new CallUpPlayerStatistics(playerID, begDate, endDate));
+            }
+            counter = 0;
+            insert_sorted(callUps, new CallUp(dailyCost, games, playerStatistics, begginingDate, endingDate));
+        }
+    }
+}
+
+
 //HANDLE COSTS
 //player costs
 float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){

@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <sstream>
 #include "Date.h"
 #include "People//Person.h"
 #include "People//FootballPlayer.h"
@@ -148,8 +149,9 @@ public:
     float allCostCalculator(Date d1, Date d2);
     float allCostCalculatorMonth(int monthNumber, int yearNumber);
 
-    //Read CallUps
+    //READ FROM TEXT FILES
     void read(ifstream *file,string peopleFile);
+    void readCallUp(ifstream *file);
 
     //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
 
