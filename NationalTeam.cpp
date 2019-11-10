@@ -4,6 +4,7 @@
 
 #include "NationalTeam.h"
 #include "Date.h"
+#include "Exceptions.h"
 #include <algorithm>
 #include <fstream>
 using namespace std;
@@ -74,8 +75,12 @@ void NationalTeam::showPerson(ostream &out, int id) {
 void NationalTeam::sortByID(vector<Person *> &people) {
     sort(people.begin(),people.end());
 }
+
+
 Person* NationalTeam::searchByID(vector<Person *> &people,int id){
-   return *lower_bound(people.begin(),people.end(),id,idComparable);
+    auto it = lower_bound(people.begin(),people.end(),id,idComparable);
+    if (it != people.end() && (*it)->getId() == id) return *it;
+    else throw InexistentId(id);
 }
 
 

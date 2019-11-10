@@ -9,4 +9,11 @@
 
 using namespace std;
 
+class InexistentId {
+public:
+    int id;
+    InexistentId(int i) {id = i;}
+};
+
+
 #endif //AEDA_TEAM_MANAGER_EXCEPTIONS_H

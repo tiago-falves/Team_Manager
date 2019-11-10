@@ -76,7 +76,8 @@ int NationalTeam::askForId(){
     return id;
 }
 
-string NationalTeam::askForDate(string dateName,string &text){
+Date NationalTeam::askForDate(string dateName,string &text){
+    Date date = Date();
     cout << dateName << "(DD/MM/YYYY): ";
     cin.clear();
     getline(cin, text);
@@ -86,5 +87,41 @@ string NationalTeam::askForDate(string dateName,string &text){
         cout << "Invalid date, please insert again: ";
         getline(cin, text);
     }
-    return text;
+    return date.dateTextConverter(text);;
+}
+
+float NationalTeam::askForFloat(string &text, const string &what){
+    bool exceptionCatched = true;
+    cout << what << ": ";
+    cin >> text;
+    while(exceptionCatched) {
+        try {
+            validFloat(text);
+            exceptionCatched = false;
+
+        }
+        catch (std::invalid_argument ia) {
+            cout << "Invalid number, please insert your answer again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> text;
+        }
+
+    }
+    cin.clear();
+    cin.ignore(10000, '\n');
+    return stof(text);
+}
+
+bool NationalTeam::askYesNoQuestion() {
+    int option;
+    cout << endl << "Yes [1]" << endl;
+    cout << "No  [2]" << endl;
+    cout << "Please the number of your option: ";
+    cin >> option;
+    validOption(option,2);
+    if(option == 1) return true;
+    else if(option == 2) return false;
+    return true;
+
 }

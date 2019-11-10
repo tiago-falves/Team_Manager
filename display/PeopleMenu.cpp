@@ -1,28 +1,27 @@
 #include "../NationalTeam.h"
+#include "../Exceptions.h"
 
 void NationalTeam::runPeopleMenu() {
     int option;
 
+
     cout << "Welcome to the People Menu! Please choose what you want to do: ";
     cout << endl << endl;
-    cout << "0. Go back" << endl;
-    cout << "1. See information from everyone. " << endl;
-    cout << "2. See information from a specific person. " << endl;
-    cout << "3. Football Players." << endl;
-    cout << "4. Technicians." << endl;
+    cout << "Go back                                                            [0]" << endl;
+    cout << "See information from everyone                                      [1]" << endl;
+    cout << "See information from a specific person                             [2]" << endl;
+    cout << "Football Players                                                   [3]" << endl;
+    cout << "Technicians                                                        [4]" << endl;
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 
     validOption(option,4);
 
-    cin.clear();
-    cin.ignore(10000, '\n');
-
     menuSeparator();
 
     if (option == 0) { runMenu(); }
     if (option == 1) { showEveryone(cout) ; }
-    if (option == 2) { showSpecificClient(); }
+    if (option == 2) { showSpecificPerson(); }
     if (option == 3) { runPlayersMenu(); }
     if (option == 4) { runTechnicianMenu(); }
 
@@ -31,43 +30,38 @@ void NationalTeam::runPeopleMenu() {
     runPeopleMenu();
 }
 
-void NationalTeam::showSpecificClient(){
+void NationalTeam::showSpecificPerson(){
     int i = askForId();
+    while (true)
+    {
+        try {
+            searchByID(people, i);
+            break;
+        }
+        catch (InexistentId(i)) {
+            i = askForId();
+        }
+    }
     cout << searchByID(people,i);
 }
 
-void NationalTeam::askPersonInformation(){
-    string name;
-    Date birthdayDate;
+void NationalTeam::askPersonInformation(string &name,float &salary,Date &birthday){
     string text;
-    float salary;
-    bool zas;
 
-    cout << "Name: ";
-    getline(cin,name);
-    askForDate("Birthday",text);
-
-    cout << "Salary: ";
-    cin >> text;
-    while(true) {
-        try {
-            validFloat(text);
-
-        }
-        catch (std::invalid_argument ia) {
-            cout << "Invalid number, please insert your answer again: ";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            cin >> text;
-        }
-        if(1){break;}
-
-    }
-
-
-
-
+    name = askForString("Name");
+    birthday = askForDate("Birthday",text);
+    salary = askForFloat(text,"Salary");
 }
+
+
+string NationalTeam::askForString(const string &what){
+    string name;
+    cout << what << ": ";
+    getline(cin,name);
+    return name;
+}
+
+
 
 /*****************************************
  ***********PLAYERS MENU******************
@@ -92,7 +86,7 @@ void NationalTeam::runPlayersMenu() {
     menuSeparator();
 
     if (option == 0) { runMenu(); }
-    if (option == 1) { runMenu(); }
+    if (option == 1) { createPlayer(); }
     if (option == 2) { runMenu(); }
     if (option == 3) { runMenu(); }
     if (option == 4) { runMenu(); }
@@ -104,10 +98,46 @@ void NationalTeam::runPlayersMenu() {
     runPeopleMenu();
 }
 
+void NationalTeam::createPlayer(){
+    players.push_back(askPlayerInformation());
+}
 
+/*void NationalTeam::modifyPlayer(){
+    FootballPlayer *player = new FootballPlayer();
+    int id = askForId();
+    try {player = searchByID(people,id)}
+    catch (out_of_range){
+        cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
+        return false;
+    }
+}*/
 
-void NationalTeam::askPlayerInformation(){
+FootballPlayer* NationalTeam::askPlayerInformation(){
+    string name;
+    float salary;
+    Date birthday = Date();
+    string position;
+    string club;
+    float weight;
+    float height;
+    float pass_value;
+    bool injury;
+    string input;
 
+    FootballPlayer *player = new FootballPlayer();
+
+    askPersonInformation(name,salary,birthday);
+
+    player->setPosition(askForString("Position"));
+    player->setClub(askForString("Club"));
+    player->setWeight(askForFloat(input,"Weight"));
+    player->setHeight(askForFloat(input, "Height"));
+    player->setPassValue(askForFloat(input,"Pass Value"));
+
+    cout << "Is the player Injured? : ";
+    player->setInjury(askYesNoQuestion());
+
+    return player;
 
 }
 

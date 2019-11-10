@@ -99,15 +99,15 @@ public:
     void menuSeparator();
     void validCin(int &option);
     int askForId();
-    string askForDate(string dateName,string &text);
+    Date askForDate(string dateName,string &text);
     void validOption(int &option,int optionsNumber);
 
     //People Menu
     void runPeopleMenu();
     void runPlayersMenu();
     void runTechnicianMenu();
-    void showSpecificClient();
-    void askPersonInformation();
+    void showSpecificPerson();
+    void askPersonInformation(string &name,float &salary,Date &birthday);
 
     //Game Menu
     void runGameMenu();
@@ -152,7 +152,17 @@ public:
 
 
 
-    void askPlayerInformation();
+    FootballPlayer* askPlayerInformation();
+
+    //float askForFloat(string &text);
+
+    bool askYesNoQuestion();
+
+    string askForString(const string &what);
+
+    float askForFloat(string &text, const string &what);
+
+    void createPlayer();
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H
