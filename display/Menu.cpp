@@ -75,3 +75,16 @@ int NationalTeam::askForId(){
     validCin(id);
     return id;
 }
+
+string NationalTeam::askForDate(string dateName,string &text){
+    cout << dateName << "(DD/MM/YYYY): ";
+    cin.clear();
+    getline(cin, text);
+
+    while (!Date::validDateText(text))
+    {
+        cout << "Invalid date, please insert again: ";
+        getline(cin, text);
+    }
+    return text;
+}

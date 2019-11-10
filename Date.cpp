@@ -9,7 +9,7 @@ Date::Date(unsigned short day, unsigned short month, unsigned year){
     this->day = day;
     this->month = month;
     this->year = year;
-    if(!isValid()) throw InvalidDate(day,month,year);
+    //if(!isValid()) throw InvalidDate(day,month,year);
 }
 
 Date::Date(string date){
@@ -41,7 +41,7 @@ string Date::toString() const {
 
 //Verifies if Date is valid
 bool Date::isValid() {
-    return ((day <= daysInMonth(month, year)) && (month >= 1) && (month <= 12) && (day > 0));
+    if (!((day <= daysInMonth(month, year)) && (month >= 1) && (month <= 12) && (day > 0))) throw InvalidDate(day,month,year);
 }
 
 //Alternative to the == operator, returns true if 2 dates are equal
@@ -129,7 +129,8 @@ Date Date::dateTextConverter(string dateText) {
     date.day = dateVector[0];
     date.month = dateVector[1];
     date.year = dateVector[2];
-    if(!date.isValid()) throw InvalidDate(date.day,date.month,date.year);
+
+    //if(!date.isValid()) throw InvalidDate(date.day,date.month,date.year);
     return date;
 }
 

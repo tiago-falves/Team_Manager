@@ -31,6 +31,48 @@ void NationalTeam::runPeopleMenu() {
     runPeopleMenu();
 }
 
+void NationalTeam::showSpecificClient(){
+    int i = askForId();
+    cout << searchByID(people,i);
+}
+
+void NationalTeam::askPersonInformation(){
+    string name;
+    Date birthdayDate;
+    string text;
+    float salary;
+    bool zas;
+
+    cout << "Name: ";
+    getline(cin,name);
+    askForDate("Birthday",text);
+
+    cout << "Salary: ";
+    cin >> text;
+    while(true) {
+        try {
+            validFloat(text);
+
+        }
+        catch (std::invalid_argument ia) {
+            cout << "Invalid number, please insert your answer again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> text;
+        }
+        if(1){break;}
+
+    }
+
+
+
+
+}
+
+/*****************************************
+ ***********PLAYERS MENU******************
+ *****************************************/
+
 void NationalTeam::runPlayersMenu() {
     int option;
 
@@ -61,6 +103,22 @@ void NationalTeam::runPlayersMenu() {
 
     runPeopleMenu();
 }
+
+
+
+void NationalTeam::askPlayerInformation(){
+
+
+}
+
+
+
+
+
+
+
+
+
 void NationalTeam::runTechnicianMenu() {
     int option;
 
@@ -91,8 +149,5 @@ void NationalTeam::runTechnicianMenu() {
     runPeopleMenu();
 }
 
-void NationalTeam::showSpecificClient(){
-    int i = askForId();
-    cout << searchByID(people,i);
-}
+
 

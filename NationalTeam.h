@@ -99,6 +99,7 @@ public:
     void menuSeparator();
     void validCin(int &option);
     int askForId();
+    string askForDate(string dateName,string &text);
     void validOption(int &option,int optionsNumber);
 
     //People Menu
@@ -106,6 +107,7 @@ public:
     void runPlayersMenu();
     void runTechnicianMenu();
     void showSpecificClient();
+    void askPersonInformation();
 
     //Game Menu
     void runGameMenu();
@@ -150,6 +152,7 @@ public:
 
 
 
+    void askPlayerInformation();
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H
