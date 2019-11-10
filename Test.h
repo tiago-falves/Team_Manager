@@ -155,7 +155,7 @@ void testExceptions(){
     team.addPerson(people,footballPlayer);
 
     //Remove Element that doesnt exist
-    team.removePerson(people,person1);
+    //team.removePerson(people,person1);
    // team.removePerson(people,person1);
 
 

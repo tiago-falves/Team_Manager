@@ -12,8 +12,7 @@
 #include "People//FootballPlayer.h"
 #include "People//Technician.h"
 #include "CallUp.h"
-
-
+#include "Exceptions.h"
 
 
 class NationalTeam {
@@ -51,18 +50,18 @@ public:
 
     //Handle people vector
     //Alguem sabe por isto no cpp?
-    template <class T>
-    bool addPerson(vector<T> &people, T person){
+    template <class T, class R>
+    bool addPerson(vector<T> &people, R person){
         people.push_back(person);
         return true;
     }
 
     template <class T>
-    bool removePerson(vector<T> &people, T person){
+    bool removePerson(vector<T> &people, int id){
         int index;
-        try {index = personPosition(people,person);}
-        catch (out_of_range){
-            cerr << "Tried to remove Person that doesn't exist: " << person->getName() << endl;
+        try {index = searchByID(people,id);}
+        catch (InexistentId(index)){
+            cerr << "Tried to remove Person that doesn't exist" << endl;
             return false;
         }
         people.erase(people.begin()+index);
@@ -81,14 +80,19 @@ public:
         return true;
     }
 
-    template <class T>
-    int personPosition(vector<T> &people, T person){
+    template <class T, class R>
+    int personPosition(vector<T> &people,R person){
         int index = BinarySearch(people,person);
         if(index==-1) throw out_of_range("Person not in vector");
         return index;
     }
 
-    Person* searchByID(vector<Person *> &people, int id);
+    template <class T>
+    int searchByID(vector<T *> &people, int id){
+        auto it = lower_bound(people.begin(),people.end(),id,idComparable);
+        if (it != people.end() && (*it)->getId() == id) return (it-people.begin());
+        else throw InexistentId(id);
+    }
 
     /****************************************************
     *******************MENUS*****************************
@@ -162,7 +166,13 @@ public:
 
     float askForFloat(string &text, const string &what);
 
-    void createPlayer();
+    void createPlayerOption();
+
+    void removePlayerOption();
+
+    int askForValidId();
+
+    void modifyPlayerOption();
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H

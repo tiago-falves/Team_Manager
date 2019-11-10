@@ -69,7 +69,7 @@ void NationalTeam::showEveryone(ostream &out) {
 }
 
 void NationalTeam::showPerson(ostream &out, int id) {
-    cout << searchByID(people,id);
+    cout << people[searchByID(people,id)];
 
 }
 void NationalTeam::sortByID(vector<Person *> &people) {
@@ -77,11 +77,6 @@ void NationalTeam::sortByID(vector<Person *> &people) {
 }
 
 
-Person* NationalTeam::searchByID(vector<Person *> &people,int id){
-    auto it = lower_bound(people.begin(),people.end(),id,idComparable);
-    if (it != people.end() && (*it)->getId() == id) return *it;
-    else throw InexistentId(id);
-}
 
 
 

@@ -4,6 +4,7 @@
 
 
 #include "../NationalTeam.h"
+#include "../Exceptions.h"
 
 using namespace std;
 
@@ -73,6 +74,20 @@ int NationalTeam::askForId(){
     cout << "Please Insert an ID: ";
     cin >> id;
     validCin(id);
+    return id;
+}
+int NationalTeam::askForValidId(){
+    int id = askForId();
+    while (true)
+    {
+        try {
+            searchByID(people, id);
+            break;
+        }
+        catch (InexistentId(id)) {
+            id = askForId();
+        }
+    }
     return id;
 }
 

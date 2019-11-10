@@ -31,21 +31,12 @@ void NationalTeam::runPeopleMenu() {
 }
 
 void NationalTeam::showSpecificPerson(){
-    int i = askForId();
-    while (true)
-    {
-        try {
-            searchByID(people, i);
-            break;
-        }
-        catch (InexistentId(i)) {
-            i = askForId();
-        }
-    }
-    cout << searchByID(people,i);
+    int i = askForValidId();
+    cout << people[searchByID(people,i)];
 }
 
-void NationalTeam::askPersonInformation(string &name,float &salary,Date &birthday){
+
+void NationalTeam::askPersonInformation(string &name, float &salary, Date &birthday){
     string text;
 
     name = askForString("Name");
@@ -86,9 +77,9 @@ void NationalTeam::runPlayersMenu() {
     menuSeparator();
 
     if (option == 0) { runMenu(); }
-    if (option == 1) { createPlayer(); }
+    if (option == 1) { createPlayerOption(); }
     if (option == 2) { runMenu(); }
-    if (option == 3) { runMenu(); }
+    if (option == 3) { removePlayerOption(); }
     if (option == 4) { runMenu(); }
     if (option == 5) { runMenu(); }
     if (option == 6) { runMenu(); }
@@ -98,19 +89,26 @@ void NationalTeam::runPlayersMenu() {
     runPeopleMenu();
 }
 
-void NationalTeam::createPlayer(){
-    players.push_back(askPlayerInformation());
+void NationalTeam::createPlayerOption(){
+    FootballPlayer *player = new FootballPlayer();
+    player = askPlayerInformation();
+    addPerson(people,player);
+    addPerson(players,player);
 }
 
-/*void NationalTeam::modifyPlayer(){
-    FootballPlayer *player = new FootballPlayer();
-    int id = askForId();
-    try {player = searchByID(people,id)}
-    catch (out_of_range){
-        cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
-        return false;
-    }
-}*/
+void NationalTeam::removePlayerOption(){
+    int id = askForValidId();
+    removePerson(people,id);
+    removePerson(players,id);
+}
+
+
+
+
+void NationalTeam::modifyPlayerOption(){
+
+
+}
 
 FootballPlayer* NationalTeam::askPlayerInformation(){
     string name;
@@ -127,7 +125,9 @@ FootballPlayer* NationalTeam::askPlayerInformation(){
     FootballPlayer *player = new FootballPlayer();
 
     askPersonInformation(name,salary,birthday);
-
+    player->setName(name);
+    player->setSalary(salary);
+    player->setBirthday(birthday);
     player->setPosition(askForString("Position"));
     player->setClub(askForString("Club"));
     player->setWeight(askForFloat(input,"Weight"));

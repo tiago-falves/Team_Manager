@@ -26,8 +26,8 @@ int sequentialSearch(const vector<Comparable> &v, Comparable x)
 }
 
 //Binary Search
-template <class T>
-int BinarySearch(const vector<T> &v, T x)
+template <class T,class R>
+int BinarySearch(const vector<T> &v, R x)
 {
     int left = 0, right = v.size() - 1;
     while (left <= right)
