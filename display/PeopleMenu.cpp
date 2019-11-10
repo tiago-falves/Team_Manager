@@ -2,8 +2,9 @@
 #include "../Exceptions.h"
 
 void NationalTeam::runPeopleMenu() {
-    int option;
 
+    menuSeparator();
+    int option;
 
     cout << "Welcome to the People Menu! Please choose what you want to do: ";
     cout << endl << endl;
@@ -31,9 +32,17 @@ void NationalTeam::runPeopleMenu() {
 }
 
 void NationalTeam::showSpecificPerson(){
-    int i = askForValidId();
+    int i = askForValidId(people);
+    menuSeparator();
     cout << people[searchByID(people,i)];
 }
+
+void NationalTeam::showEveryone(ostream &out) {
+    for (int i = 0; i < people.size(); ++i) {
+        out << people[i];
+    }
+}
+
 
 
 void NationalTeam::askPersonInformation(string &name, float &salary, Date &birthday){
@@ -76,9 +85,9 @@ void NationalTeam::runPlayersMenu() {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(); }
+    if (option == 0) { runPeopleMenu(); }
     if (option == 1) { createPlayerOption(); }
-    if (option == 2) { runMenu(); }
+    if (option == 2) { modifyPlayerOption(); }
     if (option == 3) { removePlayerOption(); }
     if (option == 4) { runMenu(); }
     if (option == 5) { runMenu(); }
@@ -94,19 +103,30 @@ void NationalTeam::createPlayerOption(){
     player = askPlayerInformation();
     addPerson(people,player);
     addPerson(players,player);
+
+    menuSeparator();
+    cout << "Player Added Successfully!";
 }
 
 void NationalTeam::removePlayerOption(){
-    int id = askForValidId();
+    int id = askForValidId(players);
     removePerson(people,id);
     removePerson(players,id);
+    menuSeparator();
+    cout << "Player Removed Successfully!";
 }
 
 
-
-
 void NationalTeam::modifyPlayerOption(){
-
+    int id = askForValidId(players);
+    FootballPlayer *player = new FootballPlayer();
+    cin.clear();
+    cin.ignore(10000, '\n');
+    player = askPlayerInformation();
+    int index = searchByID(people,id);
+    people[index]->modify(player);
+    menuSeparator();
+    cout << "Player Modified Successfully!";
 
 }
 
@@ -143,12 +163,6 @@ FootballPlayer* NationalTeam::askPlayerInformation(){
 
 
 
-
-
-
-
-
-
 void NationalTeam::runTechnicianMenu() {
     int option;
 
@@ -166,18 +180,61 @@ void NationalTeam::runTechnicianMenu() {
 
     menuSeparator();
 
-    if (option == 0) { runMenu(); }
-    if (option == 1) { runMenu(); }
-    if (option == 2) { runMenu(); }
-    if (option == 3) { runMenu(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
-    if (option == 6) { runMenu(); }
-    if (option == 7) { runMenu(); }
-    if (option == 8) { runMenu(); }
+    if (option == 0) { runPeopleMenu(); }
+    if (option == 1) { createTechOption(); }
+    if (option == 2) { modifyTechOption(); }
+    if (option == 3) { removeTechOption(); }
 
-    runPeopleMenu();
+
+    runTechnicianMenu();
+}
+
+void NationalTeam::createTechOption(){
+    Technician *technician = new Technician();
+    technician = askTechInformation();
+    addPerson(people,technician);
+    addPerson(technicians,technician);
+    menuSeparator();
+    cout << "Technician Added Successfully!";
+}
+
+void NationalTeam::removeTechOption(){
+    int id = askForValidId(technicians);
+    removePerson(people,id);
+    removePerson(technicians,id);
+    menuSeparator();
+    cout << "Technician Removed Successfully!";
 }
 
 
+void NationalTeam::modifyTechOption(){
+    int id = askForValidId(technicians);
+    Technician *technician = new Technician();
+    technician = askTechInformation();
+    int index = searchByID(people,id);
+    people[index]->modify(technician);
+    menuSeparator();
+    cout << "Technician Modified Successfully!";
+}
+
+
+Technician* NationalTeam::askTechInformation(){
+    string name;
+    float salary;
+    Date birthday = Date();
+    string role;
+
+    Technician *technician = new Technician();
+
+    askPersonInformation(name,salary,birthday);
+    technician->setName(name);
+    technician->setSalary(salary);
+    technician->setBirthday(birthday);
+
+    technician->setRole(askForString("Role"));
+
+
+    return technician;
+
+}
 

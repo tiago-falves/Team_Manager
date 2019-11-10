@@ -42,6 +42,7 @@ string Date::toString() const {
 //Verifies if Date is valid
 bool Date::isValid() {
     if (!((day <= daysInMonth(month, year)) && (month >= 1) && (month <= 12) && (day > 0))) throw InvalidDate(day,month,year);
+    return true;
 }
 
 //Alternative to the == operator, returns true if 2 dates are equal

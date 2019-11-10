@@ -30,33 +30,33 @@ public:
     *******************PEOPLE FUNCTIONS******************
     *****************************************************/
 
+    //Files
     bool readPeople(string fileName);
-
     bool savePeople(string filename);
 
+    //Print
     void showEveryone(ostream& out);
-
-    void showPerson(ostream& out,int id);
-
-    //Meter Esta em template
     void sortByID(vector<Person*> &people);
 
+    //Search and Sort
     static bool nameComparable(const Person* person1, const Person* person2);
-
     static bool idComparable(const Person* person1, const int id);
-
     void sortByName(vector<Person*> &people);
-
     vector<Person*> searchByName(vector<Person*> people, string name);
 
-    //Handle people vector
-    //Alguem sabe por isto no cpp?
+    template <class T>
+    int searchByID(vector<T *> &people, int id){
+        auto it = lower_bound(people.begin(),people.end(),id,idComparable);
+        if (it != people.end() && (*it)->getId() == id) return (it-people.begin());
+        else throw InexistentId(id);
+    }
+
+    //Vector operations
     template <class T, class R>
     bool addPerson(vector<T> &people, R person){
         people.push_back(person);
         return true;
     }
-
     template <class T>
     bool removePerson(vector<T> &people, int id){
         int index;
@@ -69,10 +69,9 @@ public:
         return true;
     }
 
-    template <class T>
-    bool modifyPerson(vector<T> &people, T person, T newPerson){
-        int index;
-        try {index = personPosition(people,person);}
+    template <class T, class R>
+    bool modifyPerson(vector<T> &people, R person, R newPerson){
+        try {personPosition(people,person);}
         catch (out_of_range){
             cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
             return false;
@@ -80,7 +79,6 @@ public:
         person->modify(newPerson);
         return true;
     }
-
     template <class T, class R>
     int personPosition(vector<T> &people,R person){
         int index = BinarySearch(people,person);
@@ -88,12 +86,6 @@ public:
         return index;
     }
 
-    template <class T>
-    int searchByID(vector<T *> &people, int id){
-        auto it = lower_bound(people.begin(),people.end(),id,idComparable);
-        if (it != people.end() && (*it)->getId() == id) return (it-people.begin());
-        else throw InexistentId(id);
-    }
 
     /****************************************************
     *******************MENUS*****************************
@@ -102,10 +94,13 @@ public:
     //Menu
     void runMenu();
     void menuSeparator();
-    void validCin(int &option);
-    int askForId();
-    Date askForDate(string dateName,string &text);
     void validOption(int &option,int optionsNumber);
+    void validCin(int &option);
+    Date askForDate(string dateName,string &text);
+    bool askYesNoQuestion();
+    float askForFloat(string &text, const string &what);
+    string askForString(const string &what);
+    int askForId();
 
     //People Menu
     void runPeopleMenu();
@@ -113,6 +108,31 @@ public:
     void runTechnicianMenu();
     void showSpecificPerson();
     void askPersonInformation(string &name,float &salary,Date &birthday);
+    void createPlayerOption();
+    void removePlayerOption();
+    void modifyPlayerOption();
+    void removeTechOption();
+    void createTechOption();
+    void modifyTechOption();
+    Technician *askTechInformation();
+    FootballPlayer* askPlayerInformation();
+
+    template <class T>
+    int askForValidId(vector<T *> &peepz){
+        int id = askForId();
+        while (true)
+        {
+            try {
+                searchByID(peepz, id);
+                break;
+            }
+            catch (InexistentId(id)) {
+                id = askForId();
+            }
+        }
+        return id;
+    }
+
 
     //Game Menu
     void runGameMenu();
@@ -149,6 +169,7 @@ public:
     float allCostCalculator(Date d1, Date d2);
     float allCostCalculatorMonth(int monthNumber, int yearNumber);
 
+
     //READ FROM TEXT FILES
     void read(ifstream *file,string peopleFile);
     void readCallUp(ifstream *file);
@@ -158,23 +179,6 @@ public:
 
 
 
-    FootballPlayer* askPlayerInformation();
-
-    //float askForFloat(string &text);
-
-    bool askYesNoQuestion();
-
-    string askForString(const string &what);
-
-    float askForFloat(string &text, const string &what);
-
-    void createPlayerOption();
-
-    void removePlayerOption();
-
-    int askForValidId();
-
-    void modifyPlayerOption();
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H

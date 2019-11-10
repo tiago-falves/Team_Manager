@@ -62,16 +62,7 @@ bool NationalTeam::savePeople(string fileName) {
     return true;
 }
 
-void NationalTeam::showEveryone(ostream &out) {
-    for (int i = 0; i < people.size(); ++i) {
-        out << people[i];
-    }
-}
 
-void NationalTeam::showPerson(ostream &out, int id) {
-    cout << people[searchByID(people,id)];
-
-}
 void NationalTeam::sortByID(vector<Person *> &people) {
     sort(people.begin(),people.end());
 }

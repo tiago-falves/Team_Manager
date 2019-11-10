@@ -76,20 +76,7 @@ int NationalTeam::askForId(){
     validCin(id);
     return id;
 }
-int NationalTeam::askForValidId(){
-    int id = askForId();
-    while (true)
-    {
-        try {
-            searchByID(people, id);
-            break;
-        }
-        catch (InexistentId(id)) {
-            id = askForId();
-        }
-    }
-    return id;
-}
+
 
 Date NationalTeam::askForDate(string dateName,string &text){
     Date date = Date();
