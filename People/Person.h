@@ -20,10 +20,21 @@ protected:
     float salary;
     static int lastId;
 public:
+    /**
+     * @brief Construct a new Person object
+     * 
+     * @param name 
+     * @param birthdayDate 
+     * @param salary 
+     */
     Person(string name, Date birthdayDate, float salary);
+
+
     Person();
 
     static int getLastId();
+
+
     int getId() const;
     string getName() const;
     Date getBirthday() const;
@@ -38,7 +49,7 @@ public:
 
     virtual void modify(Person *newPerson);
 
-
+    
     bool operator<(const Person &person) const;
     bool operator<(const Person* &person) const;
     bool operator>(const Person &person) const;

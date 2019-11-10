@@ -9,7 +9,7 @@ var files_dup =
     ] ],
     [ "CallUpPlayerStatistics.cpp", "_call_up_player_statistics_8cpp.html", null ],
     [ "CallUpPlayerStatistics.h", "_call_up_player_statistics_8h.html", [
-      [ "CallUpPlayerStatistics", "class_call_up_player_statistics.html", null ]
+      [ "CallUpPlayerStatistics", "class_call_up_player_statistics.html", "class_call_up_player_statistics" ]
     ] ],
     [ "Date.cpp", "_date_8cpp.html", "_date_8cpp" ],
     [ "Date.h", "_date_8h.html", [

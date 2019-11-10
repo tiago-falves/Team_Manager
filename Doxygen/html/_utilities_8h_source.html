@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Utilities.h Source File</title>
+<title>Team Manager: Utilities.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Team Manager
    </div>
   </td>
  </tr>
@@ -90,137 +90,138 @@ $(document).ready(function(){initNavTree('_utilities_8h_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="_utilities_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by tiago on 24/10/2019.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef AEDA_TEAM_MANAGER_UTILITIES_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define AEDA_TEAM_MANAGER_UTILITIES_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//Search Algorithms</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//Sequential Search</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Comparable&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_utilities_8h.html#acd555ad1f1fc3b2011aab63641f98151">   19</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_utilities_8h.html#acd555ad1f1fc3b2011aab63641f98151">sequentialSearch</a>(<span class="keyword">const</span> vector&lt;Comparable&gt; &amp;v, Comparable x)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; v.size(); i++)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (v[i] == x)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> i;   <span class="comment">// encontrou</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> -1;     <span class="comment">// não encontrou</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//Binary Search</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">   29</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">BinarySearch</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;v, T x)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> left = 0, right = v.size() - 1;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span> (left &lt;= right)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">int</span> middle = (left + right) / 2;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (v[middle] &lt; x)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            left = middle + 1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (x &lt; v[middle])</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            right= middle - 1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> middle; <span class="comment">// encontrou</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> -1; <span class="comment">// não encontrou</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Created by tiago on 24/10/2019.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef AEDA_TEAM_MANAGER_UTILITIES_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define AEDA_TEAM_MANAGER_UTILITIES_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//Search Algorithms</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//Sequential Search</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Comparable&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_utilities_8h.html#acd555ad1f1fc3b2011aab63641f98151">   20</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_utilities_8h.html#acd555ad1f1fc3b2011aab63641f98151">sequentialSearch</a>(<span class="keyword">const</span> vector&lt;Comparable&gt; &amp;v, Comparable x)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; v.size(); i++)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (v[i] == x)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">return</span> i;   <span class="comment">// encontrou</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> -1;     <span class="comment">// não encontrou</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//Binary Search</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">BinarySearch</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;v, T x)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> left = 0, right = v.size() - 1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">while</span> (left &lt;= right)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">int</span> middle = (left + right) / 2;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (v[middle] &lt; x)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            left = middle + 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (x &lt; v[middle])</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            right= middle - 1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> middle; <span class="comment">// encontrou</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> -1; <span class="comment">// não encontrou</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//Ordering Algorithms</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//Insertion Sort</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Comparable&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">insertionSort</a>(vector&lt;Comparable&gt; &amp;v)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p = 1; p &lt; v.size(); p++)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        Comparable tmp = v[p];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">int</span> j;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (j = p; j &gt; 0 &amp;&amp; tmp &lt; v[j - 1]; j--)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            v[j] = v[j - 1];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        v[j] = tmp;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Comparable&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a>(vector&lt;Comparable&gt; &amp;v, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (right - left &lt;= 10) <span class="comment">// se vetor pequeno</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">insertionSort</a>(v, left, right);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Comparable x = median3(v, left, right); <span class="comment">// x é o pivot</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">int</span> i = left;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">int</span> j = right - 1; <span class="comment">// passo de partição</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span> (;;) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">while</span> (v[++i] &lt; x);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">while</span> (x &lt; v[--j]);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> (i &lt; j)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                swap(v[i], v[j]);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        swap(v[i], v[right - 1]); <span class="comment">//repoe pivot</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a>(v, left, i - 1);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a>(v, i + 1, right);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//Vector Operations</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">   86</a></span>&#160;<a class="code" href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">insert_sorted</a>( std::vector&lt;T&gt; &amp; vec, T <span class="keyword">const</span>&amp; item ){</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> vec.insert(</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;               std::upper_bound( vec.begin(), vec.end(), item)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;               ,item</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;               );</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//Ordering Algorithms</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//Insertion Sort</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Comparable&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">insertionSort</a>(vector&lt;Comparable&gt; &amp;v)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p = 1; p &lt; v.size(); p++)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        Comparable tmp = v[p];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">int</span> j;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (j = p; j &gt; 0 &amp;&amp; tmp &lt; v[j - 1]; j--)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            v[j] = v[j - 1];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        v[j] = tmp;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Comparable&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a>(vector&lt;Comparable&gt; &amp;v, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (right - left &lt;= 10) <span class="comment">// se vetor pequeno</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">insertionSort</a>(v, left, right);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Comparable x = median3(v, left, right); <span class="comment">// x é o pivot</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">int</span> i = left;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">int</span> j = right - 1; <span class="comment">// passo de partição</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">while</span> (v[++i] &lt; x);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">while</span> (x &lt; v[--j]);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> (i &lt; j)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                swap(v[i], v[j]);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        swap(v[i], v[right - 1]); <span class="comment">//repoe pivot</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a>(v, left, i - 1);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a>(v, i + 1, right);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//Vector Operations</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">   87</a></span>&#160;<a class="code" href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">insert_sorted</a>( std::vector&lt;T&gt; &amp; vec, T <span class="keyword">const</span>&amp; item ){</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> vec.insert(</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;               std::upper_bound( vec.begin(), vec.end(), item)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;               ,item</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;               );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">//String Manipulators</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a17f19b817dc0f3976d51ef1ea40be67c">trimRight</a>(std::string &amp;s);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#ab22e4a74dd1f079b0e1456b6fa02a9be">trimLeft</a>(std::string &amp;s);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#ac81e8ace8f8b6d4c09572038c5d48cf4">trim</a>(std::string &amp;s);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;vector&lt;int&gt; <a class="code" href="_utilities_8h.html#a4fb74db68e0668ab6455c67432640f08">separateCharacterInt</a>(<span class="keywordtype">string</span> s, <span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_utilities_8h.html#a2b7a0329778fa37b05ac10091c2f7b70">stringIsNumber</a>(<span class="keywordtype">string</span> number);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;vector&lt;string&gt; <a class="code" href="_utilities_8h.html#aaa5debb01dc999391196715fdf3b5366">separateCharacterStr</a>(<span class="keywordtype">string</span> s, <span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_utilities_8h.html#aaa3b01d6b7b6b5bf4b868b37fcf3ac6f">isNumber</a>(<span class="keyword">const</span> std::string&amp; s);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_utilities_8h.html#af4df4847e95615d63254b99a9939d8aa">isPositiveNumber</a>(<span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a84e15ff485cccf672aa7d3ab283d768d">validFloat</a>(<span class="keywordtype">string</span> num);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif //AEDA_TEAM_MANAGER_UTILITIES_H</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//String Manipulators</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a17f19b817dc0f3976d51ef1ea40be67c">trimRight</a>(std::string &amp;s);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#ab22e4a74dd1f079b0e1456b6fa02a9be">trimLeft</a>(std::string &amp;s);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#ac81e8ace8f8b6d4c09572038c5d48cf4">trim</a>(std::string &amp;s);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;vector&lt;int&gt; <a class="code" href="_utilities_8h.html#a4fb74db68e0668ab6455c67432640f08">separateCharacterInt</a>(<span class="keywordtype">string</span> s, <span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_utilities_8h.html#a2b7a0329778fa37b05ac10091c2f7b70">stringIsNumber</a>(<span class="keywordtype">string</span> number);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;vector&lt;string&gt; <a class="code" href="_utilities_8h.html#aaa5debb01dc999391196715fdf3b5366">separateCharacterStr</a>(<span class="keywordtype">string</span> s, <span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_utilities_8h.html#aaa3b01d6b7b6b5bf4b868b37fcf3ac6f">isNumber</a>(<span class="keyword">const</span> std::string&amp; s);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_utilities_8h.html#af4df4847e95615d63254b99a9939d8aa">isPositiveNumber</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_utilities_8h.html#a84e15ff485cccf672aa7d3ab283d768d">validFloat</a>(<span class="keywordtype">string</span> num);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif //AEDA_TEAM_MANAGER_UTILITIES_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_utilities_8h_html_a17f19b817dc0f3976d51ef1ea40be67c"><div class="ttname"><a href="_utilities_8h.html#a17f19b817dc0f3976d51ef1ea40be67c">trimRight</a></div><div class="ttdeci">void trimRight(std::string &amp;s)</div></div>
 <div class="ttc" id="a_utilities_8h_html_af4df4847e95615d63254b99a9939d8aa"><div class="ttname"><a href="_utilities_8h.html#af4df4847e95615d63254b99a9939d8aa">isPositiveNumber</a></div><div class="ttdeci">bool isPositiveNumber(int n)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:70</div></div>
 <div class="ttc" id="a_utilities_8h_html_ac81e8ace8f8b6d4c09572038c5d48cf4"><div class="ttname"><a href="_utilities_8h.html#ac81e8ace8f8b6d4c09572038c5d48cf4">trim</a></div><div class="ttdeci">void trim(std::string &amp;s)</div></div>
-<div class="ttc" id="a_utilities_8h_html_a87ef49bdad4316ec45410e67a7ab096e"><div class="ttname"><a href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">insert_sorted</a></div><div class="ttdeci">std::vector&lt; T &gt;::iterator insert_sorted(std::vector&lt; T &gt; &amp;vec, T const &amp;item)</div><div class="ttdef"><b>Definition:</b> Utilities.h:86</div></div>
+<div class="ttc" id="a_utilities_8h_html_a87ef49bdad4316ec45410e67a7ab096e"><div class="ttname"><a href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">insert_sorted</a></div><div class="ttdeci">std::vector&lt; T &gt;::iterator insert_sorted(std::vector&lt; T &gt; &amp;vec, T const &amp;item)</div><div class="ttdef"><b>Definition:</b> Utilities.h:87</div></div>
 <div class="ttc" id="a_utilities_8h_html_aaa5debb01dc999391196715fdf3b5366"><div class="ttname"><a href="_utilities_8h.html#aaa5debb01dc999391196715fdf3b5366">separateCharacterStr</a></div><div class="ttdeci">vector&lt; string &gt; separateCharacterStr(string s, char ch)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:38</div></div>
-<div class="ttc" id="a_utilities_8h_html_a8b7af2e224910d66ed0c8ae5bf11c661"><div class="ttname"><a href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a></div><div class="ttdeci">void quickSort(vector&lt; Comparable &gt; &amp;v, int left, int right)</div><div class="ttdef"><b>Definition:</b> Utilities.h:63</div></div>
+<div class="ttc" id="a_utilities_8h_html_a8b7af2e224910d66ed0c8ae5bf11c661"><div class="ttname"><a href="_utilities_8h.html#a8b7af2e224910d66ed0c8ae5bf11c661">quickSort</a></div><div class="ttdeci">void quickSort(vector&lt; Comparable &gt; &amp;v, int left, int right)</div><div class="ttdef"><b>Definition:</b> Utilities.h:64</div></div>
 <div class="ttc" id="a_utilities_8h_html_a84e15ff485cccf672aa7d3ab283d768d"><div class="ttname"><a href="_utilities_8h.html#a84e15ff485cccf672aa7d3ab283d768d">validFloat</a></div><div class="ttdeci">void validFloat(string num)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:74</div></div>
-<div class="ttc" id="a_utilities_8h_html_acd555ad1f1fc3b2011aab63641f98151"><div class="ttname"><a href="_utilities_8h.html#acd555ad1f1fc3b2011aab63641f98151">sequentialSearch</a></div><div class="ttdeci">int sequentialSearch(const vector&lt; Comparable &gt; &amp;v, Comparable x)</div><div class="ttdef"><b>Definition:</b> Utilities.h:19</div></div>
-<div class="ttc" id="a_utilities_8h_html_a2d750432a373f9dab8039bef160b71a0"><div class="ttname"><a href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">insertionSort</a></div><div class="ttdeci">void insertionSort(vector&lt; Comparable &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> Utilities.h:50</div></div>
+<div class="ttc" id="a_utilities_8h_html_acd555ad1f1fc3b2011aab63641f98151"><div class="ttname"><a href="_utilities_8h.html#acd555ad1f1fc3b2011aab63641f98151">sequentialSearch</a></div><div class="ttdeci">int sequentialSearch(const vector&lt; Comparable &gt; &amp;v, Comparable x)</div><div class="ttdef"><b>Definition:</b> Utilities.h:20</div></div>
+<div class="ttc" id="a_utilities_8h_html_a2d750432a373f9dab8039bef160b71a0"><div class="ttname"><a href="_utilities_8h.html#a2d750432a373f9dab8039bef160b71a0">insertionSort</a></div><div class="ttdeci">void insertionSort(vector&lt; Comparable &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> Utilities.h:51</div></div>
 <div class="ttc" id="a_utilities_8h_html_ab22e4a74dd1f079b0e1456b6fa02a9be"><div class="ttname"><a href="_utilities_8h.html#ab22e4a74dd1f079b0e1456b6fa02a9be">trimLeft</a></div><div class="ttdeci">void trimLeft(std::string &amp;s)</div></div>
 <div class="ttc" id="a_utilities_8h_html_a2b7a0329778fa37b05ac10091c2f7b70"><div class="ttname"><a href="_utilities_8h.html#a2b7a0329778fa37b05ac10091c2f7b70">stringIsNumber</a></div><div class="ttdeci">bool stringIsNumber(string number)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:54</div></div>
 <div class="ttc" id="a_utilities_8h_html_aaa3b01d6b7b6b5bf4b868b37fcf3ac6f"><div class="ttname"><a href="_utilities_8h.html#aaa3b01d6b7b6b5bf4b868b37fcf3ac6f">isNumber</a></div><div class="ttdeci">bool isNumber(const std::string &amp;s)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:64</div></div>
-<div class="ttc" id="a_utilities_8h_html_ac905f93b29466a9fdc4d4cc816e54374"><div class="ttname"><a href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">BinarySearch</a></div><div class="ttdeci">int BinarySearch(const vector&lt; T &gt; &amp;v, T x)</div><div class="ttdef"><b>Definition:</b> Utilities.h:29</div></div>
+<div class="ttc" id="a_utilities_8h_html_ac905f93b29466a9fdc4d4cc816e54374"><div class="ttname"><a href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">BinarySearch</a></div><div class="ttdeci">int BinarySearch(const vector&lt; T &gt; &amp;v, T x)</div><div class="ttdef"><b>Definition:</b> Utilities.h:30</div></div>
 <div class="ttc" id="a_utilities_8h_html_a4fb74db68e0668ab6455c67432640f08"><div class="ttname"><a href="_utilities_8h.html#a4fb74db68e0668ab6455c67432640f08">separateCharacterInt</a></div><div class="ttdeci">vector&lt; int &gt; separateCharacterInt(string s, char ch)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:25</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

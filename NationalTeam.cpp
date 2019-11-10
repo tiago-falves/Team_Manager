@@ -244,6 +244,7 @@ float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, i
             }
         }
     }
+    return pass;
 }
 float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
     //save pass value - wre assumed 1% of the pass value as current player's value has astronomical values
@@ -295,6 +296,7 @@ float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
             }
         }
     }
+    return val;
 }
 
 

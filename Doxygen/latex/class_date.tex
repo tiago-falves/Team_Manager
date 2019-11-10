@@ -34,6 +34,8 @@ bool \mbox{\hyperlink{class_date_aada4b4b4cb2a1a960119f8bfbb9e9903}{is\+Equal\+T
 bool \mbox{\hyperlink{class_date_a6de7a44c68408346914312203ea0d426}{is\+After}} (const \mbox{\hyperlink{class_date}{Date}} \&d)
 \item 
 void \mbox{\hyperlink{class_date_a195e9c834cc7e134d380a186186944f2}{show\+Date}} () const
+\item 
+int \mbox{\hyperlink{class_date_a22ecae43b9bc2240de4ba5bb5521e03b}{date\+To\+Days}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -56,6 +58,8 @@ static bool \mbox{\hyperlink{class_date_a49d9dcc05623f509b1f5e5fdc907526c}{valid
 bool \mbox{\hyperlink{class_date_a588c6068972f9e69bc50292405c1fac7}{operator==}} (const \mbox{\hyperlink{class_date}{Date}} \&date1, const \mbox{\hyperlink{class_date}{Date}} \&date2)
 \item 
 ostream \& \mbox{\hyperlink{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\item 
+bool \mbox{\hyperlink{class_date_aa2e695ccf211714fafbc8c73cb7e5419}{operator$<$}} (const \mbox{\hyperlink{class_date}{Date}} \&date1, const \mbox{\hyperlink{class_date}{Date}} \&date2)
 \end{DoxyCompactItemize}
 
 
@@ -98,6 +102,12 @@ ostream \& \mbox{\hyperlink{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}{operat
 \index{dateTextConverterFile@{dateTextConverterFile}!Date@{Date}}
 \doxysubsubsection{\texorpdfstring{dateTextConverterFile()}{dateTextConverterFile()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Date\+::date\+Text\+Converter\+File (\begin{DoxyParamCaption}\item[{string}]{date\+Text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_date_a22ecae43b9bc2240de4ba5bb5521e03b}\label{class_date_a22ecae43b9bc2240de4ba5bb5521e03b}} 
+\index{Date@{Date}!dateToDays@{dateToDays}}
+\index{dateToDays@{dateToDays}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{dateToDays()}{dateToDays()}}
+{\footnotesize\ttfamily int Date\+::date\+To\+Days (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \mbox{\Hypertarget{class_date_ab59a4fe6057aabe5caa8d53dc03e2a3a}\label{class_date_ab59a4fe6057aabe5caa8d53dc03e2a3a}} 
 \index{Date@{Date}!daysInMonth@{daysInMonth}}
@@ -186,6 +196,12 @@ ostream \& \mbox{\hyperlink{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}{operat
 
 
 \doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_date_aa2e695ccf211714fafbc8c73cb7e5419}\label{class_date_aa2e695ccf211714fafbc8c73cb7e5419}} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date1,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
 \mbox{\Hypertarget{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}\label{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}} 
 \index{Date@{Date}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Date@{Date}}

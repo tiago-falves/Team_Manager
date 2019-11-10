@@ -11,13 +11,63 @@
 \item 
 bool \mbox{\hyperlink{class_national_team_a36b5a132fdf89a9e70e7ba46f1c65848}{read\+People}} (string file\+Name)
 \item 
-bool \mbox{\hyperlink{class_national_team_ab4fd7c4805df0902d85e205337e18ea5}{add\+Football\+Player}} (vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_af43c1d0d53fd08b4a6a80168dabbb2c0}{players}}, \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$new\+Football\+Player)
+bool \mbox{\hyperlink{class_national_team_ab246b0c4c865dfb18c68d50ab9cf4184}{save\+People}} (string filename)
 \item 
-bool \mbox{\hyperlink{class_national_team_a4583ad47899da34533fb6367c922d26b}{remove\+Football\+Player}} (vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_af43c1d0d53fd08b4a6a80168dabbb2c0}{players}}, \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$player\+To\+Remove)
+void \mbox{\hyperlink{class_national_team_a1e8217084cdeae7c733836553cb4fd9d}{show\+Everyone}} (ostream \&out)
 \item 
-bool \mbox{\hyperlink{class_national_team_aa9dd83fdc9a9b0479b17ddb51f6c21fc}{modify\+Football\+Player}} (vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_af43c1d0d53fd08b4a6a80168dabbb2c0}{players}}, \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$new\+Football\+Player, \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$previous\+Footbal\+Player)
+void \mbox{\hyperlink{class_national_team_a49f2dfbd09f7576d21f84cac321e7fa5}{show\+Person}} (ostream \&out, int id)
 \item 
-int \mbox{\hyperlink{class_national_team_a34458dfc99d8c30da8c1020f3266d81f}{player\+Position}} (vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_af43c1d0d53fd08b4a6a80168dabbb2c0}{players}}, \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$player)
+void \mbox{\hyperlink{class_national_team_ab910240934bb357f04ba46cd4a1bc726}{sort\+By\+ID}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}})
+\item 
+void \mbox{\hyperlink{class_national_team_a295ee77fe455e7ce08319e26b61a2050}{sort\+By\+Name}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}})
+\item 
+vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \mbox{\hyperlink{class_national_team_a11805b787d886deb40725123c01d5086}{search\+By\+Name}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}}, string name)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{class_national_team_a55c8550bd8798483f7d09be44fccfdb8}{add\+Person}} (vector$<$ T $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}}, T person)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{class_national_team_afaf643d4236434f2d9ce7de8bbb0f43f}{remove\+Person}} (vector$<$ T $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}}, T person)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{class_national_team_af2cc5e0fab912c9d09bdd1080e589bb5}{modify\+Person}} (vector$<$ T $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}}, T person, T new\+Person)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{class_national_team_a50f293feb60db3932136c56ad64cc390}{person\+Position}} (vector$<$ T $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}}, T person)
+\item 
+\mbox{\hyperlink{class_person}{Person}} $\ast$ \mbox{\hyperlink{class_national_team_a610e76efc1050ddccb4d69be0ec6e260}{search\+By\+ID}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}}, int id)
+\item 
+void \mbox{\hyperlink{class_national_team_a5b4b22b17fff39d06a0db1f27cb366e0}{run\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a24363a353ac2342c0892373b0014dfaa}{menu\+Separator}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a85e1f4e6c299295f360175febff7ca86}{valid\+Cin}} (int \&option)
+\item 
+int \mbox{\hyperlink{class_national_team_aa00e741783435c55f7f44194248bee48}{ask\+For\+Id}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_ae195aea71fee7f9e6ae27e23147b466e}{valid\+Option}} (int \&option, int options\+Number)
+\item 
+void \mbox{\hyperlink{class_national_team_aee90df8030e600a9c7a7c1c20118a3e4}{run\+People\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a0f8f997e7606899b5f8b9937ceeb03f5}{run\+Players\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a8edf02901d95d961e417390ef685462b}{run\+Technician\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_ae37bf3fbb0c527fc490430f91c05e735}{show\+Specific\+Client}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_acc2c4da4509b3d8891c9aee5e9f5bccc}{run\+Game\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_ad1fbc3bc74c0dc6afccb7860c4864e90}{player\+Month\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a13dcce853ebae1b128188acc6c590f85}{player\+Time\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a7fb6c5c31962e466884be23e2ba24c01}{team\+Month\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_ac588005cb076969c2c25022268a1af98}{team\+Time\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a307d545227ab092d3ee4900b30a31ab4}{staff\+Month\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a3aac333fc373ca1ce67a785a045f333d}{staff\+Time\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a30a9acfa5980e6d04a9777723b2d6227}{run\+Economies\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_national_team_a1cdefa731dcf165dbca19b0461a68df7}{run\+Call\+Up\+Menu}} ()
 \item 
 float \mbox{\hyperlink{class_national_team_aa3e7040d318207d6b38b731a115b2d3c}{player\+Cost\+Calculator}} (\mbox{\hyperlink{class_date}{Date}} d1, \mbox{\hyperlink{class_date}{Date}} d2, int player\+ID)
 \item 
@@ -30,6 +80,15 @@ float \mbox{\hyperlink{class_national_team_a02b69c6a4f1317217a15ec67ebfc596d}{te
 float \mbox{\hyperlink{class_national_team_a368969e06ae2a353f42d578400418d87}{all\+Cost\+Calculator}} (\mbox{\hyperlink{class_date}{Date}} d1, \mbox{\hyperlink{class_date}{Date}} d2)
 \item 
 float \mbox{\hyperlink{class_national_team_a7888b0c1158222b6da20de11b0801a54}{all\+Cost\+Calculator\+Month}} (int month\+Number)
+\item 
+void \mbox{\hyperlink{class_national_team_a98f0919bc91d21f53495015b42846357}{read}} (ifstream $\ast$file, string people\+File)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_national_team_a266f4d5b829629990a25c476a4bc13ef}{name\+Comparable}} (const \mbox{\hyperlink{class_person}{Person}} $\ast$person1, const \mbox{\hyperlink{class_person}{Person}} $\ast$person2)
+\item 
+static bool \mbox{\hyperlink{class_national_team_a4ef178ac55ce7c00fb754297bef5c69b}{id\+Comparable}} (const \mbox{\hyperlink{class_person}{Person}} $\ast$person1, const int id)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -54,11 +113,12 @@ vector$<$ \mbox{\hyperlink{class_call_up}{Call\+Up}} $\ast$ $>$ \mbox{\hyperlink
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_national_team_ab4fd7c4805df0902d85e205337e18ea5}\label{class_national_team_ab4fd7c4805df0902d85e205337e18ea5}} 
-\index{NationalTeam@{NationalTeam}!addFootballPlayer@{addFootballPlayer}}
-\index{addFootballPlayer@{addFootballPlayer}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{addFootballPlayer()}{addFootballPlayer()}}
-{\footnotesize\ttfamily bool National\+Team\+::add\+Football\+Player (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&}]{players,  }\item[{\mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$}]{new\+Football\+Player }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_national_team_a55c8550bd8798483f7d09be44fccfdb8}\label{class_national_team_a55c8550bd8798483f7d09be44fccfdb8}} 
+\index{NationalTeam@{NationalTeam}!addPerson@{addPerson}}
+\index{addPerson@{addPerson}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{addPerson()}{addPerson()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool National\+Team\+::add\+Person (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{people,  }\item[{T}]{person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_national_team_a368969e06ae2a353f42d578400418d87}\label{class_national_team_a368969e06ae2a353f42d578400418d87}} 
 \index{NationalTeam@{NationalTeam}!allCostCalculator@{allCostCalculator}}
@@ -72,11 +132,43 @@ vector$<$ \mbox{\hyperlink{class_call_up}{Call\+Up}} $\ast$ $>$ \mbox{\hyperlink
 \doxysubsubsection{\texorpdfstring{allCostCalculatorMonth()}{allCostCalculatorMonth()}}
 {\footnotesize\ttfamily float National\+Team\+::all\+Cost\+Calculator\+Month (\begin{DoxyParamCaption}\item[{int}]{month\+Number }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_national_team_aa9dd83fdc9a9b0479b17ddb51f6c21fc}\label{class_national_team_aa9dd83fdc9a9b0479b17ddb51f6c21fc}} 
-\index{NationalTeam@{NationalTeam}!modifyFootballPlayer@{modifyFootballPlayer}}
-\index{modifyFootballPlayer@{modifyFootballPlayer}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{modifyFootballPlayer()}{modifyFootballPlayer()}}
-{\footnotesize\ttfamily bool National\+Team\+::modify\+Football\+Player (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&}]{players,  }\item[{\mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$}]{new\+Football\+Player,  }\item[{\mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$}]{previous\+Footbal\+Player }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_national_team_aa00e741783435c55f7f44194248bee48}\label{class_national_team_aa00e741783435c55f7f44194248bee48}} 
+\index{NationalTeam@{NationalTeam}!askForId@{askForId}}
+\index{askForId@{askForId}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{askForId()}{askForId()}}
+{\footnotesize\ttfamily int National\+Team\+::ask\+For\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a4ef178ac55ce7c00fb754297bef5c69b}\label{class_national_team_a4ef178ac55ce7c00fb754297bef5c69b}} 
+\index{NationalTeam@{NationalTeam}!idComparable@{idComparable}}
+\index{idComparable@{idComparable}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{idComparable()}{idComparable()}}
+{\footnotesize\ttfamily bool National\+Team\+::id\+Comparable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} $\ast$}]{person1,  }\item[{const int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_national_team_a24363a353ac2342c0892373b0014dfaa}\label{class_national_team_a24363a353ac2342c0892373b0014dfaa}} 
+\index{NationalTeam@{NationalTeam}!menuSeparator@{menuSeparator}}
+\index{menuSeparator@{menuSeparator}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{menuSeparator()}{menuSeparator()}}
+{\footnotesize\ttfamily void National\+Team\+::menu\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_af2cc5e0fab912c9d09bdd1080e589bb5}\label{class_national_team_af2cc5e0fab912c9d09bdd1080e589bb5}} 
+\index{NationalTeam@{NationalTeam}!modifyPerson@{modifyPerson}}
+\index{modifyPerson@{modifyPerson}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{modifyPerson()}{modifyPerson()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool National\+Team\+::modify\+Person (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{people,  }\item[{T}]{person,  }\item[{T}]{new\+Person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_national_team_a266f4d5b829629990a25c476a4bc13ef}\label{class_national_team_a266f4d5b829629990a25c476a4bc13ef}} 
+\index{NationalTeam@{NationalTeam}!nameComparable@{nameComparable}}
+\index{nameComparable@{nameComparable}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{nameComparable()}{nameComparable()}}
+{\footnotesize\ttfamily bool National\+Team\+::name\+Comparable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} $\ast$}]{person1,  }\item[{const \mbox{\hyperlink{class_person}{Person}} $\ast$}]{person2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_national_team_a50f293feb60db3932136c56ad64cc390}\label{class_national_team_a50f293feb60db3932136c56ad64cc390}} 
+\index{NationalTeam@{NationalTeam}!personPosition@{personPosition}}
+\index{personPosition@{personPosition}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{personPosition()}{personPosition()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int National\+Team\+::person\+Position (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{people,  }\item[{T}]{person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_national_team_aa3e7040d318207d6b38b731a115b2d3c}\label{class_national_team_aa3e7040d318207d6b38b731a115b2d3c}} 
 \index{NationalTeam@{NationalTeam}!playerCostCalculator@{playerCostCalculator}}
@@ -90,11 +182,23 @@ vector$<$ \mbox{\hyperlink{class_call_up}{Call\+Up}} $\ast$ $>$ \mbox{\hyperlink
 \doxysubsubsection{\texorpdfstring{playerCostCalculatorMonth()}{playerCostCalculatorMonth()}}
 {\footnotesize\ttfamily float National\+Team\+::player\+Cost\+Calculator\+Month (\begin{DoxyParamCaption}\item[{int}]{month\+Number,  }\item[{int}]{player\+ID }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_national_team_a34458dfc99d8c30da8c1020f3266d81f}\label{class_national_team_a34458dfc99d8c30da8c1020f3266d81f}} 
-\index{NationalTeam@{NationalTeam}!playerPosition@{playerPosition}}
-\index{playerPosition@{playerPosition}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{playerPosition()}{playerPosition()}}
-{\footnotesize\ttfamily int National\+Team\+::player\+Position (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&}]{players,  }\item[{\mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_national_team_ad1fbc3bc74c0dc6afccb7860c4864e90}\label{class_national_team_ad1fbc3bc74c0dc6afccb7860c4864e90}} 
+\index{NationalTeam@{NationalTeam}!playerMonthMenu@{playerMonthMenu}}
+\index{playerMonthMenu@{playerMonthMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{playerMonthMenu()}{playerMonthMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::player\+Month\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a13dcce853ebae1b128188acc6c590f85}\label{class_national_team_a13dcce853ebae1b128188acc6c590f85}} 
+\index{NationalTeam@{NationalTeam}!playerTimeMenu@{playerTimeMenu}}
+\index{playerTimeMenu@{playerTimeMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{playerTimeMenu()}{playerTimeMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::player\+Time\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a98f0919bc91d21f53495015b42846357}\label{class_national_team_a98f0919bc91d21f53495015b42846357}} 
+\index{NationalTeam@{NationalTeam}!read@{read}}
+\index{read@{read}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void National\+Team\+::read (\begin{DoxyParamCaption}\item[{ifstream $\ast$}]{file,  }\item[{string}]{people\+File }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_national_team_a36b5a132fdf89a9e70e7ba46f1c65848}\label{class_national_team_a36b5a132fdf89a9e70e7ba46f1c65848}} 
 \index{NationalTeam@{NationalTeam}!readPeople@{readPeople}}
@@ -102,11 +206,114 @@ vector$<$ \mbox{\hyperlink{class_call_up}{Call\+Up}} $\ast$ $>$ \mbox{\hyperlink
 \doxysubsubsection{\texorpdfstring{readPeople()}{readPeople()}}
 {\footnotesize\ttfamily bool National\+Team\+::read\+People (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_national_team_a4583ad47899da34533fb6367c922d26b}\label{class_national_team_a4583ad47899da34533fb6367c922d26b}} 
-\index{NationalTeam@{NationalTeam}!removeFootballPlayer@{removeFootballPlayer}}
-\index{removeFootballPlayer@{removeFootballPlayer}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{removeFootballPlayer()}{removeFootballPlayer()}}
-{\footnotesize\ttfamily bool National\+Team\+::remove\+Football\+Player (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$ $>$ \&}]{players,  }\item[{\mbox{\hyperlink{class_football_player}{Football\+Player}} $\ast$}]{player\+To\+Remove }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_national_team_afaf643d4236434f2d9ce7de8bbb0f43f}\label{class_national_team_afaf643d4236434f2d9ce7de8bbb0f43f}} 
+\index{NationalTeam@{NationalTeam}!removePerson@{removePerson}}
+\index{removePerson@{removePerson}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{removePerson()}{removePerson()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool National\+Team\+::remove\+Person (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{people,  }\item[{T}]{person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_national_team_a1cdefa731dcf165dbca19b0461a68df7}\label{class_national_team_a1cdefa731dcf165dbca19b0461a68df7}} 
+\index{NationalTeam@{NationalTeam}!runCallUpMenu@{runCallUpMenu}}
+\index{runCallUpMenu@{runCallUpMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runCallUpMenu()}{runCallUpMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+Call\+Up\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a30a9acfa5980e6d04a9777723b2d6227}\label{class_national_team_a30a9acfa5980e6d04a9777723b2d6227}} 
+\index{NationalTeam@{NationalTeam}!runEconomiesMenu@{runEconomiesMenu}}
+\index{runEconomiesMenu@{runEconomiesMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runEconomiesMenu()}{runEconomiesMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+Economies\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_acc2c4da4509b3d8891c9aee5e9f5bccc}\label{class_national_team_acc2c4da4509b3d8891c9aee5e9f5bccc}} 
+\index{NationalTeam@{NationalTeam}!runGameMenu@{runGameMenu}}
+\index{runGameMenu@{runGameMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runGameMenu()}{runGameMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+Game\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a5b4b22b17fff39d06a0db1f27cb366e0}\label{class_national_team_a5b4b22b17fff39d06a0db1f27cb366e0}} 
+\index{NationalTeam@{NationalTeam}!runMenu@{runMenu}}
+\index{runMenu@{runMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runMenu()}{runMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_aee90df8030e600a9c7a7c1c20118a3e4}\label{class_national_team_aee90df8030e600a9c7a7c1c20118a3e4}} 
+\index{NationalTeam@{NationalTeam}!runPeopleMenu@{runPeopleMenu}}
+\index{runPeopleMenu@{runPeopleMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runPeopleMenu()}{runPeopleMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+People\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a0f8f997e7606899b5f8b9937ceeb03f5}\label{class_national_team_a0f8f997e7606899b5f8b9937ceeb03f5}} 
+\index{NationalTeam@{NationalTeam}!runPlayersMenu@{runPlayersMenu}}
+\index{runPlayersMenu@{runPlayersMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runPlayersMenu()}{runPlayersMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+Players\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a8edf02901d95d961e417390ef685462b}\label{class_national_team_a8edf02901d95d961e417390ef685462b}} 
+\index{NationalTeam@{NationalTeam}!runTechnicianMenu@{runTechnicianMenu}}
+\index{runTechnicianMenu@{runTechnicianMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{runTechnicianMenu()}{runTechnicianMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::run\+Technician\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_ab246b0c4c865dfb18c68d50ab9cf4184}\label{class_national_team_ab246b0c4c865dfb18c68d50ab9cf4184}} 
+\index{NationalTeam@{NationalTeam}!savePeople@{savePeople}}
+\index{savePeople@{savePeople}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{savePeople()}{savePeople()}}
+{\footnotesize\ttfamily bool National\+Team\+::save\+People (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a610e76efc1050ddccb4d69be0ec6e260}\label{class_national_team_a610e76efc1050ddccb4d69be0ec6e260}} 
+\index{NationalTeam@{NationalTeam}!searchByID@{searchByID}}
+\index{searchByID@{searchByID}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{searchByID()}{searchByID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_person}{Person}} $\ast$ National\+Team\+::search\+By\+ID (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a11805b787d886deb40725123c01d5086}\label{class_national_team_a11805b787d886deb40725123c01d5086}} 
+\index{NationalTeam@{NationalTeam}!searchByName@{searchByName}}
+\index{searchByName@{searchByName}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{searchByName()}{searchByName()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ National\+Team\+::search\+By\+Name (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$}]{people,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a1e8217084cdeae7c733836553cb4fd9d}\label{class_national_team_a1e8217084cdeae7c733836553cb4fd9d}} 
+\index{NationalTeam@{NationalTeam}!showEveryone@{showEveryone}}
+\index{showEveryone@{showEveryone}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{showEveryone()}{showEveryone()}}
+{\footnotesize\ttfamily void National\+Team\+::show\+Everyone (\begin{DoxyParamCaption}\item[{ostream \&}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a49f2dfbd09f7576d21f84cac321e7fa5}\label{class_national_team_a49f2dfbd09f7576d21f84cac321e7fa5}} 
+\index{NationalTeam@{NationalTeam}!showPerson@{showPerson}}
+\index{showPerson@{showPerson}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{showPerson()}{showPerson()}}
+{\footnotesize\ttfamily void National\+Team\+::show\+Person (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_ae37bf3fbb0c527fc490430f91c05e735}\label{class_national_team_ae37bf3fbb0c527fc490430f91c05e735}} 
+\index{NationalTeam@{NationalTeam}!showSpecificClient@{showSpecificClient}}
+\index{showSpecificClient@{showSpecificClient}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{showSpecificClient()}{showSpecificClient()}}
+{\footnotesize\ttfamily void National\+Team\+::show\+Specific\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_ab910240934bb357f04ba46cd4a1bc726}\label{class_national_team_ab910240934bb357f04ba46cd4a1bc726}} 
+\index{NationalTeam@{NationalTeam}!sortByID@{sortByID}}
+\index{sortByID@{sortByID}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{sortByID()}{sortByID()}}
+{\footnotesize\ttfamily void National\+Team\+::sort\+By\+ID (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a295ee77fe455e7ce08319e26b61a2050}\label{class_national_team_a295ee77fe455e7ce08319e26b61a2050}} 
+\index{NationalTeam@{NationalTeam}!sortByName@{sortByName}}
+\index{sortByName@{sortByName}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{sortByName()}{sortByName()}}
+{\footnotesize\ttfamily void National\+Team\+::sort\+By\+Name (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a307d545227ab092d3ee4900b30a31ab4}\label{class_national_team_a307d545227ab092d3ee4900b30a31ab4}} 
+\index{NationalTeam@{NationalTeam}!staffMonthMenu@{staffMonthMenu}}
+\index{staffMonthMenu@{staffMonthMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{staffMonthMenu()}{staffMonthMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::staff\+Month\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a3aac333fc373ca1ce67a785a045f333d}\label{class_national_team_a3aac333fc373ca1ce67a785a045f333d}} 
+\index{NationalTeam@{NationalTeam}!staffTimeMenu@{staffTimeMenu}}
+\index{staffTimeMenu@{staffTimeMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{staffTimeMenu()}{staffTimeMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::staff\+Time\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_national_team_a0d3863fbca79d61bf9a0bc85d8469edc}\label{class_national_team_a0d3863fbca79d61bf9a0bc85d8469edc}} 
 \index{NationalTeam@{NationalTeam}!teamCostCalculator@{teamCostCalculator}}
@@ -119,6 +326,30 @@ vector$<$ \mbox{\hyperlink{class_call_up}{Call\+Up}} $\ast$ $>$ \mbox{\hyperlink
 \index{teamCostCalculatorMonth@{teamCostCalculatorMonth}!NationalTeam@{NationalTeam}}
 \doxysubsubsection{\texorpdfstring{teamCostCalculatorMonth()}{teamCostCalculatorMonth()}}
 {\footnotesize\ttfamily float National\+Team\+::team\+Cost\+Calculator\+Month (\begin{DoxyParamCaption}\item[{int}]{month\+Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a7fb6c5c31962e466884be23e2ba24c01}\label{class_national_team_a7fb6c5c31962e466884be23e2ba24c01}} 
+\index{NationalTeam@{NationalTeam}!teamMonthMenu@{teamMonthMenu}}
+\index{teamMonthMenu@{teamMonthMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{teamMonthMenu()}{teamMonthMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::team\+Month\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_ac588005cb076969c2c25022268a1af98}\label{class_national_team_ac588005cb076969c2c25022268a1af98}} 
+\index{NationalTeam@{NationalTeam}!teamTimeMenu@{teamTimeMenu}}
+\index{teamTimeMenu@{teamTimeMenu}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{teamTimeMenu()}{teamTimeMenu()}}
+{\footnotesize\ttfamily void National\+Team\+::team\+Time\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_a85e1f4e6c299295f360175febff7ca86}\label{class_national_team_a85e1f4e6c299295f360175febff7ca86}} 
+\index{NationalTeam@{NationalTeam}!validCin@{validCin}}
+\index{validCin@{validCin}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{validCin()}{validCin()}}
+{\footnotesize\ttfamily void National\+Team\+::valid\+Cin (\begin{DoxyParamCaption}\item[{int \&}]{option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_national_team_ae195aea71fee7f9e6ae27e23147b466e}\label{class_national_team_ae195aea71fee7f9e6ae27e23147b466e}} 
+\index{NationalTeam@{NationalTeam}!validOption@{validOption}}
+\index{validOption@{validOption}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{validOption()}{validOption()}}
+{\footnotesize\ttfamily void National\+Team\+::valid\+Option (\begin{DoxyParamCaption}\item[{int \&}]{option,  }\item[{int}]{options\+Number }\end{DoxyParamCaption})}
 
 
 
@@ -152,4 +383,9 @@ vector$<$ \mbox{\hyperlink{class_call_up}{Call\+Up}} $\ast$ $>$ \mbox{\hyperlink
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{_national_team_8h}{National\+Team.\+h}}\item 
+display/\mbox{\hyperlink{_call_up_menu_8cpp}{Call\+Up\+Menu.\+cpp}}\item 
+display/\mbox{\hyperlink{_economies_menu_8cpp}{Economies\+Menu.\+cpp}}\item 
+display/\mbox{\hyperlink{_game_menu_8cpp}{Game\+Menu.\+cpp}}\item 
+display/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\item 
+display/\mbox{\hyperlink{_people_menu_8cpp}{People\+Menu.\+cpp}}\item 
 \mbox{\hyperlink{_national_team_8cpp}{National\+Team.\+cpp}}\end{DoxyCompactItemize}

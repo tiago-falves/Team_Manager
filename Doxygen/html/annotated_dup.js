@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "CallUp", "class_call_up.html", "class_call_up" ],
-    [ "CallUpPlayerStatistics", "class_call_up_player_statistics.html", null ],
+    [ "CallUpPlayerStatistics", "class_call_up_player_statistics.html", "class_call_up_player_statistics" ],
     [ "Date", "class_date.html", "class_date" ],
     [ "FootballPlayer", "class_football_player.html", "class_football_player" ],
     [ "Game", "class_game.html", "class_game" ],

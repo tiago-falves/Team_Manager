@@ -19,7 +19,11 @@ Collaboration diagram for Football\+Player\+:
 \item 
 \mbox{\hyperlink{class_football_player_a9c69070ff792bcc7a59d6901b0d9c6d7}{Football\+Player}} ()
 \item 
+virtual void \mbox{\hyperlink{class_football_player_aa522b5bfcd20fcc14cc00b32edc81154}{modify}} (\mbox{\hyperlink{class_person}{Person}} $\ast$new\+Person)
+\item 
 virtual void \mbox{\hyperlink{class_football_player_ab496d104171ee5168586cdd24f5c4629}{print}} (ostream \&out) const
+\item 
+virtual void \mbox{\hyperlink{class_football_player_adc0330aa8ec576bb0ab651ee92e72cb7}{print\+To\+File}} (ostream \&os) const
 \item 
 virtual void \mbox{\hyperlink{class_football_player_a8d2c1482cb95523c026c76ef768e0ec0}{read}} (ifstream $\ast$file)
 \item 
@@ -114,6 +118,16 @@ void \mbox{\hyperlink{class_football_player_a6230f93938a896a78e2382e33571584c}{s
 \doxysubsubsection{\texorpdfstring{isInjury()}{isInjury()}}
 {\footnotesize\ttfamily bool Football\+Player\+::is\+Injury (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\mbox{\Hypertarget{class_football_player_aa522b5bfcd20fcc14cc00b32edc81154}\label{class_football_player_aa522b5bfcd20fcc14cc00b32edc81154}} 
+\index{FootballPlayer@{FootballPlayer}!modify@{modify}}
+\index{modify@{modify}!FootballPlayer@{FootballPlayer}}
+\doxysubsubsection{\texorpdfstring{modify()}{modify()}}
+{\footnotesize\ttfamily void Football\+Player\+::modify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_person}{Person}} $\ast$}]{new\+Person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_person_a0c726eacd6fe7f38b094c39f949ea1db}{Person}}.
+
 \mbox{\Hypertarget{class_football_player_ab496d104171ee5168586cdd24f5c4629}\label{class_football_player_ab496d104171ee5168586cdd24f5c4629}} 
 \index{FootballPlayer@{FootballPlayer}!print@{print}}
 \index{print@{print}!FootballPlayer@{FootballPlayer}}
@@ -123,6 +137,16 @@ void \mbox{\hyperlink{class_football_player_a6230f93938a896a78e2382e33571584c}{s
 
 
 Reimplemented from \mbox{\hyperlink{class_person_afcc355404e1cd702e6aa31f6e4a15c19}{Person}}.
+
+\mbox{\Hypertarget{class_football_player_adc0330aa8ec576bb0ab651ee92e72cb7}\label{class_football_player_adc0330aa8ec576bb0ab651ee92e72cb7}} 
+\index{FootballPlayer@{FootballPlayer}!printToFile@{printToFile}}
+\index{printToFile@{printToFile}!FootballPlayer@{FootballPlayer}}
+\doxysubsubsection{\texorpdfstring{printToFile()}{printToFile()}}
+{\footnotesize\ttfamily void Football\+Player\+::print\+To\+File (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_person_ad937f6860f02ee0d26ff2a9a05ebc4d7}{Person}}.
 
 \mbox{\Hypertarget{class_football_player_a8d2c1482cb95523c026c76ef768e0ec0}\label{class_football_player_a8d2c1482cb95523c026c76ef768e0ec0}} 
 \index{FootballPlayer@{FootballPlayer}!read@{read}}

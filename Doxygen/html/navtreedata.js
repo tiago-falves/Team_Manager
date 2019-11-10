@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "Team Manager", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -49,7 +49,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_c_make_c_compiler_id_8c.html",
-"class_technician.html#a6df61bbb11dd3b428ee0a9df14072212"
+"class_person.html#ae5eb0665f79707c6e4a5d6f634f6d7b6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

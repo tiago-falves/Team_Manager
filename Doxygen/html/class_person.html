@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Person Class Reference</title>
+<title>Team Manager: Person Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Team Manager
    </div>
   </td>
  </tr>
@@ -131,14 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab3f489152645691271d01e6b2ca379b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaf890c642923318558e39ac06630094"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#aaaf890c642923318558e39ac06630094">setSalary</a> (float <a class="el" href="class_person.html#ab993b9296f5e833ecd1cfba33666759a">salary</a>)</td></tr>
 <tr class="separator:aaaf890c642923318558e39ac06630094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61160e8609ac3c86dc2ae6e2297cb8db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a61160e8609ac3c86dc2ae6e2297cb8db">addPerson</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;people)</td></tr>
-<tr class="separator:a61160e8609ac3c86dc2ae6e2297cb8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11a8cb4042fe007f4337d7e081674bab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a11a8cb4042fe007f4337d7e081674bab">removePerson</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;people)</td></tr>
-<tr class="separator:a11a8cb4042fe007f4337d7e081674bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a358a5d1552652b10ca07c1817981c4fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a358a5d1552652b10ca07c1817981c4fe">modifyPerson</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;people, <a class="el" href="class_person.html">Person</a> *newPerson)</td></tr>
-<tr class="separator:a358a5d1552652b10ca07c1817981c4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23f64e6f9860fb528c14167d5859b4a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a23f64e6f9860fb528c14167d5859b4a5">personPosition</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;people)</td></tr>
-<tr class="separator:a23f64e6f9860fb528c14167d5859b4a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c726eacd6fe7f38b094c39f949ea1db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a0c726eacd6fe7f38b094c39f949ea1db">modify</a> (<a class="el" href="class_person.html">Person</a> *newPerson)</td></tr>
+<tr class="separator:a0c726eacd6fe7f38b094c39f949ea1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8f6e7f4785989bd0d47e6405fe5b0d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#ab8f6e7f4785989bd0d47e6405fe5b0d6">operator&lt;</a> (const <a class="el" href="class_person.html">Person</a> &amp;person) const</td></tr>
 <tr class="separator:ab8f6e7f4785989bd0d47e6405fe5b0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8f67bf68ab7703f9c990496e834033a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#af8f67bf68ab7703f9c990496e834033a">operator&lt;</a> (const <a class="el" href="class_person.html">Person</a> *&amp;person) const</td></tr>
@@ -151,6 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8a11b1d5373c14a4e301cfcf83eb824f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcc355404e1cd702e6aa31f6e4a15c19"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#afcc355404e1cd702e6aa31f6e4a15c19">print</a> (ostream &amp;out) const</td></tr>
 <tr class="separator:afcc355404e1cd702e6aa31f6e4a15c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad937f6860f02ee0d26ff2a9a05ebc4d7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#ad937f6860f02ee0d26ff2a9a05ebc4d7">printToFile</a> (ostream &amp;os) const</td></tr>
+<tr class="separator:ad937f6860f02ee0d26ff2a9a05ebc4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1437d767251b706175a5e79f2f911984"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a1437d767251b706175a5e79f2f911984">read</a> (ifstream *file)</td></tr>
 <tr class="separator:a1437d767251b706175a5e79f2f911984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7944c1eb1f0c5a9db2abb2f8550f52ee"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a7944c1eb1f0c5a9db2abb2f8550f52ee">type</a> () const</td></tr>
@@ -160,12 +156,6 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5a73e8e288133a36df46f5e1413d8c5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#aa5a73e8e288133a36df46f5e1413d8c5">getLastId</a> ()</td></tr>
 <tr class="separator:aa5a73e8e288133a36df46f5e1413d8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2354b3d081b2aeaec58e273d3b04f7da"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a2354b3d081b2aeaec58e273d3b04f7da">sortByID</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;people)</td></tr>
-<tr class="separator:a2354b3d081b2aeaec58e273d3b04f7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad21408c398f5c358487da18d3002c8da"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#ad21408c398f5c358487da18d3002c8da">sortByName</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;people)</td></tr>
-<tr class="separator:ad21408c398f5c358487da18d3002c8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ccf99e4ef0955935cc979bfabcfd797"><td class="memItemLeft" align="right" valign="top">static vector&lt; <a class="el" href="class_person.html">Person</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a5ccf99e4ef0955935cc979bfabcfd797">searchByName</a> (vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; people, string <a class="el" href="class_person.html#a669b64897b4d823a27bb5866368d4dfa">name</a>)</td></tr>
-<tr class="separator:a5ccf99e4ef0955935cc979bfabcfd797"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -180,7 +170,7 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a9057bbbb3b956adb84420420f92ef0d2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a9057bbbb3b956adb84420420f92ef0d2">lastId</a> = 0</td></tr>
+<tr class="memitem:a9057bbbb3b956adb84420420f92ef0d2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a9057bbbb3b956adb84420420f92ef0d2">lastId</a> = 1</td></tr>
 <tr class="separator:a9057bbbb3b956adb84420420f92ef0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -241,24 +231,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a61160e8609ac3c86dc2ae6e2297cb8db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61160e8609ac3c86dc2ae6e2297cb8db">&#9670;&nbsp;</a></span>addPerson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Person::addPerson </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>people</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a379107914f4aeddeddc2dc083c278333"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a379107914f4aeddeddc2dc083c278333">&#9670;&nbsp;</a></span>getBirthday()</h2>
 
@@ -352,31 +324,31 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a358a5d1552652b10ca07c1817981c4fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a358a5d1552652b10ca07c1817981c4fe">&#9670;&nbsp;</a></span>modifyPerson()</h2>
+<a id="a0c726eacd6fe7f38b094c39f949ea1db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c726eacd6fe7f38b094c39f949ea1db">&#9670;&nbsp;</a></span>modify()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Person::modifyPerson </td>
+          <td class="memname">void Person::modify </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>people</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="class_person.html">Person</a> *&#160;</td>
-          <td class="paramname"><em>newPerson</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>newPerson</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_football_player.html#aa522b5bfcd20fcc14cc00b32edc81154">FootballPlayer</a>.</p>
 
 </div>
 </div>
@@ -470,24 +442,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a23f64e6f9860fb528c14167d5859b4a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23f64e6f9860fb528c14167d5859b4a5">&#9670;&nbsp;</a></span>personPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Person::personPosition </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>people</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="afcc355404e1cd702e6aa31f6e4a15c19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcc355404e1cd702e6aa31f6e4a15c19">&#9670;&nbsp;</a></span>print()</h2>
 
@@ -516,6 +470,34 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="ad937f6860f02ee0d26ff2a9a05ebc4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad937f6860f02ee0d26ff2a9a05ebc4d7">&#9670;&nbsp;</a></span>printToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Person::printToFile </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_technician.html#a41bcfa34599e09d84dd5cd62643350f4">Technician</a>, and <a class="el" href="class_football_player.html#adc0330aa8ec576bb0ab651ee92e72cb7">FootballPlayer</a>.</p>
+
+</div>
+</div>
 <a id="a1437d767251b706175a5e79f2f911984"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1437d767251b706175a5e79f2f911984">&#9670;&nbsp;</a></span>read()</h2>
 
@@ -541,60 +523,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="class_football_player.html#a8d2c1482cb95523c026c76ef768e0ec0">FootballPlayer</a>, and <a class="el" href="class_technician.html#a9c8cf2e8b1994db99fab4c24b670a22c">Technician</a>.</p>
-
-</div>
-</div>
-<a id="a11a8cb4042fe007f4337d7e081674bab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11a8cb4042fe007f4337d7e081674bab">&#9670;&nbsp;</a></span>removePerson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Person::removePerson </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>people</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ccf99e4ef0955935cc979bfabcfd797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ccf99e4ef0955935cc979bfabcfd797">&#9670;&nbsp;</a></span>searchByName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; Person::searchByName </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt;&#160;</td>
-          <td class="paramname"><em>people</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -648,58 +576,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2354b3d081b2aeaec58e273d3b04f7da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2354b3d081b2aeaec58e273d3b04f7da">&#9670;&nbsp;</a></span>sortByID()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Person::sortByID </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>people</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad21408c398f5c358487da18d3002c8da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad21408c398f5c358487da18d3002c8da">&#9670;&nbsp;</a></span>sortByName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Person::sortByName </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_person.html">Person</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>people</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -823,7 +699,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Person::lastId = 0</td>
+          <td class="memname">int Person::lastId = 1</td>
         </tr>
       </table>
   </td>

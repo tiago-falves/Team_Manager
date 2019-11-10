@@ -33,13 +33,7 @@ void \mbox{\hyperlink{class_person_ab3f489152645691271d01e6b2ca379b5}{set\+Birth
 \item 
 void \mbox{\hyperlink{class_person_aaaf890c642923318558e39ac06630094}{set\+Salary}} (float \mbox{\hyperlink{class_person_ab993b9296f5e833ecd1cfba33666759a}{salary}})
 \item 
-bool \mbox{\hyperlink{class_person_a61160e8609ac3c86dc2ae6e2297cb8db}{add\+Person}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&people)
-\item 
-bool \mbox{\hyperlink{class_person_a11a8cb4042fe007f4337d7e081674bab}{remove\+Person}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&people)
-\item 
-bool \mbox{\hyperlink{class_person_a358a5d1552652b10ca07c1817981c4fe}{modify\+Person}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&people, \mbox{\hyperlink{class_person}{Person}} $\ast$new\+Person)
-\item 
-int \mbox{\hyperlink{class_person_a23f64e6f9860fb528c14167d5859b4a5}{person\+Position}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&people)
+virtual void \mbox{\hyperlink{class_person_a0c726eacd6fe7f38b094c39f949ea1db}{modify}} (\mbox{\hyperlink{class_person}{Person}} $\ast$new\+Person)
 \item 
 bool \mbox{\hyperlink{class_person_ab8f6e7f4785989bd0d47e6405fe5b0d6}{operator$<$}} (const \mbox{\hyperlink{class_person}{Person}} \&person) const
 \item 
@@ -53,6 +47,8 @@ bool \mbox{\hyperlink{class_person_a8a11b1d5373c14a4e301cfcf83eb824f}{operator!=
 \item 
 virtual void \mbox{\hyperlink{class_person_afcc355404e1cd702e6aa31f6e4a15c19}{print}} (ostream \&out) const
 \item 
+virtual void \mbox{\hyperlink{class_person_ad937f6860f02ee0d26ff2a9a05ebc4d7}{print\+To\+File}} (ostream \&os) const
+\item 
 virtual void \mbox{\hyperlink{class_person_a1437d767251b706175a5e79f2f911984}{read}} (ifstream $\ast$file)
 \item 
 virtual string \mbox{\hyperlink{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}{type}} () const
@@ -61,12 +57,6 @@ virtual string \mbox{\hyperlink{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}{
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{class_person_aa5a73e8e288133a36df46f5e1413d8c5}{get\+Last\+Id}} ()
-\item 
-static void \mbox{\hyperlink{class_person_a2354b3d081b2aeaec58e273d3b04f7da}{sort\+By\+ID}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&people)
-\item 
-static void \mbox{\hyperlink{class_person_ad21408c398f5c358487da18d3002c8da}{sort\+By\+Name}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&people)
-\item 
-static vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \mbox{\hyperlink{class_person_a5ccf99e4ef0955935cc979bfabcfd797}{search\+By\+Name}} (vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ people, string \mbox{\hyperlink{class_person_a669b64897b4d823a27bb5866368d4dfa}{name}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -82,7 +72,7 @@ float \mbox{\hyperlink{class_person_ab993b9296f5e833ecd1cfba33666759a}{salary}}
 \doxysubsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{class_person_a9057bbbb3b956adb84420420f92ef0d2}{last\+Id}} = 0
+static int \mbox{\hyperlink{class_person_a9057bbbb3b956adb84420420f92ef0d2}{last\+Id}} = 1
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -107,12 +97,6 @@ ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{oper
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_person_a61160e8609ac3c86dc2ae6e2297cb8db}\label{class_person_a61160e8609ac3c86dc2ae6e2297cb8db}} 
-\index{Person@{Person}!addPerson@{addPerson}}
-\index{addPerson@{addPerson}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{addPerson()}{addPerson()}}
-{\footnotesize\ttfamily bool Person\+::add\+Person (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_person_a379107914f4aeddeddc2dc083c278333}\label{class_person_a379107914f4aeddeddc2dc083c278333}} 
 \index{Person@{Person}!getBirthday@{getBirthday}}
 \index{getBirthday@{getBirthday}!Person@{Person}}
@@ -143,11 +127,15 @@ ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{oper
 \doxysubsubsection{\texorpdfstring{getSalary()}{getSalary()}}
 {\footnotesize\ttfamily float Person\+::get\+Salary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_person_a358a5d1552652b10ca07c1817981c4fe}\label{class_person_a358a5d1552652b10ca07c1817981c4fe}} 
-\index{Person@{Person}!modifyPerson@{modifyPerson}}
-\index{modifyPerson@{modifyPerson}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{modifyPerson()}{modifyPerson()}}
-{\footnotesize\ttfamily bool Person\+::modify\+Person (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people,  }\item[{\mbox{\hyperlink{class_person}{Person}} $\ast$}]{new\+Person }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_person_a0c726eacd6fe7f38b094c39f949ea1db}\label{class_person_a0c726eacd6fe7f38b094c39f949ea1db}} 
+\index{Person@{Person}!modify@{modify}}
+\index{modify@{modify}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{modify()}{modify()}}
+{\footnotesize\ttfamily void Person\+::modify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_person}{Person}} $\ast$}]{new\+Person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_football_player_aa522b5bfcd20fcc14cc00b32edc81154}{Football\+Player}}.
 
 \mbox{\Hypertarget{class_person_a8a11b1d5373c14a4e301cfcf83eb824f}\label{class_person_a8a11b1d5373c14a4e301cfcf83eb824f}} 
 \index{Person@{Person}!operator"!=@{operator"!=}}
@@ -179,12 +167,6 @@ ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{oper
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
 {\footnotesize\ttfamily bool Person\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{person }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_person_a23f64e6f9860fb528c14167d5859b4a5}\label{class_person_a23f64e6f9860fb528c14167d5859b4a5}} 
-\index{Person@{Person}!personPosition@{personPosition}}
-\index{personPosition@{personPosition}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{personPosition()}{personPosition()}}
-{\footnotesize\ttfamily int Person\+::person\+Position (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_person_afcc355404e1cd702e6aa31f6e4a15c19}\label{class_person_afcc355404e1cd702e6aa31f6e4a15c19}} 
 \index{Person@{Person}!print@{print}}
 \index{print@{print}!Person@{Person}}
@@ -195,6 +177,16 @@ ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{oper
 
 Reimplemented in \mbox{\hyperlink{class_football_player_ab496d104171ee5168586cdd24f5c4629}{Football\+Player}}, and \mbox{\hyperlink{class_technician_ab575d23fe3e947130b8173e165ce897f}{Technician}}.
 
+\mbox{\Hypertarget{class_person_ad937f6860f02ee0d26ff2a9a05ebc4d7}\label{class_person_ad937f6860f02ee0d26ff2a9a05ebc4d7}} 
+\index{Person@{Person}!printToFile@{printToFile}}
+\index{printToFile@{printToFile}!Person@{Person}}
+\doxysubsubsection{\texorpdfstring{printToFile()}{printToFile()}}
+{\footnotesize\ttfamily void Person\+::print\+To\+File (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_technician_a41bcfa34599e09d84dd5cd62643350f4}{Technician}}, and \mbox{\hyperlink{class_football_player_adc0330aa8ec576bb0ab651ee92e72cb7}{Football\+Player}}.
+
 \mbox{\Hypertarget{class_person_a1437d767251b706175a5e79f2f911984}\label{class_person_a1437d767251b706175a5e79f2f911984}} 
 \index{Person@{Person}!read@{read}}
 \index{read@{read}!Person@{Person}}
@@ -204,18 +196,6 @@ Reimplemented in \mbox{\hyperlink{class_football_player_ab496d104171ee5168586cdd
 
 
 Reimplemented in \mbox{\hyperlink{class_football_player_a8d2c1482cb95523c026c76ef768e0ec0}{Football\+Player}}, and \mbox{\hyperlink{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c}{Technician}}.
-
-\mbox{\Hypertarget{class_person_a11a8cb4042fe007f4337d7e081674bab}\label{class_person_a11a8cb4042fe007f4337d7e081674bab}} 
-\index{Person@{Person}!removePerson@{removePerson}}
-\index{removePerson@{removePerson}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{removePerson()}{removePerson()}}
-{\footnotesize\ttfamily bool Person\+::remove\+Person (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_person_a5ccf99e4ef0955935cc979bfabcfd797}\label{class_person_a5ccf99e4ef0955935cc979bfabcfd797}} 
-\index{Person@{Person}!searchByName@{searchByName}}
-\index{searchByName@{searchByName}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{searchByName()}{searchByName()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ Person\+::search\+By\+Name (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$}]{people,  }\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_person_ab3f489152645691271d01e6b2ca379b5}\label{class_person_ab3f489152645691271d01e6b2ca379b5}} 
 \index{Person@{Person}!setBirthday@{setBirthday}}
@@ -234,18 +214,6 @@ Reimplemented in \mbox{\hyperlink{class_football_player_a8d2c1482cb95523c026c76e
 \index{setSalary@{setSalary}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{setSalary()}{setSalary()}}
 {\footnotesize\ttfamily void Person\+::set\+Salary (\begin{DoxyParamCaption}\item[{float}]{salary }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_person_a2354b3d081b2aeaec58e273d3b04f7da}\label{class_person_a2354b3d081b2aeaec58e273d3b04f7da}} 
-\index{Person@{Person}!sortByID@{sortByID}}
-\index{sortByID@{sortByID}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{sortByID()}{sortByID()}}
-{\footnotesize\ttfamily void Person\+::sort\+By\+ID (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{class_person_ad21408c398f5c358487da18d3002c8da}\label{class_person_ad21408c398f5c358487da18d3002c8da}} 
-\index{Person@{Person}!sortByName@{sortByName}}
-\index{sortByName@{sortByName}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{sortByName()}{sortByName()}}
-{\footnotesize\ttfamily void Person\+::sort\+By\+Name (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_person}{Person}} $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}\label{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}} 
 \index{Person@{Person}!type@{type}}
@@ -285,7 +253,7 @@ Reimplemented in \mbox{\hyperlink{class_football_player_a807c77931b7e74f4a89c3cd
 \index{Person@{Person}!lastId@{lastId}}
 \index{lastId@{lastId}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{lastId}{lastId}}
-{\footnotesize\ttfamily int Person\+::last\+Id = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily int Person\+::last\+Id = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_person_a669b64897b4d823a27bb5866368d4dfa}\label{class_person_a669b64897b4d823a27bb5866368d4dfa}} 
 \index{Person@{Person}!name@{name}}

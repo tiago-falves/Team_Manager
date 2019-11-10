@@ -7,16 +7,83 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_call_up_a76ecb8d1b129c4507bc88887f3fe084f}{Call\+Up}} (vector$<$ \mbox{\hyperlink{class_game}{Game}} $>$ games, vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $>$ player\+Statistics, \mbox{\hyperlink{class_date}{Date}} beggining\+Date, \mbox{\hyperlink{class_date}{Date}} end\+Date)
+\mbox{\hyperlink{class_call_up_ac64d984861115bacd52941176177575e}{Call\+Up}} (vector$<$ \mbox{\hyperlink{class_game}{Game}} $\ast$ $>$ games, vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$ player\+Statistics, \mbox{\hyperlink{class_date}{Date}} beggining\+Date, \mbox{\hyperlink{class_date}{Date}} end\+Date)
+\item 
+vector$<$ \mbox{\hyperlink{class_game}{Game}} $\ast$ $>$ \mbox{\hyperlink{class_call_up_aa65ef5fd769c4f2085a02be71fd54163}{get\+Games}} () const
+\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_call_up_aba5729eaf4b020d8f81ec212d2e9719d}{get\+Beg\+Date}} () const
+\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_call_up_a172a66c68dacc430d1c869c30b31634c}{get\+End\+Date}} () const
+\item 
+vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$ \mbox{\hyperlink{class_call_up_af0a28a6046542983fb8cc6a5cdf4867f}{get\+Player\+Statistics}} () const
+\item 
+void \mbox{\hyperlink{class_call_up_a199382265a21822b18b63ccfb298420f}{set\+Games}} (const vector$<$ \mbox{\hyperlink{class_game}{Game}} $\ast$ $>$ \&games)
+\item 
+void \mbox{\hyperlink{class_call_up_ace587f4a201897d48d633876b41265a8}{set\+Beg\+Date}} (const \mbox{\hyperlink{class_date}{Date}} \&beggining\+Date)
+\item 
+void \mbox{\hyperlink{class_call_up_a804736eff76bd30d5ae6f24a338e367a}{set\+End\+Date}} (const \mbox{\hyperlink{class_date}{Date}} \&end\+Date)
+\item 
+void \mbox{\hyperlink{class_call_up_a6bd66b0a4dfb801876171d43ce168651}{set\+Player\+Statistics}} (const vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$ player\+Statistics)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_call_up_a76ecb8d1b129c4507bc88887f3fe084f}\label{class_call_up_a76ecb8d1b129c4507bc88887f3fe084f}} 
+\mbox{\Hypertarget{class_call_up_ac64d984861115bacd52941176177575e}\label{class_call_up_ac64d984861115bacd52941176177575e}} 
 \index{CallUp@{CallUp}!CallUp@{CallUp}}
 \index{CallUp@{CallUp}!CallUp@{CallUp}}
 \doxysubsubsection{\texorpdfstring{CallUp()}{CallUp()}}
-{\footnotesize\ttfamily Call\+Up\+::\+Call\+Up (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_game}{Game}} $>$}]{games,  }\item[{vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $>$}]{player\+Statistics,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{beggining\+Date,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{end\+Date }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Call\+Up\+::\+Call\+Up (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_game}{Game}} $\ast$ $>$}]{games,  }\item[{vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$}]{player\+Statistics,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{beggining\+Date,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{end\+Date }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_call_up_aba5729eaf4b020d8f81ec212d2e9719d}\label{class_call_up_aba5729eaf4b020d8f81ec212d2e9719d}} 
+\index{CallUp@{CallUp}!getBegDate@{getBegDate}}
+\index{getBegDate@{getBegDate}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{getBegDate()}{getBegDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Call\+Up\+::get\+Beg\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_call_up_a172a66c68dacc430d1c869c30b31634c}\label{class_call_up_a172a66c68dacc430d1c869c30b31634c}} 
+\index{CallUp@{CallUp}!getEndDate@{getEndDate}}
+\index{getEndDate@{getEndDate}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{getEndDate()}{getEndDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Call\+Up\+::get\+End\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_call_up_aa65ef5fd769c4f2085a02be71fd54163}\label{class_call_up_aa65ef5fd769c4f2085a02be71fd54163}} 
+\index{CallUp@{CallUp}!getGames@{getGames}}
+\index{getGames@{getGames}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{getGames()}{getGames()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_game}{Game}} $\ast$ $>$ Call\+Up\+::get\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_call_up_af0a28a6046542983fb8cc6a5cdf4867f}\label{class_call_up_af0a28a6046542983fb8cc6a5cdf4867f}} 
+\index{CallUp@{CallUp}!getPlayerStatistics@{getPlayerStatistics}}
+\index{getPlayerStatistics@{getPlayerStatistics}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{getPlayerStatistics()}{getPlayerStatistics()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$ Call\+Up\+::get\+Player\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_call_up_ace587f4a201897d48d633876b41265a8}\label{class_call_up_ace587f4a201897d48d633876b41265a8}} 
+\index{CallUp@{CallUp}!setBegDate@{setBegDate}}
+\index{setBegDate@{setBegDate}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{setBegDate()}{setBegDate()}}
+{\footnotesize\ttfamily void Call\+Up\+::set\+Beg\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{beggining\+Date }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_call_up_a804736eff76bd30d5ae6f24a338e367a}\label{class_call_up_a804736eff76bd30d5ae6f24a338e367a}} 
+\index{CallUp@{CallUp}!setEndDate@{setEndDate}}
+\index{setEndDate@{setEndDate}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{setEndDate()}{setEndDate()}}
+{\footnotesize\ttfamily void Call\+Up\+::set\+End\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{end\+Date }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_call_up_a199382265a21822b18b63ccfb298420f}\label{class_call_up_a199382265a21822b18b63ccfb298420f}} 
+\index{CallUp@{CallUp}!setGames@{setGames}}
+\index{setGames@{setGames}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{setGames()}{setGames()}}
+{\footnotesize\ttfamily void Call\+Up\+::set\+Games (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_game}{Game}} $\ast$ $>$ \&}]{games }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_call_up_a6bd66b0a4dfb801876171d43ce168651}\label{class_call_up_a6bd66b0a4dfb801876171d43ce168651}} 
+\index{CallUp@{CallUp}!setPlayerStatistics@{setPlayerStatistics}}
+\index{setPlayerStatistics@{setPlayerStatistics}!CallUp@{CallUp}}
+\doxysubsubsection{\texorpdfstring{setPlayerStatistics()}{setPlayerStatistics()}}
+{\footnotesize\ttfamily void Call\+Up\+::set\+Player\+Statistics (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$}]{player\+Statistics }\end{DoxyParamCaption})}
 
 
 
