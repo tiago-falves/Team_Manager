@@ -71,7 +71,11 @@ bool operator==(const Date& date1, const Date& date2) {
     return date1.day == date2.day && date1.month == date2.month && date1.year == date2.year;
 }
 
-bool operator<(const Date& date1, const Date& date2){
+bool operator<=(const Date& date1, const Date& date2){
+    if (date1.dateToDays() <= date2.dateToDays()) return true;
+    else return false;
+}
+bool operator>=(const Date& date1, const Date& date2){
     if (date1.dateToDays() <= date2.dateToDays()) return true;
     else return false;
 }

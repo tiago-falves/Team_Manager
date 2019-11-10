@@ -134,13 +134,13 @@ public:
     //Handle costs (sallaries + insurance)
     //player costs
     float playerCostCalculator(Date d1, Date d2, int playerID);
-    float playerCostCalculatorMonth(int monthNumber, int playerID);
+    float playerCostCalculatorMonth(int monthNumber, int yearNumber, int playerID);
     //team costs
     float teamCostCalculator(Date d1, Date d2);
-    float teamCostCalculatorMonth(int monthNumber);
+    float teamCostCalculatorMonth(int monthNumber, int yearNumber);
     //team+staff costs
     float allCostCalculator(Date d1, Date d2);
-    float allCostCalculatorMonth(int monthNumber);
+    float allCostCalculatorMonth(int monthNumber, int yearNumber);
 
     //Read CallUps
     void read(ifstream *file,string peopleFile);

@@ -4,7 +4,8 @@
 
 #include "CallUp.h"
 
-CallUp::CallUp(vector<Game*> games,vector<CallUpPlayerStatistics*> playerStatistics, Date begginingDate, Date endDate) {
+CallUp::CallUp (float dailyCost, vector<Game*> games,vector<CallUpPlayerStatistics*> playerStatistics, Date begginingDate, Date endDate) {
+    this->dailyCost = dailyCost;
     this->games=games;
     this->playerStatistics = playerStatistics;
     this->begginingDate=begginingDate;
@@ -13,6 +14,9 @@ CallUp::CallUp(vector<Game*> games,vector<CallUpPlayerStatistics*> playerStatist
 }
 
 //GET METHODS
+float CallUp::getDailyCost() const {
+    return dailyCost;
+}
 Date CallUp::getBegDate() const {
     return begginingDate;
 }
@@ -27,6 +31,9 @@ vector<CallUpPlayerStatistics*> CallUp::getPlayerStatistics() const {
 }
 
 //SET METHODS
+void CallUp::setDailyCost(const float &dailyCost) {
+    this->dailyCost = dailyCost;
+}
 void CallUp::setBegDate(const Date &begginingDate) {
     this->begginingDate = begginingDate;
 }
