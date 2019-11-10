@@ -30,22 +30,25 @@ string FootballPlayer::type() const {
 void FootballPlayer::print(ostream &out) const {
 
     Person::print(cout);
-    /*out <<  left << setw(10)  << setfill(' ') << position << "|  ";
-    out <<  left << setw(14) << setfill(' ') << club  << "| ";
-    out <<  left << setw(3) << setfill(' ') <<  weight<< "| ";
-    out <<  left << setw(5) << setfill(' ') <<  height<< "| ";
-    out <<  left << setw(5) << setfill(' ') << pass_value<< "| ";
-    if(injury) out <<  left << setw(5) << setfill(' ') << "Injured"<< "| ";
-    else out <<  left << setw(5) << setfill(' ') << "Healthy"<< "| ";*/
-    out << "\tPosition: " << position << endl;
+    out <<  left << setw(20)  << setfill(' ') << position << "| ";
+    out <<  left << setw(9) << setfill(' ') << club  << " |";
+    out <<  left << setw(4) << setfill(' ')<< fixed  << setprecision(2)  <<  weight<< " |";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) <<  height<< " |";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << pass_value<< " |";
+    if(injury) out <<  left << setw(5) << setfill(' ') << "Injured"<< "|" << endl;
+    else out <<  left << setw(5) << setfill(' ') << "Healthy"<< "|" << endl;
+
+
+
+    /*out << "\tPosition: " << position << endl;
     out << "\tClub: " << club << endl;
-    out << "\tWeight: " << to_string(weight) << endl;
-    out << "\tHeight: " << to_string(height) << endl;
-    out << "\tPass Value: " << to_string(pass_value) << endl;
+    out << "\tWeight: " << fixed  << setprecision(2) <<weight << endl;
+    out << "\tHeight: " << fixed  << setprecision(2)  << height << endl;
+    out << "\tPass Value: "<< fixed  << setprecision(2)  << pass_value << endl;
     out << "\tHealth: ";
     if(injury) out << "Injured";
     else out << "Healthy";
-    out << endl;
+    out << endl;*/
 
 }
 
@@ -53,9 +56,9 @@ void FootballPlayer::printToFile(ostream &os) const {
     Person::printToFile(os);
     os << position << endl;
     os << club << endl;
-    os << weight << endl;
-    os << height << endl;
-    os << pass_value << endl;
+    os << fixed << setprecision(2) <<  weight << endl;
+    os << fixed << setprecision(2) << height << endl;
+    os << fixed << setprecision(2) << pass_value << endl;
     if (injury) os << "Injured";
     else os << "Healthy";
     os << endl;

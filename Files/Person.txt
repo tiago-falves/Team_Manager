@@ -208,7 +208,7 @@ Beto Fernandes
 12/2/1997
 823.5
 Sweeper
-Attacking Midfield
+Sporting
 92.3
 189.3
 5
@@ -283,7 +283,7 @@ Main Coach
 ::::::::::
 Technician
 25
-Marcelo Rebelo de Sousa
+Marcelo Rebelo
 1/2/2000
 200
 Secondary Coach

@@ -35,21 +35,37 @@ public:
     static int getLastId();
 
 
+    /*****************************
+     **********GETTERS************
+     *****************************/
+
     int getId() const;
     string getName() const;
     Date getBirthday() const;
     float getSalary() const;
 
+    /*****************************
+     **********SETTERS************
+     *****************************/
 
     void setName(string name);
     void setBirthday(Date birthdayDate);
     void setSalary(float salary);
 
-
+    /***************************************
+     **********VIRTUAL FUNCTIONS************
+     ***************************************/
 
     virtual void modify(Person *newPerson);
+    virtual void print(ostream& out) const;
+    virtual void printToFile(ostream &os) const;
+    virtual void read(ifstream *file);
+    virtual string type() const ;
 
-    
+    /***************************************
+     **************OPERATORS****************
+     ***************************************/
+
     bool operator<(const Person &person) const;
     bool operator<(const Person* &person) const;
     bool operator>(const Person &person) const;
@@ -58,10 +74,7 @@ public:
 
     friend ostream &operator<<(ostream &os, const Person *person);
 
-    virtual void print(ostream& out) const;
-    virtual void printToFile(ostream &os) const;
-    virtual void read(ifstream *file);
-    virtual string type() const ;
+
 
 };
 

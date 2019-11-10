@@ -25,7 +25,13 @@ void Technician::setRole(const string &role) {
 
 void Technician::print(ostream &out) const {
     Person::print(cout);
-    out << "\tRole: " << role << endl;
+
+    out <<  left << setw(20) << role << "|  ";
+    out <<  left << setw(9) << setfill(' ') << "-------"  << "| ";
+    out <<  left << setw(4) << setfill(' ')<<  "---" << " |";
+    out <<  left << setw(5) << setfill(' ') << "-----" << " | ";
+    out <<  left << setw(5) << setfill(' ') << "----"<< " | ";
+    out <<  left << setw(5) << setfill(' ') << "----"<< " |" << endl;
 }
 
 void Technician::printToFile(ostream &out) const {
@@ -35,6 +41,7 @@ void Technician::printToFile(ostream &out) const {
 
 string Technician::type() const {
     return "Technician";
+
 }
 void Technician::read(ifstream *file) {
     Person::read(file);

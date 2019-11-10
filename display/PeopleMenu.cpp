@@ -22,7 +22,7 @@ void NationalTeam::runPeopleMenu() {
 
     if (option == 0) { runMenu(); }
     if (option == 1) { showEveryone(cout) ; }
-    if (option == 2) { showSpecificPerson(); }
+    if (option == 2) { showSpecificPerson(cout); }
     if (option == 3) { runPlayersMenu(); }
     if (option == 4) { runTechnicianMenu(); }
 
@@ -31,18 +31,43 @@ void NationalTeam::runPeopleMenu() {
     runPeopleMenu();
 }
 
-void NationalTeam::showSpecificPerson(){
+void NationalTeam::showSpecificPerson(ostream &out){
     int i = askForValidId(people);
     menuSeparator();
+    tableHeader(out);
     cout << people[searchByID(people,i)];
+    tableFooter(out);
 }
 
 void NationalTeam::showEveryone(ostream &out) {
+
+    tableHeader(out);
+
     for (int i = 0; i < people.size(); ++i) {
         out << people[i];
     }
+    tableFooter(out);
 }
 
+void NationalTeam::tableHeader(ostream &out){
+    out << endl << endl << endl;
+    out << setw(117) << setfill('_') << "_" << endl;
+    out <<  left << setw(4)  << setfill(' ') << "id" << "|  ";
+    out <<  left << setw(20) << setfill(' ') << "Name"  << "| ";
+    out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "| ";
+    out <<  left << setw(9) << setfill(' ') << "Salary"<< "|  "  ;
+    out <<  left << setw(20)  << setfill(' ') << "Position" << "| ";
+    out <<  left << setw(9) << setfill(' ') << "Club"  << " |";
+    out <<  left << setw(4) << setfill(' ')<<   "Weight"<< " |";
+    out <<  left << setw(5) << setfill(' ') << "Height"<< " |";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << "Pass"<< " |";
+    out <<  left << setw(5) << setfill(' ') << "Health"<< "|" << endl;
+    out << setw(117) << setfill('-') << "-" << endl;
+}
+
+void NationalTeam::tableFooter(ostream &out){
+    out << setw(117) << setfill('_') << "_" << endl;
+}
 
 
 void NationalTeam::askPersonInformation(string &name, float &salary, Date &birthday){

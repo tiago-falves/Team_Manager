@@ -55,27 +55,24 @@ bool Person::operator!=(const Person &person) const {
     return !(person == *this);
 }
 
+
 string Person::type() const{
     return "Person";
 }
 
-
-
-
 //Prints person to the screen
 void Person::print(ostream& out) const{
 
-    out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
+    /*out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
     out << "\tId: " << to_string(id) << endl;
     out << "\tName:" << name << endl;
     out << "\tBirthday:" << birthdayDate.toString() << endl;
-    out << "\tSalary: " << to_string(salary) << endl;
+    out << "\tSalary: " << fixed <<setprecision(2) << salary << endl;*/
 
-    /*out <<  left << setw(4)  << setfill(' ') << id << "|  ";
-    out <<  left << setw(30) << setfill(' ') << name  << "| ";
-    out <<  left << setw(9) << setfill(' ') <<  birthdayDate.toString()<< "| ";
-    out <<  left << setw(6) << setfill(' ') << salary<< "|  "  ;*/
-
+    out <<  left << setw(4)  << setfill(' ') << id << "|  ";
+    out <<  left << setw(20) << setfill(' ') << name  << "| ";
+    out <<  left << setw(11) << setfill(' ') <<  birthdayDate.toString()<< "| ";
+    out <<  left << setw(9) << setfill(' ') << salary<< "|  "  ;
 }
 
 
@@ -84,7 +81,7 @@ void Person::printToFile(ostream &os) const {
     os << id << endl;
     os << name << endl;
     os << birthdayDate <<endl;
-    os  << salary << endl;
+    os  << fixed << setprecision(2) << salary << endl;
 }
 
 void Person::read(ifstream *file) {

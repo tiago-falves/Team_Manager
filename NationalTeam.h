@@ -106,7 +106,7 @@ public:
     void runPeopleMenu();
     void runPlayersMenu();
     void runTechnicianMenu();
-    void showSpecificPerson();
+    void showSpecificPerson(ostream &out);
     void askPersonInformation(string &name,float &salary,Date &birthday);
     void createPlayerOption();
     void removePlayerOption();
@@ -179,6 +179,9 @@ public:
 
 
 
+    void tableHeader(ostream &out);
+
+    void tableFooter(ostream &out);
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H
