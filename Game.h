@@ -4,7 +4,6 @@
 
 #include <string>
 #include <vector>
-#include "People//FootballPlayer.h"
 #include "PlayerGameStatistics.h"
 
 using namespace std;
@@ -15,7 +14,8 @@ private:
     string country;
     string stadium;
     vector<PlayerGameStatistics> playerStatistics;
-    vector<FootballPlayer> players;
+    vector<FootballPlayer *> nationalPlayers;
+    vector<FootballPlayer *> enemyPlayers;
     vector<Person> referees;
 
 
@@ -29,16 +29,27 @@ public:
     string getCity() const;
     string getCountry() const;
     string getStadium() const;
-    vector<FootballPlayer> getPlayers() const;
+    vector<FootballPlayer *> getNationalPlayers() const;
+    vector<FootballPlayer *> getEnemyPlayers() const;
     vector<PlayerGameStatistics> getPlayerStatistics() const;
     vector<Person> getReferees();
 
     void setCity(string city);
     void setCountry(string country);
     void setStadium(string stadium);
-    void setCalled_players(vector<FootballPlayer> vec);
+    void setNationalPlayers(vector<FootballPlayer *> vec);
+    void setEnemyPlayers(vector<FootballPlayer *> vec);
     void setPlayerStatistics(vector<PlayerGameStatistics> statistics);
     void setReferees(vector<Person> refs);
+
+
+    void addNationalPlayer(FootballPlayer * player);
+    void addEnemyPlayer(FootballPlayer * player);
+    void removeEnemyPlayer(FootballPlayer * player);
+    void removeNationalPlayer(FootballPlayer * player);
+    PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
+
+    void print(ostream &out);
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };

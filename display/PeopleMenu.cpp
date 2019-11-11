@@ -3,32 +3,33 @@
 
 void NationalTeam::runPeopleMenu() {
 
-    menuSeparator();
+
     int option;
 
-    cout << "Welcome to the People Menu! Please choose what you want to do: ";
-    cout << endl << endl;
-    cout << "Go back                                                            [0]" << endl;
-    cout << "See information from everyone                                      [1]" << endl;
-    cout << "See information from a specific person                             [2]" << endl;
-    cout << "Football Players                                                   [3]" << endl;
-    cout << "Technicians                                                        [4]" << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
+    while(true){
+        menuSeparator();
 
-    validOption(option,4);
+        cout << "Welcome to the People Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "Go back                                                            [0]" << endl;
+        cout << "See information from everyone                                      [1]" << endl;
+        cout << "See information from a specific person                             [2]" << endl;
+        cout << "Football Players                                                   [3]" << endl;
+        cout << "Technicians                                                        [4]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
 
-    menuSeparator();
+        validOption(option, 4);
 
-    if (option == 0) { runMenu(); }
-    if (option == 1) { showEveryone(cout) ; }
-    if (option == 2) { showSpecificPerson(cout); }
-    if (option == 3) { runPlayersMenu(); }
-    if (option == 4) { runTechnicianMenu(); }
+        menuSeparator();
 
+        if (option == 0) { break; }
+        if (option == 1) { showEveryone(cout); }
+        if (option == 2) { showSpecificPerson(cout); }
+        if (option == 3) { runPlayersMenu(); }
+        if (option == 4) { runTechnicianMenu(); }
 
-
-    runPeopleMenu();
+    }
 }
 
 void NationalTeam::showSpecificPerson(ostream &out){

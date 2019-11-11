@@ -13,29 +13,31 @@ using namespace std;
 void NationalTeam::runMenu() {
     int option;
 
-    menuSeparator();
+    while(true) {
+        menuSeparator();
 
-    cout << "Welcome to the National Football Team Manager! What do you want to do?" << endl << endl;
-    cout << "Please choose what your option:" << endl << endl;
+        cout << "Welcome to the National Football Team Manager! What do you want to do?" << endl << endl;
+        cout << "Please choose what your option:" << endl << endl;
 
-    cout << "Exit                                                               [0]" << endl;
-    cout << "People                                                             [1]" << endl;
-    cout << "Games                                                              [2]" << endl;
-    cout << "Call Ups                                                           [3]" << endl;
-    cout << "Economies                                                          [4]" << endl;
-    cout << "Save information and Exit                                          [5]" << endl << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
-    validOption(option,5);
+        cout << "Exit                                                               [0]" << endl;
+        cout << "People                                                             [1]" << endl;
+        cout << "Games                                                              [2]" << endl;
+        cout << "Call Ups                                                           [3]" << endl;
+        cout << "Economies                                                          [4]" << endl;
+        cout << "Save information and Exit                                          [5]" << endl << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+        validOption(option, 5);
 
-    menuSeparator();
+        menuSeparator();
 
-    if (option == 0) { exit(0);}
-    else if (option == 1) {runPeopleMenu(); }
-    else if (option == 2) {runGameMenu(); }
-    else if (option == 3) {runCallUpMenu(); }
-    else if (option == 4) {runEconomiesMenu(); }
-    //else if (option == 5) {saveAndExit(clientsVector, travelPacksVector, agency); }
+        if (option == 0) { exit(0); }
+        else if (option == 1) { runPeopleMenu(); }
+        else if (option == 2) { runGameMenu(); }
+        else if (option == 3) { runCallUpMenu(); }
+        else if (option == 4) { runEconomiesMenu(); }
+        //else if (option == 5) {saveAndExit(clientsVector, travelPacksVector, agency); }
+    }
 }
 
 void NationalTeam::validOption(int &option,int optionsNumber){

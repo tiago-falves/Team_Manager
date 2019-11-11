@@ -15,5 +15,10 @@ public:
     InexistentId(int i) {id = i;}
 };
 
+class InvalidMonth {
+public:
+    int month;
+    InvalidMonth(int month) {this->month = month;}
+};
 
 #endif //AEDA_TEAM_MANAGER_EXCEPTIONS_H
