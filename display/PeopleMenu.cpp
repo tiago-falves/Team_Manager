@@ -51,22 +51,22 @@ void NationalTeam::showEveryone(ostream &out) {
 
 void NationalTeam::tableHeader(ostream &out){
     out << endl << endl << endl;
-    out << setw(117) << setfill('_') << "_" << endl;
-    out <<  left << setw(4)  << setfill(' ') << "id" << "|  ";
-    out <<  left << setw(20) << setfill(' ') << "Name"  << "| ";
-    out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "| ";
-    out <<  left << setw(9) << setfill(' ') << "Salary"<< "|  "  ;
-    out <<  left << setw(20)  << setfill(' ') << "Position" << "| ";
-    out <<  left << setw(9) << setfill(' ') << "Club"  << " |";
-    out <<  left << setw(4) << setfill(' ')<<   "Weight"<< " |";
-    out <<  left << setw(5) << setfill(' ') << "Height"<< " |";
-    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << "Pass"<< " |";
-    out <<  left << setw(5) << setfill(' ') << "Health"<< "|" << endl;
-    out << setw(117) << setfill('-') << "-" << endl;
+    out << setw(117) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
+    out <<  left << setw(20) << setfill(' ') << "Name"  << "│ ";
+    out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "│ ";
+    out <<  left << setw(9) << setfill(' ') << "Salary"<< "│  "  ;
+    out <<  left << setw(20)  << setfill(' ') << "Position" << "│ ";
+    out <<  left << setw(9) << setfill(' ') << "Club"  << " │";
+    out <<  left << setw(4) << setfill(' ')<<   "Weight"<< " │";
+    out <<  left << setw(5) << setfill(' ') << "Height"<< " │";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << "Pass"<< " │";
+    out <<  left << setw(5) << setfill(' ') << "Health"<< " │" << endl;
+    out << setw(117) << setfill('-') << "-" << "│" <<  endl;
 }
 
 void NationalTeam::tableFooter(ostream &out){
-    out << setw(117) << setfill('_') << "_" << endl;
+    out << setw(117) << setfill('-') << "-" << endl;
 }
 
 

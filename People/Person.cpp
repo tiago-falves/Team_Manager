@@ -69,10 +69,10 @@ void Person::print(ostream& out) const{
     out << "\tBirthday:" << birthdayDate.toString() << endl;
     out << "\tSalary: " << fixed <<setprecision(2) << salary << endl;*/
 
-    out <<  left << setw(4)  << setfill(' ') << id << "|  ";
-    out <<  left << setw(20) << setfill(' ') << name  << "| ";
-    out <<  left << setw(11) << setfill(' ') <<  birthdayDate.toString()<< "| ";
-    out <<  left << setw(9) << setfill(' ') << salary<< "|  "  ;
+    out <<  left << setw(4)  << setfill(' ') << id << "│  ";
+    out <<  left << setw(20) << setfill(' ') << name  << "│ ";
+    out <<  left << setw(11) << setfill(' ') <<  birthdayDate.toString()<< "│ ";
+    out <<  left << setw(9) << setfill(' ') << salary<< "│  "  ;
 }
 
 
