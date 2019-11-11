@@ -30,10 +30,10 @@ void NationalTeam::runEconomiesMenu() {
         menuSeparator();
 
         if (option == 0) { break; }
-        else if (option == 1) {playerMonthMenu(); }
-        else if (option == 2) {/*playerTimeMenu();*/ }
-        else if (option == 3) {/*teamMonthMenu();*/}
-        else if (option == 4) {/*teamTimeMenu();*/}
+        else if (option == 1) {playerMonthMenu();}
+        else if (option == 2) {playerTimeMenu();}
+        else if (option == 3) {teamMonthMenu();}
+        else if (option == 4) {teamTimeMenu();}
         else if (option == 5) {/*staffMonthMenu();*/}
         else if (option == 6) {/*staffTimeMenu();*/}
 
@@ -51,11 +51,20 @@ void NationalTeam::playerMonthMenu(){
         cout << "Insert the ID of the player information will be taken from: ";
         cin >> playerID;
 
+        if (cin.fail()){
+            cout << "Player ID is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
         try{
             searchByID(players, playerID);
         }
         catch(InexistentId){
             cout << "There is no player with the given ID!";
+            cin.clear();
+            cin.ignore(10000, '\n');
             break;
         }
 
@@ -105,7 +114,7 @@ void NationalTeam::playerMonthMenu(){
         menuSeparator();
 
         //shows player so that user can confirm that it is checking the right player
-
+        cout << "The following player has been selected:" << endl << endl;
         showSpecificPerson(cout,playerID);
         //players[playerID]->print(cout);
         cout << endl << endl;
@@ -127,34 +136,229 @@ void NationalTeam::playerMonthMenu(){
     }
 
 }
-/*
+
 void NationalTeam::playerTimeMenu(){
-    //verify that the given ID is valid
-    if (players.size() < playerID) {
-        //throw exception that player does not exist - need to implement
-    }
-    //shows player so that user can confirm that it is checking the right player
-    players[playerID-1]->print(cout);
 
-    int option;
-    cout << "Exit.                                                               [0]" << endl;
-    cout << "Go back.                                                            [1]" << endl;
-    cout << "Confirm operation.                                                  [2]" << endl;
-    cin >> option;
-
-    while (cin.fail() || option < 0 || option > 2)
-    {
-        cout << "Invalid option, please insert the option again: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cin >> option;
-    }
-    cin.clear();
-    cin.ignore(10000, '\n');
+    int playerID, option;
+    string date1, date2;
+    Date firstDate;
+    Date endDate;
     menuSeparator();
 
-    if (option == 0) exit(0);
-    else if (option == 1) {}//go back
-    else if (option == 2) {}/*call between two dates function
+    while (true){
+
+        //GET ID OF PLAYER
+        cout << "Insert the ID of the player information will be taken from: ";
+        cin >> playerID;
+
+        if (cin.fail()){
+            cout << "Player ID is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        try{
+            searchByID(players, playerID);
+        }
+        catch(InexistentId){
+            cout << "There is no player with the given ID!";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        if (cin.fail()){
+            cout << "Invalid operation, ID is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        //GET FIRST DATE
+        cout << "Insert the first date: ";
+        cin >> date1;
+
+        if (!firstDate.validDateText(date1)){
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        firstDate = firstDate.dateTextConverter(date1);
+
+
+        if(cin.fail()){
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        //GET END DATE
+        cout << "Insert the final date: ";
+        cin >> date2;
+
+        if (!endDate.validDateText(date2)){
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        endDate = endDate.dateTextConverter(date2);
+
+        if (!endDate.isAfter(firstDate)){
+            cout << "Invalid operation, final date cannot be before first date!" << endl;
+        }
+
+        if(cin.fail()){
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        menuSeparator();
+
+        //shows player so that user can confirm that it is checking the right player
+        cout << "The following player has been selected:" << endl << endl;
+        showSpecificPerson(cout,playerID);
+        //players[playerID]->print(cout);
+        cout << endl << endl;
+        cout << "Go back.                                                               [0]" << endl;
+        cout << "Confirm operation.                                                     [1]" << endl;
+        cin >> option;
+
+        validOption(option, 1);
+        menuSeparator();
+
+        if (option == 0) break;
+        else if (option == 1) {
+
+            cout << "The costs associated with the player with ID: " << playerID << " between " << date1 << " and ";
+            cout << date2 << "were of " << playerCostCalculator(firstDate, endDate, playerID) << " euros." << endl;
+            break;
+        }
+
+    }
 }
-*/
+
+void NationalTeam::teamTimeMenu(){
+    string date1, date2;
+    Date firstDate;
+    Date endDate;
+
+    while(true) {
+        menuSeparator();
+
+        //GET FIRST DATE
+        cout << "Insert the first date: ";
+        cin >> date1;
+
+        if (!firstDate.validDateText(date1)) {
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        firstDate = firstDate.dateTextConverter(date1);
+
+
+        if (cin.fail()) {
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        //GET END DATE
+        cout << "Insert the final date: ";
+        cin >> date2;
+
+        if (!endDate.validDateText(date2)) {
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        endDate = endDate.dateTextConverter(date2);
+
+        if (!endDate.isAfter(firstDate)) {
+            cout << "Invalid operation, final date cannot be before first date!" << endl;
+        }
+
+        if (cin.fail()) {
+            cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        menuSeparator();
+
+        cout << "The costs associated with the national team players between " << date1 << " and ";
+        cout << date2 << "were of " << teamCostCalculator(firstDate, endDate) << " euros." << endl;
+        break;
+    }
+}
+
+void NationalTeam::teamMonthMenu(){
+    int option, month, year;
+    menuSeparator();
+
+    while (true) {
+
+        //GET MONTH NUMBER
+        cout << "Insert the number of the month: ";
+        cin >> month;
+
+        try {
+            if (month < 0 || month > 12) throw InvalidMonth(month);
+        }
+        catch (InvalidMonth) {
+            cout << "Month number has to be between 1 and 12!" << endl;
+            break;
+        }
+
+        if (cin.fail()) {
+            cout << "Invalid operation, MONTH is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        //GET YEAR NUMBER
+        cout << "Insert the number of the year: ";
+        cin >> year;
+
+        if (cin.fail()) {
+            cout << "Invalid operation, MONTH is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+        menuSeparator();
+
+        cout << "The costs associated with the national team players in the month " << month << ", year ";
+        cout << year << "were of " << teamCostCalculatorMonth(month, year) << " euros." << endl;
+    }
+}
