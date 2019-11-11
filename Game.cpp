@@ -31,8 +31,12 @@ string Game::getStadium() const {
     return stadium;
 }
 
-vector<FootballPlayer> Game::getPlayers() const {
-    return vector<FootballPlayer>();
+vector<FootballPlayer *> Game::getNationalPlayers() const {
+    return this->nationalPlayers;
+}
+
+vector<FootballPlayer *> Game::getEnemyPlayers() const {
+    return this->enemyPlayers;
 }
 
 vector<PlayerGameStatistics> Game::getPlayerStatistics() const {
@@ -64,10 +68,18 @@ void Game::setCountry(string country) {
     this->country = country;
 }
 
-
-void Game::setCalled_players(vector<FootballPlayer> vec) {
-    this->players = vec;
+void Game::setNationalPlayers(vector<FootballPlayer *> vec) {
+    this->nationalPlayers = vec;
+}
+void Game::setEnemyPlayers(vector<FootballPlayer *> vec){
+    this->enemyPlayers = vec;
 }
 
+/*****************************************************
+ *****************PRINT FUNCTIONS*********************
+ *****************************************************/
 
+void Game::print(ostream &out) {
+    
+}
 

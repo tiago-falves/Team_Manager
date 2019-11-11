@@ -15,7 +15,7 @@ Date CallUpPlayerStatistics::getEndDate() const {
     return endDate;
 }
 Date CallUpPlayerStatistics::getBegDate() const {
-    return endDate;
+    return begginingDate;
 }
 int CallUpPlayerStatistics::getPlayerID() const {
     return playerID;
