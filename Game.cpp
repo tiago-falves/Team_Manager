@@ -80,6 +80,46 @@ void Game::setEnemyPlayers(vector<FootballPlayer *> vec){
  *****************************************************/
 
 void Game::print(ostream &out) {
-    
+
 }
 
+/*****************************************************
+ ******************AUX FUNCTIONS*********************
+ *****************************************************/
+
+void Game::addEnemyPlayer(FootballPlayer *player) {
+    this->enemyPlayers.push_back(player);
+}
+
+void Game::addNationalPlayer(FootballPlayer *player) {
+    this->nationalPlayers.push_back(player);
+}
+
+void Game::removeNationalPlayer(FootballPlayer *player) {
+
+    vector<FootballPlayer *>::iterator it;
+
+    for(it = nationalPlayers.begin(); it < nationalPlayers.end(); it++){
+        if((*it)->getId() == (*player).getId()){ nationalPlayers.erase(it); }
+        return;
+    }
+}
+
+void Game::removeEnemyPlayer(FootballPlayer *player){
+
+    vector<FootballPlayer *>::iterator it;
+
+    for(it = enemyPlayers.begin(); it < enemyPlayers.end(); it++){
+        if((*it)->getId() == (*player).getId()){ enemyPlayers.erase(it); }
+        return;
+    }
+}
+
+PlayerGameStatistics Game::getSpecificPlayerStatistics(FootballPlayer *player) {
+
+    for(PlayerGameStatistics p : playerStatistics){
+        if(p.getPlayer() == player){
+            return p;
+        }
+    }
+}

@@ -42,6 +42,13 @@ public:
     void setPlayerStatistics(vector<PlayerGameStatistics> statistics);
     void setReferees(vector<Person> refs);
 
+
+    void addNationalPlayer(FootballPlayer * player);
+    void addEnemyPlayer(FootballPlayer * player);
+    void removeEnemyPlayer(FootballPlayer * player);
+    void removeNationalPlayer(FootballPlayer * player);
+    PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
+
     void print(ostream &out);
 
     friend ostream& operator<< (ostream& out, const Game& game);
