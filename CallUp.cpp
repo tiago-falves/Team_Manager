@@ -62,10 +62,11 @@ void CallUp::changeEndDate(Date end) {
 
 //ADD / REMOVE GAME
 void CallUp::addGame(Game *game) {
-    //if (!gameExists(game)) //throw exception game already exists
+    //if (gameExists(game)) //throw exception game already exists
     insert_sorted(games, game);
 }
 void CallUp::removeGame(Game *game){
+    //if (!gameExists(game)) //throw exception game does not exist
     games.erase(games.begin() + BinarySearch(games, game));
 }
 
