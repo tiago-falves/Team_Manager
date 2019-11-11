@@ -122,4 +122,5 @@ PlayerGameStatistics Game::getSpecificPlayerStatistics(FootballPlayer *player) {
             return p;
         }
     }
+    return playerStatistics[0];
 }

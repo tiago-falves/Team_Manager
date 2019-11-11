@@ -105,7 +105,9 @@ void NationalTeam::playerMonthMenu(){
         menuSeparator();
 
         //shows player so that user can confirm that it is checking the right player
-        players[playerID]->print(cout);
+
+        showSpecificPerson(cout,playerID);
+        //players[playerID]->print(cout);
         cout << endl << endl;
         cout << "Go back.                                                               [0]" << endl;
         cout << "Confirm operation.                                                     [1]" << endl;

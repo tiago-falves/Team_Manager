@@ -39,17 +39,6 @@ void FootballPlayer::print(ostream &out) const {
     else out <<  left << setw(5) << setfill(' ') << "Healthy"<< " │" << endl;
 
 
-
-    /*out << "\tPosition: " << position << endl;
-    out << "\tClub: " << club << endl;
-    out << "\tWeight: " << fixed  << setprecision(2) <<weight << endl;
-    out << "\tHeight: " << fixed  << setprecision(2)  << height << endl;
-    out << "\tPass Value: "<< fixed  << setprecision(2)  << pass_value << endl;
-    out << "\tHealth: ";
-    if(injury) out << "Injured";
-    else out << "Healthy";
-    out << endl;*/
-
 }
 
 void FootballPlayer::printToFile(ostream &os) const {

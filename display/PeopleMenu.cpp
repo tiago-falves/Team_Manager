@@ -25,16 +25,20 @@ void NationalTeam::runPeopleMenu() {
 
         if (option == 0) { break; }
         if (option == 1) { showEveryone(cout); }
-        if (option == 2) { showSpecificPerson(cout); }
+        if (option == 2) { showSpecificPersonOption(); }
         if (option == 3) { runPlayersMenu(); }
         if (option == 4) { runTechnicianMenu(); }
 
     }
 }
-
-void NationalTeam::showSpecificPerson(ostream &out){
+void NationalTeam::showSpecificPersonOption() {
     int i = askForValidId(people);
     menuSeparator();
+    showSpecificPerson(cout,i);
+}
+
+void NationalTeam::showSpecificPerson(ostream &out,int i){
+
     tableHeader(out);
     cout << people[searchByID(people,i)];
     tableFooter(out);
