@@ -396,6 +396,75 @@ float NationalTeam::staffCostCalculatorMonth(int monthNumber) {
     return costs;
 }
 
+bool NationalTeam::readGames(string filename) {
+    string text;
+    ifstream gamesFile;
+    vector<int> splited_int_string;
+    vector<string> splited_str_string;
+    vector<FootballPlayer *> players;
+    gamesFile.open("..//Files//" + filename);
+
+    if(gamesFile.fail()){
+        cerr << "Error Opening File";
+        return false;
+    }
+    else {
+        while (!gamesFile.eof()) {
+            Game *game = new Game();
+
+            getline(gamesFile, text);
+            game->setCity(text);
+
+            getline(gamesFile, text);
+            game->setCountry(text);
+
+            getline(gamesFile, text);
+            game->setStadium(text);
+
+            getline(gamesFile, text);
+            splited_int_string = separateCharacterInt(text, ',');
+
+            //Falta implementar guardar os PlayerGameStatistics
+
+            getline(gamesFile, text);
+            splited_int_string = separateCharacterInt(text, ',');
+
+            for (int i = 0; i < splited_int_string.size(); i++) {
+                players.push_back(this->players[splited_int_string[i]-1]);
+            }
+
+            game->setNationalPlayers(players);
+
+            getline(gamesFile, text);
+            splited_str_string = separateCharacterStr(text, ',');
+            game->setEnemyPlayers(splited_str_string);
+
+            getline(gamesFile, text);
+            splited_str_string = separateCharacterStr(text, ',');
+            game->setReferees(splited_str_string);
+
+            getline(gamesFile, text);
+        }
+
+        return true;
+    }
+}
+
+vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
+    vector<Game*> gamesPlayed;
+
+    for(Game *g : this->games){
+        if(g->getID() == player->getId()){
+            gamesPlayed.push_back(g);
+        }
+    }
+
+    return gamesPlayed;
+}
+
+void NationalTeam::printGame(ostream &out) {
+
+}
 
 
 

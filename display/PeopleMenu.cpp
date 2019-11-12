@@ -39,14 +39,14 @@ void NationalTeam::showSpecificPersonOption() {
 
 void NationalTeam::showSpecificPerson(ostream &out,int i){
 
-    tableHeader(out);
+    tableHeaderPlayer(out);
     cout << people[searchByID(people,i)];
     tableFooter(out);
 }
 
 void NationalTeam::showEveryone(ostream &out) {
 
-    tableHeader(out);
+    tableHeaderPlayer(out);
 
     for (int i = 0; i < people.size(); ++i) {
         out << people[i];
@@ -54,7 +54,7 @@ void NationalTeam::showEveryone(ostream &out) {
     tableFooter(out);
 }
 
-void NationalTeam::tableHeader(ostream &out){
+void NationalTeam::tableHeaderPlayer(ostream &out){
     out << endl << endl << endl;
     out << setw(117) << setfill('-') << "-" <<  endl;
     out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";

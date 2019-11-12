@@ -24,10 +24,8 @@ int main() {
     //std::wcout << L"Testing unicode -- English -- Ελληνικά -- Español." << std::endl;
     NationalTeam team;
     team.readPeople("Person.txt");
+    team.readGames("Games.txt");
     team.runMenu();
-
-
-
 
     system("Pause");
 

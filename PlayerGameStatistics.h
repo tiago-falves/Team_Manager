@@ -48,6 +48,8 @@ public:
 
     void setNumberOfRedCards(int numberOfRedCards);
 
+    int getID() const;
+
 private:
     int id;
     int playerID;

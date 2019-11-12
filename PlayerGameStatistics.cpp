@@ -29,6 +29,9 @@ int PlayerGameStatistics::getPlayerID() const {
     return playerID;
 }
 
+int PlayerGameStatistics::getID() const {
+    return id;
+}
 void PlayerGameStatistics::setPlayerID(int player) {
     this->playerID = player;
 }

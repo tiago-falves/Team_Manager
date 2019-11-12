@@ -1,5 +1,3 @@
-+Game
-1
 Porto
 Portugal
 Estádio do Dragão
@@ -8,7 +6,6 @@ Estádio do Dragão
 "Hector", "Juan", "Miguel", "Luis", "Joao", "Amaro", "Forte", "J3P", "André", "Antonio", "Joel"
 "Lel", "lol", "lolitos"
 ::::::::::
-2
 Porto
 Portugal
 Estádio do Dragão

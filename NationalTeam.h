@@ -23,6 +23,7 @@ public:
     vector<FootballPlayer*> players;
     vector<Technician*> technicians;
     vector<CallUp*> callUps;
+    vector<Game*> games;
 
     NationalTeam();
 
@@ -87,6 +88,14 @@ public:
         return index;
     }
 
+    /****************************************************
+    ********************GAMES FUNCTIONS******************
+    *****************************************************/
+    bool readGames(string filename);
+    void saveGames(string filename);
+    void printGame(ostream& out);
+
+    vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
 
     /****************************************************
     *******************MENUS*****************************
@@ -118,6 +127,7 @@ public:
     Technician *askTechInformation();
     FootballPlayer* askPlayerInformation();
 
+
     template <class T>
     int askForValidId(vector<T *> &peepz){
         int id = askForId();
@@ -137,6 +147,10 @@ public:
 
     //Game Menu
     void runGameMenu();
+    void createGameOption();
+    void removeGameOption();
+    void modifyGameOption();
+
 
     //Economies Menu
     void playerMonthMenu();
@@ -175,7 +189,8 @@ public:
     void read(ifstream *file,string peopleFile);
 
 
-    void tableHeader(ostream &out);
+    void tableHeaderPlayer(ostream &out);
+    void tableHeaderGame(ostream &out);
 
     void tableFooter(ostream &out);
 
