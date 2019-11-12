@@ -260,6 +260,20 @@ float NationalTeam::teamCostCalculator(Date d1, Date d2) {
     return val;
 }
 
+float NationalTeam::staffCostCalculator(Date d1, Date d2) {
+    float costs = 0;
+    float date_difference;
+    float no_months;
+    //iterate over technicians menu
+    for (auto i = technicians.begin(); i != technicians.end(); i++){
+        //GET DATE DIFERENCE IN DAYS - setting an average of 30.44 days per month
+        no_months = (d2.dateToDays() - d1.dateToDays()) / 30.44;
+        costs += no_months * (*i)->getSalary();
+    }
+
+    return costs;
+}
+
 float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, int playerID) {
     //save pass value - wre assumed 1% of the pass value as current player's value has astronomical values
     float pass = players[playerID-1]->getPassValue() * 0.01;
@@ -313,6 +327,7 @@ float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, i
     }
     return pass;
 }
+
 float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
     //save pass value - wre assumed 1% of the pass value as current player's value has astronomical values
     float pass;
@@ -364,6 +379,14 @@ float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
         }
     }
     return val;
+}
+
+float NationalTeam::staffCostCalculatorMonth(int monthNumber) {
+    float costs;
+    for (auto i = technicians.begin(); i != technicians.end(); i++){
+        costs += (*i)->getSalary();
+    }
+    return costs;
 }
 
 

@@ -166,9 +166,9 @@ public:
     //team costs
     float teamCostCalculator(Date d1, Date d2);
     float teamCostCalculatorMonth(int monthNumber, int yearNumber);
-    //team+staff costs
-    float allCostCalculator(Date d1, Date d2);
-    float allCostCalculatorMonth(int monthNumber, int yearNumber);
+    //staff costs
+    float staffCostCalculator(Date d1, Date d2);
+    float staffCostCalculatorMonth(int monthNumber);
 
 
     //READ FROM TEXT FILES
