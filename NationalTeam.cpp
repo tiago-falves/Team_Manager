@@ -445,6 +445,8 @@ bool NationalTeam::readGames(string filename) {
             game->setReferees(splited_str_string);
 
             getline(gamesFile, text);
+
+            games.push_back(game);
         }
 
         return true;
