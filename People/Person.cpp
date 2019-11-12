@@ -43,6 +43,8 @@ bool Person::operator<(const Person* &person) const {
     return id < person->id;
 }
 
+
+
 bool Person::operator>(const Person &person) const {
     return id > person.id;
 }
@@ -127,9 +129,6 @@ ostream &operator<<(ostream &os, const Person *person){
     return os;
 }
 
-void Person::setLastId(int lastId) {
-    Person::lastId = lastId;
-}
 
 
 

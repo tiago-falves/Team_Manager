@@ -163,6 +163,9 @@ public:
      */
     bool operator<(const Person &person) const;
 
+
+    bool operator<(const Person* &person) const;
+
     /**
      * @brief Operator to see if the person's caller id is bigger than person.id
      * @param person
@@ -190,7 +193,7 @@ public:
      * @param Person* - Pointer to the Person we want to print
      * @return Ostream - Returns formatted Data
      */
-    friend ostream &operator<<(ostream &os, const Person *person) const;
+    friend ostream &operator<<(ostream &os, const Person *person);
 
 
 
