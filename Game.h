@@ -52,6 +52,7 @@ public:
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
     void printIntoFile(ostream &os) const;
     void printStatistics(ostream &os, PlayerGameStatistics statistics);
+    void print(ostream &os);
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };

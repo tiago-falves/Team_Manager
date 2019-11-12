@@ -461,13 +461,6 @@ vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
     return gamesPlayed;
 }
 
-void NationalTeam::printSimpleGame(ostream &out, Game *game){
-    out <<  left << setw(4)  << setfill(' ') << game->getID() << "│  ";
-    out <<  left << setw(20) << setfill(' ') << game->getCity()  << "│ ";
-    out <<  left << setw(11) << setfill(' ') <<  game->getCountry() << "│ ";
-    out <<  left << setw(20) << setfill(' ') << game->getStadium() << "│  "  ;
-}
-
 
 //Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
 void NationalTeam::saveAndExit(string fileName) {

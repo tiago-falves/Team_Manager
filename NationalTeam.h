@@ -112,7 +112,6 @@ public:
     *****************************************************/
     bool readGames(string filename);
     void saveGames(string filename);
-    void printSimpleGame(ostream& out, Game * game);
     void printAllGameInfo(ostream& out, Game * game);
 
     vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
