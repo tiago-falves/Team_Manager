@@ -81,6 +81,7 @@ void NationalTeam::sortByName(vector<Person *> &people) {
     sort(people.begin(),people.end(),nameComparable);
 }
 
+
 vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) { //Devo ordenar duas vezes?? ou mais vale usar a sequencial?
 
     vector<Person*> peopleName;
@@ -396,6 +397,20 @@ float NationalTeam::staffCostCalculatorMonth(int monthNumber) {
     return costs;
 }
 
+
+
+//Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
+void NationalTeam::saveAndExit(string fileName) {
+    string content;
+    ofstream peopleFile(fileName);
+
+    for (int i = 0; i < people.size(); i++){
+        people[i]->printToFile(peopleFile);
+    }
+    peopleFile.close();
+    
+    exit(0);
+}
 
 
 

@@ -16,6 +16,9 @@ void NationalTeam::runCallUpMenu() {
     cout << "3. Create new Call up." << endl;
     cout << "4. Remove Call Up" << endl;
     cout << "5. Modify Call Up" << endl;
+    cout << "5. Add Game to Call Up" << endl;
+    cout << "5. Remove Game from Call Up" << endl;
+    cout << "5. Modify Call Up" << endl;
     cout << "Insert the number correspondent to your option: ";
     cin >> option;
 

@@ -18,11 +18,30 @@
 
 class NationalTeam {
 private:
-public:
     vector<Person*> people;
     vector<FootballPlayer*> players;
     vector<Technician*> technicians;
     vector<CallUp*> callUps;
+    string peopleFile;
+public:
+    const string &getPeopleFile() const;
+
+    void setPeopleFile(const string &peopleFile);
+
+    const string &getCallUpFile() const;
+
+    void setCallUpFile(const string &callUpFile);
+
+    const string &getGameFile() const;
+
+    void setGameFile(const string &gameFile);
+
+private:
+    string callUpFile;
+    string gameFile; //Todos os ficheiros contidos no ficheiro da team
+
+public:
+
 
     NationalTeam();
 
@@ -194,6 +213,7 @@ public:
     //DELETE CALLUP
     void deleteCallUp();
 
+    void saveAndExit(string fileName);
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H

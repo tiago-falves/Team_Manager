@@ -22,15 +22,7 @@ public:
     FootballPlayer();
 
     virtual void modify(Person *newPerson);
-/*
-    bool addFootballPlayer(vector<FootballPlayer*> &players);
 
-    bool removeFootballPlayer(vector<FootballPlayer*> &players);
-
-    bool modifyFootballPlayer(vector<FootballPlayer*> &players, FootballPlayer *newFootballPlayer);
-
-    int playerPosition(vector<FootballPlayer*> &players);
-*/
     virtual void print(ostream& out) const;
 
     virtual void printToFile(ostream &os) const;

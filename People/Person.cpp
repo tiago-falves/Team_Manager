@@ -122,6 +122,10 @@ ostream &operator<<(ostream &os, const Person *person){
     return os;
 }
 
+void Person::setLastId(int lastId) {
+    Person::lastId = lastId;
+}
+
 
 
 
