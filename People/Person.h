@@ -8,6 +8,7 @@
 #include <ostream>
 #include <iomanip>
 #include "..//Utilities.h"
+#include "..//Game.h"
 
 
 

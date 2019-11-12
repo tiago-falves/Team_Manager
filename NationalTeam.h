@@ -23,6 +23,7 @@ public:
     vector<FootballPlayer*> players;
     vector<Technician*> technicians;
     vector<CallUp*> callUps;
+    vector<Game *> games;
 
     NationalTeam();
 
