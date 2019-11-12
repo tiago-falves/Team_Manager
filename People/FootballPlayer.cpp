@@ -16,6 +16,7 @@ FootballPlayer::FootballPlayer(string name, Date birthdayDate,float salary, stri
 }
 
 FootballPlayer::FootballPlayer():Person() {
+    this->position = "";
     this->club = "";
     this->weight= 0;
     this->height = 0;
@@ -102,13 +103,8 @@ void FootballPlayer::setInjury(bool injury) {
     FootballPlayer::injury = injury;
 }
 
-float FootballPlayer::getSalary() const {
-    return salary;
-}
 
-void FootballPlayer::setSalary(float salary) {
-    FootballPlayer::salary = salary;
-}
+
 
 void FootballPlayer::modify(Person *newPerson){
     FootballPlayer *player = (FootballPlayer*) newPerson;
