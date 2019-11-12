@@ -67,10 +67,6 @@ void NationalTeam::sortByID(vector<Person *> &people) {
     sort(people.begin(),people.end());
 }
 
-
-
-
-
 bool NationalTeam::nameComparable(const Person* person1, const Person* person2){
     return (person1->getName() < person2->getName());
 }
@@ -445,6 +441,8 @@ bool NationalTeam::readGames(string filename) {
             game->setReferees(splited_str_string);
 
             getline(gamesFile, text);
+
+            games.push_back(game);
         }
 
         return true;
@@ -461,13 +459,6 @@ vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
     }
 
     return gamesPlayed;
-}
-
-void NationalTeam::printSimpleGame(ostream &out, Game *game){
-    out <<  left << setw(4)  << setfill(' ') << game->getID() << "│  ";
-    out <<  left << setw(20) << setfill(' ') << game->getCity()  << "│ ";
-    out <<  left << setw(11) << setfill(' ') <<  game->getCountry() << "│ ";
-    out <<  left << setw(20) << setfill(' ') << game->getStadium() << "│  "  ;
 }
 
 

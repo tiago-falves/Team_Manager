@@ -112,7 +112,6 @@ public:
     *****************************************************/
     bool readGames(string filename);
     void saveGames(string filename);
-    void printSimpleGame(ostream& out, Game * game);
     void printAllGameInfo(ostream& out, Game * game);
 
     vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
@@ -133,10 +132,29 @@ public:
     int askForId();
 
     //People Menu
+
+    /**
+     * Runs the Menin People Menu with all the options
+     */
     void runPeopleMenu();
+
+    /**
+     * Runs the main Player's Menu with all Football Player coorelated options
+     */
     void runPlayersMenu();
+
+    /**
+     * Runs the main Technician's Menu with all Technician coorelated options
+     */
     void runTechnicianMenu();
+
+    /**
+     *
+     * @param out where the information is going to be outputted
+     * @param i id of the Person that will be printed
+     */
     void showSpecificPerson(ostream &out,int i);
+
     void askPersonInformation(string &name,float &salary,Date &birthday);
     void createPlayerOption();
     void removePlayerOption();
@@ -148,19 +166,32 @@ public:
     FootballPlayer* askPlayerInformation();
 
 
+    /**
+     * Template class that asks the user for id and catches exception
+     * if the user tris to search for an id that is not
+     * in the database
+     * @tparam T Can be of any type that has the atribbute id
+     * @param peepz of type T, in this represents any pointer of type person
+     * @return  int representing a valid id
+     */
     template <class T>
     int askForValidId(vector<T *> &peepz){
-        int id = askForId();
+
+        int id;
+
         while (true)
         {
+            id = askForId();
+
             try {
                 searchByID(peepz, id);
                 break;
             }
             catch (InexistentId(id)) {
-                id = askForId();
+                cout << "Invalid Input.\n";
             }
         }
+
         return id;
     }
 
