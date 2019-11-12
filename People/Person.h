@@ -164,6 +164,11 @@ public:
     bool operator<(const Person &person) const;
 
 
+    /**
+     *@brief Operator to see if the person's caller id is smaller than person->id
+     * @param person
+     * @return bool - True if caller id is smaller than person->id
+     */
     bool operator<(const Person* &person) const;
 
     /**
