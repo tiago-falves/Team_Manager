@@ -1,0 +1,17 @@
+Game
+1
+Porto
+Portugal
+Estádio do Dragão
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+"Hector", "Juan", "Miguel", "Luis", "Joao", "Amaro", "Forte", "J3P", "André", "Antonio", "Joel"
+"Lel", "lol", "lolitos"
+2
+Porto
+Portugal
+Estádio do Dragão
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+"Hector", "Juan", "Miguel", "Luis", "Joao", "Amaro", "Forte", "J3P", "André", "Antonio", "Joel"
+"Lel", "lol", "lolitos"

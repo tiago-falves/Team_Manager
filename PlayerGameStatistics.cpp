@@ -4,10 +4,27 @@
 
 #include "PlayerGameStatistics.h"
 
-PlayerGameStatistics::PlayerGameStatistics(int numberOfGoals,int minutesPlayed, int kilometers) {
+PlayerGameStatistics::PlayerGameStatistics(FootballPlayer * player, int numberOfGoals,int minutesPlayed, int kilometers,int numberOfPasses, int numberOfYellowCards, int numberOfRedCards):id(lastId++) {
+
+    this->player = player;
     this->numberOfGoals=numberOfGoals;
     this->minutesPlayed=minutesPlayed;
     this->kilometers=kilometers;
+    this->numberOfPasses = numberOfPasses;
+    this->numberOfYellowCards = numberOfYellowCards;
+    this->numberOfRedCards = numberOfRedCards;
+
+}
+
+PlayerGameStatistics::PlayerGameStatistics(FootballPlayer *player):id(lastId++) {
+
+    this->player = player;
+    this->numberOfGoals = 0;
+    this->minutesPlayed = 0;
+    this->kilometers = 0;
+    this->numberOfPasses = 0;
+    this->numberOfYellowCards = 0;
+    this->numberOfRedCards = 0;
 }
 
 FootballPlayer *PlayerGameStatistics::getPlayer() const {
@@ -64,4 +81,14 @@ int PlayerGameStatistics::getNumberOfRedCards() const {
 
 void PlayerGameStatistics::setNumberOfRedCards(int numberOfRedCards) {
     PlayerGameStatistics::numberOfRedCards = numberOfRedCards;
+}
+
+void PlayerGameStatistics::print(ostream &out) {
+    out <<  left << setw(20)  << setfill(' ') << player->getName() << "│ ";
+    out <<  left << setw(20)  << setfill(' ') << numberOfGoals << "│ ";
+    out <<  left << setw(9) << setfill(' ') << minutesPlayed  << " │";
+    out <<  left << setw(4) << setfill(' ')<< fixed  << setprecision(2)  <<  kilometers<< " │";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) <<  numberOfPasses << " │";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << numberOfYellowCards << " │";
+    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << numberOfRedCards << " │";
 }

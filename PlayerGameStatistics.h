@@ -14,7 +14,21 @@ using namespace std;
 
 class PlayerGameStatistics {
 private:
+    int id;
+    FootballPlayer * player;
+    int numberOfGoals;
+    int minutesPlayed;
+    int kilometers;
+    int numberOfPasses;
+    int numberOfYellowCards;
+    int numberOfRedCards;
+    int lastId;
+
 public:
+    PlayerGameStatistics(FootballPlayer * player, int numberOfGoals, int minutesPlayed, int kilometers, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
+
+    PlayerGameStatistics(FootballPlayer * player);
+
     FootballPlayer *getPlayer() const;
 
     void setPlayer(FootballPlayer *player);
@@ -43,17 +57,7 @@ public:
 
     void setNumberOfRedCards(int numberOfRedCards);
 
-private:
-    FootballPlayer * player;
-    int numberOfGoals;
-    int minutesPlayed;
-    int kilometers;
-    int numberOfPasses;
-    int numberOfYellowCards;
-    int numberOfRedCards;
-
-public:
-    PlayerGameStatistics(int numberOfGoals, int minutesPlayed, int kilometers);
+    void print(ostream &out);
 };
 
 
