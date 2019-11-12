@@ -176,6 +176,10 @@ public:
     void setInjury(bool injury);
 
 
+    /**
+     * Sets player's position
+     * @param const string &position - represent payer's position
+     */
     void setPosition(const string &position);
 };
 

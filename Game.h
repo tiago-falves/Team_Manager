@@ -29,7 +29,6 @@ public:
     Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP);
 
     Game();
-
     int getID() const;
     string getCity() const;
     string getCountry() const;
