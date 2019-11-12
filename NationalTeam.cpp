@@ -27,7 +27,7 @@ bool NationalTeam::readPeople(string fileName) {
     else{
         while(!peopleFile.eof()){
             getline(peopleFile, text);
-            getline(peopleFile,id);
+            //getline(peopleFile,id);
             if(text == "Football Player"){
                 FootballPlayer *player = new FootballPlayer();
                 player->read(&peopleFile);
@@ -80,6 +80,7 @@ bool NationalTeam::idComparable(const Person* person1, const int id){
 void NationalTeam::sortByName(vector<Person *> &people) {
     sort(people.begin(),people.end(),nameComparable);
 }
+
 
 vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) { //Devo ordenar duas vezes?? ou mais vale usar a sequencial?
 
@@ -464,6 +465,20 @@ vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
 
 void NationalTeam::printGame(ostream &out) {
 
+}
+
+
+//Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
+void NationalTeam::saveAndExit(string fileName) {
+    string content;
+    ofstream peopleFile("../Files/" +fileName);
+
+    for (int i = 0; i < people.size(); i++){
+        people[i]->printToFile(peopleFile);
+    }
+    peopleFile.close();
+
+    exit(0);
 }
 
 

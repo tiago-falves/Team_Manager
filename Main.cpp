@@ -8,7 +8,16 @@
 #include "Test.h"
 using namespace std;
 
+void runAgency(){
+    //Read Team File
+    //File will contain the name of the other documents
 
+    //Isto e so para testar
+    NationalTeam team;
+    team.setPeopleFile("Person.txt");
+    team.readPeople(team.getPeopleFile());
+    team.runMenu();
+}
 
 int main() {
 
@@ -18,6 +27,7 @@ int main() {
     //testNationalTeam();;
     SetConsoleOutputCP(CP_UTF8);
 
+    runAgency();
 
 
     //_setmode(_fileno(stdout), _O_U16TEXT);

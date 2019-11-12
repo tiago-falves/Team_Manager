@@ -28,15 +28,16 @@ void Technician::print(ostream &out) const {
 
     out <<  left << setw(20) << role << "│  ";
     out <<  left << setw(9) << setfill(' ') << "-------"  << "│ ";
-    out <<  left << setw(4) << setfill(' ')<<  "---" << " │";
+    out <<  left << setw(5) << setfill(' ')<<  "---" << "│ ";
     out <<  left << setw(5) << setfill(' ') << "-----" << " │ ";
-    out <<  left << setw(5) << setfill(' ') << "----"<< " │ ";
+    out <<  left << setw(5) << setfill(' ') << "----"<< "│ ";
     out <<  left << setw(5) << setfill(' ') << "----"<< "  │" << endl;
 }
 
 void Technician::printToFile(ostream &out) const {
     Person::printToFile(out);
     out << role << endl;
+    out <<  "::::::::::" << endl;
 }
 
 string Technician::type() const {

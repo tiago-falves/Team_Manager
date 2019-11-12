@@ -268,3 +268,27 @@ Technician* NationalTeam::askTechInformation(){
 
 }
 
+const string &NationalTeam::getPeopleFile() const {
+    return peopleFile;
+}
+
+void NationalTeam::setPeopleFile(const string &peopleFile) {
+    NationalTeam::peopleFile = peopleFile;
+}
+
+const string &NationalTeam::getCallUpFile() const {
+    return callUpFile;
+}
+
+void NationalTeam::setCallUpFile(const string &callUpFile) {
+    NationalTeam::callUpFile = callUpFile;
+}
+
+const string &NationalTeam::getGameFile() const {
+    return gameFile;
+}
+
+void NationalTeam::setGameFile(const string &gameFile) {
+    NationalTeam::gameFile = gameFile;
+}
+

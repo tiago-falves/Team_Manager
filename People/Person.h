@@ -20,6 +20,9 @@ protected:
     float salary;
     static int lastId;
 public:
+    static void setLastId(int lastId);
+
+public:
     /**
      * @brief Construct a new Person object
      * 

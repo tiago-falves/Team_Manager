@@ -32,10 +32,10 @@ void FootballPlayer::print(ostream &out) const {
     Person::print(cout);
     out <<  left << setw(20)  << setfill(' ') << position << "│ ";
     out <<  left << setw(9) << setfill(' ') << club  << " │";
-    out <<  left << setw(4) << setfill(' ')<< fixed  << setprecision(2)  <<  weight<< " │";
-    out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) <<  height<< " │";
+    out <<  left << setw(5) << setfill(' ')<< fixed  << setprecision(2)  <<  weight<< " │";
+    out <<  left << setw(6) << setfill(' ') << fixed  << setprecision(2) <<  height<< " │";
     out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << pass_value<< " │";
-    if(injury) out <<  left << setw(5) << setfill(' ') << "Injured"<< "│" << endl;
+    if(injury) out <<  left << setw(5) << setfill(' ') << "Injured"<< " │" << endl;
     else out <<  left << setw(5) << setfill(' ') << "Healthy"<< " │" << endl;
 
 
@@ -50,6 +50,7 @@ void FootballPlayer::printToFile(ostream &os) const {
     os << fixed << setprecision(2) << pass_value << endl;
     if (injury) os << "Injured";
     else os << "Healthy";
+    os << endl << "::::::::::";
     os << endl;
 }
 
