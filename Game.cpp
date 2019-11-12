@@ -15,6 +15,9 @@ Game::Game(string city, string country, string stadium, vector<PlayerGameStatist
 
 }
 
+Game::Game():id(lastID++){}
+
+
 ostream& operator<<(ostream &out, const Game& game) {
     out << "Location: " << game.stadium << ", " << game.city << ", " << game.country << endl << endl;
     return out;
@@ -23,6 +26,11 @@ ostream& operator<<(ostream &out, const Game& game) {
 /*****************************************************
  *******************GET FUNCTIONS*********************
  *****************************************************/
+
+int Game::getID() const {
+    return this->id;
+}
+
 string Game::getCountry() const {
     return country;
 }
@@ -42,7 +50,7 @@ vector<string> Game::getEnemyPlayers() const {
 }
 
 vector<PlayerGameStatistics> Game::getPlayerStatistics() const {
-    return vector<PlayerGameStatistics>();
+    return this->playerStatistics;
 }
 
 vector<string> Game::getReferees() {
@@ -81,9 +89,6 @@ void Game::setEnemyPlayers(vector<string> vec){
  *****************PRINT FUNCTIONS*********************
  *****************************************************/
 
-void Game::print(ostream &out) {
-
-}
 
 /*****************************************************
  ******************AUX FUNCTIONS*********************
@@ -91,6 +96,7 @@ void Game::print(ostream &out) {
 
 void Game::addNationalPlayer(FootballPlayer *player) {
     this->nationalPlayers.push_back(player);
+    this->playerStatistics.push_back(PlayerGameStatistics(player->getId()));
 }
 
 void Game::removeNationalPlayer(FootballPlayer *player) {
@@ -113,5 +119,48 @@ PlayerGameStatistics Game::getSpecificPlayerStatistics(FootballPlayer *player) {
     return playerStatistics[0];
 }
 
+void Game::printIntoFile(ostream &os) const{
+    os << id << endl;
+    os << city << endl;
+    os << country << endl;
+    os << stadium << endl;
+
+    for(int i = 0; i < playerStatistics.size(); i++){
+        if(i == playerStatistics.size() - 1){
+            os << playerStatistics[i].getID() << endl;
+        }
+        else {
+            os << playerStatistics[i].getID() << ",";
+        }
+    }
+
+    for(int i = 0; i < nationalPlayers.size(); i++){
+        if(i == nationalPlayers.size() - 1){
+            os << nationalPlayers[i]->getId() << endl;
+        }
+        else {
+            os << nationalPlayers[i]->getId() << ",";
+        }
+    }
+
+    for(int i = 0; i < enemyPlayers.size(); i++){
+        if(i == enemyPlayers.size() - 1){
+            os << enemyPlayers[i] << endl;
+        }
+        else {
+            os << enemyPlayers[i] << ",";
+        }
+    }
+
+    for(int i = 0; i < referees.size(); i++){
+        if(i == referees.size() - 1){
+            os << referees[i] << endl;
+        }
+        else {
+            os << referees[i] << ",";
+        }
+    }
+
+}
 
 int Game::lastID = 1;

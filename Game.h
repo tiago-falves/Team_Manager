@@ -28,6 +28,9 @@ private:
 public:
     Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP);
 
+    Game();
+
+    int getID() const;
     string getCity() const;
     string getCountry() const;
     string getStadium() const;
@@ -48,8 +51,7 @@ public:
     void addNationalPlayer(FootballPlayer * player);
     void removeNationalPlayer(FootballPlayer * player);
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
-
-    void print(ostream &out);
+    void printIntoFile(ostream &os) const;
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };
