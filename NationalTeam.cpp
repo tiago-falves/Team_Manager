@@ -401,6 +401,7 @@ bool NationalTeam::readGames(string filename) {
     vector<FootballPlayer *> players;
     gamesFile.open("..//Files//" + filename);
 
+
     if(gamesFile.fail()){
         cerr << "Error Opening File";
         return false;

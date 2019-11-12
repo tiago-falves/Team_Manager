@@ -16,6 +16,7 @@ void runAgency(){
     NationalTeam team;
     team.setPeopleFile("Person.txt");
     team.readPeople(team.getPeopleFile());
+    team.readGames("Games.txt");
     team.runMenu();
 }
 
@@ -27,7 +28,7 @@ int main() {
     //testNationalTeam();;
     SetConsoleOutputCP(CP_UTF8);
 
-    runAgency();
+    //runAgency();
 
 
     //_setmode(_fileno(stdout), _O_U16TEXT);

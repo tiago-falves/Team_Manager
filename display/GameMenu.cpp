@@ -83,7 +83,7 @@ void NationalTeam::showAllGames(ostream &out) {
     tableHeaderAllGames(out);
     out << games.size() << "ZAAAAAAAAAAAAAAAAs";
     for(Game* g : games){
-        printSimpleGame(out, g);
+        g->print(out);
     }
     out << endl;
 
