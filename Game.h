@@ -10,15 +10,13 @@ using namespace std;
 
 class Game {
 private:
-    int id;
     string city;
     string country;
     string stadium;
     vector<PlayerGameStatistics> playerStatistics;
     vector<FootballPlayer *> nationalPlayers;
-    vector<string> enemyPlayers;
-    vector<string> referees;
-    static int lastId;
+    vector<FootballPlayer *> enemyPlayers;
+    vector<Person> referees;
 
 
 
@@ -26,34 +24,32 @@ private:
     //participantes no jogo de cada uma das equipas, a equipa de arbitragem, e todos os eventos e estatísticas de jogo
     //para cada jogador nacional (golos, passes, km percorridos, cartões, lesões, etc).
 public:
-    Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<string> referees, vector<string> enemyPlayer);
+    Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<Person> referees);
 
-    int getID() const;
     string getCity() const;
     string getCountry() const;
     string getStadium() const;
     vector<FootballPlayer *> getNationalPlayers() const;
-    vector<string> getEnemyPlayers() const;
+    vector<FootballPlayer *> getEnemyPlayers() const;
     vector<PlayerGameStatistics> getPlayerStatistics() const;
-    vector<string> getReferees();
+    vector<Person> getReferees();
 
     void setCity(string city);
     void setCountry(string country);
     void setStadium(string stadium);
     void setNationalPlayers(vector<FootballPlayer *> vec);
-    void setEnemyPlayers(vector<string> vec);
+    void setEnemyPlayers(vector<FootballPlayer *> vec);
     void setPlayerStatistics(vector<PlayerGameStatistics> statistics);
-    void setReferees(vector<string> refs);
+    void setReferees(vector<Person> refs);
 
 
     void addNationalPlayer(FootballPlayer * player);
-    void addEnemyPlayer(string player);
-    void removeEnemyPlayer(string player);
+    void addEnemyPlayer(FootballPlayer * player);
+    void removeEnemyPlayer(FootballPlayer * player);
     void removeNationalPlayer(FootballPlayer * player);
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
 
     void print(ostream &out);
-    void read(ifstream *file);
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };

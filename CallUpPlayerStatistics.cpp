@@ -31,3 +31,4 @@ void CallUpPlayerStatistics::setBegDate(const Date &begginingDate) {
 void CallUpPlayerStatistics::setPlayerID(const int &playerID) {
     this->playerID = playerID;
 }
+

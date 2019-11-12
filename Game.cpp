@@ -4,13 +4,12 @@
 
 #include "Game.h"
 
-Game::Game(string city, string country, string stadium, vector<PlayerGameStatistics> playerStatistics, vector<string> referees, vector<string> ePlayer):id(lastId++) {
+Game::Game(string city, string country, string stadium, vector<PlayerGameStatistics> playerStatistics, vector<Person> referees) {
     this->city =city;
     this->country = country;
     this->stadium=stadium;
     this->playerStatistics=playerStatistics;
     this->referees=referees;
-    this->enemyPlayers = ePlayer;
 
 }
 
@@ -22,11 +21,6 @@ ostream& operator<<(ostream &out, const Game& game) {
 /*****************************************************
  *******************GET FUNCTIONS*********************
  *****************************************************/
-
-int Game::getID() const {
-    return id;
-}
-
 string Game::getCountry() const {
     return country;
 }
@@ -41,16 +35,16 @@ vector<FootballPlayer *> Game::getNationalPlayers() const {
     return this->nationalPlayers;
 }
 
-vector<string> Game::getEnemyPlayers() const {
+vector<FootballPlayer *> Game::getEnemyPlayers() const {
     return this->enemyPlayers;
 }
 
 vector<PlayerGameStatistics> Game::getPlayerStatistics() const {
-    return this->playerStatistics;
+    return vector<PlayerGameStatistics>();
 }
 
-vector<string> Game::getReferees() {
-    return referees;
+vector<Person> Game::getReferees() {
+    return vector<Person>();
 }
 
 /*****************************************************
@@ -60,7 +54,7 @@ void Game::setPlayerStatistics(vector<PlayerGameStatistics> statistics){
     this->playerStatistics = statistics;
 }
 
-void Game::setReferees(vector<string> refs) {
+void Game::setReferees(vector<Person> refs) {
     this->referees = refs;
 }
 
@@ -77,7 +71,7 @@ void Game::setCountry(string country) {
 void Game::setNationalPlayers(vector<FootballPlayer *> vec) {
     this->nationalPlayers = vec;
 }
-void Game::setEnemyPlayers(vector<string> vec){
+void Game::setEnemyPlayers(vector<FootballPlayer *> vec){
     this->enemyPlayers = vec;
 }
 
@@ -93,13 +87,12 @@ void Game::print(ostream &out) {
  ******************AUX FUNCTIONS*********************
  *****************************************************/
 
-void Game::addEnemyPlayer(string player) {
+void Game::addEnemyPlayer(FootballPlayer *player) {
     this->enemyPlayers.push_back(player);
 }
 
 void Game::addNationalPlayer(FootballPlayer *player) {
     this->nationalPlayers.push_back(player);
-    this->playerStatistics.push_back(PlayerGameStatistics(player));
 }
 
 void Game::removeNationalPlayer(FootballPlayer *player) {
@@ -112,12 +105,12 @@ void Game::removeNationalPlayer(FootballPlayer *player) {
     }
 }
 
-void Game::removeEnemyPlayer(string player){
+void Game::removeEnemyPlayer(FootballPlayer *player){
 
-    vector<string>::iterator it;
+    vector<FootballPlayer *>::iterator it;
 
     for(it = enemyPlayers.begin(); it < enemyPlayers.end(); it++){
-        if((*it) == (player)){ enemyPlayers.erase(it); }
+        if((*it)->getId() == (*player).getId()){ enemyPlayers.erase(it); }
         return;
     }
 }
@@ -130,8 +123,4 @@ PlayerGameStatistics Game::getSpecificPlayerStatistics(FootballPlayer *player) {
         }
     }
     return playerStatistics[0];
-}
-
-void Game::read(ifstream *file) {
-    string text;
 }
