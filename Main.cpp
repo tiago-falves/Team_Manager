@@ -14,7 +14,7 @@ void runAgency(){
 
     //Isto e so para testar
     NationalTeam team;
-    team.setPeopleFile("ZAS.txt");
+    team.setPeopleFile("Person.txt");
     team.readPeople(team.getPeopleFile());
     team.runMenu();
 }

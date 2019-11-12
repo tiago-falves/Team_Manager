@@ -280,9 +280,32 @@ Joseph Mourinho
 1/2/2000
 1000.30
 Main Coach
+::::::::::
+Technician
+25
+Marcelo Rebelo
+1/2/2000
+200.00
+Secondary Coach
+::::::::::
+Technician
+26
+Susana Sousa
+1/2/2000
+300.90
+Manager
+::::::::::
+Technician
+27
+Afonso Lopes
+1/2/2000
+12000.00
+President
+::::::::::
 Technician
 28
 Pedro Gomes
 1/2/2000
 643.50
 Vice-President
+::::::::::
