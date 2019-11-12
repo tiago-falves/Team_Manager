@@ -10,13 +10,15 @@ using namespace std;
 
 class Game {
 private:
+    int id;
     string city;
     string country;
     string stadium;
     vector<PlayerGameStatistics> playerStatistics;
     vector<FootballPlayer *> nationalPlayers;
-    vector<FootballPlayer *> enemyPlayers;
-    vector<Person> referees;
+    vector<string> enemyPlayers;
+    vector<string> referees;
+    int lastID;
 
 
 
@@ -24,28 +26,26 @@ private:
     //participantes no jogo de cada uma das equipas, a equipa de arbitragem, e todos os eventos e estatísticas de jogo
     //para cada jogador nacional (golos, passes, km percorridos, cartões, lesões, etc).
 public:
-    Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<Person> referees);
+    Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP);
 
     string getCity() const;
     string getCountry() const;
     string getStadium() const;
     vector<FootballPlayer *> getNationalPlayers() const;
-    vector<FootballPlayer *> getEnemyPlayers() const;
+    vector<string> getEnemyPlayers() const;
     vector<PlayerGameStatistics> getPlayerStatistics() const;
-    vector<Person> getReferees();
+    vector<string> getReferees();
 
     void setCity(string city);
     void setCountry(string country);
     void setStadium(string stadium);
     void setNationalPlayers(vector<FootballPlayer *> vec);
-    void setEnemyPlayers(vector<FootballPlayer *> vec);
+    void setEnemyPlayers(vector<string> vec);
     void setPlayerStatistics(vector<PlayerGameStatistics> statistics);
-    void setReferees(vector<Person> refs);
+    void setReferees(vector<string> refs);
 
 
     void addNationalPlayer(FootballPlayer * player);
-    void addEnemyPlayer(FootballPlayer * player);
-    void removeEnemyPlayer(FootballPlayer * player);
     void removeNationalPlayer(FootballPlayer * player);
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
 

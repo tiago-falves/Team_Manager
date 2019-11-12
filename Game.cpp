@@ -4,12 +4,14 @@
 
 #include "Game.h"
 
-Game::Game(string city, string country, string stadium, vector<PlayerGameStatistics> playerStatistics, vector<Person> referees) {
+Game::Game(string city, string country, string stadium, vector<PlayerGameStatistics> playerStatistics, vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP):id(lastID++) {
     this->city =city;
     this->country = country;
     this->stadium=stadium;
     this->playerStatistics=playerStatistics;
     this->referees=referees;
+    this->nationalPlayers = nationalP;
+    this->enemyPlayers = enemyP;
 
 }
 
@@ -35,7 +37,7 @@ vector<FootballPlayer *> Game::getNationalPlayers() const {
     return this->nationalPlayers;
 }
 
-vector<FootballPlayer *> Game::getEnemyPlayers() const {
+vector<string> Game::getEnemyPlayers() const {
     return this->enemyPlayers;
 }
 
@@ -43,8 +45,8 @@ vector<PlayerGameStatistics> Game::getPlayerStatistics() const {
     return vector<PlayerGameStatistics>();
 }
 
-vector<Person> Game::getReferees() {
-    return vector<Person>();
+vector<string> Game::getReferees() {
+    return this->referees;
 }
 
 /*****************************************************
@@ -54,7 +56,7 @@ void Game::setPlayerStatistics(vector<PlayerGameStatistics> statistics){
     this->playerStatistics = statistics;
 }
 
-void Game::setReferees(vector<Person> refs) {
+void Game::setReferees(vector<string> refs) {
     this->referees = refs;
 }
 
@@ -71,7 +73,7 @@ void Game::setCountry(string country) {
 void Game::setNationalPlayers(vector<FootballPlayer *> vec) {
     this->nationalPlayers = vec;
 }
-void Game::setEnemyPlayers(vector<FootballPlayer *> vec){
+void Game::setEnemyPlayers(vector<string> vec){
     this->enemyPlayers = vec;
 }
 
@@ -87,10 +89,6 @@ void Game::print(ostream &out) {
  ******************AUX FUNCTIONS*********************
  *****************************************************/
 
-void Game::addEnemyPlayer(FootballPlayer *player) {
-    this->enemyPlayers.push_back(player);
-}
-
 void Game::addNationalPlayer(FootballPlayer *player) {
     this->nationalPlayers.push_back(player);
 }
@@ -101,16 +99,6 @@ void Game::removeNationalPlayer(FootballPlayer *player) {
 
     for(it = nationalPlayers.begin(); it < nationalPlayers.end(); it++){
         if((*it)->getId() == (*player).getId()){ nationalPlayers.erase(it); }
-        return;
-    }
-}
-
-void Game::removeEnemyPlayer(FootballPlayer *player){
-
-    vector<FootballPlayer *>::iterator it;
-
-    for(it = enemyPlayers.begin(); it < enemyPlayers.end(); it++){
-        if((*it)->getId() == (*player).getId()){ enemyPlayers.erase(it); }
         return;
     }
 }
