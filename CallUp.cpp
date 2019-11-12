@@ -113,3 +113,15 @@ bool CallUp::playerExists(int playerID) {
     }
     return false;
 }
+
+//SHOW CALL UP
+void CallUp::showCallUp(){
+
+}
+
+//CALL UP COMPARISON
+bool operator< (const CallUp& callUp1, const CallUp& callUp2){
+    if (callUp1.getId() < callUp2.getId()) return true;
+    else return false;
+}
+
