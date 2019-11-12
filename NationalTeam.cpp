@@ -420,6 +420,9 @@ bool NationalTeam::readGames(string filename) {
             game->setStadium(text);
 
             getline(gamesFile, text);
+            game->setGameTitle(text);
+
+            getline(gamesFile, text);
             splited_int_string = separateCharacterInt(text, ',');
 
             //Falta implementar guardar os PlayerGameStatistics
