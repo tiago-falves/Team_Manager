@@ -112,7 +112,8 @@ public:
     *****************************************************/
     bool readGames(string filename);
     void saveGames(string filename);
-    void printGame(ostream& out);
+    void printSimpleGame(ostream& out, Game * game);
+    void printAllGameInfo(ostream& out, Game * game);
 
     vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
 
@@ -169,6 +170,7 @@ public:
     void createGameOption();
     void removeGameOption();
     void modifyGameOption();
+    void showAllGames(ostream &out);
 
 
     //Economies Menu
@@ -209,9 +211,12 @@ public:
 
 
     void tableHeaderPlayer(ostream &out);
-    void tableHeaderGame(ostream &out);
+    void tableHeaderAllGames(ostream &out);
+    void tableHeaderStatistics(ostream &out);
 
-    void tableFooter(ostream &out);
+    void tableFooterPlayer(ostream &out);
+    void tableFooterAllGames(ostream &out);
+    void tableFooterStatistics(ostream &out);
 
     /****************************************************
     *******************HANDLE CALLUPS******************

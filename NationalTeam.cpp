@@ -463,8 +463,11 @@ vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
     return gamesPlayed;
 }
 
-void NationalTeam::printGame(ostream &out) {
-
+void NationalTeam::printSimpleGame(ostream &out, Game *game){
+    out <<  left << setw(4)  << setfill(' ') << game->getID() << "│  ";
+    out <<  left << setw(20) << setfill(' ') << game->getCity()  << "│ ";
+    out <<  left << setw(11) << setfill(' ') <<  game->getCountry() << "│ ";
+    out <<  left << setw(20) << setfill(' ') << game->getStadium() << "│  "  ;
 }
 
 
@@ -480,6 +483,7 @@ void NationalTeam::saveAndExit(string fileName) {
 
     exit(0);
 }
+
 
 
 

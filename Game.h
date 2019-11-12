@@ -52,6 +52,7 @@ public:
     void removeNationalPlayer(FootballPlayer * player);
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
     void printIntoFile(ostream &os) const;
+    void printStatistics(ostream &os, PlayerGameStatistics statistics);
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };
