@@ -18,7 +18,7 @@ private:
     vector<FootballPlayer *> nationalPlayers;
     vector<string> enemyPlayers;
     vector<string> referees;
-    int lastID;
+    static int lastID;
 
 
 

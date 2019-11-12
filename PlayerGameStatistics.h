@@ -15,9 +15,14 @@ using namespace std;
 class PlayerGameStatistics {
 private:
 public:
-    FootballPlayer *getPlayer() const;
 
-    void setPlayer(FootballPlayer *player);
+    PlayerGameStatistics(int numberOfGoals, int minutesPlayed, int kilometers, int playerID, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
+
+    PlayerGameStatistics(int playerID);
+    
+    int getPlayerID() const;
+
+    void setPlayerID(int playerID);
 
     int getNumberOfGoals() const;
 
@@ -44,16 +49,18 @@ public:
     void setNumberOfRedCards(int numberOfRedCards);
 
 private:
-    FootballPlayer * player;
+    int id;
+    int playerID;
     int numberOfGoals;
     int minutesPlayed;
     int kilometers;
     int numberOfPasses;
     int numberOfYellowCards;
     int numberOfRedCards;
+    static int lastId;
 
 public:
-    PlayerGameStatistics(int numberOfGoals, int minutesPlayed, int kilometers);
+
 };
 
 
