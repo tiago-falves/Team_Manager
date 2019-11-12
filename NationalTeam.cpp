@@ -67,10 +67,6 @@ void NationalTeam::sortByID(vector<Person *> &people) {
     sort(people.begin(),people.end());
 }
 
-
-
-
-
 bool NationalTeam::nameComparable(const Person* person1, const Person* person2){
     return (person1->getName() < person2->getName());
 }

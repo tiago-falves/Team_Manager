@@ -150,17 +150,22 @@ public:
 
     template <class T>
     int askForValidId(vector<T *> &peepz){
-        int id = askForId();
+
+        int id;
+
         while (true)
         {
+            id = askForId();
+
             try {
                 searchByID(peepz, id);
                 break;
             }
             catch (InexistentId(id)) {
-                id = askForId();
+                cout << "Invalid Input.\n";
             }
         }
+
         return id;
     }
 
