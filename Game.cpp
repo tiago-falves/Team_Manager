@@ -180,7 +180,50 @@ void Game::print(ostream &out){
     out <<  left << setw(4)  << setfill(' ') << this->id << "│  ";
     out <<  left << setw(20) << setfill(' ') << this->city  << "│ ";
     out <<  left << setw(11) << setfill(' ') <<  this->country << "│ ";
-    out <<  left << setw(20) << setfill(' ') << this->stadium << "│  "  ;
+    out <<  left << setw(20) << setfill(' ') << this->stadium << "│ "  ;
+    out << left << setw(20) << setfill(' ') << this->game_title << "|  " ;
+    out << endl;
 }
 
 int Game::lastID = 1;
+
+/*****************************************************
+ ******************ADD FUNCTIONS*********************
+ *****************************************************/
+
+void Game::addEnemyPlayer(string player)  {
+    enemyPlayers.push_back(player);
+}
+
+int Game::addReferee(string referee) {
+    if(referee.size() == 5){
+        cout << "You can't add more referees. Please delete one before adding.";
+        return 1;
+    }
+}
+
+/*****************************************************
+ ****************REMOVE FUNCTIONS*********************
+ *****************************************************/
+
+void Game::removeEnemyPlayer(string player) {
+    vector<string>::const_iterator it;
+
+    for(it = enemyPlayers.begin(); it < enemyPlayers.end(); it++){
+        if((*it) == player){
+            enemyPlayers.erase(it);
+            return;
+        }
+    }
+}
+
+void Game::removeReferee(string referee){
+    vector<string>::const_iterator it;
+
+    for(it = referees.begin(); it < referees.end(); it++){
+        if((*it) == referee){
+            referees.erase(it);
+            return;
+        }
+    }
+}

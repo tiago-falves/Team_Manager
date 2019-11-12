@@ -50,13 +50,21 @@ public:
     void setPlayerStatistics(vector<PlayerGameStatistics> statistics);
     void setReferees(vector<string> refs);
 
-
+    // ADD FUNCTIONS
     void addNationalPlayer(FootballPlayer * player);
+    void addEnemyPlayer(string player);
+    int addReferee(string referee);
+
+    // REMOVE FUNCTIONS
     void removeNationalPlayer(FootballPlayer * player);
+    void removeEnemyPlayer(string player);
+    void removeReferee(string referee);
+
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
     void printIntoFile(ostream &os) const;
     void printStatistics(ostream &os, PlayerGameStatistics statistics);
     void print(ostream &os);
+
 
     friend ostream& operator<< (ostream& out, const Game& game);
 };

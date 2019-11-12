@@ -49,16 +49,18 @@ void NationalTeam::runGameMenu() {
 
 void NationalTeam::tableHeaderAllGames(ostream &out) {
     out << endl << endl << endl;
-    out << setw(55) << setfill('-') << "-" <<  endl;
+    out << setw(83) << setfill('-') << "-" <<  endl;
     out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
     out <<  left << setw(20) << setfill(' ') << "City"  << "│ ";
     out <<  left << setw(11) << setfill(' ') <<  "Country"<< "│ ";
-    out <<  left << setw(20)  << setfill(' ') << "Stadium" << "│ ";
+    out <<  left << setw(18)  << setfill(' ') << "Stadium" << "│ ";
+    out <<  left << setw(20)  << setfill(' ') << "Game Title" << "│ ";
+    out << endl;
 
 }
 
 void NationalTeam::tableFooterAllGames(ostream &out) {
-    out << setw(55) << setfill('-') << "-" << endl;
+    out << setw(83) << setfill('-') << "-" << endl;
 }
 
 void NationalTeam::tableHeaderStatistics(ostream &out) {
@@ -81,11 +83,9 @@ void NationalTeam::tableFooterStatistics(ostream &out){
 void NationalTeam::showAllGames(ostream &out) {
 
     tableHeaderAllGames(out);
-    out << games.size() << "ZAAAAAAAAAAAAAAAAs";
     for(Game* g : games){
         g->print(out);
     }
-    out << endl;
 
     tableFooterAllGames(out);
 
