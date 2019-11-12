@@ -12,8 +12,9 @@ void runAgency(){
     //Read Team File
     //File will contain the name of the other documents
 
+    //Isto e so para testar
     NationalTeam team;
-    team.setPeopleFile("Person.txt");
+    team.setPeopleFile("ZAS.txt");
     team.readPeople(team.getPeopleFile());
     team.runMenu();
 }

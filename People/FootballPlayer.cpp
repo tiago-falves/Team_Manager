@@ -50,6 +50,7 @@ void FootballPlayer::printToFile(ostream &os) const {
     os << fixed << setprecision(2) << pass_value << endl;
     if (injury) os << "Injured";
     else os << "Healthy";
+    os << endl << "::::::::::";
     os << endl;
 }
 

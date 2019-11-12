@@ -27,7 +27,7 @@ bool NationalTeam::readPeople(string fileName) {
     else{
         while(!peopleFile.eof()){
             getline(peopleFile, text);
-            getline(peopleFile,id);
+            //getline(peopleFile,id);
             if(text == "Football Player"){
                 FootballPlayer *player = new FootballPlayer();
                 player->read(&peopleFile);
@@ -402,13 +402,13 @@ float NationalTeam::staffCostCalculatorMonth(int monthNumber) {
 //Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
 void NationalTeam::saveAndExit(string fileName) {
     string content;
-    ofstream peopleFile(fileName);
+    ofstream peopleFile("../Files/" +fileName);
 
     for (int i = 0; i < people.size(); i++){
         people[i]->printToFile(peopleFile);
     }
     peopleFile.close();
-    
+
     exit(0);
 }
 

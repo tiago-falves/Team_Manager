@@ -36,7 +36,7 @@ void NationalTeam::runMenu() {
         else if (option == 2) { runGameMenu(); }
         else if (option == 3) { runCallUpMenu(); }
         else if (option == 4) { runEconomiesMenu(); }
-        else if (option == 5) {/*saveAndExit();*/ }
+        else if (option == 5) {saveAndExit("ZAS.txt"); }
     }
 }
 

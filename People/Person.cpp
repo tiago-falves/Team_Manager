@@ -87,6 +87,11 @@ void Person::printToFile(ostream &os) const {
 void Person::read(ifstream *file) {
     string text;
     Date birthday = Date();
+
+    getline(*file,text);
+    try {id = stoi(text);}
+    catch (std::invalid_argument ia){ cerr << "Invalid ID " << text << " for: " << name; throw;}
+
     getline(*file,text);
     name = text;
 
