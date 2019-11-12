@@ -106,9 +106,12 @@ void Game::removeNationalPlayer(FootballPlayer *player) {
 PlayerGameStatistics Game::getSpecificPlayerStatistics(FootballPlayer *player) {
 
     for(PlayerGameStatistics p : playerStatistics){
-        if(p.getPlayer() == player){
+        if(p.getPlayerID() == player->getId()){
             return p;
         }
     }
     return playerStatistics[0];
 }
+
+
+int Game::lastID = 1;

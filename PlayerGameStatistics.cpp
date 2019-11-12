@@ -80,3 +80,6 @@ int PlayerGameStatistics::getNumberOfRedCards() const {
 void PlayerGameStatistics::setNumberOfRedCards(int numberOfRedCards) {
     PlayerGameStatistics::numberOfRedCards = numberOfRedCards;
 }
+
+
+int PlayerGameStatistics::lastId = 1;

@@ -19,7 +19,7 @@ public:
     PlayerGameStatistics(int numberOfGoals, int minutesPlayed, int kilometers, int playerID, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
 
     PlayerGameStatistics(int playerID);
-    
+
     int getPlayerID() const;
 
     void setPlayerID(int playerID);
