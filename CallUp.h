@@ -5,10 +5,12 @@
 #include "Date.h"
 #include "Game.h"
 #include "CallUpPlayerStatistics.h"
+#include "Exceptions.h"
 using namespace std;
 
 class CallUp {
 private:
+    int id;
     float dailyCost;
     vector<Game*> games;
     Date begginingDate;
@@ -16,9 +18,10 @@ private:
     vector<CallUpPlayerStatistics*> playerStatistics;
 
 public:
-    CallUp(float dailyCost, vector<Game*> games,vector<CallUpPlayerStatistics*> playerStatistics,Date begginingDate,Date endDate);
+    CallUp(int id, float dailyCost, vector<Game*> games,vector<CallUpPlayerStatistics*> playerStatistics,Date begginingDate,Date endDate);
 
     //GET METHODS
+    int getId() const;
     float getDailyCost() const;
     vector<Game*> getGames() const;
     Date getBegDate() const;
@@ -26,6 +29,7 @@ public:
     vector<CallUpPlayerStatistics*> getPlayerStatistics() const;
 
     //SET METHODS
+    void setId(const int &id);
     void setDailyCost(const float &dailyCost);
     void setGames(const vector<Game*> &games);
     void setBegDate(const Date &begginingDate);

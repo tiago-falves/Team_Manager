@@ -173,17 +173,26 @@ public:
 
     //READ FROM TEXT FILES
     void read(ifstream *file,string peopleFile);
-    void readCallUp(ifstream *file);
-
-    //FIND PLAYER IN CALLUPS AND CALCULATE NUMBER OF DAYS HE WAS IN
-
-
 
 
     void tableHeader(ostream &out);
 
     void tableFooter(ostream &out);
 
+    /****************************************************
+    *******************HANDLE CALLUPS******************
+    *****************************************************/
+
+    void readCallUp(ifstream *file);
+
+    //CREATE CALLUP
+    void createCallUp();
+
+    //CHANGE CALLUP
+    void changeCallUp();
+
+    //DELETE CALLUP
+    void deleteCallUp();
 
 };
 

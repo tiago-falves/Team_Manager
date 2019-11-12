@@ -21,4 +21,28 @@ public:
     InvalidMonth(int month) {this->month = month;}
 };
 
+class PlayerExistsCallUp{
+public:
+    int id;
+    PlayerExistsCallUp(int id) {this->id = id;}
+};
+
+class PlayerDontExistsCallUp{
+public:
+    int id;
+    PlayerDontExistsCallUp(int id) {this->id = id;}
+};
+
+class GameExistsCallUp{
+public:
+    Game *game;
+    GameExistsCallUp(Game *game) {this->game = game;}
+};
+
+class GameDontExistsCallUp{
+public:
+    Game *game;
+    GameDontExistsCallUp(Game *game) {this->game = game;}
+};
+
 #endif //AEDA_TEAM_MANAGER_EXCEPTIONS_H

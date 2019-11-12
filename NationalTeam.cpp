@@ -104,6 +104,7 @@ void NationalTeam::readCallUp(ifstream *file) {
     int index;
 
     //VARIABLES TO CONSTRUCT CALLUP
+    int callUpId;
     Date begginingDate, endingDate;
     float dailyCost;
     vector<Game*> games;
@@ -116,26 +117,32 @@ void NationalTeam::readCallUp(ifstream *file) {
     unsigned int counter = 0;
 
     while(getline(*file, text)) {
+        //ID
+        if(counter == 0){
+            callUpId = stoi(text);
+            counter++;
+        }
+
         //BEGINNING DATE
-        if (counter == 0) {
-            begginingDate.dateTextConverter(text);
+        if (counter == 1) {
+            begginingDate = begginingDate.dateTextConverter(text);
             counter++;
         }
 
         //END DATE
-        if (counter == 1) {
-            endingDate.dateTextConverter(text);
+        if (counter == 2) {
+            endingDate = endingDate.dateTextConverter(text);
             counter++;
         }
 
         //DAILY COST
-        if (counter == 2) {
+        if (counter == 3) {
             dailyCost = stof(text);
             counter++;
         }
 
         //VECTOR OF GAMES
-        if (counter == 3) {
+        if (counter == 4) {
             while (ss << text) {
                 ss >> index;
 
@@ -149,7 +156,7 @@ void NationalTeam::readCallUp(ifstream *file) {
             counter ++;
         }
         //CALLUP PLAYER STATISTICS VECTOR
-        if (counter == 4) {
+        if (counter == 5) {
             while (getline(*file, text)) {
                 if (text == "::::::::::") break;
                 playerID = stoi(text);
@@ -163,7 +170,7 @@ void NationalTeam::readCallUp(ifstream *file) {
                 insert_sorted(playerStatistics, new CallUpPlayerStatistics(playerID, begDate, endDate));
             }
             counter = 0;
-            insert_sorted(callUps, new CallUp(dailyCost, games, playerStatistics, begginingDate, endingDate));
+            insert_sorted(callUps, new CallUp(callUpId ,dailyCost, games, playerStatistics, begginingDate, endingDate));
         }
     }
 }
