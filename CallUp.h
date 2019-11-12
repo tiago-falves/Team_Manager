@@ -52,6 +52,12 @@ public:
     //UTILITIES
     bool gameExists(Game *game);
     bool playerExists(int playerID);
+
+    //SHOW CALLUP
+    void showCallUp();
+
+    //COMPARISON OPERATOR
+    friend bool operator< (const CallUp& callUp1, const CallUp& callUp2);
 };
 
 #endif //AEDA_TEAM_MANAGER_CALLUP_H

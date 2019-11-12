@@ -1,6 +1,7 @@
 Porto
 Portugal
 Estádio do Dragão
+Portugal x Espanha
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 "Hector", "Juan", "Miguel", "Luis", "Joao", "Amaro", "Forte", "J3P", "André", "Antonio", "Joel"
@@ -9,6 +10,7 @@ Estádio do Dragão
 Porto
 Portugal
 Estádio do Dragão
+Portugal x Italia
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 "Hector", "Juan", "Miguel", "Luis", "Joao", "Amaro", "Forte", "J3P", "André", "Antonio", "Joel"

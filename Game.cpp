@@ -4,7 +4,8 @@
 
 #include "Game.h"
 
-Game::Game(string city, string country, string stadium, vector<PlayerGameStatistics> playerStatistics, vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP):id(lastID++) {
+Game::Game(string game_title, string city, string country, string stadium, vector<PlayerGameStatistics> playerStatistics, vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP):id(lastID++) {
+    this->game_title = game_title;
     this->city =city;
     this->country = country;
     this->stadium=stadium;
@@ -26,7 +27,9 @@ ostream& operator<<(ostream &out, const Game& game) {
 /*****************************************************
  *******************GET FUNCTIONS*********************
  *****************************************************/
-
+string Game::getGameTitle() const {
+    return game_title;
+}
 int Game::getID() const {
     return this->id;
 }
@@ -60,6 +63,9 @@ vector<string> Game::getReferees() {
 /*****************************************************
  *******************SET FUNCTIONS*********************
  *****************************************************/
+void Game::setGameTitle(string game_title) {
+    this->game_title = game_title;
+}
 void Game::setPlayerStatistics(vector<PlayerGameStatistics> statistics){
     this->playerStatistics = statistics;
 }

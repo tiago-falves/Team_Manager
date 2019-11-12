@@ -10,6 +10,7 @@ using namespace std;
 
 class Game {
 private:
+    string game_title;
     int id;
     string city;
     string country;
@@ -26,10 +27,11 @@ private:
     //participantes no jogo de cada uma das equipas, a equipa de arbitragem, e todos os eventos e estatísticas de jogo
     //para cada jogador nacional (golos, passes, km percorridos, cartões, lesões, etc).
 public:
-    Game(string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP);
+    Game(string game_title, string city,string country,string stadium,vector<PlayerGameStatistics> playerStatistics,vector<string> referees, vector<FootballPlayer *> nationalP, vector<string> enemyP);
 
     Game();
 
+    string getGameTitle() const;
     int getID() const;
     string getCity() const;
     string getCountry() const;
@@ -39,6 +41,7 @@ public:
     vector<PlayerGameStatistics> getPlayerStatistics() const;
     vector<string> getReferees();
 
+    void setGameTitle(string game_title);
     void setCity(string city);
     void setCountry(string country);
     void setStadium(string stadium);

@@ -27,7 +27,7 @@ int main() {
     //testNationalTeam();;
     SetConsoleOutputCP(CP_UTF8);
 
-    runAgency();
+    //runAgency();
 
 
     //_setmode(_fileno(stdout), _O_U16TEXT);

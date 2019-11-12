@@ -149,8 +149,8 @@ void NationalTeam::readCallUp(ifstream *file) {
 
                 //verify that game exists
                 for (auto i = games.begin(); i < games.end(); i++) {
-                    //if ((*i)->getID == index) -- need ID parameter in game
-                    insert_sorted(games, *i);
+                    if ((*i)->getID() == index) insert_sorted(games, *i);
+
                     break;
                 }
             }
