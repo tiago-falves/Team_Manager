@@ -56,7 +56,6 @@ void NationalTeam::tableHeaderAllGames(ostream &out) {
     out <<  left << setw(18)  << setfill(' ') << "Stadium" << "│ ";
     out <<  left << setw(20)  << setfill(' ') << "Game Title" << "│ ";
     out << endl << setw(82) << setfill('-') << "-" << "│" <<  endl;
-    out << endl;
 
 }
 
@@ -66,6 +65,7 @@ void NationalTeam::tableFooterAllGames(ostream &out) {
 
 void NationalTeam::tableHeaderStatistics(ostream &out) {
     out << endl << endl << endl;
+    out << "Player Statistics:\n";
     out << setw(110) << setfill('-') << "-" <<  endl;
     out <<  left << setw(11)  << setfill(' ') << "Player ID" << "│ ";
     out <<  left << setw(15) << setfill(' ') << "Goals"  << "│ ";
@@ -77,8 +77,28 @@ void NationalTeam::tableHeaderStatistics(ostream &out) {
     out <<  endl << setw(109) << setfill('-') << "-" << "│" <<  endl;
 }
 
+void NationalTeam::tableHeaderEnemyTeam(ostream &out) {
+    out << endl << endl << endl;
+    out << "Enemy Team:\n";
+    out << setw(15) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(15) << setfill(' ') << "Name"  << "│ ";
+    out <<  endl << setw(15) << setfill('-') << "-" << "│" <<  endl;
+}
+
+void NationalTeam::tableHeaderReferee(ostream &out) {
+    out << endl << endl << endl;
+    out << "Referees:\n";
+    out << setw(15) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(15) << setfill(' ') << "Name"  << "│ ";
+    out <<  endl << setw(15) << setfill('-') << "-" << "│" <<  endl;
+}
+
 void NationalTeam::tableFooterStatistics(ostream &out){
     out << setw(110) << setfill('-') << "-" << endl;
+}
+
+void NationalTeam::tableFooterEnemyTeamReferee(ostream &out) {
+    out << setw(15) << setfill('-') << "-" << endl;
 }
 
 void NationalTeam::showAllGames(ostream &out) {
@@ -108,4 +128,29 @@ void NationalTeam::showSpecificGame(ostream &out) {
     }
 
     tableFooterStatistics(out);
+
+    tableHeaderPlayer(out);
+
+    for(FootballPlayer * p : games[id -1]->getNationalPlayers()){
+        p->print(out);
+    }
+
+    tableFooterPlayer(out);
+
+    tableHeaderEnemyTeam(out);
+
+    for(string s : games[id - 1]->getEnemyPlayers()){
+        out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+    }
+
+    tableFooterEnemyTeamReferee(out);
+
+    tableHeaderReferee(out);
+
+    for(string s : games[id - 1]->getReferees()){
+        out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+    }
+
+    tableFooterEnemyTeamReferee(out);
+
 }

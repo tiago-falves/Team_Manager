@@ -255,10 +255,13 @@ public:
     void tableHeaderPlayer(ostream &out);
     void tableHeaderAllGames(ostream &out);
     void tableHeaderStatistics(ostream &out);
+    void tableHeaderEnemyTeam(ostream &out);
+    void tableHeaderReferee(ostream &out);
 
     void tableFooterPlayer(ostream &out);
     void tableFooterAllGames(ostream &out);
     void tableFooterStatistics(ostream &out);
+    void tableFooterEnemyTeamReferee(ostream &out);
 
     /****************************************************
     *******************HANDLE CALLUPS******************
