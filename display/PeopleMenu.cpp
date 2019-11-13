@@ -299,15 +299,24 @@ void NationalTeam::setPeopleFile(const string &peopleFile) {
 void NationalTeam::showPlayerGames(int id) {
     tableHeaderAllGames(cout);
     for (auto i = games.begin(); i != games.end(); i++){
-        for (auto j = (*i)->getPlayerStatistics().begin(); j != (*i)->getPlayerStatistics().end(); j++){
-            cout << id << " = " << (*j).getID() << endl;
-            if (id == (*j).getID()){
-                cout << "GOT IN" << endl;
+        for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++){
+            if (id == (*i)->getPlayerStatistics()[j].getPlayerID()){
                 (*i)->print(cout);
             }
         }
     }
     tableFooterAllGames(cout);
+}
+
+void NationalTeam::showPlayerCallUps(int id) {
+    headerCallUp(cout);
+    for (auto i = callUps.begin(); i != callUps.end(); i++){
+        for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++){
+            if (id == (*i)->getPlayerStatistics()[j]->getPlayerID()){
+                (*i)->showCallUp(cout);
+            }
+        }
+    }
 }
 
 void NationalTeam::playerMenuTransition() {
@@ -350,7 +359,7 @@ void NationalTeam::playerMenuTransition() {
 
         if (option == 0) break;
         if (option == 1) { showPlayerGames(id); }
-        if (option == 2) { /*showPlayerCallUps(id);*/ }
+        if (option == 2) { showPlayerCallUps(id); }
         if (option == 3) { /*showGameStats(id);*/}
         if (option == 4) { /*showCallUpStats(id);*/}
 
