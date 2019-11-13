@@ -33,8 +33,8 @@ void NationalTeam::runCallUpMenu() {
         if (option == 3) { createCallUpMenu(); }
         if (option == 4) { removeCallUpMenu(); }
         if (option == 5) { modifyCallMenu(); }
-        if (option == 6) { /*addGameCallUpMenu();*/ }
-        if (option == 7) { /*removeGameCallUpMenu();*/ }
+        if (option == 6) { addGameCallUpMenu(); }
+        if (option == 7) { removeGameCallUpMenu(); }
 
     }
 }
@@ -85,6 +85,7 @@ void NationalTeam::callUpMenu() {
             if (option == (*i)->getId()) (*i)->showCallUp(cout);
         }
 
+        menuSeparator();
         break;
     }
 }
@@ -243,7 +244,8 @@ void NationalTeam::createCallUpMenu() {
             }
             if (error) break;
         }
-        if (error) break;
+        menuSeparator();
+        break;
     }
 
     //ADD NEW CALL UP DATA BASE
@@ -276,6 +278,8 @@ void NationalTeam::removeCallUpMenu() {
 
         //ERASE ELEMENT
         deleteCallUp(option);
+
+        menuSeparator();
         break;
 
     }
@@ -287,7 +291,7 @@ void NationalTeam::modifyCallMenu() {
     int option, id;
 
     while (true) {
-        cout << "Insert the ID of the call up you want to remove: ";
+        cout << "Insert the ID of the call up you want to modify: ";
         cin >> id;
 
         if (cin.fail()) {
@@ -318,14 +322,17 @@ void NationalTeam::modifyCallMenu() {
         if (option == 0) break;
         if (option == 1){
             changeDailyCosts(id);
+            menuSeparator();
             break;
         }
         if (option == 2){
             reduceBegDate(id);
+            menuSeparator();
             break;
         }
         if (option == 3) {
             extendEndDate(id);
+            menuSeparator();
             break;
         }
     }
@@ -402,6 +409,131 @@ void NationalTeam::extendEndDate(int id){
 
         getCallUpWithID(id)->setEndDate(endDate);
 
+        menuSeparator();
+        break;
+    }
+}
+
+void NationalTeam::addGameCallUpMenu() {
+    menuSeparator();
+
+    int idc, idg;
+    Game* g;
+
+    while (true) {
+        cout << "Insert the ID of the call up you want to add the game to: ";
+        cin >> idc;
+
+        if (cin.fail()) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        try {
+            searchCallUpByID(idc);
+        }
+        catch (InexistentId) {
+            cout << "There are no call ups with such id (" << idc << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+
+
+        cout << "Insert the ID of the game: ";
+        cin >> idg;
+
+        if (cin.fail()) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        try {
+            g = getGameWithID(idg);
+        }
+        catch (InexistentId) {
+            cout << "There are no games with such id (" << idg << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+
+        try {
+            getCallUpWithID(idc)->addGame(g);
+        }
+        catch(GameExistsCallUp){
+            cout << "The game already exists in call up!" << endl;
+            menuSeparator();
+            break;
+        }
+        menuSeparator();
+        break;
+    }
+}
+
+void NationalTeam::removeGameCallUpMenu() {
+    menuSeparator();
+
+    int idc, idg;
+    Game* g;
+
+    while (true) {
+        cout << "Insert the ID of the call up you want to add the game to: ";
+        cin >> idc;
+
+        if (cin.fail()) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+
+            menuSeparator();
+            break;
+        }
+
+        try {
+            searchCallUpByID(idc);
+        }
+        catch (InexistentId) {
+            cout << "There are no call ups with such id (" << idc << ") !" << endl;
+
+            menuSeparator();
+            break;
+        }
+
+
+        cout << "Insert the ID of the game: ";
+        cin >> idg;
+
+        if (cin.fail()) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+
+            menuSeparator();
+            break;
+        }
+
+        try {
+            g = getGameWithID(idg);
+        }
+        catch (InexistentId) {
+            cout << "There are no games with such id (" << idg << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+
+        try {
+            getCallUpWithID(idc)->removeGame(g);
+        }
+        catch(GameDontExistsCallUp){
+            cout << "The game does not exist in call up!" << endl;
+            menuSeparator();
+            break;
+        }
+
+        menuSeparator();
         break;
     }
 }
