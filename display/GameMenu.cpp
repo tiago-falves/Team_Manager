@@ -36,7 +36,7 @@ void NationalTeam::runGameMenu() {
     if (option == 0) { runMenu(); }
     if (option == 1) { showAllGames(cout); }
     if (option == 2) { showSpecificGame(cout); }
-    if (option == 3) { runMenu(); }
+    if (option == 3) { showSpecificStats(cout); }
     if (option == 4) { runMenu(); }
     if (option == 5) { runMenu(); }
 
@@ -49,6 +49,7 @@ void NationalTeam::runGameMenu() {
 
 void NationalTeam::tableHeaderAllGames(ostream &out) {
     out << endl << endl << endl;
+    out << "Games:\n";
     out << setw(83) << setfill('-') << "-" <<  endl;
     out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
     out <<  left << setw(20) << setfill(' ') << "City"  << "│ ";
@@ -113,6 +114,7 @@ void NationalTeam::showAllGames(ostream &out) {
 }
 
 void NationalTeam::showSpecificGame(ostream &out) {
+    out << "Which game do you which to see?\n";
     int id = askForId();
 
     tableHeaderAllGames(out);
@@ -153,4 +155,27 @@ void NationalTeam::showSpecificGame(ostream &out) {
 
     tableFooterEnemyTeamReferee(out);
 
+}
+
+void NationalTeam::showSpecificStats(ostream &out) {
+    out << "Which game do you which to see?\n";
+    int gameID = askForId();
+    out << "Which player do you which to see?\n";
+    int playerID = askForId();
+
+    tableHeaderAllGames(out);
+
+    games[gameID - 1]->print(out);
+
+    tableFooterAllGames(out);
+
+    tableHeaderStatistics(out);
+
+    for(PlayerGameStatistics stat : games[gameID - 1]->getPlayerStatistics()) {
+        if (stat.getPlayerID() == playerID) {
+            stat.print(out);
+            break;
+        }
+    }
+    tableFooterStatistics(out);
 }
