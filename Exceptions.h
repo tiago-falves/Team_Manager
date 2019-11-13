@@ -45,4 +45,8 @@ public:
     GameDontExistsCallUp(Game *game) {this->game = game;}
 };
 
+class ExceptionDate{
+public:
+    ExceptionDate(){};
+};
 #endif //AEDA_TEAM_MANAGER_EXCEPTIONS_H

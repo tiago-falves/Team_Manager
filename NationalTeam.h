@@ -265,14 +265,13 @@ public:
     //READ FROM FILE
     bool readCallUp(string file);
 
-    //CREATE CALLUP
-    void createCallUp();
-
     //CHANGE CALLUP
-    void changeCallUp();
+    void changeDailyCosts(int id);
+    void reduceBegDate(int id);
+    void extendEndDate(int id);
 
     //DELETE CALLUP
-    void deleteCallUp();
+    void deleteCallUp(int id);
 
     void headerCallUp(ostream& out);
 
@@ -288,7 +287,10 @@ public:
         return check;
     }
 
-    Game* getGameWithID(const int &id);
+    Game* getGameWithID(int id);
+    CallUp* getCallUpWithID(int id);
+
+
 
 
 

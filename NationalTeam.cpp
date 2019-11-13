@@ -89,11 +89,27 @@ vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) 
     return peopleName;
 
 }
-Game* NationalTeam::getGameWithID(const int &id){
+Game* NationalTeam::getGameWithID(int id){
     for (auto i = games.begin(); i != games.end(); i++){
         if ((*i)->getID() == id) return *i;
     }
     throw InexistentId(id);
+}
+
+CallUp* NationalTeam::getCallUpWithID(int id){
+    for (auto i = callUps.begin(); i != callUps.end(); i++){
+        if ((*i)->getId() == id) return *i;
+    }
+    throw InexistentId(id);
+}
+//DELETE CALL UP
+void NationalTeam::deleteCallUp(int id) {
+    for (auto i = callUps.begin(); i != callUps.end(); i++){
+        if ((*i)->getId() == id){
+            callUps.erase(i);
+            return;
+        }
+    }
 }
 
 //READ FROM TEXT FILE
