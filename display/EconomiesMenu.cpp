@@ -13,30 +13,42 @@ void NationalTeam::runEconomiesMenu() {
     while (true){
 
         menuSeparator();
-
         cout << "Welcome to the Economies Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "Costs associated with one player.                                  [1]" << endl;
+        cout << "Costs associated with full team.                                   [2]" << endl;
+        cout << "Costs associated with team and staff.                              [3]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+
+        validOption(option, 3);
+        menuSeparator();
+
+        if (option == 0) break;
+        if (option == 1) {playerMenu();}
+        if (option == 2) {teamMenu();}
+        if (option == 3) {staffMenu();}
+    }
+}
+
+void NationalTeam::playerMenu() {
+    int option;
+
+    while(true){
         cout << endl << endl;
         cout << "Go back.                                                           [0]" << endl;
         cout << "Costs associated with one player in a determined month.            [1]" << endl;
         cout << "Costs associated with one player between two dates.                [2]" << endl;
-        cout << "Costs associated with full team in a determined month.             [3]" << endl;
-        cout << "Costs associated with full team between two dates.                 [4]" << endl;
-        cout << "Costs associated with team and staff in a determined month.        [5]" << endl;
-        cout << "Costs associated with team and staff between two dates.            [6]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 6);
+        validOption(option, 2);
         menuSeparator();
 
         if (option == 0) { break; }
         else if (option == 1) {playerMonthMenu();}
         else if (option == 2) {playerTimeMenu();}
-        else if (option == 3) {teamMonthMenu();}
-        else if (option == 4) {teamTimeMenu();}
-        else if (option == 5) {staffMonthMenu();}
-        else if (option == 6) {/*staffTimeMenu();*/}
-
     }
 }
 
@@ -116,7 +128,7 @@ void NationalTeam::playerMonthMenu(){
         //shows player so that user can confirm that it is checking the right player
         cout << "The following player has been selected:" << endl << endl;
         showSpecificPerson(cout,playerID);
-        //players[playerID]->print(cout);
+
         cout << endl << endl;
         cout << "Go back.                                                               [0]" << endl;
         cout << "Confirm operation.                                                     [1]" << endl;
@@ -252,6 +264,26 @@ void NationalTeam::playerTimeMenu(){
     }
 }
 
+void NationalTeam::teamMenu() {
+    int option;
+
+    while(true){
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "Costs associated with full team in a determined month.             [1]" << endl;
+        cout << "Costs associated with full team between two dates.                 [2]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+
+        validOption(option, 2);
+        menuSeparator();
+
+        if (option == 0) { break; }
+        else if (option == 1) {teamMonthMenu();}
+        else if (option == 2) {teamTimeMenu();}
+    }
+}
+
 void NationalTeam::teamTimeMenu(){
     string date1, date2;
     Date firstDate;
@@ -362,6 +394,26 @@ void NationalTeam::teamMonthMenu(){
         cout << "The costs associated with the national team players in the month " << month << ", year ";
         cout << year << "were of " << teamCostCalculatorMonth(month, year) << " euros." << endl;
         break;
+    }
+}
+
+void NationalTeam::staffMenu() {
+    int option;
+
+    while(true){
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "Costs associated with team and staff in a determined month.        [1]" << endl;
+        cout << "Costs associated with team and staff between two dates.            [2]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+
+        validOption(option, 2);
+        menuSeparator();
+
+        if (option == 0) { break; }
+        else if (option == 1) {staffMonthMenu();}
+        else if (option == 2) {staffTimeMenu();}
     }
 }
 

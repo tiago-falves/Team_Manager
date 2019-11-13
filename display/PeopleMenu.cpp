@@ -100,32 +100,34 @@ string NationalTeam::askForString(const string &what){
 void NationalTeam::runPlayersMenu() {
     int option;
 
-    cout << "Welcome to the players Menu! Please choose what you want to do: ";
-    cout << endl << endl;
-    cout << "0. Go back" << endl;
-    cout << "1. Create a new Football Player." << endl;
-    cout << "2. Change a player's information." << endl;
-    cout << "3. Remove a player" << endl;
-    cout << "6. See all games played by a specific player. " << endl;
-    cout << "7. See all call-ups that a player participated. " << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
+    while(true) {
+        cout << "Welcome to the players Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "Create a new Football Player.                                      [1]" << endl;
+        cout << "Change a player's information.                                     [2]" << endl;
+        cout << "Remove a player.                                                   [3]" << endl;
+        cout << "See all games played by a specific player.                         [4]" << endl;
+        cout << "5. See all call-ups that a player participated.                    [5]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
 
-    validOption(option,7);
+        validOption(option, 7);
 
-    menuSeparator();
+        menuSeparator();
 
-    if (option == 0) { runPeopleMenu(); }
-    if (option == 1) { createPlayerOption(); }
-    if (option == 2) { modifyPlayerOption(); }
-    if (option == 3) { removePlayerOption(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
-    if (option == 6) { runMenu(); }
-    if (option == 7) { runMenu(); }
+        if (option == 0) { break; }
+        if (option == 1) { createPlayerOption(); }
+        if (option == 2) { modifyPlayerOption(); }
+        if (option == 3) { removePlayerOption(); }
+        if (option == 4) { runMenu(); }
+        if (option == 5) { runMenu(); }
+        if (option == 6) { runMenu(); }
+        if (option == 7) { runMenu(); }
 
 
-    runPeopleMenu();
+        break;
+    }
 }
 
 void NationalTeam::createPlayerOption(){

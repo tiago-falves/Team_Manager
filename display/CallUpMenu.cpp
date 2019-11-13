@@ -192,7 +192,8 @@ void NationalTeam::createCallUpMenu() {
 
                 if (begPlayerDate.validDateText(date)) {
                     begPlayerDate = begPlayerDate.dateTextConverter(date);
-                } else {
+                }
+                else {
                     cout << "The inserted date was not written properly!";
                     menuSeparator();
                     error = true;

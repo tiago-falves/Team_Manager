@@ -212,12 +212,18 @@ public:
 
 
     //Economies Menu
+    void playerMenu();
     void playerMonthMenu();
     void playerTimeMenu();
+
+    void teamMenu();
     void teamMonthMenu();
     void teamTimeMenu();
+
+    void staffMenu();
     void staffMonthMenu();
     void staffTimeMenu();
+
     void runEconomiesMenu();
 
     //Call Up Menu
@@ -274,20 +280,13 @@ public:
     //DELETE CALLUP
     void deleteCallUp(int id);
 
+    //HEADER WHEN PRINTING CALL UP OBJECTS
     void headerCallUp(ostream& out);
 
     //SEARCH CALL UP BY ID
-    bool searchCallUpByID(const int &id){
-        bool check = false;
-        for (auto i = callUps.begin(); i != callUps.end(); i++){
-            if ((*i)->getId() == id) check = true;
-        }
+    bool searchCallUpByID(const int &id);
 
-        if (!check) throw InexistentId(id);
-
-        return check;
-    }
-
+    //GET GAME AND CALLUP USING ID
     Game* getGameWithID(int id);
     CallUp* getCallUpWithID(int id);
 
