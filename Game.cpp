@@ -200,6 +200,7 @@ int Game::addReferee(string referee) {
         cout << "You can't add more referees. Please delete one before adding.";
         return 1;
     }
+    return 0;
 }
 
 /*****************************************************

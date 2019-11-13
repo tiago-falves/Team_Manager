@@ -19,22 +19,38 @@ void NationalTeam::runCallUpMenu() {
         cout << "Modify Call Up.                                                    [5]" << endl;
         cout << "Add Game to Call Up.                                               [6]" << endl;
         cout << "Remove Game from Call Up.                                          [7]" << endl;
-        cout << "Modify Call Up.                                                    [8]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 8);
-
-        cin.clear();
-        cin.ignore(10000, '\n');
+        validOption(option, 7);
 
         menuSeparator();
 
         if (option == 0) { break; }
-        if (option == 1) { runMenu(); }
-        if (option == 2) { runMenu(); }
-        if (option == 3) { runMenu(); }
-        if (option == 4) { runMenu(); }
-        if (option == 5) { runMenu(); }
+        if (option == 1) { cout << "GOT IN" << endl; allCallUpMenu(); break;}
+        if (option == 2) { /*callUpMenu();*/ }
+        if (option == 3) { /*createCallUpMenu();*/ }
+        if (option == 4) { /*removeCallUpMenu();*/ }
+        if (option == 5) { /*modifyCallMenu();*/ }
+        if (option == 6) { /*addGameCallUpMenu();*/ }
+        if (option == 7) { /*removeGameCallUpMenu();*/ }
+
+    }
+}
+
+void NationalTeam::headerCallUp(ostream &out) {
+    out << endl << endl << endl;
+    out << setw(55) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(5)  << setfill(' ') << "ID" << "│  ";
+    out <<  left << setw(8)  << setfill(' ') << "Begin date" << "│  ";
+    out <<  left << setw(10) << setfill(' ') << "End date"  << "│ ";
+    out <<  left << setw(20) << setfill(' ') <<  "List of games"<< "│ ";
+    out << endl;
+}
+
+void NationalTeam::allCallUpMenu() {
+    headerCallUp(cout);
+    for (auto i = callUps.begin(); i != callUps.end(); i++){
+        (*i)->showCallUp(cout);
     }
 }

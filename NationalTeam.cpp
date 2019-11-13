@@ -91,20 +91,25 @@ vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) 
 }
 
 //READ FROM TEXT FILE
-void NationalTeam::readCallUp(ifstream *file) {
+bool NationalTeam::readCallUp(string file) {
+
+    ifstream callUpFile;
+    callUpFile.open("..//Files//" + file);
+
+    if(callUpFile.fail()){
+        cerr << "Error Opening File";
+        return false;
+    }
 
     //READ FROM FILE VARIABLES
     string text;
-    stringstream ss;
-
-    //LIST OF GAME INDEXES
-    int index;
+    vector<int> game_indexes;
 
     //VARIABLES TO CONSTRUCT CALLUP
-    int callUpId;
+    int callUpId = 0;
     Date begginingDate, endingDate;
     float dailyCost;
-    vector<Game*> games;
+    vector<Game*> callUpGames;
     vector<CallUpPlayerStatistics*> playerStatistics;
 
     //VARIABLES TO CONSTRUCT CALLUPPLAYERSTATISTICS
@@ -113,63 +118,66 @@ void NationalTeam::readCallUp(ifstream *file) {
 
     unsigned int counter = 0;
 
-    while(getline(*file, text)) {
+    while(getline(callUpFile, text)) {
+
         //ID
         if(counter == 0){
             callUpId = stoi(text);
-            counter++;
         }
 
         //BEGINNING DATE
         if (counter == 1) {
             begginingDate = begginingDate.dateTextConverter(text);
-            counter++;
         }
 
         //END DATE
         if (counter == 2) {
             endingDate = endingDate.dateTextConverter(text);
-            counter++;
         }
 
         //DAILY COST
         if (counter == 3) {
             dailyCost = stof(text);
-            counter++;
         }
 
         //VECTOR OF GAMES
         if (counter == 4) {
-            while (ss << text) {
-                ss >> index;
+            game_indexes = separateCharacterInt(text, ',');
 
-                //verify that game exists
-                for (auto i = games.begin(); i < games.end(); i++) {
-                    if ((*i)->getID() == index) insert_sorted(games, *i);
+            //verify that game exists
 
-                    break;
+            for (auto i = games.begin(); i < games.end(); i++) {
+                for (auto j = game_indexes.begin(); j < game_indexes.end(); j++){
+                    if ((*i)->getID() == *j){
+                        insert_sorted(callUpGames, *i);
+                    }
                 }
             }
-            counter ++;
+
         }
         //CALLUP PLAYER STATISTICS VECTOR
         if (counter == 5) {
-            while (getline(*file, text)) {
+
+            while (getline(callUpFile, text)) {
                 if (text == "::::::::::") break;
                 playerID = stoi(text);
 
-                getline(*file, text);
+                getline(callUpFile, text);
                 begDate.dateTextConverter(text);
 
-                getline(*file, text);
+                getline(callUpFile, text);
                 endDate.dateTextConverter(text);
 
                 insert_sorted(playerStatistics, new CallUpPlayerStatistics(playerID, begDate, endDate));
+
             }
-            counter = 0;
-            insert_sorted(callUps, new CallUp(callUpId ,dailyCost, games, playerStatistics, begginingDate, endingDate));
+            counter = -1;
+            insert_sorted(callUps, new CallUp(callUpId ,dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
         }
+        counter++;
     }
+    callUpFile.close();
+    return true;
 }
 
 

@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <string>
 #include <sstream>
 #include "Date.h"
 #include "People//Person.h"
@@ -36,6 +37,10 @@ public:
     const string &getGameFile() const;
 
     void setGameFile(const string &gameFile);
+
+    vector<Game*> getGames(){
+        return games;
+    }
 
 private:
     string callUpFile;
@@ -215,9 +220,13 @@ public:
 
     //Call Up Menu
     void runCallUpMenu();
-
-
-
+    void allCallUpMenu();
+    void callUpMenu();
+    void createCallUpMenu();
+    void removeCallUpMenu();
+    void modifyCallMenu();
+    void addGameCallUpMenu();
+    void removeGameCallUpMenu();
 
     /****************************************************
     *******************SALARY FUNCTIONS******************
@@ -252,8 +261,8 @@ public:
     /****************************************************
     *******************HANDLE CALLUPS******************
     *****************************************************/
-
-    void readCallUp(ifstream *file);
+    //READ FROM FILE
+    bool readCallUp(string file);
 
     //CREATE CALLUP
     void createCallUp();
@@ -263,6 +272,11 @@ public:
 
     //DELETE CALLUP
     void deleteCallUp();
+
+    void headerCallUp(ostream& out);
+
+
+
 
     void saveAndExit(string fileName);
 };

@@ -36,6 +36,7 @@ int main() {
     NationalTeam team;
     team.readPeople("Person.txt");
     team.readGames("Games.txt");
+    team.readCallUp("CallUp.txt");
     team.runMenu();
 
     system("Pause");

@@ -115,8 +115,24 @@ bool CallUp::playerExists(int playerID) {
 }
 
 //SHOW CALL UP
-void CallUp::showCallUp(){
-
+void CallUp::showCallUp(ostream &out){
+    for (auto i = games.begin(); i != games.end(); i++){
+        if (i == games.begin()) {
+            out << left << setw(5) << setfill(' ') << id << "│  ";
+            out << left << setw(8) << setfill(' ') << begginingDate.toString() << "│  ";
+            out << left << setw(8) << setfill(' ') << endDate.toString() << "│ ";
+            out << left << setw(20) << setfill(' ') << (*i)->getGameTitle() << "│ ";
+            out << endl;
+        }
+        else{
+            out << left << setw(5) << setfill(' ') << "----" << "│  ";
+            out << left << setw(8) << setfill(' ') << "----------" << "│  ";
+            out << left << setw(8) << setfill(' ') << "----------" << "│ ";
+            out << left << setw(20) << setfill(' ') << (*i)->getGameTitle() << "│ ";
+            out << endl;
+        }
+    }
+    out << setw(55) << setfill('-') << "-" <<  endl;
 }
 
 //CALL UP COMPARISON

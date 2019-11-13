@@ -54,7 +54,7 @@ public:
     bool playerExists(int playerID);
 
     //SHOW CALLUP
-    void showCallUp();
+    void showCallUp(ostream &out);
 
     //COMPARISON OPERATOR
     friend bool operator< (const CallUp& callUp1, const CallUp& callUp2);
