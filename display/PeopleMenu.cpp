@@ -24,10 +24,10 @@ void NationalTeam::runPeopleMenu() {
         menuSeparator();
 
         if (option == 0) { break; }
-        if (option == 1) { showEveryone(cout); }
-        if (option == 2) { showSpecificPersonOption(); }
-        if (option == 3) { runPlayersMenu(); }
-        if (option == 4) { runTechnicianMenu(); }
+        if (option == 1) { showEveryone(cout); break;}
+        if (option == 2) { showSpecificPersonOption(); break;}
+        if (option == 3) { runPlayersMenu(); break;}
+        if (option == 4) { runTechnicianMenu(); break;}
 
     }
 }
@@ -107,12 +107,11 @@ void NationalTeam::runPlayersMenu() {
         cout << "Create a new Football Player.                                      [1]" << endl;
         cout << "Change a player's information.                                     [2]" << endl;
         cout << "Remove a player.                                                   [3]" << endl;
-        cout << "See all games played by a specific player.                         [4]" << endl;
-        cout << "5. See all call-ups that a player participated.                    [5]" << endl;
+        cout << "See a specific player statistics.                                  [4]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 7);
+        validOption(option, 4);
 
         menuSeparator();
 
@@ -120,11 +119,7 @@ void NationalTeam::runPlayersMenu() {
         if (option == 1) { createPlayerOption(); }
         if (option == 2) { modifyPlayerOption(); }
         if (option == 3) { removePlayerOption(); }
-        if (option == 4) { runMenu(); }
-        if (option == 5) { runMenu(); }
-        if (option == 6) { runMenu(); }
-        if (option == 7) { runMenu(); }
-
+        if (option == 4) { playerMenuTransition();}
 
         break;
     }
@@ -292,5 +287,67 @@ const string &NationalTeam::getGameFile() const {
 
 void NationalTeam::setGameFile(const string &gameFile) {
     NationalTeam::gameFile = gameFile;
+}
+
+void NationalTeam::showPlayerGames(int id) {
+    tableHeaderAllGames(cout);
+    for (auto i = games.begin(); i != games.end(); i++){
+        for (auto j = (*i)->getPlayerStatistics().begin(); j != (*i)->getPlayerStatistics().end(); j++){
+            cout << id << " = " << (*j).getID() << endl;
+            if (id == (*j).getID()){
+                cout << "GOT IN" << endl;
+                (*i)->print(cout);
+            }
+        }
+    }
+    tableFooterAllGames(cout);
+}
+
+void NationalTeam::playerMenuTransition() {
+    int id, option;
+
+    while (true) {
+        cout << "Insert the ID of the player you want to see information from: ";
+        cin >> id;
+
+        if (cin.fail()) {
+            cout << "Invalid option, ID must be an integer!";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        try {
+            searchByID(players, id);
+        }
+        catch (InexistentId) {
+            cout << "There are no players with such id (" << id << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+        menuSeparator();
+
+        cout << endl << endl;
+
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "See all games played by a specific player.                         [1]" << endl;
+        cout << "See all call-ups that a player participated.                       [2]" << endl;
+        cout << "See player statistics from a game.                                 [3]" << endl;
+        cout << "See player statistics from call up.                                [4]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+
+        validOption(option, 4);
+
+        menuSeparator();
+
+        if (option == 0) break;
+        if (option == 1) { showPlayerGames(id); }
+        if (option == 2) { /*showPlayerCallUps(id);*/ }
+        if (option == 3) { /*showGameStats(id);*/}
+        if (option == 4) { /*showCallUpStats(id);*/}
+
+        break;
+    }
 }
 

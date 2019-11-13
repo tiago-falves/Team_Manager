@@ -171,6 +171,14 @@ public:
     Technician *askTechInformation();
     FootballPlayer* askPlayerInformation();
 
+    void showPlayerGames(int id);
+    void showPlayerCallUps(int id);
+
+    void showGameStats(int id);
+    void showCallUpStats(int id);
+
+    void playerMenuTransition();
+
 
     /**
      * Template class that asks the user for id and catches exception
@@ -236,6 +244,11 @@ public:
     void modifyCallMenu();
     void addGameCallUpMenu();
     void removeGameCallUpMenu();
+
+    void allEqual(Date begDate, Date endDate, vector<Game*> call_game, vector<CallUpPlayerStatistics*> stats);
+    void setAllEqual(Date begDate, Date endDate, vector<Game*> call_game, vector<CallUpPlayerStatistics*> stats);
+    void infoManually(Date begDate, Date endDate, vector<Game*> call_game, vector<CallUpPlayerStatistics*> stats);
+    void listDifferent(Date begDate, Date endDate, vector<Game*> call_game, vector<CallUpPlayerStatistics*> stats);
 
     /****************************************************
     *******************SALARY FUNCTIONS******************
