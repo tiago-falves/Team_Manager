@@ -276,6 +276,19 @@ public:
 
     void headerCallUp(ostream& out);
 
+    //SEARCH CALL UP BY ID
+    bool searchCallUpByID(const int &id){
+        bool check = false;
+        for (auto i = callUps.begin(); i != callUps.end(); i++){
+            if ((*i)->getId() == id) check = true;
+        }
+
+        if (!check) throw InexistentId(id);
+
+        return check;
+    }
+
+    Game* getGameWithID(const int &id);
 
 
 

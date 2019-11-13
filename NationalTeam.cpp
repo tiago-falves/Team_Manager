@@ -89,6 +89,12 @@ vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) 
     return peopleName;
 
 }
+Game* NationalTeam::getGameWithID(const int &id){
+    for (auto i = games.begin(); i != games.end(); i++){
+        if ((*i)->getID() == id) return *i;
+    }
+    throw InexistentId(id);
+}
 
 //READ FROM TEXT FILE
 bool NationalTeam::readCallUp(string file) {
@@ -480,10 +486,11 @@ bool NationalTeam::readGameStatiscs(string filename) {
     int numberOfPasses;
     int numberOfYellowCards;
     int numberOfRedCards;
-    vector<PlayerGameStatistics> stats;
+    vector<PlayerGameStatistics> stats = {};
 
     //GET NUMBER OF TEXT FILE LINE
     int counter = 0;
+    int count_pushs = 0;
 
     while(getline(statsFile, text)){
         if (counter == 0) {
@@ -520,17 +527,25 @@ bool NationalTeam::readGameStatiscs(string filename) {
 
         if (text == "---------"){
             counter = 0;
+            cout << "PLAYER ID: " << playerID << endl;
             stats.push_back(PlayerGameStatistics(playerID, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards));
+            count_pushs++;
         }
 
         if (text == "::::::::::"){
             counter = -1;
+            stats.push_back(PlayerGameStatistics(playerID, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards));
             games[id-1]->setPlayerStatistics(stats);
+
+            cout << "GET ID: " << stats[0].getID() << endl;
+            cout << "GET NO OF GOALS: " << stats[0].getNumberOfGoals() << endl;
             stats = {};
         }
 
         counter++;
     }
+
+
     statsFile.close();
     return true;
 }

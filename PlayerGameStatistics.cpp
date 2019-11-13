@@ -24,6 +24,15 @@ PlayerGameStatistics::PlayerGameStatistics(int playerID):id(lastId++) {
     this->numberOfYellowCards = 0;
     this->numberOfRedCards = 0;
 }
+PlayerGameStatistics::PlayerGameStatistics() {
+    this->playerID = 0;
+    this->numberOfGoals = 0;
+    this->minutesPlayed = 0;
+    this->kilometers = 0;
+    this->numberOfPasses = 0;
+    this->numberOfYellowCards = 0;
+    this->numberOfRedCards = 0;
+}
 
 int PlayerGameStatistics::getPlayerID() const {
     return playerID;

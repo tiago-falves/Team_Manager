@@ -20,6 +20,8 @@ public:
 
     PlayerGameStatistics(int playerID);
 
+    PlayerGameStatistics();
+
     int getPlayerID() const;
 
     void setPlayerID(int playerID);

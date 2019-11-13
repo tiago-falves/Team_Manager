@@ -84,6 +84,7 @@ void CallUp::addPlayer(int playerID, Date begDate, Date endDate) {
     CallUpPlayerStatistics player(playerID, begDate, endDate);
     insert_sorted(playerStatistics, &player);
 }
+
 void CallUp::removePlayer(int playerID) {
     bool check = false;
     //FIND PLAYER POSITION

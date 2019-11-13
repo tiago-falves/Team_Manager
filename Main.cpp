@@ -44,7 +44,10 @@ int main() {
     cout << endl << endl;
 
     cout << "START" << endl;
-    for (auto i = team.getGames().begin(); i < team.getGames().end(); i++){
+
+    vector<Game*> games = team.getGames();
+
+    for (auto i = games.begin(); i < games.end(); i++){
         cout << "GOT IN " << endl;
         for (auto j = (*i)->getPlayerStatistics().begin(); j < (*i)->getPlayerStatistics().end(); j++){
             cout << "playerID: " << j->getPlayerID() << endl;
