@@ -32,6 +32,7 @@ void NationalTeam::runPeopleMenu() {
         if (option == 4) { runPlayersMenu(); }
         if (option == 5) { runTechnicianMenu(); }
 
+
     }
 }
 
@@ -125,32 +126,29 @@ string NationalTeam::askForString(const string &what){
 void NationalTeam::runPlayersMenu() {
     int option;
 
-    cout << "Welcome to the players Menu! Please choose what you want to do: ";
-    cout << endl << endl;
-    cout << "0. Go back" << endl;
-    cout << "1. Create a new Football Player." << endl;
-    cout << "2. Change a player's information." << endl;
-    cout << "3. Remove a player" << endl;
-    cout << "6. See all games played by a specific player. " << endl;
-    cout << "7. See all call-ups that a player participated. " << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
+    while(true) {
+        cout << "Welcome to the players Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "Create a new Football Player.                                      [1]" << endl;
+        cout << "Change a player's information.                                     [2]" << endl;
+        cout << "Remove a player.                                                   [3]" << endl;
+        cout << "See a specific player statistics.                                  [4]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
 
-    validOption(option,7);
+        validOption(option, 4);
 
-    menuSeparator();
+        menuSeparator();
 
-    if (option == 0) { runPeopleMenu(); }
-    if (option == 1) { createPlayerOption(); }
-    if (option == 2) { modifyPlayerOption(); }
-    if (option == 3) { removePlayerOption(); }
-    if (option == 4) { runMenu(); }
-    if (option == 5) { runMenu(); }
-    if (option == 6) { runMenu(); }
-    if (option == 7) { runMenu(); }
+        if (option == 0) { break; }
+        if (option == 1) { createPlayerOption(); }
+        if (option == 2) { modifyPlayerOption(); }
+        if (option == 3) { removePlayerOption(); }
+        if (option == 4) { playerMenuTransition();}
 
-
-    runPeopleMenu();
+        break;
+    }
 }
 
 //Asks the user for information of new player and adds it to the databas
@@ -297,4 +295,66 @@ void NationalTeam::setPeopleFile(const string &peopleFile) {
     NationalTeam::peopleFile = peopleFile;
 }
 
+
+void NationalTeam::showPlayerGames(int id) {
+    tableHeaderAllGames(cout);
+    for (auto i = games.begin(); i != games.end(); i++){
+        for (auto j = (*i)->getPlayerStatistics().begin(); j != (*i)->getPlayerStatistics().end(); j++){
+            cout << id << " = " << (*j).getID() << endl;
+            if (id == (*j).getID()){
+                cout << "GOT IN" << endl;
+                (*i)->print(cout);
+            }
+        }
+    }
+    tableFooterAllGames(cout);
+}
+
+void NationalTeam::playerMenuTransition() {
+    int id, option;
+
+    while (true) {
+        cout << "Insert the ID of the player you want to see information from: ";
+        cin >> id;
+
+        if (cin.fail()) {
+            cout << "Invalid option, ID must be an integer!";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        try {
+            searchByID(players, id);
+        }
+        catch (InexistentId) {
+            cout << "There are no players with such id (" << id << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+        menuSeparator();
+
+        cout << endl << endl;
+
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "See all games played by a specific player.                         [1]" << endl;
+        cout << "See all call-ups that a player participated.                       [2]" << endl;
+        cout << "See player statistics from a game.                                 [3]" << endl;
+        cout << "See player statistics from call up.                                [4]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+
+        validOption(option, 4);
+
+        menuSeparator();
+
+        if (option == 0) break;
+        if (option == 1) { showPlayerGames(id); }
+        if (option == 2) { /*showPlayerCallUps(id);*/ }
+        if (option == 3) { /*showGameStats(id);*/}
+        if (option == 4) { /*showCallUpStats(id);*/}
+
+        break;
+    }
+}
 

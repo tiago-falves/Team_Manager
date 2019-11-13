@@ -128,6 +128,17 @@ CallUp* NationalTeam::getCallUpWithID(int id){
     }
     throw InexistentId(id);
 }
+bool NationalTeam::searchCallUpByID(const int &id){
+    bool check = false;
+    for (auto i = callUps.begin(); i != callUps.end(); i++){
+        if ((*i)->getId() == id) check = true;
+    }
+
+    if (!check) throw InexistentId(id);
+
+    return check;
+}
+
 //DELETE CALL UP
 void NationalTeam::deleteCallUp(int id) {
     for (auto i = callUps.begin(); i != callUps.end(); i++){
