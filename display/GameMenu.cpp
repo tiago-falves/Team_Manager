@@ -35,7 +35,7 @@ void NationalTeam::runGameMenu() {
 
     if (option == 0) { runMenu(); }
     if (option == 1) { showAllGames(cout); }
-    if (option == 2) { runMenu(); }
+    if (option == 2) { showSpecificGame(cout); }
     if (option == 3) { runMenu(); }
     if (option == 4) { runMenu(); }
     if (option == 5) { runMenu(); }
@@ -55,6 +55,7 @@ void NationalTeam::tableHeaderAllGames(ostream &out) {
     out <<  left << setw(11) << setfill(' ') <<  "Country"<< "│ ";
     out <<  left << setw(18)  << setfill(' ') << "Stadium" << "│ ";
     out <<  left << setw(20)  << setfill(' ') << "Game Title" << "│ ";
+    out << endl << setw(82) << setfill('-') << "-" << "│" <<  endl;
     out << endl;
 
 }
@@ -65,19 +66,19 @@ void NationalTeam::tableFooterAllGames(ostream &out) {
 
 void NationalTeam::tableHeaderStatistics(ostream &out) {
     out << endl << endl << endl;
-    out << setw(117) << setfill('-') << "-" <<  endl;
-    out <<  left << setw(11)  << setfill(' ') << "Player ID" << "│  ";
-    out <<  left << setw(15) << setfill(' ') << "Number of Goals"  << "│ ";
+    out << setw(110) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(11)  << setfill(' ') << "Player ID" << "│ ";
+    out <<  left << setw(15) << setfill(' ') << "Goals"  << "│ ";
     out <<  left << setw(16) << setfill(' ') <<  "Minutes Played"<< "│ ";
     out <<  left << setw(12)  << setfill(' ') << "Kilometers" << "│ ";
     out <<  left << setw(18)  << setfill(' ') << "Number of Passes" << "│ ";
-    out <<  left << setw(24)  << setfill(' ') << "Number of Yellow Cards" << "│ ";
-    out <<  left << setw(21)  << setfill(' ') << "Number of Red Cards" << "│ ";
-    out << setw(117) << setfill('-') << "-" << "│" <<  endl;
+    out <<  left << setw(14)  << setfill(' ') << "Yellow Cards" << "│ ";
+    out <<  left << setw(11)  << setfill(' ') << "Red Cards" << "│ ";
+    out <<  endl << setw(109) << setfill('-') << "-" << "│" <<  endl;
 }
 
 void NationalTeam::tableFooterStatistics(ostream &out){
-    out << setw(117) << setfill('-') << "-" << endl;
+    out << setw(110) << setfill('-') << "-" << endl;
 }
 
 void NationalTeam::showAllGames(ostream &out) {
@@ -89,4 +90,22 @@ void NationalTeam::showAllGames(ostream &out) {
 
     tableFooterAllGames(out);
 
+}
+
+void NationalTeam::showSpecificGame(ostream &out) {
+    int id = askForId();
+
+    tableHeaderAllGames(out);
+
+    games[id - 1]->print(out);
+
+    tableFooterAllGames(out);
+
+    tableHeaderStatistics(out);
+
+    for(PlayerGameStatistics stat : games[id - 1]->getPlayerStatistics()){
+        stat.print(out);
+    }
+
+    tableFooterStatistics(out);
 }

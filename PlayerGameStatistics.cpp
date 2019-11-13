@@ -93,5 +93,15 @@ void PlayerGameStatistics::setNumberOfRedCards(int numberOfRedCards) {
     PlayerGameStatistics::numberOfRedCards = numberOfRedCards;
 }
 
+void PlayerGameStatistics::print(ostream &os) {
+    os <<  left << setw(11)  << setfill(' ') << playerID << "│ ";
+    os <<  left << setw(15) << setfill(' ') << numberOfGoals << "│ ";
+    os <<  left << setw(16) << setfill(' ') <<  minutesPlayed << "│ ";
+    os <<  left << setw(12) << setfill(' ') << kilometers << "│ "  ;
+    os <<  left << setw(18) << setfill(' ') << numberOfPasses << "│ "  ;
+    os <<  left << setw(14) << setfill(' ') << numberOfYellowCards << "│ "  ;
+    os <<  left << setw(11) << setfill(' ') << numberOfRedCards << "│ "  ;
+    os << endl;
+}
 
 int PlayerGameStatistics::lastId = 1;

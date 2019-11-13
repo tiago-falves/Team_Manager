@@ -208,6 +208,7 @@ public:
     void removeGameOption();
     void modifyGameOption();
     void showAllGames(ostream &out);
+    void showSpecificGame(ostream &out);
 
 
     //Economies Menu
