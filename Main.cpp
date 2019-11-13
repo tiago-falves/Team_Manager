@@ -8,40 +8,22 @@
 #include "Test.h"
 using namespace std;
 
-void runAgency(){
-    //Read Team File
-    //File will contain the name of the other documents
+void runTeamManager(){
 
-    //Isto e so para testar
     NationalTeam team;
-    team.setPeopleFile("Person.txt");
-    team.readPeople(team.getPeopleFile());
-    team.readGames("Games.txt");
+    team.readNationalTeam("NationalTeam.txt");
     team.runMenu();
 }
 
 int main() {
 
-    //testPerson();
-    //testExceptions();
-    //testPlayers();
-    //testNationalTeam();;
     SetConsoleOutputCP(CP_UTF8);
 
-    //runAgency();
-
-
-
-    //_setmode(_fileno(stdout), _O_U16TEXT);
-    //std::wcout << L"Testing unicode -- English -- Ελληνικά -- Español." << std::endl;
-    NationalTeam team;
-    team.readPeople("Person.txt");
-    team.readGames("Games.txt");
-    team.readGameStatiscs("Statistics.txt");
-    team.readCallUp("CallUp.txt");
-    team.runMenu();
+    runTeamManager();
 
     system("Pause");
+
+    return 0;
 
 
 }

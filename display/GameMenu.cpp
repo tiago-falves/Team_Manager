@@ -179,3 +179,11 @@ void NationalTeam::showSpecificStats(ostream &out) {
     }
     tableFooterStatistics(out);
 }
+
+const string &NationalTeam::getGameFile() const {
+    return gameFile;
+}
+
+void NationalTeam::setGameFile(const string &gameFile) {
+    NationalTeam::gameFile = gameFile;
+}

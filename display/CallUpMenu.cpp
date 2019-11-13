@@ -537,3 +537,21 @@ void NationalTeam::removeGameCallUpMenu() {
         break;
     }
 }
+
+const string &NationalTeam::getCallUpFile() const {
+    return callUpFile;
+}
+
+void NationalTeam::setCallUpFile(const string &callUpFile) {
+    NationalTeam::callUpFile = callUpFile;
+}
+
+
+
+const string &NationalTeam::getStatisticsFile() const {
+    return statisticsFile;
+}
+
+void NationalTeam::setStatisticsFile(const string &statisticsFile) {
+    NationalTeam::statisticsFile = statisticsFile;
+}

@@ -48,8 +48,34 @@ bool NationalTeam::readPeople(string fileName) {
     return true;
 }
 
-void NationalTeam::read(ifstream *file,string peopleFile) {
+void NationalTeam::read(string peopleFile,string callUpFile,string gameFile,string statisticsFile) {
     readPeople(peopleFile);
+    readCallUp(callUpFile);
+    readGames(gameFile);
+    readGameStatiscs(statisticsFile);
+}
+
+bool NationalTeam::readNationalTeam(string fileName) {
+    string text;
+    ifstream teamFile;
+    teamFile.open("..//Files//" + fileName);
+    if(teamFile.fail()){
+        cerr << "Error Opening National Team File";
+        return false;
+    }
+    else{
+        getline(teamFile, text);
+        callUpFile = text;
+        getline(teamFile,text);
+        gameFile = text;
+        getline(teamFile,text);
+        peopleFile = text;
+        getline(teamFile,text);
+        statisticsFile = text;
+    }
+    teamFile.close();
+    read(peopleFile,callUpFile,gameFile, statisticsFile);
+    return true;
 }
 
 bool NationalTeam::savePeople(string fileName) {
@@ -556,9 +582,9 @@ vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
 
 
 //Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
-void NationalTeam::saveAndExit(string fileName) {
+void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string gamesFileName, string etc) {
     string content;
-    ofstream peopleFile("../Files/" +fileName);
+    ofstream peopleFile("../Files/" +peepzFile);
 
     for (int i = 0; i < people.size(); i++){
         people[i]->printToFile(peopleFile);
