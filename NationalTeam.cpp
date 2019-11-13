@@ -479,6 +479,8 @@ bool NationalTeam::readGames(string filename) {
             games.push_back(game);
         }
 
+        gamesFile.close();
+
         return true;
     }
 }
@@ -493,73 +495,47 @@ bool NationalTeam::readGameStatiscs(string filename) {
         return false;
     }
 
-    //VARIABLES TO BUILD STATISTICS OBJECT
-    int id;
-    int playerID;
-    int numberOfGoals;
-    int minutesPlayed;
-    int kilometers;
-    int numberOfPasses;
-    int numberOfYellowCards;
-    int numberOfRedCards;
-    vector<PlayerGameStatistics> stats = {};
 
-    //GET NUMBER OF TEXT FILE LINE
-    int counter = 0;
-    int count_pushs = 0;
+    int gameID;
 
-    while(getline(statsFile, text)){
-        if (counter == 0) {
-            id = stoi(text);
+    while(!statsFile.eof()){
+
+        getline(statsFile, text);
+        gameID = stoi(text);
+        vector<PlayerGameStatistics> stats = {};
+
+        while(text != "::::::::::"){
+            PlayerGameStatistics statistics;
+
+            getline(statsFile, text);
+            statistics.setPlayerID(stoi(text));
+
+            getline(statsFile, text);
+            statistics.setNumberOfGoals( stoi(text) );
+
+            getline(statsFile, text);
+            statistics.setMinutesPlayed( stoi(text) );
+
+            getline(statsFile, text);
+            statistics.setKilometers( stoi(text) );
+
+            getline(statsFile, text);
+            statistics.setNumberOfPasses( stoi(text) );
+
+            getline(statsFile, text);
+            statistics.setNumberOfYellowCards( stoi(text) );
+
+            getline(statsFile, text);
+            statistics.setNumberOfRedCards( stoi(text) );
+
+            getline(statsFile, text);
+
+            stats.push_back(statistics);
         }
 
-        if (counter == 1) {
-            playerID = stoi(text);
-        }
-
-        if (counter == 2) {
-            numberOfGoals = stoi(text);
-        }
-
-        if (counter == 3) {
-            minutesPlayed = stoi(text);
-        }
-
-        if (counter == 4) {
-            kilometers = stoi(text);
-        }
-
-        if (counter == 5) {
-            numberOfPasses = stoi(text);
-        }
-
-        if (counter == 6) {
-            numberOfYellowCards = stoi(text);
-        }
-
-        if (counter == 7) {
-            numberOfRedCards = stoi(text);
-        }
-
-        if (text == "---------"){
-            counter = 0;
-            cout << "PLAYER ID: " << playerID << endl;
-            stats.push_back(PlayerGameStatistics(playerID, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards));
-            count_pushs++;
-        }
-
-        if (text == "::::::::::"){
-            counter = -1;
-            stats.push_back(PlayerGameStatistics(playerID, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards));
-            games[id-1]->setPlayerStatistics(stats);
-
-            cout << "GET ID: " << stats[0].getID() << endl;
-            cout << "GET NO OF GOALS: " << stats[0].getNumberOfGoals() << endl;
-            stats = {};
-        }
-
-        counter++;
+        games[gameID - 1]->setPlayerStatistics(stats);
     }
+
 
 
     statsFile.close();

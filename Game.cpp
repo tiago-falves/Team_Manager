@@ -165,16 +165,6 @@ void Game::printIntoFile(ostream &os) const{
 
 }
 
-void Game::printStatistics(ostream &os, PlayerGameStatistics statistics) {
-    os <<  left << setw(11)  << setfill(' ') << statistics.getPlayerID() << "│  ";
-    os <<  left << setw(15) << setfill(' ') << statistics.getNumberOfGoals()  << "│ ";
-    os <<  left << setw(16) << setfill(' ') <<  statistics.getMinutesPlayed() << "│ ";
-    os <<  left << setw(12) << setfill(' ') << statistics.getKilometers() << "│  "  ;
-    os <<  left << setw(18) << setfill(' ') << statistics.getNumberOfPasses() << "│  "  ;
-    os <<  left << setw(24) << setfill(' ') << statistics.getNumberOfYellowCards() << "│  "  ;
-    os <<  left << setw(21) << setfill(' ') << statistics.getNumberOfRedCards() << "│  "  ;
-}
-
 
 void Game::print(ostream &out){
     out <<  left << setw(4)  << setfill(' ') << this->id << "│  ";

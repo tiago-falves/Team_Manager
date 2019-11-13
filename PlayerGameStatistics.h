@@ -52,6 +52,8 @@ public:
 
     int getID() const;
 
+    void print(ostream &os);
+
 private:
     int id;
     int playerID;
