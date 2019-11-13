@@ -116,6 +116,7 @@ public:
     ********************GAMES FUNCTIONS******************
     *****************************************************/
     bool readGames(string filename);
+    bool readGameStatiscs(string filename);
     void saveGames(string filename);
     void printAllGameInfo(ostream& out, Game * game);
 

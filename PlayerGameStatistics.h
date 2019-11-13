@@ -16,7 +16,7 @@ class PlayerGameStatistics {
 private:
 public:
 
-    PlayerGameStatistics(int numberOfGoals, int minutesPlayed, int kilometers, int playerID, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
+    PlayerGameStatistics(int playerID, int numberOfGoals, int minutesPlayed, int kilometers, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
 
     PlayerGameStatistics(int playerID);
 

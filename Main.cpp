@@ -36,6 +36,30 @@ int main() {
     NationalTeam team;
     team.readPeople("Person.txt");
     team.readGames("Games.txt");
+    team.readGameStatiscs("Statistics.txt");
+
+    cout << team.getGames()[0]->getPlayerStatistics().size() << endl;
+    cout << team.getGames()[1]->getPlayerStatistics().size() << endl;
+
+    cout << endl << endl;
+
+    cout << "START" << endl;
+    for (auto i = team.getGames().begin(); i < team.getGames().end(); i++){
+        cout << "GOT IN " << endl;
+        for (auto j = (*i)->getPlayerStatistics().begin(); j < (*i)->getPlayerStatistics().end(); j++){
+            cout << "playerID: " << j->getPlayerID() << endl;
+            cout << "Goals: " << j->getNumberOfGoals() << endl;
+            cout << "Minutes: " << j->getMinutesPlayed() << endl;
+            cout << "Kilometers: " << j->getKilometers() << endl;
+            cout << "Passes: " << j->getNumberOfPasses() << endl;
+            cout << "Yellows: " << j->getNumberOfYellowCards() << endl;
+            cout << "Reds: " << j->getNumberOfRedCards() << endl;
+            cout << "---------" << endl;
+        }
+        cout << "::::::::::" << endl;
+    }
+    cout << "END" << endl;
+
     team.readCallUp("CallUp.txt");
     team.runMenu();
 

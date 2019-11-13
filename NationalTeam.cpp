@@ -460,6 +460,80 @@ bool NationalTeam::readGames(string filename) {
         return true;
     }
 }
+bool NationalTeam::readGameStatiscs(string filename) {
+    //VARIABLES TO READ FILE
+    ifstream statsFile;
+    statsFile.open("..//Files//" + filename);
+    string text;
+
+    if(statsFile.fail()){
+        cerr << "Error Opening File";
+        return false;
+    }
+
+    //VARIABLES TO BUILD STATISTICS OBJECT
+    int id;
+    int playerID;
+    int numberOfGoals;
+    int minutesPlayed;
+    int kilometers;
+    int numberOfPasses;
+    int numberOfYellowCards;
+    int numberOfRedCards;
+    vector<PlayerGameStatistics> stats;
+
+    //GET NUMBER OF TEXT FILE LINE
+    int counter = 0;
+
+    while(getline(statsFile, text)){
+        if (counter == 0) {
+            id = stoi(text);
+        }
+
+        if (counter == 1) {
+            playerID = stoi(text);
+        }
+
+        if (counter == 2) {
+            numberOfGoals = stoi(text);
+        }
+
+        if (counter == 3) {
+            minutesPlayed = stoi(text);
+        }
+
+        if (counter == 4) {
+            kilometers = stoi(text);
+        }
+
+        if (counter == 5) {
+            numberOfPasses = stoi(text);
+        }
+
+        if (counter == 6) {
+            numberOfYellowCards = stoi(text);
+        }
+
+        if (counter == 7) {
+            numberOfRedCards = stoi(text);
+        }
+
+        if (text == "---------"){
+            counter = 0;
+            stats.push_back(PlayerGameStatistics(playerID, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards));
+        }
+
+        if (text == "::::::::::"){
+            counter = -1;
+            games[id-1]->setPlayerStatistics(stats);
+            stats = {};
+        }
+
+        counter++;
+    }
+    statsFile.close();
+    return true;
+}
 
 vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
     vector<Game*> gamesPlayed;
