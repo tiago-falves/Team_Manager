@@ -38,13 +38,6 @@ int main() {
     team.readGames("Games.txt");
     team.readGameStatiscs("Statistics.txt");
 
-    cout << team.getGames()[0]->getPlayerStatistics().size() << endl;
-    cout << team.getGames()[1]->getPlayerStatistics().size() << endl;
-
-    cout << endl << endl;
-
-    cout << "START" << endl;
-
     vector<Game*> games = team.getGames();
 
     for (auto i = games.begin(); i < games.end(); i++){
