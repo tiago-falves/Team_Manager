@@ -31,12 +31,16 @@ int main() {
     //runAgency();
 
 
+
     //_setmode(_fileno(stdout), _O_U16TEXT);
     //std::wcout << L"Testing unicode -- English -- Ελληνικά -- Español." << std::endl;
     NationalTeam team;
     team.readPeople("Person.txt");
+
     team.readGames("Games.txt");
+
     team.readGameStatiscs("Statistics.txt");
+
 
     cout << team.getGames()[0]->getPlayerStatistics().size() << endl;
     cout << team.getGames()[1]->getPlayerStatistics().size() << endl;
