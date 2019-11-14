@@ -233,6 +233,27 @@ public:
     void saveGames(string filename);
     void printAllGameInfo(ostream& out, Game * game);
 
+    static bool idGameComparable(const Game* game, const int id){
+        return (game->getID() < id);
+    }
+
+    int searchGameByID(vector<Game *> &game, int id){
+        auto it = lower_bound(game.begin(),game.end(),id,idGameComparable);
+        if (it != game.end() && (*it)->getID() == id) return (it-game.begin());
+        else throw InexistentId(id);
+    }
+
+    static bool idStatsComparable(const PlayerGameStatistics stats, const int id){
+        return (stats.getPlayerID() < id);
+    }
+
+    int searchStatsByID(vector<PlayerGameStatistics> stats, int id){
+        auto it = lower_bound(stats.begin(), stats.end(),id,idStatsComparable);
+        if (it != stats.end() && (*it).getPlayerID() == id) return (it-stats.begin());
+        else throw InexistentId(id);
+    }
+
+
     vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
 
     /****************************************************

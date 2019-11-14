@@ -237,9 +237,10 @@ void NationalTeam::modifyCallMenu() {
         cin >> id;
 
         if (cin.fail()) {
-            cout << "Invalid option, please insert the option again: ";
+            cout << "Invalid option, ID must be an integer!" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
+            menuSeparator();
             break;
         }
 

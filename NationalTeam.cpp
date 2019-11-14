@@ -390,9 +390,6 @@ float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, i
                     }
                     else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
                 }
-                else{
-                    //lançar exceção de jogador não estar em nenhuma convocatória na data fornecida
-                }
             }
         }
     }
@@ -443,9 +440,6 @@ float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
                     val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost() *3;
                 }
                 else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
-            }
-            else{
-                //lançar exceção de jogador não estar em nenhuma convocatória na data fornecida
             }
         }
     }
