@@ -186,4 +186,10 @@ void NationalTeam::createGameOption(ostream &out) {
 
 void NationalTeam::removeGameOption(ostream &out) {
 
+const string &NationalTeam::getGameFile() const {
+    return gameFile;
+}
+
+void NationalTeam::setGameFile(const string &gameFile) {
+    NationalTeam::gameFile = gameFile;
 }

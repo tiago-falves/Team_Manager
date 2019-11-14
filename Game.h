@@ -64,7 +64,6 @@ public:
     void printIntoFile(ostream &os) const;
     void print(ostream &os);
 
-
     friend ostream& operator<< (ostream& out, const Game& game);
 };
 

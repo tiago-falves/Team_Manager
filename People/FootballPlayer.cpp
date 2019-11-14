@@ -5,6 +5,7 @@
 
 #include "FootballPlayer.h"
 
+//Constructs a Football player given all the information
 FootballPlayer::FootballPlayer(string name, Date birthdayDate,float salary, string position, string club, const float weight, const float height, float pass_value,bool injury):Person(name,birthdayDate, salary) {
 
     this->club = club;
@@ -15,6 +16,7 @@ FootballPlayer::FootballPlayer(string name, Date birthdayDate,float salary, stri
     this->injury= injury;
 }
 
+//Constructs a default FootballPlayer
 FootballPlayer::FootballPlayer():Person() {
     this->position = "";
     this->club = "";
@@ -25,9 +27,12 @@ FootballPlayer::FootballPlayer():Person() {
 
 }
 
+//Returns the type of the player
 string FootballPlayer::type() const {
     return "Football Player";
 }
+
+//Prints the Football player in a formatted table way
 void FootballPlayer::print(ostream &out) const {
 
     Person::print(cout);
@@ -38,10 +43,9 @@ void FootballPlayer::print(ostream &out) const {
     out <<  left << setw(5) << setfill(' ') << fixed  << setprecision(2) << pass_value<< " │";
     if(injury) out <<  left << setw(5) << setfill(' ') << "Injured"<< " │" << endl;
     else out <<  left << setw(5) << setfill(' ') << "Healthy"<< " │" << endl;
-
-
 }
 
+//Prints a person in the file format
 void FootballPlayer::printToFile(ostream &os) const {
     Person::printToFile(os);
     os << position << endl;
@@ -55,57 +59,67 @@ void FootballPlayer::printToFile(ostream &os) const {
     os << endl;
 }
 
+//Gets the position of the player
 const string &FootballPlayer::getPosition() const {
     return position;
 }
 
+//Sets the position of the player
 void FootballPlayer::setPosition(const string &position) {
     FootballPlayer::position = position;
 }
-
+//Gets the club of the player
 const string &FootballPlayer::getClub() const {
     return club;
 }
 
+//Sets the club of the player
 void FootballPlayer::setClub(const string &club) {
     FootballPlayer::club = club;
 }
 
+//Gets the weight of the player
 float FootballPlayer::getWeight() const {
     return weight;
 }
 
+//Sets the weight of the player
 void FootballPlayer::setWeight(float weight) {
     FootballPlayer::weight = weight;
 }
 
+//Gets the height of the player
 float FootballPlayer::getHeight() const {
     return height;
 }
 
+//Sets the height of the player
 void FootballPlayer::setHeight(float height) {
     FootballPlayer::height = height;
 }
 
+//Gets the pass value
 float FootballPlayer::getPassValue() const {
     return pass_value;
 }
-
+//sets the pass value
 void FootballPlayer::setPassValue(float passValue) {
     pass_value = passValue;
 }
 
+//Returns true if the player is injured
 bool FootballPlayer::isInjury() const {
     return injury;
 }
 
+//sets injutry
 void FootballPlayer::setInjury(bool injury) {
     FootballPlayer::injury = injury;
 }
 
 
 
-
+//Modifies a player given a new football player
 void FootballPlayer::modify(Person *newPerson){
     FootballPlayer *player = (FootballPlayer*) newPerson;
     Person::modify(newPerson);
@@ -115,10 +129,9 @@ void FootballPlayer::modify(Person *newPerson){
     height = player->getHeight();
     pass_value = player->getPassValue();
     injury  = player->isInjury();
-
-
 }
 
+//Reads a football player form a ifstrem
 void FootballPlayer::read(ifstream *file) {
     Person::read(file);
     string text;

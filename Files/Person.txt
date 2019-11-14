@@ -309,3 +309,59 @@ Pedro Gomes
 643.5
 Vice-President
 ::::::::::
+Technician
+29
+Isaque Camacho
+1/2/2000
+643.5
+Assistant
+::::::::::
+Technician
+30
+Carlos Marques
+1/2/2000
+643.5
+Assistant
+::::::::::
+Technician
+31
+Joana Reis
+1/2/2000
+643.5
+Assistant
+::::::::::
+Technician
+32
+Isabel Zas
+1/2/2000
+643.5
+Assistant
+::::::::::
+Technician
+33
+Marta Camacho
+1/2/2000
+643.5
+Doctor
+::::::::::
+Technician
+34
+Serena Bela
+1/2/2000
+643.5
+Doctor
+::::::::::
+Technician
+35
+Ricardo Pode
+1/2/2000
+643.5
+Doctor
+::::::::::
+Technician
+36
+Maria Ribas
+1/2/2000
+643.5
+Phisical Trainer
+::::::::::
