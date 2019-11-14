@@ -5,6 +5,7 @@
 #include "NationalTeam.h"
 #include "Date.h"
 #include "Exceptions.h"
+#include "Utilities.h"
 #include <algorithm>
 #include <fstream>
 using namespace std;
@@ -50,8 +51,8 @@ bool NationalTeam::readPeople(string fileName) {
 
 void NationalTeam::read(string peopleFile,string callUpFile,string gameFile,string statisticsFile) {
     readPeople(peopleFile);
-    readCallUp(callUpFile);
     readGames(gameFile);
+    readCallUp(callUpFile);
     readGameStatiscs(statisticsFile);
 }
 
@@ -202,16 +203,12 @@ bool NationalTeam::readCallUp(string file) {
         //VECTOR OF GAMES
         if (counter == 4) {
             game_indexes = separateCharacterInt(text, ',');
+            insertionSort(game_indexes);
 
-            //verify that game exists
-
-            for (auto i = games.begin(); i < games.end(); i++) {
-                for (auto j = game_indexes.begin(); j < game_indexes.end(); j++){
-                    if ((*i)->getID() == *j){
-                        insert_sorted(callUpGames, *i);
-                    }
-                }
+            for (auto j = game_indexes.begin(); j < game_indexes.end(); j++){
+                callUpGames.push_back(getGameWithID(*j));
             }
+
 
         }
         //CALLUP PLAYER STATISTICS VECTOR
@@ -358,6 +355,7 @@ float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, i
     //iterates over different call ups
     for (auto i = callUps.begin(); i < callUps.end(); i++) {
 
+        cout << "FLOAT COST: " << (*i)->getDailyCost() << endl;
         //iterates over the players that were in that call up
         for (auto j = (*i)->getPlayerStatistics().begin(); j < (*i)->getPlayerStatistics().end(); j++) {
 
@@ -393,7 +391,7 @@ float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, i
             }
         }
     }
-    return pass;
+    return val;
 }
 
 float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
