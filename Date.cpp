@@ -77,7 +77,7 @@ bool operator<=(const Date& date1, const Date& date2){
     else return false;
 }
 bool operator>=(const Date& date1, const Date& date2){
-    if (date1.dateToDays() <= date2.dateToDays()) return true;
+    if (date1.dateToDays() >= date2.dateToDays()) return true;
     else return false;
 }
 

@@ -390,15 +390,15 @@ void NationalTeam::showCallUpStats(int id) {
             break;
         }
 
-        for (auto i = call->getGames().begin(); i != call->getGames().end(); i++){
-            pos_stat = ((*i)->getPlayerStatistics(), id);
+        for (auto i = 0; i < (call->getGames()).size(); i++){
+            pos_stat = searchStatsByID(call->getGames()[i]->getPlayerStatistics(), id);
 
-            numberOfGoals += ((*i)->getPlayerStatistics()[pos_stat]).getNumberOfGoals();
-            minutesPlayed += ((*i)->getPlayerStatistics()[pos_stat]).getMinutesPlayed();
-            kilometers += ((*i)->getPlayerStatistics()[pos_stat]).getKilometers();
-            numberOfPasses += ((*i)->getPlayerStatistics()[pos_stat]).getNumberOfPasses();
-            numberOfYellowCards += ((*i)->getPlayerStatistics()[pos_stat]).getNumberOfYellowCards();
-            numberOfRedCards += ((*i)->getPlayerStatistics()[pos_stat]).getNumberOfRedCards();
+            numberOfGoals += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfGoals();
+            minutesPlayed += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getMinutesPlayed();
+            kilometers += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getKilometers();
+            numberOfPasses += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfPasses();
+            numberOfYellowCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfYellowCards();
+            numberOfRedCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfRedCards();
         }
 
         tableHeaderStatistics(cout);
