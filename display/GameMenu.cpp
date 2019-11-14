@@ -179,3 +179,11 @@ void NationalTeam::showSpecificStats(ostream &out) {
     }
     tableFooterStatistics(out);
 }
+
+void NationalTeam::createGameOption(ostream &out) {
+
+}
+
+void NationalTeam::removeGameOption(ostream &out) {
+
+}
