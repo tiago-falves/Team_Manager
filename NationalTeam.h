@@ -233,6 +233,25 @@ public:
     void saveGames(string filename);
     void printAllGameInfo(ostream& out, Game * game);
 
+
+    template <class T>
+    bool removeGame(vector<T> &game, int id){
+        int index;
+        try {index = searchByID(game,id);}
+        catch (InexistentId(index)){
+            cerr << "Tried to remove Person that doesn't exist" << endl;
+            return false;
+        }
+        games.erase(games.begin()+index);
+        return true;
+    }
+
+    template <class T, class R>
+    bool addGame(vector<T> &game, R person){
+        games.push_back(game);
+        return true;
+    }
+
     static bool idGameComparable(const Game* game, const int id){
         return (game->getID() < id);
     }
@@ -446,9 +465,9 @@ public:
 
     //Game Menu
     void runGameMenu();
-    void createGameOption();
-    void removeGameOption();
-    void modifyGameOption();
+    void createGameOption(ostream &out);
+    void removeGameOption(ostream &out);
+    void modifyGameOption(ostream &out);
     void showAllGames(ostream &out);
     void showSpecificGame(ostream &out);
     void showSpecificStats(ostream &out);

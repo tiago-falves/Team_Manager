@@ -180,6 +180,12 @@ void NationalTeam::showSpecificStats(ostream &out) {
     tableFooterStatistics(out);
 }
 
+void NationalTeam::createGameOption(ostream &out) {
+
+}
+
+void NationalTeam::removeGameOption(ostream &out) {
+
 const string &NationalTeam::getGameFile() const {
     return gameFile;
 }
