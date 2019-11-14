@@ -96,9 +96,9 @@ void Game::setEnemyPlayers(vector<string> vec){
  ******************AUX FUNCTIONS*********************
  *****************************************************/
 
-void Game::addNationalPlayer(FootballPlayer *player) {
+void Game::addNationalPlayer(FootballPlayer *player, PlayerGameStatistics stats) {
     this->nationalPlayers.push_back(player);
-    this->playerStatistics.push_back(PlayerGameStatistics(player->getId()));
+    this->playerStatistics.push_back(stats);
 }
 
 void Game::removeNationalPlayer(FootballPlayer *player) {
@@ -186,9 +186,12 @@ void Game::addEnemyPlayer(string player)  {
 }
 
 int Game::addReferee(string referee) {
-    if(referee.size() == 5){
+    if(referees.size() == 5){
         cout << "You can't add more referees. Please delete one before adding.";
         return 1;
+    }
+    else {
+        referees.push_back(referee);
     }
     return 0;
 }

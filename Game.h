@@ -51,7 +51,7 @@ public:
     void setReferees(vector<string> refs);
 
     // ADD FUNCTIONS
-    void addNationalPlayer(FootballPlayer * player);
+    void addNationalPlayer(FootballPlayer * player, PlayerGameStatistics stats);
     void addEnemyPlayer(string player);
     int addReferee(string referee);
 

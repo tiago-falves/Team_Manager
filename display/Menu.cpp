@@ -77,6 +77,8 @@ int NationalTeam::askForId(){
     cout << "Please Insert an ID: ";
     cin >> id;
     validCin(id);
+    cin.clear();
+    cin.ignore(10000, '\n');
     return id;
 }
 
@@ -129,4 +131,29 @@ bool NationalTeam::askYesNoQuestion() {
     else if(option == 2) return false;
     return true;
 
+}
+
+int NationalTeam::askForInt(const string &what) {
+    bool exceptionCatched = true;
+    string text;
+    cout << what << ": ";
+    cin >> text;
+
+    while(exceptionCatched) {
+        try {
+            validInt(text);
+            exceptionCatched = false;
+
+        }
+        catch (std::invalid_argument ia) {
+            cout << "Invalid number, please insert your answer again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> text;
+        }
+
+    }
+    cin.clear();
+    cin.ignore(10000, '\n');
+    return stoi(text);
 }

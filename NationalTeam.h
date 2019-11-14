@@ -237,7 +237,7 @@ public:
     template <class T>
     bool removeGame(vector<T> &game, int id){
         int index;
-        try {index = searchByID(game,id);}
+        try {index = searchGameByID(game,id);}
         catch (InexistentId(index)){
             cerr << "Tried to remove Person that doesn't exist" << endl;
             return false;
@@ -328,6 +328,14 @@ public:
      * @return float containing a valid float
      */
     float askForFloat(string &text, const string &what);
+
+    /**
+     * Asks for an integer until the input is valid
+     * @param text input of the user
+     * @param what For example Salary
+     * @return integer containing a valid integer
+     */
+    int askForInt(const string &what);
 
     /**
      * Asks the user for a string
@@ -471,6 +479,9 @@ public:
     void showAllGames(ostream &out);
     void showSpecificGame(ostream &out);
     void showSpecificStats(ostream &out);
+    void askForPlayers(ostream &out, Game * game);
+    void askForStringVector(ostream &out, string what, Game* game);
+    PlayerGameStatistics askForPlayerStatistics(ostream &out, int playerID);
 
 
     //Economies Menu
