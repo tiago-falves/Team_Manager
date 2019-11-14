@@ -62,7 +62,7 @@ void NationalTeam::showPersonByName() {
 void NationalTeam::showSpecificPerson(ostream &out,int i){
 
     tableHeaderPlayer(out);
-    cout << people[searchByID(people,i)];
+    out << people[searchByID(people,i)];
     tableFooterPlayer(out);
 }
 
@@ -178,8 +178,7 @@ void NationalTeam::modifyPlayerOption(){
     int id = askForValidId(players);
     FootballPlayer *player = new FootballPlayer();
     cin.clear();
-    cin.ignore(10000, '\n');
-    askPlayerInformation(player);
+«    askPlayerInformation(player);
     int index = searchByID(people,id);
     people[index]->modify(player);
     menuSeparator();
@@ -263,7 +262,7 @@ void NationalTeam::modifyTechOption(){
     int id = askForValidId(technicians);
     Technician *technician = new Technician();
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     askTechInformation(technician);
     int index = searchByID(people,id);
     people[index]->modify(technician);
@@ -329,7 +328,7 @@ void NationalTeam::showGameStats(int id) {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!" << endl;
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             menuSeparator();
             break;
         }
@@ -377,7 +376,7 @@ void NationalTeam::showCallUpStats(int id) {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!" << endl;
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             menuSeparator();
             break;
         }
@@ -421,7 +420,7 @@ void NationalTeam::playerMenuTransition() {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!";
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             break;
         }
 

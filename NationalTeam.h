@@ -475,13 +475,15 @@ public:
     void runGameMenu();
     void createGameOption(ostream &out);
     void removeGameOption(ostream &out);
-    void modifyGameOption(ostream &out);
+    void modifyGameOption(ostream &out, int option);
+    void modifyVectorOption(ostream &out, string vectorType);
     void showAllGames(ostream &out);
     void showSpecificGame(ostream &out);
     void showSpecificStats(ostream &out);
     void askForPlayers(ostream &out, Game * game);
     void askForStringVector(ostream &out, string what, Game* game);
     PlayerGameStatistics askForPlayerStatistics(ostream &out, int playerID);
+    void showModifyGameOptions(ostream &out);
 
 
     //Economies Menu

@@ -24,12 +24,12 @@ void NationalTeam::runGameMenu() {
     {
         cout << "Invalid option, please insert the option again: ";
         cin.clear();
-        cin.ignore(10000, '\n');
+        cin.ignore(100, '\n');
         cin >> option;
     }
 
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
 
     menuSeparator();
 
@@ -39,11 +39,7 @@ void NationalTeam::runGameMenu() {
     if (option == 3) { showSpecificStats(cout); }
     if (option == 4) { createGameOption(cout); }
     if (option == 5) { removeGameOption(cout); }
-    if (option == 6) { modifyGameOption(cout); }
-
-
-
-
+    if (option == 6) { showModifyGameOptions(cout); }
 
     runMenu();
 }
@@ -210,7 +206,6 @@ void NationalTeam::removeGameOption(ostream &out) {
     out << "Unable to remove the game.\n";
 }
 
-
 const string &NationalTeam::getGameFile() const {
     return gameFile;
 }
@@ -260,19 +255,107 @@ PlayerGameStatistics NationalTeam::askForPlayerStatistics(ostream &out, int play
     return stats;
 }
 
-void NationalTeam::modifyGameOption(ostream &out) {
+void NationalTeam::showModifyGameOptions(ostream &out) {
+    int option;
+
+    cout << "Welcome to the Game Menu! Please choose what you want to do: ";
+    cout << endl << endl;
+    cout << "0. Go back" << endl;
+    cout << "1. City " << endl;
+    cout << "2. Country " << endl;
+    cout << "3. Stadium " << endl;
+    cout << "4. Player Statistics" << endl;
+    cout << "5. National Players" << endl;
+    cout << "6. Enemy Players" << endl;
+    cout << "7. Referees" << endl;
+    cout << "8. Everything" << endl;
+    cout << "Insert the number correspondent to your option: ";
+    cin >> option;
+
+    while (cin.fail() || option < 0 || option > 8)
+    {
+        cout << "Invalid option, please insert the option again: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cin >> option;
+    }
+
+    cin.clear();
+    cin.ignore(10000, '\n');
+
+    menuSeparator();
+
+    if (option == 0) { runGameMenu(); }
+    else { modifyGameOption(cout, option); }
+
+}
+
+void NationalTeam::modifyGameOption(ostream &out, int option) {
     out << "What Game do you wish to modify?\n";
     int gameID = askForId();
 
+    cin.clear();
+
     int index = searchGameByID(games, gameID);
 
-    games[index]->setCity(askForString("City"));
-    games[index]->setCountry(askForString("Country"));
-    games[index]->setStadium(askForString("Stadium"));
-    games[index]->setGameTitle(askForString("Game Title"));
-    /*askForPlayers(out, games[index]);
-    askForStringVector(out, "EnemyPlayers", games[index]);
-    askForStringVector(out, "Referee", games[index]);
-*/
+
+    if(option == 1){
+        games[index]->setCity(askForString("City"));
+    }
+    else if(option == 2){
+        games[index]->setCountry(askForString("Country"));
+    }
+    else if(option == 3){
+        games[index]->setStadium(askForString("Stadium"));
+    }
+    else if(option == 4){
+        games[index]->setGameTitle(askForString("Game Title"));
+    }
+    else if(option == 5){
+
+        tableHeaderPlayer(out);
+
+        for(FootballPlayer * p : games[index]->getNationalPlayers()){
+            p->print(out);
+        }
+
+        tableFooterPlayer(out);
+
+        modifyPlayerOption();
+
+    }
+    else if(option == 6){
+        tableHeaderEnemyTeam(out);
+
+        for(string s : games[index]->getEnemyPlayers()){
+            out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+        }
+
+        tableFooterEnemyTeamReferee(out);
+
+        askForStringVector(out, "EnemyPlayers", games[index]);
+
+    }
+    else if(option == 7){
+        tableHeaderReferee(out);
+
+        for(string s : games[index]->getReferees()){
+            out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+        }
+
+        tableFooterEnemyTeamReferee(out);
+
+        askForStringVector(out, "Referee", games[index]);
+    }
+    else if(option == 8){
+        modifyGameOption(cout, 1);
+        modifyGameOption(cout, 2);
+        modifyGameOption(cout, 3);
+        modifyGameOption(cout, 4);
+        modifyGameOption(cout, 5);
+        modifyGameOption(cout, 6);
+        modifyGameOption(cout, 7);
+    }
+
 
 }
