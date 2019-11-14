@@ -46,11 +46,11 @@ void NationalTeam::validOption(int &option,int optionsNumber){
     {
         cout << "Invalid option, please insert the option again: ";
         cin.clear();
-        cin.ignore(10000, '\n');
+        cin.ignore(100, '\n');
         cin >> option;
     }
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
 }
 
 //Outputs a separator made of *
@@ -67,7 +67,7 @@ void NationalTeam::validCin(int &option) {
     {
         cout << "Invalid input, please insert your answer again: ";
         cin.clear();
-        cin.ignore(10000, '\n');
+        cin.ignore(100, '\n');
         cin >> option;
     }
 }
@@ -78,7 +78,7 @@ int NationalTeam::askForId(){
     cin >> id;
     validCin(id);
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     return id;
 }
 
@@ -110,13 +110,13 @@ float NationalTeam::askForFloat(string &text, const string &what){
         catch (std::invalid_argument ia) {
             cout << "Invalid number, please insert your answer again: ";
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             cin >> text;
         }
 
     }
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     return stof(text);
 }
 
@@ -148,12 +148,12 @@ int NationalTeam::askForInt(const string &what) {
         catch (std::invalid_argument ia) {
             cout << "Invalid number, please insert your answer again: ";
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             cin >> text;
         }
 
     }
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     return stoi(text);
 }

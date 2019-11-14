@@ -24,12 +24,12 @@ void NationalTeam::runGameMenu() {
     {
         cout << "Invalid option, please insert the option again: ";
         cin.clear();
-        cin.ignore(10000, '\n');
+        cin.ignore(100, '\n');
         cin >> option;
     }
 
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
 
     menuSeparator();
 
@@ -40,10 +40,6 @@ void NationalTeam::runGameMenu() {
     if (option == 4) { createGameOption(cout); }
     if (option == 5) { removeGameOption(cout); }
     if (option == 6) { showModifyGameOptions(cout); }
-
-
-
-
 
     runMenu();
 }
@@ -210,7 +206,6 @@ void NationalTeam::removeGameOption(ostream &out) {
     out << "Unable to remove the game.\n";
 }
 
-}
 const string &NationalTeam::getGameFile() const {
     return gameFile;
 }

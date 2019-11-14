@@ -262,7 +262,7 @@ void NationalTeam::modifyTechOption(){
     int id = askForValidId(technicians);
     Technician *technician = new Technician();
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     askTechInformation(technician);
     int index = searchByID(people,id);
     people[index]->modify(technician);
@@ -328,7 +328,7 @@ void NationalTeam::showGameStats(int id) {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!" << endl;
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             menuSeparator();
             break;
         }
@@ -376,7 +376,7 @@ void NationalTeam::showCallUpStats(int id) {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!" << endl;
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             menuSeparator();
             break;
         }
@@ -420,7 +420,7 @@ void NationalTeam::playerMenuTransition() {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!";
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             break;
         }
 
