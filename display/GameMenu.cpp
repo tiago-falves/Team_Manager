@@ -210,7 +210,7 @@ void NationalTeam::removeGameOption(ostream &out) {
     out << "Unable to remove the game.\n";
 }
 
-}
+
 const string &NationalTeam::getGameFile() const {
     return gameFile;
 }

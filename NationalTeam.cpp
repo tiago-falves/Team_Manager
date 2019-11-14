@@ -306,35 +306,46 @@ float NationalTeam::teamCostCalculator(Date d1, Date d2) {
     float val = 0;
     float pass;
 
+    //Date variables used in loops
+    Date beg, end;
+
+    //Variable to get player position in palyer vector
+    int playerPos;
+
     //iterates over different call ups
     for (auto i = callUps.begin(); i < callUps.end(); i++){
 
         //iterates over the players that were in that call up
-        for (auto j = (*i)->getPlayerStatistics().begin(); j < (*i)->getPlayerStatistics().end(); j++){
+        for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++) {
 
-            pass = players[(*j)->getPlayerID()]->getPassValue() * 0.01;
+            playerPos = searchByID(players, (*i)->getPlayerStatistics()[j]->getPlayerID());
+
+            pass = players[playerPos]->getPassValue() * 0.01;
+
+            beg = (*i)->getPlayerStatistics()[j]->getBegDate();
+            end = (*i)->getPlayerStatistics()[j]->getEndDate();
 
             //checking number of days player was in call up between the given days
-            if (d1 <= (*j)->getBegDate() && d2 >= (*j)->getEndDate()){
-                if (players[(*j)->getPlayerID()]->isInjury()) {
-                    val += pass * ((*j)->getEndDate().dateToDays() - (*j)->getBegDate().dateToDays()) * 3 * (*i)->getDailyCost();
+            if (d1 <= beg && d2 >= end){
+                if (players[playerPos]->isInjury()) {
+                    val += pass * (end.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
                 }
-                else val += pass * ((*j)->getEndDate().dateToDays() - (*j)->getBegDate().dateToDays()) * (*i)->getDailyCost();
+                else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
             }
-            else if (d1 <= (*j)->getBegDate()){
-                if (players[(*j)->getPlayerID()]->isInjury()){
-                    val += pass * (d2.dateToDays() - (*j)->getBegDate().dateToDays()) * 3 * (*i)->getDailyCost();
+            else if (d1 <= beg){
+                if (players[playerPos]->isInjury()){
+                    val += pass * (d2.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
                 }
-                else  val += pass * (d2.dateToDays() - (*j)->getBegDate().dateToDays())  * (*i)->getDailyCost();
+                else  val += pass * (d2.dateToDays() - beg.dateToDays())  * (*i)->getDailyCost();
             }
-            else if (d2 >= (*j)->getEndDate()) {
-                if (players[(*j)->getPlayerID()]->isInjury()) {
-                    val += pass * ((*j)->getEndDate().dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
+            else if (d2 >= end) {
+                if (players[playerPos]->isInjury()) {
+                    val += pass * (end.dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
                 }
-                else val += pass * ((*j)->getEndDate().dateToDays() - d1.dateToDays())  * (*i)->getDailyCost();
+                else val += pass * (end.dateToDays() - d1.dateToDays())  * (*i)->getDailyCost();
             }
-            else if (d1 >= (*j)->getBegDate() && d2 <= (*j)->getEndDate()){
-                if (players[(*j)->getPlayerID()]->isInjury()){
+            else if (d1 >= beg && d2 <= end){
+                if (players[playerPos]->isInjury()){
                     val += pass * (d2.dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
                 }
                 else val += pass * (d2.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
@@ -424,38 +435,44 @@ float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
     //Date variables used in loops
     Date beg, end;
 
+    //postition of player in data base vector
+    int playerPos;
+
     //iterates over different call ups
     for (auto i = callUps.begin(); i < callUps.end(); i++) {
 
         //iterates over the players that were in that call up
-        for (auto j = (*i)->getPlayerStatistics().begin(); j < (*i)->getPlayerStatistics().end(); j++) {
+        for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++) {
 
             //found player in this call up
-            beg = (*j)->getBegDate();
-            end = (*j)->getEndDate();
-            pass = players[(*j)->getPlayerID()]->getPassValue() * 0.01;
+            beg = (*i)->getPlayerStatistics()[j]->getBegDate();
+            end = (*i)->getPlayerStatistics()[j]->getEndDate();
+
+            playerPos = searchByID(players, (*i)->getPlayerStatistics()[j]->getPlayerID());
+
+            pass = players[playerPos]->getPassValue() * 0.01;
 
             if (beg.getMonth() == monthNumber && end.getMonth() == monthNumber && beg.getYear() == yearNumber && end.getYear() == yearNumber){
-                if (players[(*j)->getPlayerID()]->isInjury()){
+                if (players[playerPos]->isInjury()){
                     val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost() *3;
                 }
                 else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
 
             }
             else if (beg.getMonth() == monthNumber && end.getYear() == yearNumber){
-                if(players[(*j)->getPlayerID()]->isInjury()){
+                if(players[playerPos]->isInjury()){
                     val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost() *3;
                 }
                 else val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost();
             }
             else if (end.getMonth() == monthNumber && end.getYear() == yearNumber){
-                if(players[(*j)->getPlayerID()]->isInjury()){
+                if(players[playerPos]->isInjury()){
                     val += pass * (end.getDay()) * (*i)->getDailyCost() *3;
                 }
                 else val += pass * (end.getDay()) * (*i)->getDailyCost();
             }
-            else if (((beg.getMonth() <= monthNumber && beg.getYear() == yearNumber) || (beg.getYear() == yearNumber)) && ((end.getMonth() >= monthNumber && end.getYear() == yearNumber) || (end.getYear() == yearNumber))){
-                if(players[(*j)->getPlayerID()]->isInjury()){
+            else if ((beg.getMonth() <= monthNumber && beg.getYear() <= yearNumber) && ((end.getMonth() >= monthNumber && end.getYear() >= yearNumber) )){
+                if(players[playerPos]->isInjury()){
                     val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost() *3;
                 }
                 else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
