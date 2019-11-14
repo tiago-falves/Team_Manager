@@ -76,3 +76,9 @@ void validFloat(string num) {
     catch (std::invalid_argument ia){ throw;}
 
 }
+
+void validInt(string num) {
+    try {stoi(num);}
+    catch (std::invalid_argument ia){ throw;}
+
+}

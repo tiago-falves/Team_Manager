@@ -130,3 +130,28 @@ bool NationalTeam::askYesNoQuestion() {
     return true;
 
 }
+
+int NationalTeam::askForInt(const string &what) {
+    bool exceptionCatched = true;
+    string text;
+    cout << what << ": ";
+    cin >> text;
+
+    while(exceptionCatched) {
+        try {
+            validInt(text);
+            exceptionCatched = false;
+
+        }
+        catch (std::invalid_argument ia) {
+            cout << "Invalid number, please insert your answer again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> text;
+        }
+
+    }
+    cin.clear();
+    cin.ignore(10000, '\n');
+    return stoi(text);
+}
