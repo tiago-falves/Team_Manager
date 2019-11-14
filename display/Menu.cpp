@@ -77,6 +77,8 @@ int NationalTeam::askForId(){
     cout << "Please Insert an ID: ";
     cin >> id;
     validCin(id);
+    cin.clear();
+    cin.ignore(10000, '\n');
     return id;
 }
 

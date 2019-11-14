@@ -39,6 +39,7 @@ void NationalTeam::runGameMenu() {
     if (option == 3) { showSpecificStats(cout); }
     if (option == 4) { createGameOption(cout); }
     if (option == 5) { removeGameOption(cout); }
+    if (option == 6) { modifyGameOption(cout); }
 
 
 
@@ -256,4 +257,21 @@ PlayerGameStatistics NationalTeam::askForPlayerStatistics(ostream &out, int play
     stats.setNumberOfRedCards(askForInt("Red Cards"));
 
     return stats;
+}
+
+void NationalTeam::modifyGameOption(ostream &out) {
+    out << "What Game do you wish to modify?\n";
+    int gameID = askForId();
+
+    int index = searchGameByID(games, gameID);
+
+    games[index]->setCity(askForString("City"));
+    games[index]->setCountry(askForString("Country"));
+    games[index]->setStadium(askForString("Stadium"));
+    games[index]->setGameTitle(askForString("Game Title"));
+    /*askForPlayers(out, games[index]);
+    askForStringVector(out, "EnemyPlayers", games[index]);
+    askForStringVector(out, "Referee", games[index]);
+*/
+
 }
