@@ -78,12 +78,6 @@ string Person::type() const{
 //Prints person to the screen
 void Person::print(ostream& out) const{
 
-    /*out << type() << endl; //Porque que nao esta a imprimir quando é Pessoa?
-    out << "\tId: " << to_string(id) << endl;
-    out << "\tName:" << name << endl;
-    out << "\tBirthday:" << birthdayDate.toString() << endl;
-    out << "\tSalary: " << fixed <<setprecision(2) << salary << endl;*/
-
     out <<  left << setw(4)  << setfill(' ') << id << "│  ";
     out <<  left << setw(20) << setfill(' ') << name  << "│ ";
     out <<  left << setw(11) << setfill(' ') <<  birthdayDate.toString()<< "│ ";

@@ -139,7 +139,7 @@ public:
     vector<Person*> searchByName(vector<Person*> people, string name);
 
     /**
-     * @brief Given a Person* vector and an id, Returns the Person with that same id
+     * @brief Given a Object* vector and an id, Returns the Object with that same id
      * This sort uses Binary search since the ids are always ordered
      * @tparam T Template function so it accepts all types that have a unique ID as a menber
      * @param people vector we want to search
@@ -327,7 +327,7 @@ public:
      * @param what For example Salary
      * @return float containing a valid float
      */
-    float askForFloat(string &text, const string &what);
+    float askForFloat(string &text, const string &what,float lower,float higher);
 
     /**
      * Asks for an integer until the input is valid

@@ -1,10 +1,24 @@
 var searchData=
 [
-  ['addperson_0',['addPerson',['../class_national_team.html#a55c8550bd8798483f7d09be44fccfdb8',1,'NationalTeam']]],
-  ['aeda_5fteam_5fmanager_5fgame_5fh_1',['AEDA_TEAM_MANAGER_GAME_H',['../_game_8h.html#a3d2e0aa099c43a909b3c3b4d3d8f10b4',1,'Game.h']]],
-  ['aeda_5fteam_5fmanager_5ftechinicalteam_5fh_2',['AEDA_TEAM_MANAGER_TECHINICALTEAM_H',['../_technician_8h.html#a6fc28cd341f592cbfba27cb8b1dd039a',1,'Technician.h']]],
-  ['allcostcalculator_3',['allCostCalculator',['../class_national_team.html#a368969e06ae2a353f42d578400418d87',1,'NationalTeam']]],
-  ['allcostcalculatormonth_4',['allCostCalculatorMonth',['../class_national_team.html#a7888b0c1158222b6da20de11b0801a54',1,'NationalTeam']]],
-  ['architecture_5fid_5',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
-  ['askforid_6',['askForId',['../class_national_team.html#aa00e741783435c55f7f44194248bee48',1,'NationalTeam']]]
+  ['addenemyplayer_0',['addEnemyPlayer',['../class_game.html#aa804c4c7a332664b0356bec8f32cf166',1,'Game']]],
+  ['addgame_1',['addGame',['../class_call_up.html#a26a55d62400b4502758e622358936753',1,'CallUp']]],
+  ['addgamecallupmenu_2',['addGameCallUpMenu',['../class_national_team.html#a411aebc2e972875efd09fa089f1890ed',1,'NationalTeam']]],
+  ['addnationalplayer_3',['addNationalPlayer',['../class_game.html#ab3941621cedb65d841845ef3a5eb1e4f',1,'Game']]],
+  ['addperson_4',['addPerson',['../class_national_team.html#ae77284f723c5adbbcf891cc87e93f87c',1,'NationalTeam']]],
+  ['addplayer_5',['addPlayer',['../class_call_up.html#a2e9974fcfda648077f4c0eeb6a0b7764',1,'CallUp']]],
+  ['addreferee_6',['addReferee',['../class_game.html#a9f88df0deb7e40f8d395fca4e862fa47',1,'Game']]],
+  ['aeda_5fteam_5fmanager_5fgame_5fh_7',['AEDA_TEAM_MANAGER_GAME_H',['../_game_8h.html#a3d2e0aa099c43a909b3c3b4d3d8f10b4',1,'Game.h']]],
+  ['aeda_5fteam_5fmanager_5ftechinicalteam_5fh_8',['AEDA_TEAM_MANAGER_TECHINICALTEAM_H',['../_technician_8h.html#a6fc28cd341f592cbfba27cb8b1dd039a',1,'Technician.h']]],
+  ['allcallupmenu_9',['allCallUpMenu',['../class_national_team.html#a7a94611810a54936cc2876ab4c6ea7ff',1,'NationalTeam']]],
+  ['allequal_10',['allEqual',['../class_national_team.html#a2d847318425243dc90a006bb4ff8fb06',1,'NationalTeam']]],
+  ['architecture_5fid_11',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['askfordate_12',['askForDate',['../class_national_team.html#aa002f373223782223312cb0f799019f7',1,'NationalTeam']]],
+  ['askforfloat_13',['askForFloat',['../class_national_team.html#ad600d146edb6dbc5f74f112a5c6314a2',1,'NationalTeam']]],
+  ['askforid_14',['askForId',['../class_national_team.html#aa00e741783435c55f7f44194248bee48',1,'NationalTeam']]],
+  ['askforstring_15',['askForString',['../class_national_team.html#acd1136d36df789b01c630673fcff583c',1,'NationalTeam']]],
+  ['askforvalidid_16',['askForValidId',['../class_national_team.html#af8062205e8237268ca1147b342a5661c',1,'NationalTeam']]],
+  ['askpersoninformation_17',['askPersonInformation',['../class_national_team.html#a7eb7f4714e37267981eab2bfe5fb768f',1,'NationalTeam']]],
+  ['askplayerinformation_18',['askPlayerInformation',['../class_national_team.html#a38101d06f650ea8f34b88f6f02b076d5',1,'NationalTeam']]],
+  ['asktechinformation_19',['askTechInformation',['../class_national_team.html#af7b1c112fe6395aace4569b34021348f',1,'NationalTeam']]],
+  ['askyesnoquestion_20',['askYesNoQuestion',['../class_national_team.html#abf3203c0639039f4b3172e6e6ed49fc0',1,'NationalTeam']]]
 ];

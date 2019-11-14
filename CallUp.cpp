@@ -112,6 +112,7 @@ bool CallUp::playerExists(int playerID) {
     for (auto i = playerStatistics.begin(); i != playerStatistics.end(); i++){
         if ((*i)->getPlayerID() == playerID) return true;
     }
+
     return false;
 }
 
