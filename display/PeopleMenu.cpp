@@ -62,7 +62,7 @@ void NationalTeam::showPersonByName() {
 void NationalTeam::showSpecificPerson(ostream &out,int i){
 
     tableHeaderPlayer(out);
-    cout << people[searchByID(people,i)];
+    out << people[searchByID(people,i)];
     tableFooterPlayer(out);
 }
 
@@ -178,8 +178,7 @@ void NationalTeam::modifyPlayerOption(){
     int id = askForValidId(players);
     FootballPlayer *player = new FootballPlayer();
     cin.clear();
-    cin.ignore(10000, '\n');
-    askPlayerInformation(player);
+«    askPlayerInformation(player);
     int index = searchByID(people,id);
     people[index]->modify(player);
     menuSeparator();
