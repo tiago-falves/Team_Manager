@@ -178,7 +178,7 @@ void NationalTeam::modifyPlayerOption(){
     int id = askForValidId(players);
     FootballPlayer *player = new FootballPlayer();
     cin.clear();
-«    askPlayerInformation(player);
+    askPlayerInformation(player);
     int index = searchByID(people,id);
     people[index]->modify(player);
     menuSeparator();
