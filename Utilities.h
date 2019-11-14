@@ -115,4 +115,6 @@ bool isPositiveNumber(int n);
 
 void validFloat(string num);
 
+void validInt(string num);
+
 #endif //AEDA_TEAM_MANAGER_UTILITIES_H

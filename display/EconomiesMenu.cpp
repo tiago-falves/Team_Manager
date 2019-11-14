@@ -54,14 +54,14 @@ void NationalTeam::playerMenu() {
 
 void NationalTeam::playerMonthMenu(){
 
-    int playerID, option, month, year;
+    int pID, option, month, year;
     menuSeparator();
 
     while (true){
 
         //GET ID OF PLAYER
         cout << "Insert the ID of the player information will be taken from: ";
-        cin >> playerID;
+        cin >> pID;
 
         if (cin.fail()){
             cout << "Player ID is an integer number!" << endl;
@@ -71,7 +71,7 @@ void NationalTeam::playerMonthMenu(){
         }
 
         try{
-            searchByID(players, playerID);
+            searchByID(players, pID);
         }
         catch(InexistentId){
             cout << "There is no player with the given ID!";
@@ -127,7 +127,7 @@ void NationalTeam::playerMonthMenu(){
 
         //shows player so that user can confirm that it is checking the right player
         cout << "The following player has been selected:" << endl << endl;
-        showSpecificPerson(cout,playerID);
+        showSpecificPerson(cout,pID);
 
         cout << endl << endl;
         cout << "Go back.                                                               [0]" << endl;
@@ -140,8 +140,8 @@ void NationalTeam::playerMonthMenu(){
         if (option == 0) break;
         else if (option == 1) {
 
-            cout << "The costs associated with the player with ID: " << playerID << " in " << month << "/";
-            cout << year << "were of " << playerCostCalculatorMonth(month, year, playerID) << " euros." << endl;
+            cout << "The costs associated with the player with ID: " << pID << " in " << month << "/";
+            cout << year << " were of " << playerCostCalculatorMonth(month, year, pID) << " euros." << endl;
             break;
         }
 
@@ -257,7 +257,7 @@ void NationalTeam::playerTimeMenu(){
         else if (option == 1) {
 
             cout << "The costs associated with the player with ID: " << playerID << " between " << date1 << " and ";
-            cout << date2 << "were of " << playerCostCalculator(firstDate, endDate, playerID) << " euros." << endl;
+            cout << date2 << " were of " << playerCostCalculator(firstDate, endDate, playerID) << " euros." << endl;
             break;
         }
 
@@ -344,7 +344,7 @@ void NationalTeam::teamTimeMenu(){
         menuSeparator();
 
         cout << "The costs associated with the national team players between " << date1 << " and ";
-        cout << date2 << "were of " << teamCostCalculator(firstDate, endDate) << " euros." << endl;
+        cout << date2 << " were of " << teamCostCalculator(firstDate, endDate) << " euros." << endl;
         break;
     }
 }
@@ -392,7 +392,7 @@ void NationalTeam::teamMonthMenu(){
         menuSeparator();
 
         cout << "The costs associated with the national team players in the month " << month << ", year ";
-        cout << year << "were of " << teamCostCalculatorMonth(month, year) << " euros." << endl;
+        cout << year << " were of " << teamCostCalculatorMonth(month, year) << " euros." << endl;
         break;
     }
 }
@@ -460,7 +460,7 @@ void NationalTeam::staffMonthMenu() {
         menuSeparator();
 
         cout << "The costs associated with the national team players and staff in the month " << month << ", year ";
-        cout << year << "were of " << teamCostCalculatorMonth(month, year) + staffCostCalculatorMonth(month) << " euros." << endl;
+        cout << year << " were of " << teamCostCalculatorMonth(month, year) + staffCostCalculatorMonth(month) << " euros." << endl;
         break;
     }
 }
@@ -525,7 +525,7 @@ void NationalTeam::staffTimeMenu() {
         menuSeparator();
 
         cout << "The costs associated with the national team players and staff between " << date1 << " and ";
-        cout << date2 << "were of " << teamCostCalculator(firstDate, endDate) + staffCostCalculator(firstDate, endDate)<< " euros." << endl;
+        cout << date2 << " were of " << teamCostCalculator(firstDate, endDate) + staffCostCalculator(firstDate, endDate)<< " euros." << endl;
         break;
     }
 }

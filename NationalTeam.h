@@ -233,6 +233,46 @@ public:
     void saveGames(string filename);
     void printAllGameInfo(ostream& out, Game * game);
 
+
+    template <class T>
+    bool removeGame(vector<T> &game, int id){
+        int index;
+        try {index = searchGameByID(game,id);}
+        catch (InexistentId(index)){
+            cerr << "Tried to remove Person that doesn't exist" << endl;
+            return false;
+        }
+        games.erase(games.begin()+index);
+        return true;
+    }
+
+    template <class T, class R>
+    bool addGame(vector<T> &game, R person){
+        games.push_back(game);
+        return true;
+    }
+
+    static bool idGameComparable(const Game* game, const int id){
+        return (game->getID() < id);
+    }
+
+    int searchGameByID(vector<Game *> &game, int id){
+        auto it = lower_bound(game.begin(),game.end(),id,idGameComparable);
+        if (it != game.end() && (*it)->getID() == id) return (it-game.begin());
+        else throw InexistentId(id);
+    }
+
+    static bool idStatsComparable(const PlayerGameStatistics stats, const int id){
+        return (stats.getPlayerID() < id);
+    }
+
+    int searchStatsByID(vector<PlayerGameStatistics> stats, int id){
+        auto it = lower_bound(stats.begin(), stats.end(),id,idStatsComparable);
+        if (it != stats.end() && (*it).getPlayerID() == id) return (it-stats.begin());
+        else throw InexistentId(id);
+    }
+
+
     vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
 
     /****************************************************
@@ -288,6 +328,14 @@ public:
      * @return float containing a valid float
      */
     float askForFloat(string &text, const string &what,float lower,float higher);
+
+    /**
+     * Asks for an integer until the input is valid
+     * @param text input of the user
+     * @param what For example Salary
+     * @return integer containing a valid integer
+     */
+    int askForInt(const string &what);
 
     /**
      * Asks the user for a string
@@ -425,12 +473,17 @@ public:
 
     //Game Menu
     void runGameMenu();
-    void createGameOption();
-    void removeGameOption();
-    void modifyGameOption();
+    void createGameOption(ostream &out);
+    void removeGameOption(ostream &out);
+    void modifyGameOption(ostream &out, int option);
+    void modifyVectorOption(ostream &out, string vectorType);
     void showAllGames(ostream &out);
     void showSpecificGame(ostream &out);
     void showSpecificStats(ostream &out);
+    void askForPlayers(ostream &out, Game * game);
+    void askForStringVector(ostream &out, string what, Game* game);
+    PlayerGameStatistics askForPlayerStatistics(ostream &out, int playerID);
+    void showModifyGameOptions(ostream &out);
 
 
     //Economies Menu

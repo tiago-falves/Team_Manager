@@ -46,11 +46,11 @@ void NationalTeam::validOption(int &option,int optionsNumber){
     {
         cout << "Invalid option, please insert the option again: ";
         cin.clear();
-        cin.ignore(10000, '\n');
+        cin.ignore(100, '\n');
         cin >> option;
     }
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
 }
 
 //Outputs a separator made of *
@@ -67,7 +67,7 @@ void NationalTeam::validCin(int &option) {
     {
         cout << "Invalid input, please insert your answer again: ";
         cin.clear();
-        cin.ignore(10000, '\n');
+        cin.ignore(100, '\n');
         cin >> option;
     }
 }
@@ -77,6 +77,8 @@ int NationalTeam::askForId(){
     cout << "Please Insert an ID: ";
     cin >> id;
     validCin(id);
+    cin.clear();
+    cin.ignore(100, '\n');
     return id;
 }
 
@@ -109,7 +111,7 @@ float NationalTeam::askForFloat(string &text, const string &what, float lower, f
         catch (std::invalid_argument ia) {
             cout << "Invalid number, please insert your answer again: ";
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             cin >> text;
         }
         catch (InvalidFloat) {
@@ -121,7 +123,7 @@ float NationalTeam::askForFloat(string &text, const string &what, float lower, f
 
     }
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     return stof(text);
 }
 
@@ -136,4 +138,29 @@ bool NationalTeam::askYesNoQuestion() {
     else if(option == 2) return false;
     return true;
 
+}
+
+int NationalTeam::askForInt(const string &what) {
+    bool exceptionCatched = true;
+    string text;
+    cout << what << ": ";
+    cin >> text;
+
+    while(exceptionCatched) {
+        try {
+            validInt(text);
+            exceptionCatched = false;
+
+        }
+        catch (std::invalid_argument ia) {
+            cout << "Invalid number, please insert your answer again: ";
+            cin.clear();
+            cin.ignore(100, '\n');
+            cin >> text;
+        }
+
+    }
+    cin.clear();
+    cin.ignore(100, '\n');
+    return stoi(text);
 }

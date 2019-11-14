@@ -62,7 +62,7 @@ void NationalTeam::showPersonByName() {
 void NationalTeam::showSpecificPerson(ostream &out,int i){
 
     tableHeaderPlayer(out);
-    cout << people[searchByID(people,i)];
+    out << people[searchByID(people,i)];
     tableFooterPlayer(out);
 }
 
@@ -178,8 +178,7 @@ void NationalTeam::modifyPlayerOption(){
     int id = askForValidId(players);
     FootballPlayer *player = new FootballPlayer();
     cin.clear();
-    cin.ignore(10000, '\n');
-    askPlayerInformation(player);
+«    askPlayerInformation(player);
     int index = searchByID(people,id);
     people[index]->modify(player);
     menuSeparator();
@@ -263,7 +262,7 @@ void NationalTeam::modifyTechOption(){
     int id = askForValidId(technicians);
     Technician *technician = new Technician();
     cin.clear();
-    cin.ignore(10000, '\n');
+    cin.ignore(100, '\n');
     askTechInformation(technician);
     int index = searchByID(people,id);
     people[index]->modify(technician);
@@ -319,6 +318,98 @@ void NationalTeam::showPlayerCallUps(int id) {
     }
 }
 
+void NationalTeam::showGameStats(int id) {
+    int option, pos, pos_stat;
+
+    while (true) {
+        cout << "Insert the ID of the pretended game: ";
+        cin >> option;
+
+        if (cin.fail()) {
+            cout << "Invalid option, ID must be an integer!" << endl;
+            cin.clear();
+            cin.ignore(100, '\n');
+            menuSeparator();
+            break;
+        }
+
+        try{
+            pos = searchGameByID(games, option);
+        }
+        catch (InexistentId){
+            cout << "There is no game with th given ID!" << endl;
+            menuSeparator();
+            break;
+        }
+
+        try {
+            pos_stat = searchStatsByID(games[pos]->getPlayerStatistics(), id);
+        }
+        catch(InexistentId){
+            cout << "Player did not take part of the selected game!" << endl;
+            menuSeparator();
+            break;
+        }
+
+        tableHeaderStatistics(cout);
+        games[pos]->getPlayerStatistics()[pos_stat].print(cout);
+        tableFooterStatistics(cout);
+        menuSeparator();
+        break;
+    }
+}
+
+void NationalTeam::showCallUpStats(int id) {
+    int option, pos, pos_stat;
+    CallUp* call;
+    int numberOfGoals = 0;
+    int minutesPlayed = 0;
+    int kilometers = 0;
+    int numberOfPasses = 0;
+    int numberOfYellowCards = 0;
+    int numberOfRedCards = 0;
+
+    while (true) {
+        cout << "Insert the ID of the pretended call up: ";
+        cin >> option;
+
+        if (cin.fail()) {
+            cout << "Invalid option, ID must be an integer!" << endl;
+            cin.clear();
+            cin.ignore(100, '\n');
+            menuSeparator();
+            break;
+        }
+
+        try{
+            call = getCallUpWithID(option);
+        }
+        catch (InexistentId){
+            cout << "There is no call up with th given ID!" << endl;
+            menuSeparator();
+            break;
+        }
+
+        for (auto i = 0; i < (call->getGames()).size(); i++){
+            pos_stat = searchStatsByID(call->getGames()[i]->getPlayerStatistics(), id);
+
+            numberOfGoals += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfGoals();
+            minutesPlayed += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getMinutesPlayed();
+            kilometers += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getKilometers();
+            numberOfPasses += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfPasses();
+            numberOfYellowCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfYellowCards();
+            numberOfRedCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfRedCards();
+        }
+
+        tableHeaderStatistics(cout);
+        PlayerGameStatistics p(id, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards);
+        p.print(cout);
+        tableFooterStatistics(cout);
+        menuSeparator();
+        break;
+    }
+}
+
 void NationalTeam::playerMenuTransition() {
     int id, option;
 
@@ -329,7 +420,7 @@ void NationalTeam::playerMenuTransition() {
         if (cin.fail()) {
             cout << "Invalid option, ID must be an integer!";
             cin.clear();
-            cin.ignore(10000, '\n');
+            cin.ignore(100, '\n');
             break;
         }
 
@@ -360,8 +451,8 @@ void NationalTeam::playerMenuTransition() {
         if (option == 0) break;
         if (option == 1) { showPlayerGames(id); }
         if (option == 2) { showPlayerCallUps(id); }
-        if (option == 3) { /*showGameStats(id);*/}
-        if (option == 4) { /*showCallUpStats(id);*/}
+        if (option == 3) { showGameStats(id);}
+        if (option == 4) { showCallUpStats(id);}
 
         break;
     }
