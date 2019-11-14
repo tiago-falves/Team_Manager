@@ -105,7 +105,7 @@ void NationalTeam::askPersonInformation(string &name, float &salary, Date &birth
 
     name = askForString("Name");
     birthday = askForDate("Birthday",text);
-    salary = askForFloat(text,"Salary");
+    salary = askForFloat(text,"Salary",0,999999);
 }
 
 //Asks the user to insert a string of type what
@@ -200,9 +200,9 @@ void NationalTeam::askPlayerInformation(FootballPlayer *player){
     player->setBirthday(birthday);
     player->setPosition(askForString("Position"));
     player->setClub(askForString("Club"));
-    player->setWeight(askForFloat(input,"Weight"));
-    player->setHeight(askForFloat(input, "Height"));
-    player->setPassValue(askForFloat(input,"Pass Value"));
+    player->setWeight(askForFloat(input,"Weight",40,250));
+    player->setHeight(askForFloat(input, "Height",100,300));
+    player->setPassValue(askForFloat(input,"Pass Value",0, 100000));
 
     cout << "Is the player Injured? : ";
     player->setInjury(askYesNoQuestion());

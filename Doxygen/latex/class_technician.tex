@@ -15,22 +15,22 @@ Collaboration diagram for Technician\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_technician_aba560e651f621f077b54480a493c1046}{Technician}} ()
+\begin{DoxyCompactList}\small\item\em Construct a default \mbox{\hyperlink{class_technician}{Technician}} object with no paramters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_technician_ac3a969724a037526063eaad1be680b58}{Technician}} (string \mbox{\hyperlink{class_person_a669b64897b4d823a27bb5866368d4dfa}{name}}, \mbox{\hyperlink{class_date}{Date}} birthday, float \mbox{\hyperlink{class_person_ab993b9296f5e833ecd1cfba33666759a}{salary}}, string role)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_technician}{Technician}}. \end{DoxyCompactList}\item 
 const string \mbox{\hyperlink{class_technician_a8c68c9e85af500e2c3ccbfb215dd23b5}{get\+Role}} () const
 \item 
 void \mbox{\hyperlink{class_technician_ae5f1c1a53f683f81db2e84c3dce77d80}{set\+Role}} (const string \&role)
 \item 
-\mbox{\hyperlink{class_technician_aba560e651f621f077b54480a493c1046}{Technician}} ()
-\item 
-\mbox{\hyperlink{class_technician_ac3a969724a037526063eaad1be680b58}{Technician}} (string \mbox{\hyperlink{class_person_a669b64897b4d823a27bb5866368d4dfa}{name}}, \mbox{\hyperlink{class_date}{Date}} birthday, float \mbox{\hyperlink{class_person_ab993b9296f5e833ecd1cfba33666759a}{salary}}, string role)
-\item 
 virtual string \mbox{\hyperlink{class_technician_a6df61bbb11dd3b428ee0a9df14072212}{type}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em constant virtual function that returns the type of the Caller, In this case, \char`\"{}\+Technician\char`\"{} \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_technician_ab575d23fe3e947130b8173e165ce897f}{print}} (ostream \&out) const
-\item 
+\begin{DoxyCompactList}\small\item\em virtual function that prints the caller in a table format, given an ostream variable \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_technician_a41bcfa34599e09d84dd5cd62643350f4}{print\+To\+File}} (ostream \&out) const
-\item 
+\begin{DoxyCompactList}\small\item\em virtual function that prints the caller in the file format, given an ostream variable \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c}{read}} (ifstream $\ast$file)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em virtual function that reads a specific \mbox{\hyperlink{class_technician}{Technician}} , given an ifstream variable \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -41,12 +41,31 @@ virtual void \mbox{\hyperlink{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c
 \doxysubsubsection{\texorpdfstring{Technician()}{Technician()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Technician\+::\+Technician (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Construct a default \mbox{\hyperlink{class_technician}{Technician}} object with no paramters. 
+
 \mbox{\Hypertarget{class_technician_ac3a969724a037526063eaad1be680b58}\label{class_technician_ac3a969724a037526063eaad1be680b58}} 
 \index{Technician@{Technician}!Technician@{Technician}}
 \index{Technician@{Technician}!Technician@{Technician}}
 \doxysubsubsection{\texorpdfstring{Technician()}{Technician()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Technician\+::\+Technician (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{birthday,  }\item[{float}]{salary,  }\item[{string}]{role }\end{DoxyParamCaption})}
 
+
+
+Construct a \mbox{\hyperlink{class_technician}{Technician}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ string that represents person\textquotesingle{}s first and last name \\
+\hline
+{\em birthday} & -\/\mbox{\hyperlink{class_date}{Date}} that represents person\textquotesingle{}s birthday \\
+\hline
+{\em salary} & -\/ float that represents what is the salary of this person \\
+\hline
+{\em role} & -\/ string that tells what the person does in the team \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -56,12 +75,27 @@ virtual void \mbox{\hyperlink{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c
 \doxysubsubsection{\texorpdfstring{getRole()}{getRole()}}
 {\footnotesize\ttfamily const string Technician\+::get\+Role (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+Gets the technician\textquotesingle{}s role \begin{DoxyReturn}{Returns}
+string representing the role 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_technician_ab575d23fe3e947130b8173e165ce897f}\label{class_technician_ab575d23fe3e947130b8173e165ce897f}} 
 \index{Technician@{Technician}!print@{print}}
 \index{print@{print}!Technician@{Technician}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
 {\footnotesize\ttfamily void Technician\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+virtual function that prints the caller in a table format, given an ostream variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & ostream os -\/ Tells where to print the content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 Reimplemented from \mbox{\hyperlink{class_person_afcc355404e1cd702e6aa31f6e4a15c19}{Person}}.
@@ -74,6 +108,18 @@ Reimplemented from \mbox{\hyperlink{class_person_afcc355404e1cd702e6aa31f6e4a15c
 
 
 
+virtual function that prints the caller in the file format, given an ostream variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & ostream os -\/ Tells where to print the content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
 Reimplemented from \mbox{\hyperlink{class_person_ad937f6860f02ee0d26ff2a9a05ebc4d7}{Person}}.
 
 \mbox{\Hypertarget{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c}\label{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c}} 
@@ -84,6 +130,18 @@ Reimplemented from \mbox{\hyperlink{class_person_ad937f6860f02ee0d26ff2a9a05ebc4
 
 
 
+virtual function that reads a specific \mbox{\hyperlink{class_technician}{Technician}} , given an ifstream variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & ifstream file -\/ Tells where to output the \mbox{\hyperlink{class_person}{Person}} information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
 Reimplemented from \mbox{\hyperlink{class_person_a1437d767251b706175a5e79f2f911984}{Person}}.
 
 \mbox{\Hypertarget{class_technician_ae5f1c1a53f683f81db2e84c3dce77d80}\label{class_technician_ae5f1c1a53f683f81db2e84c3dce77d80}} 
@@ -92,12 +150,24 @@ Reimplemented from \mbox{\hyperlink{class_person_a1437d767251b706175a5e79f2f9119
 \doxysubsubsection{\texorpdfstring{setRole()}{setRole()}}
 {\footnotesize\ttfamily void Technician\+::set\+Role (\begin{DoxyParamCaption}\item[{const string \&}]{role }\end{DoxyParamCaption})}
 
+Sets the person’s role. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ A String containing the person’s role. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_technician_a6df61bbb11dd3b428ee0a9df14072212}\label{class_technician_a6df61bbb11dd3b428ee0a9df14072212}} 
 \index{Technician@{Technician}!type@{type}}
 \index{type@{type}!Technician@{Technician}}
 \doxysubsubsection{\texorpdfstring{type()}{type()}}
 {\footnotesize\ttfamily string Technician\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+constant virtual function that returns the type of the Caller, In this case, \char`\"{}\+Technician\char`\"{} 
+
+\begin{DoxyReturn}{Returns}
+string -\/ \char`\"{}\+Technician\char`\"{} 
+\end{DoxyReturn}
 
 
 Reimplemented from \mbox{\hyperlink{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}{Person}}.

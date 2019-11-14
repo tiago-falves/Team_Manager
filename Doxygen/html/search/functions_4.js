@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['footballplayer_252',['FootballPlayer',['../class_football_player.html#a2c7f76fe740eab0688278e53826ca322',1,'FootballPlayer::FootballPlayer(string name, Date birthDay, float salary, string position, string club, const float weight, const float height, float pass_value, bool injury)'],['../class_football_player.html#a9c69070ff792bcc7a59d6901b0d9c6d7',1,'FootballPlayer::FootballPlayer()']]]
+  ['exceptiondate_394',['ExceptionDate',['../class_exception_date.html#a870ff3c7c0aee21e3431cbcf0963f9a6',1,'ExceptionDate']]],
+  ['extendenddate_395',['extendEndDate',['../class_national_team.html#a5b50a0c2d8d610776e5074768c2035e1',1,'NationalTeam']]]
 ];

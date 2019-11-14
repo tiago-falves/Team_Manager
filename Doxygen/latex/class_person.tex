@@ -16,9 +16,9 @@ Collaboration diagram for Person\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_person_ae5eb0665f79707c6e4a5d6f634f6d7b6}{Person}} (string \mbox{\hyperlink{class_person_a669b64897b4d823a27bb5866368d4dfa}{name}}, \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_person_a1e256b32ac8885b346d6184a8af493fc}{birthday\+Date}}, float \mbox{\hyperlink{class_person_ab993b9296f5e833ecd1cfba33666759a}{salary}})
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_person}{Person}} object given his name, birthday and salary. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_person_a0397c6f89fafc12e738923f612bc41a3}{Person}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a default \mbox{\hyperlink{class_person}{Person}} object with no paramters. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_person_a49f296ec2cf43272c18fe9adfe03091a}{get\+Id}} () const
 \item 
 string \mbox{\hyperlink{class_person_a9db2e2ccfc6cfa0d7979613ec2aaa922}{get\+Name}} () const
@@ -34,30 +34,25 @@ void \mbox{\hyperlink{class_person_ab3f489152645691271d01e6b2ca379b5}{set\+Birth
 void \mbox{\hyperlink{class_person_aaaf890c642923318558e39ac06630094}{set\+Salary}} (float \mbox{\hyperlink{class_person_ab993b9296f5e833ecd1cfba33666759a}{salary}})
 \item 
 virtual void \mbox{\hyperlink{class_person_a0c726eacd6fe7f38b094c39f949ea1db}{modify}} (\mbox{\hyperlink{class_person}{Person}} $\ast$new\+Person)
-\item 
-bool \mbox{\hyperlink{class_person_ab8f6e7f4785989bd0d47e6405fe5b0d6}{operator$<$}} (const \mbox{\hyperlink{class_person}{Person}} \&person) const
-\item 
-bool \mbox{\hyperlink{class_person_af8f67bf68ab7703f9c990496e834033a}{operator$<$}} (const \mbox{\hyperlink{class_person}{Person}} $\ast$\&person) const
-\item 
-bool \mbox{\hyperlink{class_person_a465eec030407744a0ebe405ad6fa7a7e}{operator$>$}} (const \mbox{\hyperlink{class_person}{Person}} \&person) const
-\item 
-bool \mbox{\hyperlink{class_person_a3a02b9de688c0c8101000d0bcae4e04d}{operator==}} (const \mbox{\hyperlink{class_person}{Person}} \&rhs) const
-\item 
-bool \mbox{\hyperlink{class_person_a8a11b1d5373c14a4e301cfcf83eb824f}{operator!=}} (const \mbox{\hyperlink{class_person}{Person}} \&rhs) const
-\item 
+\begin{DoxyCompactList}\small\item\em virtual function that modifies the caller, given a new \mbox{\hyperlink{class_person}{Person}} pointer \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_person_afcc355404e1cd702e6aa31f6e4a15c19}{print}} (ostream \&out) const
-\item 
+\begin{DoxyCompactList}\small\item\em virtual function that prints the caller in a table format, given an ostream variable \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_person_ad937f6860f02ee0d26ff2a9a05ebc4d7}{print\+To\+File}} (ostream \&os) const
-\item 
+\begin{DoxyCompactList}\small\item\em virtual function that prints the caller in the file format, given an ostream variable \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_person_a1437d767251b706175a5e79f2f911984}{read}} (ifstream $\ast$file)
-\item 
+\begin{DoxyCompactList}\small\item\em virtual function that reads a specific \mbox{\hyperlink{class_person}{Person}} , given an ifstream variable \end{DoxyCompactList}\item 
 virtual string \mbox{\hyperlink{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}{type}} () const
-\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static int \mbox{\hyperlink{class_person_aa5a73e8e288133a36df46f5e1413d8c5}{get\+Last\+Id}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em constant virtual function that returns the type of the Caller, if it is either a \mbox{\hyperlink{class_person}{Person}}, Football Player or \mbox{\hyperlink{class_technician}{Technician}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_person_ab8f6e7f4785989bd0d47e6405fe5b0d6}{operator$<$}} (const \mbox{\hyperlink{class_person}{Person}} \&person) const
+\begin{DoxyCompactList}\small\item\em Operator to see if the person\textquotesingle{}s caller id is smaller than person.\+id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_person_af8f67bf68ab7703f9c990496e834033a}{operator$<$}} (const \mbox{\hyperlink{class_person}{Person}} $\ast$\&person) const
+\begin{DoxyCompactList}\small\item\em Operator to see if the person\textquotesingle{}s caller id is smaller than person-\/$>$id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_person_a465eec030407744a0ebe405ad6fa7a7e}{operator$>$}} (const \mbox{\hyperlink{class_person}{Person}} \&person) const
+\begin{DoxyCompactList}\small\item\em Operator to see if the person\textquotesingle{}s caller id is bigger than person.\+id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_person_a3a02b9de688c0c8101000d0bcae4e04d}{operator==}} (const \mbox{\hyperlink{class_person}{Person}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Operator to see if the person\textquotesingle{}s caller id is equal to person.\+id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_person_a8a11b1d5373c14a4e301cfcf83eb824f}{operator!=}} (const \mbox{\hyperlink{class_person}{Person}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Operator to see if the person\textquotesingle{}s caller id is equal to person.\+id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -78,7 +73,7 @@ static int \mbox{\hyperlink{class_person_a9057bbbb3b956adb84420420f92ef0d2}{last
 \begin{DoxyCompactItemize}
 \item 
 ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{class_person}{Person}} $\ast$person)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Output operator calls print\+Id function so it outputs a formatted \mbox{\hyperlink{class_person}{Person}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -88,11 +83,28 @@ ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{oper
 \doxysubsubsection{\texorpdfstring{Person()}{Person()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Person\+::\+Person (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{birthday\+Date,  }\item[{float}]{salary }\end{DoxyParamCaption})}
 
+
+
+Construct a new \mbox{\hyperlink{class_person}{Person}} object given his name, birthday and salary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Represent person\textquotesingle{}s name \\
+\hline
+{\em birthday\+Date} & Represent person\textquotesingle{}s birthday date \\
+\hline
+{\em salary} & -\/ Represent person\textquotesingle{}s salary \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_person_a0397c6f89fafc12e738923f612bc41a3}\label{class_person_a0397c6f89fafc12e738923f612bc41a3}} 
 \index{Person@{Person}!Person@{Person}}
 \index{Person@{Person}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{Person()}{Person()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Person\+::\+Person (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a default \mbox{\hyperlink{class_person}{Person}} object with no paramters. 
 
 
 
@@ -103,36 +115,54 @@ ostream \& \mbox{\hyperlink{class_person_a8e3490008f863ba39cce4f0aad2ca5f2}{oper
 \doxysubsubsection{\texorpdfstring{getBirthday()}{getBirthday()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Person\+::get\+Birthday (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+Gets \mbox{\hyperlink{class_person}{Person}}\textquotesingle{}s Birthday date \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_date}{Date}} -\/ Represents person\textquotesingle{}s birthday \mbox{\hyperlink{class_date}{Date}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_a49f296ec2cf43272c18fe9adfe03091a}\label{class_person_a49f296ec2cf43272c18fe9adfe03091a}} 
 \index{Person@{Person}!getId@{getId}}
 \index{getId@{getId}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{getId()}{getId()}}
 {\footnotesize\ttfamily int Person\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_person_aa5a73e8e288133a36df46f5e1413d8c5}\label{class_person_aa5a73e8e288133a36df46f5e1413d8c5}} 
-\index{Person@{Person}!getLastId@{getLastId}}
-\index{getLastId@{getLastId}!Person@{Person}}
-\doxysubsubsection{\texorpdfstring{getLastId()}{getLastId()}}
-{\footnotesize\ttfamily static int Person\+::get\+Last\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
+Gets the person\textquotesingle{}s id. \begin{DoxyReturn}{Returns}
+A Int representing the person’s id 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_a9db2e2ccfc6cfa0d7979613ec2aaa922}\label{class_person_a9db2e2ccfc6cfa0d7979613ec2aaa922}} 
 \index{Person@{Person}!getName@{getName}}
 \index{getName@{getName}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{getName()}{getName()}}
 {\footnotesize\ttfamily string Person\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+Gets the person\textquotesingle{}s name \begin{DoxyReturn}{Returns}
+string -\/ Representing person\textquotesingle{}s name 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_ac655a06293a27d522a631d7bb00dd53f}\label{class_person_ac655a06293a27d522a631d7bb00dd53f}} 
 \index{Person@{Person}!getSalary@{getSalary}}
 \index{getSalary@{getSalary}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{getSalary()}{getSalary()}}
 {\footnotesize\ttfamily float Person\+::get\+Salary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+Gets \mbox{\hyperlink{class_person}{Person}}\textquotesingle{}s Salary \begin{DoxyReturn}{Returns}
+float -\/ Represents person\textquotesingle{}s current salary 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_a0c726eacd6fe7f38b094c39f949ea1db}\label{class_person_a0c726eacd6fe7f38b094c39f949ea1db}} 
 \index{Person@{Person}!modify@{modify}}
 \index{modify@{modify}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{modify()}{modify()}}
 {\footnotesize\ttfamily void Person\+::modify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_person}{Person}} $\ast$}]{new\+Person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+virtual function that modifies the caller, given a new \mbox{\hyperlink{class_person}{Person}} pointer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & $\ast$new\+Person -\/ a pointer to a \mbox{\hyperlink{class_person}{Person}} with all the information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 Reimplemented in \mbox{\hyperlink{class_football_player_aa522b5bfcd20fcc14cc00b32edc81154}{Football\+Player}}.
@@ -143,36 +173,108 @@ Reimplemented in \mbox{\hyperlink{class_football_player_aa522b5bfcd20fcc14cc00b3
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
 {\footnotesize\ttfamily bool Person\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{rhs }\end{DoxyParamCaption}) const}
 
+
+
+Operator to see if the person\textquotesingle{}s caller id is equal to person.\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ True if caller id is different than person.\+id 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_ab8f6e7f4785989bd0d47e6405fe5b0d6}\label{class_person_ab8f6e7f4785989bd0d47e6405fe5b0d6}} 
 \index{Person@{Person}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool Person\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{person }\end{DoxyParamCaption}) const}
 
+
+
+Operator to see if the person\textquotesingle{}s caller id is smaller than person.\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ True if caller id is smaller than person.\+id 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_af8f67bf68ab7703f9c990496e834033a}\label{class_person_af8f67bf68ab7703f9c990496e834033a}} 
 \index{Person@{Person}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Person\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} $\ast$\&}]{person }\end{DoxyParamCaption}) const}
 
+
+
+Operator to see if the person\textquotesingle{}s caller id is smaller than person-\/$>$id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ True if caller id is smaller than person-\/$>$id 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_a3a02b9de688c0c8101000d0bcae4e04d}\label{class_person_a3a02b9de688c0c8101000d0bcae4e04d}} 
 \index{Person@{Person}!operator==@{operator==}}
 \index{operator==@{operator==}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily bool Person\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{rhs }\end{DoxyParamCaption}) const}
 
+
+
+Operator to see if the person\textquotesingle{}s caller id is equal to person.\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ True if caller id is equal to person.\+id 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_a465eec030407744a0ebe405ad6fa7a7e}\label{class_person_a465eec030407744a0ebe405ad6fa7a7e}} 
 \index{Person@{Person}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
 {\footnotesize\ttfamily bool Person\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_person}{Person}} \&}]{person }\end{DoxyParamCaption}) const}
 
+
+
+Operator to see if the person\textquotesingle{}s caller id is bigger than person.\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ True if caller id is bigger than person.\+id 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_person_afcc355404e1cd702e6aa31f6e4a15c19}\label{class_person_afcc355404e1cd702e6aa31f6e4a15c19}} 
 \index{Person@{Person}!print@{print}}
 \index{print@{print}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
 {\footnotesize\ttfamily void Person\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+virtual function that prints the caller in a table format, given an ostream variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & ostream os -\/ Tells where to print the content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 Reimplemented in \mbox{\hyperlink{class_football_player_ab496d104171ee5168586cdd24f5c4629}{Football\+Player}}, and \mbox{\hyperlink{class_technician_ab575d23fe3e947130b8173e165ce897f}{Technician}}.
@@ -185,6 +287,18 @@ Reimplemented in \mbox{\hyperlink{class_football_player_ab496d104171ee5168586cdd
 
 
 
+virtual function that prints the caller in the file format, given an ostream variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & ostream os -\/ Tells where to print the content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
 Reimplemented in \mbox{\hyperlink{class_technician_a41bcfa34599e09d84dd5cd62643350f4}{Technician}}, and \mbox{\hyperlink{class_football_player_adc0330aa8ec576bb0ab651ee92e72cb7}{Football\+Player}}.
 
 \mbox{\Hypertarget{class_person_a1437d767251b706175a5e79f2f911984}\label{class_person_a1437d767251b706175a5e79f2f911984}} 
@@ -195,6 +309,18 @@ Reimplemented in \mbox{\hyperlink{class_technician_a41bcfa34599e09d84dd5cd626433
 
 
 
+virtual function that reads a specific \mbox{\hyperlink{class_person}{Person}} , given an ifstream variable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & ifstream file -\/ Tells where to output the \mbox{\hyperlink{class_person}{Person}} information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
 Reimplemented in \mbox{\hyperlink{class_football_player_a8d2c1482cb95523c026c76ef768e0ec0}{Football\+Player}}, and \mbox{\hyperlink{class_technician_a9c8cf2e8b1994db99fab4c24b670a22c}{Technician}}.
 
 \mbox{\Hypertarget{class_person_ab3f489152645691271d01e6b2ca379b5}\label{class_person_ab3f489152645691271d01e6b2ca379b5}} 
@@ -203,24 +329,51 @@ Reimplemented in \mbox{\hyperlink{class_football_player_a8d2c1482cb95523c026c76e
 \doxysubsubsection{\texorpdfstring{setBirthday()}{setBirthday()}}
 {\footnotesize\ttfamily void Person\+::set\+Birthday (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{birthday\+Date }\end{DoxyParamCaption})}
 
+Sets the person’s birthday date. 
+\begin{DoxyParams}{Parameters}
+{\em birthday\+Date} & -\/ A \mbox{\hyperlink{class_date}{Date}} containing the person’s birthday date. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_person_a9fa68f82727e6de0137b3c1b1537a0bf}\label{class_person_a9fa68f82727e6de0137b3c1b1537a0bf}} 
 \index{Person@{Person}!setName@{setName}}
 \index{setName@{setName}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{setName()}{setName()}}
 {\footnotesize\ttfamily void Person\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
 
+Sets the person’s name. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ A String containing the person’s name. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_person_aaaf890c642923318558e39ac06630094}\label{class_person_aaaf890c642923318558e39ac06630094}} 
 \index{Person@{Person}!setSalary@{setSalary}}
 \index{setSalary@{setSalary}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{setSalary()}{setSalary()}}
 {\footnotesize\ttfamily void Person\+::set\+Salary (\begin{DoxyParamCaption}\item[{float}]{salary }\end{DoxyParamCaption})}
 
+Sets the person’s salary. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ A float containing the person’s salary. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}\label{class_person_a7944c1eb1f0c5a9db2abb2f8550f52ee}} 
 \index{Person@{Person}!type@{type}}
 \index{type@{type}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{type()}{type()}}
 {\footnotesize\ttfamily string Person\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+constant virtual function that returns the type of the Caller, if it is either a \mbox{\hyperlink{class_person}{Person}}, Football Player or \mbox{\hyperlink{class_technician}{Technician}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string -\/ Type of the Person$\ast$ 
+\end{DoxyReturn}
 
 
 Reimplemented in \mbox{\hyperlink{class_football_player_a807c77931b7e74f4a89c3cd6b73b581e}{Football\+Player}}, and \mbox{\hyperlink{class_technician_a6df61bbb11dd3b428ee0a9df14072212}{Technician}}.
@@ -236,6 +389,20 @@ Reimplemented in \mbox{\hyperlink{class_football_player_a807c77931b7e74f4a89c3cd
 
 
 
+Output operator calls print\+Id function so it outputs a formatted \mbox{\hyperlink{class_person}{Person}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & os -\/ Ostream variable that tells where to output the \mbox{\hyperlink{class_person}{Person}} \\
+\hline
+{\em Person$\ast$} & -\/ Pointer to the \mbox{\hyperlink{class_person}{Person}} we want to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ostream -\/ Returns formatted Data 
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_person_a1e256b32ac8885b346d6184a8af493fc}\label{class_person_a1e256b32ac8885b346d6184a8af493fc}} 
 \index{Person@{Person}!birthdayDate@{birthdayDate}}
@@ -243,31 +410,31 @@ Reimplemented in \mbox{\hyperlink{class_football_player_a807c77931b7e74f4a89c3cd
 \doxysubsubsection{\texorpdfstring{birthdayDate}{birthdayDate}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Person\+::birthday\+Date\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_person_aec48a92f614a854ff380a15eb8e2f479}\label{class_person_aec48a92f614a854ff380a15eb8e2f479}} 
+Represents the \mbox{\hyperlink{class_person}{Person}}\textquotesingle{}s Birthday \mbox{\hyperlink{class_date}{Date}} \mbox{\Hypertarget{class_person_aec48a92f614a854ff380a15eb8e2f479}\label{class_person_aec48a92f614a854ff380a15eb8e2f479}} 
 \index{Person@{Person}!id@{id}}
 \index{id@{id}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily int Person\+::id\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_person_a9057bbbb3b956adb84420420f92ef0d2}\label{class_person_a9057bbbb3b956adb84420420f92ef0d2}} 
+ID of the \mbox{\hyperlink{class_person}{Person}} Everyone has an ID so it easy to identify each person \mbox{\Hypertarget{class_person_a9057bbbb3b956adb84420420f92ef0d2}\label{class_person_a9057bbbb3b956adb84420420f92ef0d2}} 
 \index{Person@{Person}!lastId@{lastId}}
 \index{lastId@{lastId}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{lastId}{lastId}}
 {\footnotesize\ttfamily int Person\+::last\+Id = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_person_a669b64897b4d823a27bb5866368d4dfa}\label{class_person_a669b64897b4d823a27bb5866368d4dfa}} 
+Static variable to keep ID always updated and orderd \mbox{\Hypertarget{class_person_a669b64897b4d823a27bb5866368d4dfa}\label{class_person_a669b64897b4d823a27bb5866368d4dfa}} 
 \index{Person@{Person}!name@{name}}
 \index{name@{name}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{name}{name}}
 {\footnotesize\ttfamily string Person\+::name\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_person_ab993b9296f5e833ecd1cfba33666759a}\label{class_person_ab993b9296f5e833ecd1cfba33666759a}} 
+\mbox{\hyperlink{class_person}{Person}}\textquotesingle{}s Name \mbox{\Hypertarget{class_person_ab993b9296f5e833ecd1cfba33666759a}\label{class_person_ab993b9296f5e833ecd1cfba33666759a}} 
 \index{Person@{Person}!salary@{salary}}
 \index{salary@{salary}!Person@{Person}}
 \doxysubsubsection{\texorpdfstring{salary}{salary}}
 {\footnotesize\ttfamily float Person\+::salary\hspace{0.3cm}{\ttfamily [protected]}}
 
-
+Represents the current Salary of a person 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

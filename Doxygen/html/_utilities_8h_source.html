@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team Manager: Utilities.h Source File</title>
+<title>My Project: Utilities.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Team Manager
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -117,8 +117,8 @@ $(document).ready(function(){initNavTree('_utilities_8h_source.html','');});
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//Binary Search</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">BinarySearch</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;v, T x)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T,<span class="keyword">class</span> R&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_utilities_8h.html#a8647be562cb68a92ced5a9af760e0b90">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_utilities_8h.html#a8647be562cb68a92ced5a9af760e0b90">BinarySearch</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;v, R x)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> left = 0, right = v.size() - 1;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">while</span> (left &lt;= right)</div>
@@ -211,6 +211,7 @@ $(document).ready(function(){initNavTree('_utilities_8h_source.html','');});
 </div><!-- doc-content -->
 <div class="ttc" id="a_utilities_8h_html_a17f19b817dc0f3976d51ef1ea40be67c"><div class="ttname"><a href="_utilities_8h.html#a17f19b817dc0f3976d51ef1ea40be67c">trimRight</a></div><div class="ttdeci">void trimRight(std::string &amp;s)</div></div>
 <div class="ttc" id="a_utilities_8h_html_af4df4847e95615d63254b99a9939d8aa"><div class="ttname"><a href="_utilities_8h.html#af4df4847e95615d63254b99a9939d8aa">isPositiveNumber</a></div><div class="ttdeci">bool isPositiveNumber(int n)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:70</div></div>
+<div class="ttc" id="a_utilities_8h_html_a8647be562cb68a92ced5a9af760e0b90"><div class="ttname"><a href="_utilities_8h.html#a8647be562cb68a92ced5a9af760e0b90">BinarySearch</a></div><div class="ttdeci">int BinarySearch(const vector&lt; T &gt; &amp;v, R x)</div><div class="ttdef"><b>Definition:</b> Utilities.h:30</div></div>
 <div class="ttc" id="a_utilities_8h_html_ac81e8ace8f8b6d4c09572038c5d48cf4"><div class="ttname"><a href="_utilities_8h.html#ac81e8ace8f8b6d4c09572038c5d48cf4">trim</a></div><div class="ttdeci">void trim(std::string &amp;s)</div></div>
 <div class="ttc" id="a_utilities_8h_html_a87ef49bdad4316ec45410e67a7ab096e"><div class="ttname"><a href="_utilities_8h.html#a87ef49bdad4316ec45410e67a7ab096e">insert_sorted</a></div><div class="ttdeci">std::vector&lt; T &gt;::iterator insert_sorted(std::vector&lt; T &gt; &amp;vec, T const &amp;item)</div><div class="ttdef"><b>Definition:</b> Utilities.h:87</div></div>
 <div class="ttc" id="a_utilities_8h_html_aaa5debb01dc999391196715fdf3b5366"><div class="ttname"><a href="_utilities_8h.html#aaa5debb01dc999391196715fdf3b5366">separateCharacterStr</a></div><div class="ttdeci">vector&lt; string &gt; separateCharacterStr(string s, char ch)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:38</div></div>
@@ -221,7 +222,6 @@ $(document).ready(function(){initNavTree('_utilities_8h_source.html','');});
 <div class="ttc" id="a_utilities_8h_html_ab22e4a74dd1f079b0e1456b6fa02a9be"><div class="ttname"><a href="_utilities_8h.html#ab22e4a74dd1f079b0e1456b6fa02a9be">trimLeft</a></div><div class="ttdeci">void trimLeft(std::string &amp;s)</div></div>
 <div class="ttc" id="a_utilities_8h_html_a2b7a0329778fa37b05ac10091c2f7b70"><div class="ttname"><a href="_utilities_8h.html#a2b7a0329778fa37b05ac10091c2f7b70">stringIsNumber</a></div><div class="ttdeci">bool stringIsNumber(string number)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:54</div></div>
 <div class="ttc" id="a_utilities_8h_html_aaa3b01d6b7b6b5bf4b868b37fcf3ac6f"><div class="ttname"><a href="_utilities_8h.html#aaa3b01d6b7b6b5bf4b868b37fcf3ac6f">isNumber</a></div><div class="ttdeci">bool isNumber(const std::string &amp;s)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:64</div></div>
-<div class="ttc" id="a_utilities_8h_html_ac905f93b29466a9fdc4d4cc816e54374"><div class="ttname"><a href="_utilities_8h.html#ac905f93b29466a9fdc4d4cc816e54374">BinarySearch</a></div><div class="ttdeci">int BinarySearch(const vector&lt; T &gt; &amp;v, T x)</div><div class="ttdef"><b>Definition:</b> Utilities.h:30</div></div>
 <div class="ttc" id="a_utilities_8h_html_a4fb74db68e0668ab6455c67432640f08"><div class="ttname"><a href="_utilities_8h.html#a4fb74db68e0668ab6455c67432640f08">separateCharacterInt</a></div><div class="ttdeci">vector&lt; int &gt; separateCharacterInt(string s, char ch)</div><div class="ttdef"><b>Definition:</b> Utilities.cpp:25</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

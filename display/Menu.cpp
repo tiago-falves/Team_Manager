@@ -95,18 +95,25 @@ Date NationalTeam::askForDate(string dateName,string &text){
     return date.dateTextConverter(text);;
 }
 
-float NationalTeam::askForFloat(string &text, const string &what){
+float NationalTeam::askForFloat(string &text, const string &what, float lower, float higher){
     bool exceptionCatched = true;
     cout << what << ": ";
     cin >> text;
     while(exceptionCatched) {
         try {
             validFloat(text);
+            if(stof(text) < lower  || stof(text) > higher) throw InvalidFloat();
             exceptionCatched = false;
 
         }
         catch (std::invalid_argument ia) {
             cout << "Invalid number, please insert your answer again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> text;
+        }
+        catch (InvalidFloat) {
+            cout << what << " can only be between " << lower << " and " << higher << ": ";
             cin.clear();
             cin.ignore(10000, '\n');
             cin >> text;

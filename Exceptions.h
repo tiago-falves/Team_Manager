@@ -15,6 +15,8 @@ public:
     InexistentId(int i) {id = i;}
 };
 
+class InvalidFloat{};
+
 class InvalidMonth {
 public:
     int month;

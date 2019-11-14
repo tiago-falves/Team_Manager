@@ -3,3 +3,17 @@
 {\ttfamily \#include \char`\"{}Call\+Up.\+h\char`\"{}}\newline
 Include dependency graph for Call\+Up.\+cpp\+:
 % FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_call_up_8cpp_af59aeb2a972db7afdc385fd8c385e7c7}{operator$<$}} (const \mbox{\hyperlink{class_call_up}{Call\+Up}} \&call\+Up1, const \mbox{\hyperlink{class_call_up}{Call\+Up}} \&call\+Up2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_call_up_8cpp_af59aeb2a972db7afdc385fd8c385e7c7}\label{_call_up_8cpp_af59aeb2a972db7afdc385fd8c385e7c7}} 
+\index{CallUp.cpp@{CallUp.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!CallUp.cpp@{CallUp.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_call_up}{Call\+Up}} \&}]{call\+Up1,  }\item[{const \mbox{\hyperlink{class_call_up}{Call\+Up}} \&}]{call\+Up2 }\end{DoxyParamCaption})}
+

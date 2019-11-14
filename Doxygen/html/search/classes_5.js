@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['nationalteam_203',['NationalTeam',['../class_national_team.html',1,'']]]
+  ['inexistentid_318',['InexistentId',['../class_inexistent_id.html',1,'']]],
+  ['invaliddate_319',['InvalidDate',['../class_invalid_date.html',1,'']]],
+  ['invalidmonth_320',['InvalidMonth',['../class_invalid_month.html',1,'']]]
 ];

@@ -1,12 +1,27 @@
 var class_call_up =
 [
-    [ "CallUp", "class_call_up.html#ac64d984861115bacd52941176177575e", null ],
+    [ "CallUp", "class_call_up.html#acb2826ddeab56a5bd1023e474e45d14b", null ],
+    [ "addGame", "class_call_up.html#a26a55d62400b4502758e622358936753", null ],
+    [ "addPlayer", "class_call_up.html#a2e9974fcfda648077f4c0eeb6a0b7764", null ],
+    [ "changeBeginDate", "class_call_up.html#a6ac0673a36fe01c75c87a79fdfeaf5e3", null ],
+    [ "changeDailyCost", "class_call_up.html#a8e19f638660b3b49d82c56e58ee67350", null ],
+    [ "changeEndDate", "class_call_up.html#a97359d05339fd779bfbf7f1c5fdfe75d", null ],
+    [ "gameExists", "class_call_up.html#ac126a9666f137355d005684148286368", null ],
     [ "getBegDate", "class_call_up.html#aba5729eaf4b020d8f81ec212d2e9719d", null ],
+    [ "getDailyCost", "class_call_up.html#a04fb25ba24a727388f84d4781ea3fcb6", null ],
     [ "getEndDate", "class_call_up.html#a172a66c68dacc430d1c869c30b31634c", null ],
     [ "getGames", "class_call_up.html#aa65ef5fd769c4f2085a02be71fd54163", null ],
+    [ "getId", "class_call_up.html#aaa00b8bf6dd32e6955a33bed9b0ae809", null ],
     [ "getPlayerStatistics", "class_call_up.html#af0a28a6046542983fb8cc6a5cdf4867f", null ],
+    [ "playerExists", "class_call_up.html#a365e9fc1e48dc6ef06719ebc78d6675b", null ],
+    [ "removeGame", "class_call_up.html#aa9082efcc0888dd2caa8dbf9069534c9", null ],
+    [ "removePlayer", "class_call_up.html#ac15f5824a4ac31ff30ac90670e5c9132", null ],
     [ "setBegDate", "class_call_up.html#ace587f4a201897d48d633876b41265a8", null ],
+    [ "setDailyCost", "class_call_up.html#a85937c85687107916ee1ead2fce6f51d", null ],
     [ "setEndDate", "class_call_up.html#a804736eff76bd30d5ae6f24a338e367a", null ],
     [ "setGames", "class_call_up.html#a199382265a21822b18b63ccfb298420f", null ],
-    [ "setPlayerStatistics", "class_call_up.html#a6bd66b0a4dfb801876171d43ce168651", null ]
+    [ "setId", "class_call_up.html#af6e1213ae3edc49956738fed137784b6", null ],
+    [ "setPlayerStatistics", "class_call_up.html#a6bd66b0a4dfb801876171d43ce168651", null ],
+    [ "showCallUp", "class_call_up.html#a2d7a6ce521d620e3691c370de8c42fa6", null ],
+    [ "operator<", "class_call_up.html#af59aeb2a972db7afdc385fd8c385e7c7", null ]
 ];
