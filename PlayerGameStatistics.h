@@ -50,7 +50,7 @@ public:
 
     void setNumberOfRedCards(int numberOfRedCards);
 
-    int getID() const;
+    int getId() const;
 
     void print(ostream &os);
 

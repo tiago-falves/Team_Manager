@@ -32,7 +32,7 @@ public:
     Game();
 
     string getGameTitle() const;
-    int getID() const;
+    int getId() const;
     string getCity() const;
     string getCountry() const;
     string getStadium() const;

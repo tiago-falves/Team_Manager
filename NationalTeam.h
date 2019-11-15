@@ -100,11 +100,6 @@ public:
      */
     void showSpecificPersonOption();
 
-    /**
-     * Given a vector of people, sorts it acoordingly to the ids
-     * @param people vector of type Person*
-     */
-    void sortByID(vector<Person*> &people);
 
     //Search and Sort
 
@@ -124,11 +119,6 @@ public:
      */
     static bool idComparable(const Person* person1, const int id);
 
-    /**
-     * Function used to Sort a Person* vector by their names
-     * @param people
-     */
-    void sortByName(vector<Person*> &people);
 
     /**
      * Given a Person* vector and a name, returns all the people with that same name
@@ -147,9 +137,9 @@ public:
      * @return
      */
     template <class T>
-    int searchByID(vector<T *> &people, int id){
-        auto it = lower_bound(people.begin(),people.end(),id,idComparable);
-        if (it != people.end() && (*it)->getId() == id) return (it-people.begin());
+    int searchByID(vector<T *> &object, int id){
+        auto it = lower_bound(object.begin(),object.end(),id,idComparable);
+        if (it != object.end() && (*it)->getId() == id) return (it-object.begin());
         else throw InexistentId(id);
     }
 
@@ -164,8 +154,8 @@ public:
      * @return true if operation was successfull
      */
     template <class T, class R>
-    bool addPerson(vector<T> &people, R person){
-        people.push_back(person);
+    bool addtoVector(vector<T> &objects, R object){
+        objects.push_back(object);
         return true;
     }
 
@@ -177,16 +167,17 @@ public:
      * @return true if operation was successfull
      */
     template <class T>
-    bool removePerson(vector<T> &people, int id){
+    bool removeById(vector<T> &objects, int id){
         int index;
-        try {index = searchByID(people,id);}
+        try {index = searchByID(objects,id);}
         catch (InexistentId(index)){
             cerr << "Tried to remove Person that doesn't exist" << endl;
             return false;
         }
-        people.erase(people.begin()+index);
+        objects.erase(objects.begin()+index);
         return true;
     }
+
 
     /**
      * Given a vector of people, and two people, it sets all the atribbutes
@@ -200,7 +191,7 @@ public:
      */
     template <class T, class R>
     bool modifyPerson(vector<T> &people, R person, R newPerson){
-        try {personPosition(people,person);}
+        try {position(people,person);}
         catch (out_of_range){
             cerr << "Tried to modify Person that doesn't exist: " << person->getName() << endl;
             return false;
@@ -219,8 +210,8 @@ public:
      * @return Index of the person position in the vector
      */
     template <class T, class R>
-    int personPosition(vector<T> &people,R person){
-        int index = BinarySearch(people,person);
+    int position(vector<T> &objects,R object){
+        int index = BinarySearch(objects,object);
         if(index==-1) throw out_of_range("Person not in vector");
         return index;
     }
@@ -246,19 +237,14 @@ public:
         return true;
     }
 
-    template <class T, class R>
-    bool addGame(vector<T> &game, R person){
-        games.push_back(game);
-        return true;
-    }
 
     static bool idGameComparable(const Game* game, const int id){
-        return (game->getID() < id);
+        return (game->getId() < id);
     }
 
     int searchGameByID(vector<Game *> &game, int id){
         auto it = lower_bound(game.begin(),game.end(),id,idGameComparable);
-        if (it != game.end() && (*it)->getID() == id) return (it-game.begin());
+        if (it != game.end() && (*it)->getId() == id) return (it-game.begin());
         else throw InexistentId(id);
     }
 
@@ -273,7 +259,7 @@ public:
     }
 
 
-    vector<Game*> getAllGamesForPlayer(FootballPlayer * player);
+
 
     /****************************************************
     *******************MENUS*****************************
@@ -745,6 +731,7 @@ public:
     /**
      * Gets call up with id from data base
      * @param id - id of the call up that will be looked for
+     * @return call up address
      * @return call up address
      */
     CallUp* getCallUpWithID(int id);
