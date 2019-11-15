@@ -75,7 +75,7 @@ void NationalTeam::callUpMenu() {
         try{
             searchCallUpByID(option);
         }
-        catch(InexistentId){
+        catch(...){
             cout << "There are no call ups with such id (" << option << ") !" << endl;
             menuSeparator();
             break;
@@ -155,7 +155,7 @@ void NationalTeam::createCallUpMenu() {
     callUps.push_back(new CallUp(id, cost, call_games, stats, begDate, endDate));
 }
 
-void NationalTeam::askForDates(Date begDate, Date endDate) {
+void NationalTeam::askForDates(Date& begDate, Date& endDate) {
     //GET BEGINNING DATE
     string date;
     bool isAfter = true;
@@ -168,7 +168,7 @@ void NationalTeam::askForDates(Date begDate, Date endDate) {
             try {
                 begDate = begDate.dateTextConverter(date);
                 break;
-            } catch (ExceptionDate) {
+            } catch (...) {
                 cout << "The inserted date was not written properly!";
                 menuSeparator();
             }
@@ -177,13 +177,15 @@ void NationalTeam::askForDates(Date begDate, Date endDate) {
         //GET END DATE
 
         while (true) {
+            isAfter = true;
+
             cout << "Insert ending date (DD/MM/YYYY): ";
             cin >> date;
 
             try {
                 endDate = endDate.dateTextConverter(date);
                 break;
-            } catch (ExceptionDate) {
+            } catch (...) {
                 cout << "The inserted date was not written properly!";
                 menuSeparator();
             }
@@ -218,7 +220,7 @@ void NationalTeam::removeCallUpMenu() {
         try {
             searchCallUpByID(option);
         }
-        catch (InexistentId) {
+        catch (...) {
             cout << "There are no call ups with such id (" << option << ") !" << endl;
             menuSeparator();
             break;
@@ -253,7 +255,7 @@ void NationalTeam::modifyCallMenu() {
         try {
             searchCallUpByID(id);
         }
-        catch (InexistentId) {
+        catch (...) {
             cout << "There are no call ups with such id (" << id << ") !" << endl;
             menuSeparator();
             break;
@@ -367,31 +369,36 @@ void NationalTeam::addGameCallUpMenu(const int& id) {
     menuSeparator();
 
     int idc, idg;
+    bool error = false;
 
     while (true) {
+        error = false;
+
         cout << "Insert the ID of the call up you want to add the game to: ";
         cin >> idc;
 
-        if (cin.fail()) {
+        while (cin.fail()) {
             cout << "Invalid option, please insert the option again: ";
+            cin >> idc;
             cin.clear();
             cin.ignore(10000, '\n');
-            break;
         }
 
         try {
             searchCallUpByID(idc);
         }
-        catch (InexistentId) {
+        catch (...) {
             cout << "There are no call ups with such id (" << idc << ") !" << endl;
+            menuSeparator();
+            error = true;
+        }
+
+        if (!error) {
+            getCallUpWithID(idc)->addGame(getGameWithID(id));
+
             menuSeparator();
             break;
         }
-
-        getCallUpWithID(idc)->addGame(getGameWithID(id));
-
-        menuSeparator();
-        break;
     }
 }
 
@@ -416,7 +423,7 @@ void NationalTeam::removeGameCallUpMenu() {
         try {
             searchCallUpByID(idc);
         }
-        catch (InexistentId) {
+        catch (...) {
             cout << "There are no call ups with such id (" << idc << ") !" << endl;
 
             menuSeparator();
@@ -459,7 +466,7 @@ void NationalTeam::allEqual(Date begDate, Date endDate, vector<Game*> call_games
 
         validOption(option, 1);
 
-        if (option == 0) { setAllEqual(begDate, endDate, call_games, stats); break;}
+        if (option == 0) { setAllEqual(begDate, endDate, call_games, stats);}
         if (option == 1) {
             menuSeparator();
             int option_sub;
@@ -495,61 +502,69 @@ void NationalTeam::infoManually(Date begDate, Date endDate, vector<Game*> call_g
 
     for (auto i = call_games.begin(); i != call_games.end(); i++) {
         for (auto j = 0; j < (*i)->getNationalPlayers().size(); j++) {
+
             //GET BEGINNING DATE
-            cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId() << " beggining date (DD/MM/YYYY): ";
-            cin >> date;
+            while (true) {
+                error = false;
 
-            if (begPlayerDate.validDateText(date)) {
-                begPlayerDate = begPlayerDate.dateTextConverter(date);
-            }
-            else {
-                cout << "The inserted date was not written properly!";
-                menuSeparator();
-                error = true;
-                break;
-            }
+                cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId()
+                     << " beggining date (DD/MM/YYYY): ";
+                cin >> date;
 
-            //CHECK IF BEGGININNG PLAYER DATE IS AFTER OR EQUAL TO CALL UP'S
-            if (begPlayerDate.dateToDays() < begDate.dateToDays()) {
-                cout << "Player date is not included in call up time!";
-                menuSeparator();
-                error = true;
-                break;
+                try {
+                    begPlayerDate = begPlayerDate.dateTextConverter(date);
+                }
+                catch (...) {
+                    cout << "The inserted date was not written properly!";
+                    menuSeparator();
+                    error = true;
+                }
+
+                //CHECK IF BEGGININNG PLAYER DATE IS AFTER OR EQUAL TO CALL UP'S
+                if (begPlayerDate.dateToDays() < begDate.dateToDays() && !error) {
+                    cout << "Player date is not included in call up time!";
+                    menuSeparator();
+                    error = true;
+                }
+                else break;
             }
 
             //GET END DATE
-            cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId() << " ending date (DD/MM/YYYY): ";
-            cin >> date;
+            while(true){
+                error = false;
 
-            if (endPlayerDate.validDateText(date)) {
-                endPlayerDate = endPlayerDate.dateTextConverter(date);
-            }
-            else {
-                cout << "The inserted date was not written properly!";
-                menuSeparator();
-                error = true;
-                break;
-            }
+                cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId()
+                     << " ending date (DD/MM/YYYY): ";
+                cin >> date;
 
-            //CHECK IF ENDING IS AFTER BEGINNING
-            if (!endPlayerDate.isAfter(begPlayerDate)) {
-                cout << "The ending date cannot come before the beginning date!";
-                menuSeparator();
-                error = true;
-                break;
-            }
+                try {
+                    endPlayerDate = endPlayerDate.dateTextConverter(date);
+                }
+                catch(...){
+                    cout << "The inserted date was not written properly!";
+                    menuSeparator();
+                    error = true;
+                }
 
-            //CHECK IF ENDING PLAYER DATE IS BEFORE OR EQUAL TO CALL UP'S
-            if (endPlayerDate.dateToDays() > endDate.dateToDays()) {
-                cout << "Player date is not included in call up time!";
-                menuSeparator();
-                error = true;
-                break;
+                //CHECK IF ENDING IS AFTER BEGINNING
+                if (!endPlayerDate.isAfter(begPlayerDate) && !error) {
+                    cout << "The ending date cannot come before the beginning date!";
+                    menuSeparator();
+                    error = true;
+                }
+
+                //CHECK IF ENDING PLAYER DATE IS BEFORE OR EQUAL TO CALL UP'S
+                if (endPlayerDate.dateToDays() > endDate.dateToDays() && !error) {
+                    cout << "Player date is not included in call up time!";
+                    menuSeparator();
+                    error = true;
+                }
+
+                if (!error) break;
             }
 
             stats.push_back(new CallUpPlayerStatistics((*i)->getNationalPlayers()[j]->getId(), begPlayerDate, endPlayerDate));
         }
-        if (error) break;
     }
 }
 
@@ -575,57 +590,64 @@ void NationalTeam::listDifferent(Date begDate, Date endDate, vector<Game *> call
                 stats.push_back(new CallUpPlayerStatistics((*i)->getNationalPlayers()[j]->getId(), begDate, endDate));
             }
             else{
-                cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId() << " beggining date (DD/MM/YYYY): ";
-                cin >> date;
+                //GET BEGINNING DATE
+                while (true) {
+                    error = false;
 
-                if (begPlayerDate.validDateText(date)) {
-                    begPlayerDate = begPlayerDate.dateTextConverter(date);
-                }
-                else {
-                    cout << "The inserted date was not written properly!";
-                    menuSeparator();
-                    error = true;
-                    break;
-                }
+                    cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId() << " beggining date (DD/MM/YYYY): ";
+                    cin >> date;
 
-                //CHECK IF BEGGININNG PLAYER DATE IS AFTER OR EQUAL TO CALL UP'S
-                if (begPlayerDate.dateToDays() < begDate.dateToDays()) {
-                    cout << "Player date is not included in call up time!";
-                    menuSeparator();
-                    error = true;
-                    break;
+                    try {
+                        begPlayerDate = begPlayerDate.dateTextConverter(date);
+                    }
+                    catch (...) {
+                        cout << "The inserted date was not written properly!";
+                        menuSeparator();
+                        error = true;
+                    }
+
+                    //CHECK IF BEGGININNG PLAYER DATE IS AFTER OR EQUAL TO CALL UP'S
+                    if (begPlayerDate.dateToDays() < begDate.dateToDays() && !error) {
+                        cout << "Player date is not included in call up time!";
+                        menuSeparator();
+                        error = true;
+                    }
+                    else break;
                 }
 
                 //GET END DATE
-                cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId() << " ending date (DD/MM/YYYY): ";
-                cin >> date;
+                while(true){
+                    error = false;
 
-                if (endPlayerDate.validDateText(date)) {
-                    endPlayerDate = endPlayerDate.dateTextConverter(date);
-                }
-                else {
-                    cout << "The inserted date was not written properly!";
-                    menuSeparator();
-                    error = true;
-                    break;
-                }
+                    cout << "Insert player's with id " << (*i)->getNationalPlayers()[j]->getId()
+                         << " ending date (DD/MM/YYYY): ";
+                    cin >> date;
 
-                //CHECK IF ENDING IS AFTER BEGINNING
-                if (!endPlayerDate.isAfter(begPlayerDate)) {
-                    cout << "The ending date cannot come before the beginning date!";
-                    menuSeparator();
-                    error = true;
-                    break;
-                }
+                    try {
+                        endPlayerDate = endPlayerDate.dateTextConverter(date);
+                    }
+                    catch(...){
+                        cout << "The inserted date was not written properly!";
+                        menuSeparator();
+                        error = true;
+                    }
 
-                //CHECK IF ENDING PLAYER DATE IS BEFORE OR EQUAL TO CALL UP'S
-                if (endPlayerDate.dateToDays() > endDate.dateToDays()) {
-                    cout << "Player date is not included in call up time!";
-                    menuSeparator();
-                    error = true;
-                    break;
-                }
+                    //CHECK IF ENDING IS AFTER BEGINNING
+                    if (!endPlayerDate.isAfter(begPlayerDate) && !error) {
+                        cout << "The ending date cannot come before the beginning date!";
+                        menuSeparator();
+                        error = true;
+                    }
 
+                    //CHECK IF ENDING PLAYER DATE IS BEFORE OR EQUAL TO CALL UP'S
+                    if (endPlayerDate.dateToDays() > endDate.dateToDays() && !error) {
+                        cout << "Player date is not included in call up time!";
+                        menuSeparator();
+                        error = true;
+                    }
+
+                    if (!error) break;
+                }
                 stats.push_back(new CallUpPlayerStatistics((*i)->getNationalPlayers()[j]->getId(), begPlayerDate, endPlayerDate));
             }
         }

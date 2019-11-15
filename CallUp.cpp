@@ -138,8 +138,31 @@ void CallUp::showCallUp(ostream &out){
 }
 
 //CALL UP COMPARISON
-bool operator< (const CallUp& callUp1, const CallUp& callUp2){
+bool operator< (const CallUp& callUp1, const CallUp& callUp2) {
     if (callUp1.getId() < callUp2.getId()) return true;
     else return false;
+}
+//SEND INFORMATION TO FILE
+void CallUp::printIntoFile(ostream &os) const{
+    os << id << endl;
+    os << begginingDate << endl;
+    os << endDate << endl;
+    os << dailyCost << endl;
+
+    //LIST OF GAME IDS
+    for (auto i = 0; i < games.size(); i++){
+        if (i = games.size() - 1) os << games[i]->getID() << endl;
+        else os << games[i]->getID() << ", ";
+    }
+
+    os << "----------" << endl;
+
+    for (auto i = playerStatistics.begin(); i != playerStatistics.end(); i++){
+        os << (*i)->getPlayerID() << endl;
+        os << (*i)->getBegDate() << endl;
+        os << (*i)->getEndDate() << endl;
+    }
+
+    os << "::::::::::" << endl;
 }
 

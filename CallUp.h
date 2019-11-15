@@ -155,6 +155,12 @@ public:
      * @return
      */
     friend bool operator< (const CallUp& callUp1, const CallUp& callUp2);
+
+    /**
+     * Prints Call Up information to correspondent file
+     * @param os
+     */
+    void printIntoFile(ostream &os) const;
 };
 
 #endif //AEDA_TEAM_MANAGER_CALLUP_H

@@ -754,7 +754,7 @@ public:
      * @param begDate - initial date
      * @param endDate - final date
      */
-    void askForDates(Date begDate, Date endDate);
+    void askForDates(Date& begDate, Date& endDate);
 
 
 
