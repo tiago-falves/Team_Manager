@@ -9,7 +9,7 @@ Date::Date(unsigned short day, unsigned short month, unsigned year){
     this->day = day;
     this->month = month;
     this->year = year;
-    //if(!isValid()) throw InvalidDate(day,month,year);
+    if(!isValid()) throw InvalidDate(day,month,year);
 }
 
 Date::Date(string date){
