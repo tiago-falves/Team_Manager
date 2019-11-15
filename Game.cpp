@@ -30,7 +30,7 @@ ostream& operator<<(ostream &out, const Game& game) {
 string Game::getGameTitle() const {
     return game_title;
 }
-int Game::getID() const {
+int Game::getId() const {
     return this->id;
 }
 
@@ -129,10 +129,10 @@ void Game::printIntoFile(ostream &os) const{
 
     for(int i = 0; i < playerStatistics.size(); i++){
         if(i == playerStatistics.size() - 1){
-            os << playerStatistics[i].getID() << endl;
+            os << playerStatistics[i].getId() << endl;
         }
         else {
-            os << playerStatistics[i].getID() << ",";
+            os << playerStatistics[i].getId() << ",";
         }
     }
 

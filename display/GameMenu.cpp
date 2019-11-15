@@ -199,7 +199,7 @@ int NationalTeam::createGameOption(ostream &out) {
 
     out << "Game created with success.\n";
 
-    return newGame->getID();
+    return newGame->getId();
 }
 
 int NationalTeam::removeGameOption(ostream &out, const int& idc) {

@@ -38,7 +38,7 @@ int PlayerGameStatistics::getPlayerID() const {
     return playerID;
 }
 
-int PlayerGameStatistics::getID() const {
+int PlayerGameStatistics::getId() const {
     return id;
 }
 void PlayerGameStatistics::setPlayerID(int player) {

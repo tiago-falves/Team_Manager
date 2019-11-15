@@ -153,8 +153,8 @@ void CallUp::printIntoFile(ostream &os) const{
 
     //LIST OF GAME IDS
     for (auto i = 0; i < games.size(); i++){
-        if (i = games.size() - 1) os << games[i]->getID() << endl;
-        else os << games[i]->getID() << ", ";
+        if (i = games.size() - 1) os << games[i]->getId() << endl;
+        else os << games[i]->getId() << ", ";
     }
 
     os << "----------" << endl;

@@ -36,15 +36,15 @@ void testPerson(){
 
     NationalTeam team;
 
-    team.addPerson(people,person1);
-    team.addPerson(people,person2);
-    team.addPerson(people,person3);
-    team.addPerson(people,person4);
-    team.addPerson(people,person5);
-    team.addPerson(people,person6);
+    team.addtoVector(people,person1);
+    team.addtoVector(people,person2);
+    team.addtoVector(people,person3);
+    team.addtoVector(people,person4);
+    team.addtoVector(people,person5);
+    team.addtoVector(people,person6);
 
-    team.addPerson(people,footballPlayer);
-    team.addPerson(people,tech);
+    team.addtoVector(people,footballPlayer);
+    team.addtoVector(people,tech);
 
     //cout << tech;
     //cout << footballPlayer;
@@ -62,7 +62,7 @@ void testPerson(){
     }
 
     //Verify Position Team
-    int index = team.personPosition(people,footballPlayer);
+    int index = team.position(people,footballPlayer);
     //cout << index << endl;
     //cout << people[index]->type() << endl;
     //cout << people[6]->type() << endl;
@@ -90,13 +90,13 @@ void testPlayers(){
     FootballPlayer *player6 = new FootballPlayer("Terry", date,200,"position", "club",50.0, 20.0, 5.0,false);
     FootballPlayer *player7 = new FootballPlayer("Zas", date,300,"position", "club",40.0, 30.0, 4.0,true);
 
-    n.addPerson(players, player1);
-    n.addPerson(players, player2);
-    n.addPerson(players, player3);
-    n.addPerson(players, player4);
-    n.addPerson(players, player5);
-    n.addPerson(players, player6);
-    n.addPerson(players, player7);
+    n.addtoVector(players, player1);
+    n.addtoVector(players, player2);
+    n.addtoVector(players, player3);
+    n.addtoVector(players, player4);
+    n.addtoVector(players, player5);
+    n.addtoVector(players, player6);
+    n.addtoVector(players, player7);
 
     for (int i = 0; i < players.size() ; ++i) {
         //players[i]->print(cout);
@@ -150,9 +150,9 @@ void testExceptions(){
 
 
     NationalTeam team;
-    team.addPerson(people,person1);
-    team.addPerson(people,person2);
-    team.addPerson(people,footballPlayer);
+    team.addtoVector(people,person1);
+    team.addtoVector(people,person2);
+    team.addtoVector(people,footballPlayer);
 
     //Remove Element that doesnt exist
     //team.removePerson(people,person1);

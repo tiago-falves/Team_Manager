@@ -155,8 +155,8 @@ void NationalTeam::runPlayersMenu() {
 void NationalTeam::createPlayerOption(){
     FootballPlayer *player = new FootballPlayer();
     askPlayerInformation(player);
-    addPerson(people,player);
-    addPerson(players,player);
+    addtoVector(people,player);
+    addtoVector(players,player);
 
     menuSeparator();
     cout << "Player Added Successfully!";
@@ -165,8 +165,8 @@ void NationalTeam::createPlayerOption(){
 //Asks for an id of a player and removes it from the database
 void NationalTeam::removePlayerOption(){
     int id = askForValidId(players);
-    removePerson(people,id);
-    removePerson(players,id);
+    removeById(people,id);
+    removeById(players,id);
     menuSeparator();
     cout << "Player Removed Successfully!" << endl;
 }
@@ -240,8 +240,8 @@ void NationalTeam::runTechnicianMenu() {
 void NationalTeam::createTechOption(){
     Technician *technician = new Technician();
     askTechInformation(technician);
-    addPerson(people,technician);
-    addPerson(technicians,technician);
+    addtoVector(people,technician);
+    addtoVector(technicians,technician);
     menuSeparator();
     cout << "Technician Added Successfully!";
 }
@@ -249,8 +249,8 @@ void NationalTeam::createTechOption(){
 //Asks the id of the technician it wants to remove and removes it from the database
 void NationalTeam::removeTechOption(){
     int id = askForValidId(technicians);
-    removePerson(people,id);
-    removePerson(technicians,id);
+    removeById(people,id);
+    removeById(technicians,id);
     menuSeparator();
     cout << "Technician Removed Successfully!";
 }
