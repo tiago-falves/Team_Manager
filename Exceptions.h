@@ -47,5 +47,4 @@ public:
     GameDontExistsCallUp(Game *game) {this->game = game;}
 };
 
-
 #endif //AEDA_TEAM_MANAGER_EXCEPTIONS_H

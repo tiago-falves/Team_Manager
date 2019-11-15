@@ -664,6 +664,15 @@ void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string ga
 
     gameFile.close();
 
+    ofstream callupFile("../Files/" +callupFileName);
+
+    for (int i = 0; i < callUps.size(); i++){
+        callUps[i]->printIntoFile(callupFile);
+        if (i != callUps.size() - 1) callupFile << endl;
+    }
+
+    callupFile.close();
+
     exit(0);
 }
 
