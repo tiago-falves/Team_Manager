@@ -239,7 +239,7 @@ public:
         int index;
         try {index = searchGameByID(game,id);}
         catch (InexistentId(index)){
-            cerr << "Tried to remove Person that doesn't exist" << endl;
+            cerr << "Tried to remove Game that doesn't exist" << endl;
             return false;
         }
         games.erase(games.begin()+index);
@@ -473,8 +473,8 @@ public:
 
     //Game Menu
     void runGameMenu();
-    void createGameOption(ostream &out);
-    void removeGameOption(ostream &out);
+    int createGameOption(ostream &out);
+    int removeGameOption(ostream &out, const int& id);
     void modifyGameOption(ostream &out, int option);
     void modifyVectorOption(ostream &out, string vectorType);
     void showAllGames(ostream &out);
@@ -508,7 +508,7 @@ public:
     void createCallUpMenu();
     void removeCallUpMenu();
     void modifyCallMenu();
-    void addGameCallUpMenu();
+    void addGameCallUpMenu(const int& id);
     void removeGameCallUpMenu();
 
     void allEqual(Date begDate, Date endDate, vector<Game*> call_game, vector<CallUpPlayerStatistics*> stats);

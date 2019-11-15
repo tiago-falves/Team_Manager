@@ -18,7 +18,7 @@ void NationalTeam::runCallUpMenu() {
         cout << "Create new Call up.                                                [3]" << endl;
         cout << "Remove Call Up.                                                    [4]" << endl;
         cout << "Modify Call Up.                                                    [5]" << endl;
-        cout << "Add Game to Call Up.                                               [6]" << endl;
+        cout << "Create Game and add to Call Up.                                    [6]" << endl;
         cout << "Remove Game from Call Up.                                          [7]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
@@ -28,14 +28,15 @@ void NationalTeam::runCallUpMenu() {
         menuSeparator();
 
         if (option == 0) { break; }
-        if (option == 1) { allCallUpMenu(); break;}
+        if (option == 1) { allCallUpMenu(); }
         if (option == 2) { callUpMenu(); }
         if (option == 3) { createCallUpMenu(); }
         if (option == 4) { removeCallUpMenu(); }
         if (option == 5) { modifyCallMenu(); }
-        if (option == 6) { addGameCallUpMenu(); }
+        if (option == 6) { addGameCallUpMenu(createGameOption(cout)); }
         if (option == 7) { removeGameCallUpMenu(); }
 
+        break;
     }
 }
 
@@ -96,7 +97,7 @@ void NationalTeam::createCallUpMenu() {
     int id;
     float cost;
 
-    string indexes; vector<int> vec_indexes;
+    int numGames;
     vector<Game*> call_games;
 
     string date;
@@ -120,34 +121,21 @@ void NationalTeam::createCallUpMenu() {
             cin >> cost;
         }
 
+        //CREATE NEW GAMES FOR NEW CALL UP AND ADD TO VECTOR
+        cout << "Number of games to be added in call up: ";
+        cin >> numGames;
 
-        //GET INDEX OF GAMES -- WILL HAVE TO BE CHANGED
-        cout << "Insert a list of the game's indexes separated by commas: ";
-        cin >> indexes;
-
-        try {
-            vec_indexes = separateCharacterInt(indexes, ',');
-            insertionSort(vec_indexes);
-        }
-        catch (exception) {
-            cout << "The inserted list was not written properly!" << endl;
-            menuSeparator();
-            break;
+        while (cin.fail()) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> cost;
         }
 
-        //ITERATE INDEXES
-        for (auto i = vec_indexes.begin(); i != vec_indexes.end(); i++) {
-            try {
-                call_games.push_back(getGameWithID(*i));
-            }
-            catch (InexistentId) {
-                cout << "The id: " << *i << " does not correspond to an existant game!" << endl;
-                menuSeparator();
-                break;
-            }
+        for (int i = 0; i < numGames; i++){
+            call_games.push_back(getGameWithID(createGameOption(cout)));
         }
 
-        //CREATE LIST OF GAMES
 
         //GET BEGINNING DATE
         cout << "Insert beggining date (DD/MM/YYYY): ";
@@ -357,11 +345,10 @@ void NationalTeam::extendEndDate(int id){
     }
 }
 
-void NationalTeam::addGameCallUpMenu() {
+void NationalTeam::addGameCallUpMenu(const int& id) {
     menuSeparator();
 
     int idc, idg;
-    Game* g;
 
     while (true) {
         cout << "Insert the ID of the call up you want to add the game to: ";
@@ -383,34 +370,8 @@ void NationalTeam::addGameCallUpMenu() {
             break;
         }
 
+        getCallUpWithID(idc)->addGame(getGameWithID(id));
 
-        cout << "Insert the ID of the game: ";
-        cin >> idg;
-
-        if (cin.fail()) {
-            cout << "Invalid option, please insert the option again: ";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-
-        try {
-            g = getGameWithID(idg);
-        }
-        catch (InexistentId) {
-            cout << "There are no games with such id (" << idg << ") !" << endl;
-            menuSeparator();
-            break;
-        }
-
-        try {
-            getCallUpWithID(idc)->addGame(g);
-        }
-        catch(GameExistsCallUp){
-            cout << "The game already exists in call up!" << endl;
-            menuSeparator();
-            break;
-        }
         menuSeparator();
         break;
     }
@@ -419,11 +380,10 @@ void NationalTeam::addGameCallUpMenu() {
 void NationalTeam::removeGameCallUpMenu() {
     menuSeparator();
 
-    int idc, idg;
-    Game* g;
+    int idc;
 
     while (true) {
-        cout << "Insert the ID of the call up you want to add the game to: ";
+        cout << "Insert the ID of the call up you want to remove the game : ";
         cin >> idc;
 
         if (cin.fail()) {
@@ -445,37 +405,7 @@ void NationalTeam::removeGameCallUpMenu() {
             break;
         }
 
-
-        cout << "Insert the ID of the game: ";
-        cin >> idg;
-
-        if (cin.fail()) {
-            cout << "Invalid option, please insert the option again: ";
-            cin.clear();
-            cin.ignore(10000, '\n');
-
-            menuSeparator();
-            break;
-        }
-
-        try {
-            g = getGameWithID(idg);
-        }
-        catch (InexistentId) {
-            cout << "There are no games with such id (" << idg << ") !" << endl;
-            menuSeparator();
-            break;
-        }
-
-        try {
-            getCallUpWithID(idc)->removeGame(g);
-        }
-        catch(GameDontExistsCallUp){
-            cout << "The game does not exist in call up!" << endl;
-            menuSeparator();
-            break;
-        }
-
+        removeGameOption(cout, idc);
         menuSeparator();
         break;
     }

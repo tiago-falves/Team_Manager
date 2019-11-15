@@ -8,40 +8,41 @@
 void NationalTeam::runGameMenu() {
     int option;
 
-    cout << "Welcome to the Game Menu! Please choose what you want to do: ";
-    cout << endl << endl;
-    cout << "0. Go back" << endl;
-    cout << "1. See information from all games. " << endl;
-    cout << "2. See information from a specific game. " << endl;
-    cout << "3. See information from a specific game for a specific player. " << endl;
-    cout << "4. Create new game." << endl;
-    cout << "5. Remove Game" << endl;
-    cout << "6. Modify Game" << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
+    while (true) {
+        cout << "Welcome to the Game Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "See information from all games.                                    [1]" << endl;
+        cout << "See information from a specific game.                              [2]" << endl;
+        cout << "See information from a specific game for a specific player.        [3]" << endl;
+        cout << "Create new game.                                                   [4]" << endl;
+        cout << "Remove Game.                                                       [5]" << endl;
+        cout << "Modify Game.                                                       [6]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
 
-    while (cin.fail() || option < 0 || option > 6)
-    {
-        cout << "Invalid option, please insert the option again: ";
+        while (cin.fail() || option < 0 || option > 6) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(100, '\n');
+            cin >> option;
+        }
+
         cin.clear();
         cin.ignore(100, '\n');
-        cin >> option;
+
+        menuSeparator();
+
+        if (option == 0) { break; }
+        if (option == 1) { showAllGames(cout); }
+        if (option == 2) { showSpecificGame(cout); }
+        if (option == 3) { showSpecificStats(cout); }
+        if (option == 4) { addGameCallUpMenu(createGameOption(cout)); }
+        if (option == 5) { removeGameCallUpMenu(); }
+        if (option == 6) { showModifyGameOptions(cout); }
+
+        break;
     }
-
-    cin.clear();
-    cin.ignore(100, '\n');
-
-    menuSeparator();
-
-    if (option == 0) { runMenu(); }
-    if (option == 1) { showAllGames(cout); }
-    if (option == 2) { showSpecificGame(cout); }
-    if (option == 3) { showSpecificStats(cout); }
-    if (option == 4) { createGameOption(cout); }
-    if (option == 5) { removeGameOption(cout); }
-    if (option == 6) { showModifyGameOptions(cout); }
-
-    runMenu();
 }
 
 void NationalTeam::tableHeaderAllGames(ostream &out) {
@@ -177,7 +178,7 @@ void NationalTeam::showSpecificStats(ostream &out) {
     tableFooterStatistics(out);
 }
 
-void NationalTeam::createGameOption(ostream &out) {
+int NationalTeam::createGameOption(ostream &out) {
     Game *newGame = new Game();
 
     newGame->setCity(askForString("City"));
@@ -191,19 +192,32 @@ void NationalTeam::createGameOption(ostream &out) {
     games.push_back(newGame);
 
     out << "Game created with success.\n";
+
+    return newGame->getID();
 }
 
-void NationalTeam::removeGameOption(ostream &out) {
+int NationalTeam::removeGameOption(ostream &out, const int& idc) {
     out << "What Game do you wish to remove?\n";
     int gameID = askForId();
 
+    //GETS CALL UP AND REMOVES GAME FROM IR
+    try {
+        getCallUpWithID(idc)->removeGame(getGameWithID(gameID));
+    }
+    catch(GameDontExistsCallUp){
+        cout << "The game does not exist in call up!" << endl;
+        menuSeparator();
+        return 0;
+    }
 
+    //REMOVES GAME FROM LIST OF GAMES
     if(removeGame(games, gameID)){
         out << "Game removed with success.\n";
-        return;
+        return gameID;
     }
 
     out << "Unable to remove the game.\n";
+    return 0;
 }
 
 const string &NationalTeam::getGameFile() const {
@@ -258,36 +272,38 @@ PlayerGameStatistics NationalTeam::askForPlayerStatistics(ostream &out, int play
 void NationalTeam::showModifyGameOptions(ostream &out) {
     int option;
 
-    cout << "Welcome to the Game Menu! Please choose what you want to do: ";
-    cout << endl << endl;
-    cout << "0. Go back" << endl;
-    cout << "1. City " << endl;
-    cout << "2. Country " << endl;
-    cout << "3. Stadium " << endl;
-    cout << "4. Player Statistics" << endl;
-    cout << "5. National Players" << endl;
-    cout << "6. Enemy Players" << endl;
-    cout << "7. Referees" << endl;
-    cout << "8. Everything" << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
+    while(true) {
+        cout << "Welcome to the Game Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "Go back.                                                           [0]" << endl;
+        cout << "City                                                               [1] " << endl;
+        cout << "Country                                                            [2]" << endl;
+        cout << "Stadium                                                            [3]" << endl;
+        cout << "Player Statistics                                                  [4]" << endl;
+        cout << "National Players                                                   [5]" << endl;
+        cout << "Enemy Players                                                      [6]" << endl;
+        cout << "Referees                                                           [7]" << endl;
+        cout << "Everything                                                         [8]" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
 
-    while (cin.fail() || option < 0 || option > 8)
-    {
-        cout << "Invalid option, please insert the option again: ";
+        while (cin.fail() || option < 0 || option > 8) {
+            cout << "Invalid option, please insert the option again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cin >> option;
+        }
+
         cin.clear();
         cin.ignore(10000, '\n');
-        cin >> option;
+
+        menuSeparator();
+
+        if (option == 0) { break; }
+        else { modifyGameOption(cout, option); }
+
+        break;
     }
-
-    cin.clear();
-    cin.ignore(10000, '\n');
-
-    menuSeparator();
-
-    if (option == 0) { runGameMenu(); }
-    else { modifyGameOption(cout, option); }
-
 }
 
 void NationalTeam::modifyGameOption(ostream &out, int option) {

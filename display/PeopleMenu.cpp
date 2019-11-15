@@ -214,27 +214,26 @@ void NationalTeam::askPlayerInformation(FootballPlayer *player){
 void NationalTeam::runTechnicianMenu() {
     int option;
 
-    cout << "Welcome to the players Menu! Please choose what you want to do: ";
-    cout << endl << endl;
-    cout << "0. Go back" << endl;
-    cout << "1. Create a new Technician." << endl;
-    cout << "2. Change a technician information." << endl;
-    cout << "3. Remove a technician" << endl;
-    cout << "Insert the number correspondent to your option: ";
-    cin >> option;
+    while(true) {
+        cout << "Welcome to the players Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "0. Go back" << endl;
+        cout << "1. Create a new Technician." << endl;
+        cout << "2. Change a technician information." << endl;
+        cout << "3. Remove a technician" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
 
-    validOption(option,3);
-
-
-    menuSeparator();
-
-    if (option == 0) { runPeopleMenu(); }
-    if (option == 1) { createTechOption(); }
-    if (option == 2) { modifyTechOption(); }
-    if (option == 3) { removeTechOption(); }
+        validOption(option, 3);
 
 
-    runTechnicianMenu();
+        menuSeparator();
+
+        if (option == 0) { break; }
+        if (option == 1) { createTechOption(); }
+        if (option == 2) { modifyTechOption(); }
+        if (option == 3) { removeTechOption(); }
+    }
 }
 
 //Aks the user for information about a technician and adds it to the database
