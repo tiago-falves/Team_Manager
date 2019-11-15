@@ -68,11 +68,7 @@ void CallUp::changeEndDate(Date end) {
     this->endDate = end;
 }
 
-//ADD / REMOVE GAME
-void CallUp::addGame(Game *game) {
-    if (gameExists(game)) throw GameExistsCallUp(game);
-    games.push_back(game);
-}
+//REMOVE GAME
 void CallUp::removeGame(Game *game){
     if (!gameExists(game)) throw GameDontExistsCallUp(game);
     games.erase(games.begin() + BinarySearch(games, game));
@@ -106,7 +102,7 @@ void CallUp::removePlayer(int playerID) {
 //UTILITIES
 bool CallUp::gameExists(Game *game) {
     if (BinarySearch(games, game) == -1) {
-        throw GameDontExistsCallUp(game);
+        false;
     }
     return true;
 }
