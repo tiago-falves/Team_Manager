@@ -132,44 +132,17 @@ void NationalTeam::createCallUpMenu() {
             cin >> cost;
         }
 
+        cin.clear();
+        cin.ignore(10000, '\n');
+
         for (int i = 0; i < numGames; i++){
             call_games.push_back(getGameWithID(createGameOption(cout)));
         }
 
+        menuSeparator();
 
-        //GET BEGINNING DATE
-        cout << "Insert beggining date (DD/MM/YYYY): ";
-        cin >> date;
-
-        if (begDate.validDateText(date)) {
-            begDate = begDate.dateTextConverter(date);
-        } else {
-            cout << "The inserted date was not written properly!";
-            menuSeparator();
-            break;
-        }
-
-        //GET END DATE
-        cout << "Insert ending date (DD/MM/YYYY): ";
-        cin >> date;
-
-        if (endDate.validDateText(date)) {
-            endDate = endDate.dateTextConverter(date);
-        } else {
-            cout << "The inserted date was not written properly!";
-            menuSeparator();
-            break;
-        }
-
-        //CHECK IF ENDING IS AFTER BEGINNING
-        if (!endDate.isAfter(begDate)) {
-            cout << "The ending date cannot come before the beginning date!";
-            menuSeparator();
-            break;
-        }
-
-        //GET PLAYER DATES IN CALL UP
-        bool error = false;
+        //GET DATES
+        askForDates(begDate, endDate);
 
         cout << endl << endl;
         allEqual(begDate, endDate, call_games, stats);
@@ -180,6 +153,51 @@ void NationalTeam::createCallUpMenu() {
 
     //ADD NEW CALL UP DATA BASE
     callUps.push_back(new CallUp(id, cost, call_games, stats, begDate, endDate));
+}
+
+void NationalTeam::askForDates(Date begDate, Date endDate) {
+    //GET BEGINNING DATE
+    string date;
+    bool isAfter = true;
+
+    while(true) {
+        while (true) {
+            cout << "Insert beggining date (DD/MM/YYYY): ";
+            cin >> date;
+
+            try {
+                begDate = begDate.dateTextConverter(date);
+                break;
+            } catch (ExceptionDate) {
+                cout << "The inserted date was not written properly!";
+                menuSeparator();
+            }
+        }
+
+        //GET END DATE
+
+        while (true) {
+            cout << "Insert ending date (DD/MM/YYYY): ";
+            cin >> date;
+
+            try {
+                endDate = endDate.dateTextConverter(date);
+                break;
+            } catch (ExceptionDate) {
+                cout << "The inserted date was not written properly!";
+                menuSeparator();
+            }
+        }
+
+        //CHECK IF ENDING IS AFTER BEGINNING
+        if (!endDate.isAfter(begDate)) {
+            cout << "The ending date cannot come before the beginning date!";
+            isAfter = false;
+            menuSeparator();
+        }
+
+        if (isAfter) break;
+    }
 }
 
 void NationalTeam::removeCallUpMenu() {

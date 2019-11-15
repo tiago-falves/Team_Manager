@@ -119,16 +119,9 @@ public:
 
 };
 
-class InvalidDate {
+class ExceptionDate{
 public:
-    int day;
-    int month;
-    int year;
-
-    const string getMessage() const {return "Invalid Date: " + to_string(day) + "/" + to_string(month) + "/" + to_string( year);}
-
-    InvalidDate(int d,int m, int y):day(d), month(m), year(y) {}
-
-
+    string date;
+    ExceptionDate(string date){this->date = date;};
 };
 

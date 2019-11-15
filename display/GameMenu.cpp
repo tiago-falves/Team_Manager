@@ -112,7 +112,7 @@ void NationalTeam::showAllGames(ostream &out) {
 }
 
 void NationalTeam::showSpecificGame(ostream &out) {
-    out << "Which game do you which to see?\n";
+    out << "Which game do you wish to see?\n";
     int id = askForId();
 
     tableHeaderAllGames(out);
@@ -156,9 +156,9 @@ void NationalTeam::showSpecificGame(ostream &out) {
 }
 
 void NationalTeam::showSpecificStats(ostream &out) {
-    out << "Which game do you which to see?\n";
+    out << "Which game do you wish to see?\n";
     int gameID = askForId();
-    out << "Which player do you which to see?\n";
+    out << "Which player do you wish to see?\n";
     int playerID = askForId();
 
     tableHeaderAllGames(out);
@@ -185,6 +185,8 @@ int NationalTeam::createGameOption(ostream &out) {
     newGame->setCountry(askForString("Country"));
     newGame->setStadium(askForString("Stadium"));
     newGame->setGameTitle(askForString("Game Title"));
+
+    menuSeparator();
     askForPlayers(out, newGame);
 
     menuSeparator();
@@ -258,6 +260,7 @@ void NationalTeam::askForStringVector(ostream &out, string what, Game *game) {
     else {
         counter = 0;
         for(int i=0; i < 5; i++){
+            counter++;
             game->addReferee(askForString("Referee " + to_string(counter)));
         }
     }

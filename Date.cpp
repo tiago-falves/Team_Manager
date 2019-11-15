@@ -131,7 +131,8 @@ Date Date::dateTextConverter(string dateText) {
     date.month = dateVector[1];
     date.year = dateVector[2];
 
-    //if(!date.isValid()) throw InvalidDate(date.day,date.month,date.year);
+    if(!date.isValid()) throw ExceptionDate(dateText);
+
     return date;
 }
 

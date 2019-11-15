@@ -749,6 +749,13 @@ public:
      */
     CallUp* getCallUpWithID(int id);
 
+    /**
+     * Asks for dates when creating call up
+     * @param begDate - initial date
+     * @param endDate - final date
+     */
+    void askForDates(Date begDate, Date endDate);
+
 
 
 
