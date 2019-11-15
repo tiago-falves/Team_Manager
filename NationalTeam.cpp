@@ -15,6 +15,42 @@ NationalTeam::NationalTeam() {
 
 }
 
+//Gets People File name
+const string &NationalTeam::getPeopleFile() const {
+    return peopleFile;
+}
+
+//Sets People file name
+void NationalTeam::setPeopleFile(const string &peopleFile) {
+    NationalTeam::peopleFile = peopleFile;
+}
+
+const string &NationalTeam::getGameFile() const {
+    return gameFile;
+}
+
+void NationalTeam::setGameFile(const string &gameFile) {
+    NationalTeam::gameFile = gameFile;
+}
+
+const string &NationalTeam::getCallUpFile() const {
+    return callUpFile;
+}
+
+void NationalTeam::setCallUpFile(const string &callUpFile) {
+    NationalTeam::callUpFile = callUpFile;
+}
+
+const string &NationalTeam::getStatisticsFile() const {
+    return statisticsFile;
+}
+
+void NationalTeam::setStatisticsFile(const string &statisticsFile) {
+    NationalTeam::statisticsFile = statisticsFile;
+}
+
+
+
 bool NationalTeam::readPeople(string fileName) {
     string text;
     string id;

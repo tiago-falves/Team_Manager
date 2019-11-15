@@ -3,9 +3,9 @@
 //
 
 
-#include "../NationalTeam.h"
+#include "Menu.h"
 
-void NationalTeam::runGameMenu() {
+void Menu::runGameMenu() {
     int option;
 
     while (true) {
@@ -45,7 +45,7 @@ void NationalTeam::runGameMenu() {
     }
 }
 
-void NationalTeam::tableHeaderAllGames(ostream &out) {
+void Menu::tableHeaderAllGames(ostream &out) {
     out << endl << endl << endl;
     out << "Games:\n";
     out << setw(83) << setfill('-') << "-" <<  endl;
@@ -58,11 +58,11 @@ void NationalTeam::tableHeaderAllGames(ostream &out) {
 
 }
 
-void NationalTeam::tableFooterAllGames(ostream &out) {
+void Menu::tableFooterAllGames(ostream &out) {
     out << setw(83) << setfill('-') << "-" << endl;
 }
 
-void NationalTeam::tableHeaderStatistics(ostream &out) {
+void Menu::tableHeaderStatistics(ostream &out) {
     out << endl << endl << endl;
     out << "Player Statistics:\n";
     out << setw(110) << setfill('-') << "-" <<  endl;
@@ -76,7 +76,7 @@ void NationalTeam::tableHeaderStatistics(ostream &out) {
     out <<  endl << setw(109) << setfill('-') << "-" << "│" <<  endl;
 }
 
-void NationalTeam::tableHeaderEnemyTeam(ostream &out) {
+void Menu::tableHeaderEnemyTeam(ostream &out) {
     out << endl << endl << endl;
     out << "Enemy Team:\n";
     out << setw(15) << setfill('-') << "-" <<  endl;
@@ -84,7 +84,7 @@ void NationalTeam::tableHeaderEnemyTeam(ostream &out) {
     out <<  endl << setw(15) << setfill('-') << "-" << "│" <<  endl;
 }
 
-void NationalTeam::tableHeaderReferee(ostream &out) {
+void Menu::tableHeaderReferee(ostream &out) {
     out << endl << endl << endl;
     out << "Referees:\n";
     out << setw(15) << setfill('-') << "-" <<  endl;
@@ -92,15 +92,15 @@ void NationalTeam::tableHeaderReferee(ostream &out) {
     out <<  endl << setw(15) << setfill('-') << "-" << "│" <<  endl;
 }
 
-void NationalTeam::tableFooterStatistics(ostream &out){
+void Menu::tableFooterStatistics(ostream &out){
     out << setw(110) << setfill('-') << "-" << endl;
 }
 
-void NationalTeam::tableFooterEnemyTeamReferee(ostream &out) {
+void Menu::tableFooterEnemyTeamReferee(ostream &out) {
     out << setw(15) << setfill('-') << "-" << endl;
 }
 
-void NationalTeam::showAllGames(ostream &out) {
+void Menu::showAllGames(ostream &out) {
 
     tableHeaderAllGames(out);
     for(Game* g : games){
@@ -111,7 +111,7 @@ void NationalTeam::showAllGames(ostream &out) {
 
 }
 
-void NationalTeam::showSpecificGame(ostream &out) {
+void Menu::showSpecificGame(ostream &out) {
     out << "Which game do you wish to see?\n";
     int id = askForId();
 
@@ -155,7 +155,7 @@ void NationalTeam::showSpecificGame(ostream &out) {
 
 }
 
-void NationalTeam::showSpecificStats(ostream &out) {
+void Menu::showSpecificStats(ostream &out) {
     out << "Which game do you wish to see?\n";
     int gameID = askForId();
     out << "Which player do you wish to see?\n";
@@ -178,7 +178,7 @@ void NationalTeam::showSpecificStats(ostream &out) {
     tableFooterStatistics(out);
 }
 
-int NationalTeam::createGameOption(ostream &out) {
+int Menu::createGameOption(ostream &out) {
     Game *newGame = new Game();
 
     newGame->setCity(askForString("City"));
@@ -202,7 +202,7 @@ int NationalTeam::createGameOption(ostream &out) {
     return newGame->getId();
 }
 
-int NationalTeam::removeGameOption(ostream &out, const int& idc) {
+int Menu::removeGameOption(ostream &out, const int& idc) {
     out << "What Game do you wish to remove?\n";
     int gameID = askForId();
 
@@ -226,15 +226,9 @@ int NationalTeam::removeGameOption(ostream &out, const int& idc) {
     return 0;
 }
 
-const string &NationalTeam::getGameFile() const {
-    return gameFile;
-}
 
-void NationalTeam::setGameFile(const string &gameFile) {
-    NationalTeam::gameFile = gameFile;
-}
 
-void NationalTeam::askForPlayers(ostream &out, Game * game) {
+void Menu::askForPlayers(ostream &out, Game * game) {
     int playerID;
     PlayerGameStatistics stats;
     int index;
@@ -248,7 +242,7 @@ void NationalTeam::askForPlayers(ostream &out, Game * game) {
     }
 }
 
-void NationalTeam::askForStringVector(ostream &out, string what, Game *game) {
+void Menu::askForStringVector(ostream &out, string what, Game *game) {
     int counter = 0;
 
     if(what == "EnemyPlayers") {
@@ -267,7 +261,7 @@ void NationalTeam::askForStringVector(ostream &out, string what, Game *game) {
 
 }
 
-PlayerGameStatistics NationalTeam::askForPlayerStatistics(ostream &out, int playerID) {
+PlayerGameStatistics Menu::askForPlayerStatistics(ostream &out, int playerID) {
     PlayerGameStatistics stats;
 
     stats.setPlayerID(playerID);
@@ -281,7 +275,7 @@ PlayerGameStatistics NationalTeam::askForPlayerStatistics(ostream &out, int play
     return stats;
 }
 
-void NationalTeam::showModifyGameOptions(ostream &out) {
+void Menu::showModifyGameOptions(ostream &out) {
     int option;
 
     while(true) {
@@ -318,7 +312,7 @@ void NationalTeam::showModifyGameOptions(ostream &out) {
     }
 }
 
-void NationalTeam::modifyGameOption(ostream &out, int option) {
+void Menu::modifyGameOption(ostream &out, int option) {
     out << "What Game do you wish to modify?\n";
     int gameID = askForId();
 

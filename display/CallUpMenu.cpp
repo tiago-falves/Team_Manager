@@ -3,10 +3,10 @@
 //
 
 
-#include "../NationalTeam.h"
+#include "Menu.h"
 #include <algorithm>
 
-void NationalTeam::runCallUpMenu() {
+void Menu::runCallUpMenu() {
     int option;
 
     while(true) {
@@ -40,7 +40,7 @@ void NationalTeam::runCallUpMenu() {
     }
 }
 
-void NationalTeam::headerCallUp(ostream &out) {
+void Menu::headerCallUp(ostream &out) {
     out << endl << endl << endl;
     out << setw(55) << setfill('-') << "-" <<  endl;
     out <<  left << setw(5)  << setfill(' ') << "ID" << "│  ";
@@ -50,14 +50,14 @@ void NationalTeam::headerCallUp(ostream &out) {
     out << endl;
 }
 
-void NationalTeam::allCallUpMenu() {
+void Menu::allCallUpMenu() {
     headerCallUp(cout);
     for (auto i = callUps.begin(); i != callUps.end(); i++) {
         (*i)->showCallUp(cout);
     }
 }
 
-void NationalTeam::callUpMenu() {
+void Menu::callUpMenu() {
     menuSeparator();
     int option;
 
@@ -92,7 +92,7 @@ void NationalTeam::callUpMenu() {
 }
 
 //IS NOT CREATING GAMES
-void NationalTeam::createCallUpMenu() {
+void Menu::createCallUpMenu() {
     menuSeparator();
     int id;
     float cost;
@@ -155,7 +155,7 @@ void NationalTeam::createCallUpMenu() {
     callUps.push_back(new CallUp(id, cost, call_games, stats, begDate, endDate));
 }
 
-void NationalTeam::askForDates(Date& begDate, Date& endDate) {
+void Menu::askForDates(Date& begDate, Date& endDate) {
     //GET BEGINNING DATE
     string date;
     bool isAfter = true;
@@ -202,7 +202,7 @@ void NationalTeam::askForDates(Date& begDate, Date& endDate) {
     }
 }
 
-void NationalTeam::removeCallUpMenu() {
+void Menu::removeCallUpMenu() {
     menuSeparator();
     int option;
 
@@ -235,7 +235,7 @@ void NationalTeam::removeCallUpMenu() {
     }
 }
 
-void NationalTeam::modifyCallMenu() {
+void Menu::modifyCallMenu() {
     menuSeparator();
 
     int option, id;
@@ -289,7 +289,7 @@ void NationalTeam::modifyCallMenu() {
     }
 }
 
-void NationalTeam::changeDailyCosts(int id) {
+void Menu::changeDailyCosts(int id) {
     float cost;
     cout << "New accomodation daily cost: ";
     cin >> cost;
@@ -304,7 +304,7 @@ void NationalTeam::changeDailyCosts(int id) {
     getCallUpWithID(id)->setId(id);
 }
 
-void NationalTeam::reduceBegDate(int id) {
+void Menu::reduceBegDate(int id) {
     string date;
     Date begDate;
 
@@ -334,7 +334,7 @@ void NationalTeam::reduceBegDate(int id) {
     }
 }
 
-void NationalTeam::extendEndDate(int id){
+void Menu::extendEndDate(int id){
     string date;
     Date endDate;
 
@@ -365,7 +365,7 @@ void NationalTeam::extendEndDate(int id){
     }
 }
 
-void NationalTeam::addGameCallUpMenu(const int& id) {
+void Menu::addGameCallUpMenu(const int& id) {
     menuSeparator();
 
     int idc, idg;
@@ -402,7 +402,7 @@ void NationalTeam::addGameCallUpMenu(const int& id) {
     }
 }
 
-void NationalTeam::removeGameCallUpMenu() {
+void Menu::removeGameCallUpMenu() {
     menuSeparator();
 
     int idc;
@@ -437,25 +437,12 @@ void NationalTeam::removeGameCallUpMenu() {
 }
 
 
-const string &NationalTeam::getCallUpFile() const {
-    return callUpFile;
-}
-
-void NationalTeam::setCallUpFile(const string &callUpFile) {
-    NationalTeam::callUpFile = callUpFile;
-}
 
 
 
-const string &NationalTeam::getStatisticsFile() const {
-    return statisticsFile;
-}
 
-void NationalTeam::setStatisticsFile(const string &statisticsFile) {
-    NationalTeam::statisticsFile = statisticsFile;
-}
 
-void NationalTeam::allEqual(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
+void Menu::allEqual(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
     int option;
 
     while(true) {
@@ -487,7 +474,7 @@ void NationalTeam::allEqual(Date begDate, Date endDate, vector<Game*> call_games
     }
 }
 
-void NationalTeam::setAllEqual(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
+void Menu::setAllEqual(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
     for (auto i = call_games.begin(); i != call_games.end(); i++) {
         for (auto j = 0; j < (*i)->getNationalPlayers().size(); j++) {
             stats.push_back(new CallUpPlayerStatistics((*i)->getNationalPlayers()[j]->getId(), begDate, endDate));
@@ -495,7 +482,7 @@ void NationalTeam::setAllEqual(Date begDate, Date endDate, vector<Game*> call_ga
     }
 }
 
-void NationalTeam::infoManually(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
+void Menu::infoManually(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
     string date;
     Date begPlayerDate, endPlayerDate;
     bool error = false;
@@ -568,7 +555,7 @@ void NationalTeam::infoManually(Date begDate, Date endDate, vector<Game*> call_g
     }
 }
 
-void NationalTeam::listDifferent(Date begDate, Date endDate, vector<Game *> call_games,
+void Menu::listDifferent(Date begDate, Date endDate, vector<Game *> call_games,
                                  vector<CallUpPlayerStatistics *> stats) {
     string indexes, date;
     vector<int> vec_indexes;
