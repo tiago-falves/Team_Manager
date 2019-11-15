@@ -3,14 +3,17 @@
 //
 
 
-#include "../NationalTeam.h"
+#include "Menu.h"
 #include "../Exceptions.h"
 
 using namespace std;
 
+Menu::Menu(){
+    readNationalTeam("NationalTeam.txt");
+}
 
 //Runs the main Menu
-void NationalTeam::runMenu() {
+void Menu::runMenu() {
     int option;
 
 
@@ -41,7 +44,7 @@ void NationalTeam::runMenu() {
     }
 }
 
-void NationalTeam::validOption(int &option,int optionsNumber){
+void Menu::validOption(int &option,int optionsNumber){
     while (cin.fail() || option < 0 || option > optionsNumber)
     {
         cout << "Invalid option, please insert the option again: ";
@@ -54,14 +57,14 @@ void NationalTeam::validOption(int &option,int optionsNumber){
 }
 
 //Outputs a separator made of *
-void NationalTeam::menuSeparator() {
+void Menu::menuSeparator() {
     cout << endl << endl;
     for (int i = 0; i < 70; i++) { cout << "="; }
     cout << endl;
 }
 
 //Asks for a valid int until the user inputs it
-void NationalTeam::validCin(int &option) {
+void Menu::validCin(int &option) {
 
     while (cin.fail())
     {
@@ -72,7 +75,7 @@ void NationalTeam::validCin(int &option) {
     }
 }
 
-int NationalTeam::askForId(){
+int Menu::askForId(){
     int id;
     cout << "Please Insert an ID: ";
     cin >> id;
@@ -83,7 +86,7 @@ int NationalTeam::askForId(){
 }
 
 
-Date NationalTeam::askForDate(string dateName,string &text){
+Date Menu::askForDate(string dateName,string &text){
     Date date = Date();
     cout << dateName << "(DD/MM/YYYY): ";
     cin.clear();
@@ -97,7 +100,7 @@ Date NationalTeam::askForDate(string dateName,string &text){
     return date.dateTextConverter(text);;
 }
 
-float NationalTeam::askForFloat(string &text, const string &what, float lower, float higher){
+float Menu::askForFloat(string &text, const string &what, float lower, float higher){
     bool exceptionCatched = true;
     cout << what << ": ";
     cin >> text;
@@ -127,7 +130,7 @@ float NationalTeam::askForFloat(string &text, const string &what, float lower, f
     return stof(text);
 }
 
-bool NationalTeam::askYesNoQuestion() {
+bool Menu::askYesNoQuestion() {
     int option;
     cout << endl << "Yes [1]" << endl;
     cout << "No  [2]" << endl;
@@ -140,7 +143,7 @@ bool NationalTeam::askYesNoQuestion() {
 
 }
 
-int NationalTeam::askForInt(const string &what) {
+int Menu::askForInt(const string &what) {
     bool exceptionCatched = true;
     string text;
     cout << what << ": ";

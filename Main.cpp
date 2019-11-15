@@ -6,13 +6,14 @@
 #include <windows.h>
 #include <cstdio>
 #include "Test.h"
+#include "display/Menu.h"
+
 using namespace std;
 
 void runTeamManager(){
 
-    NationalTeam team;
-    team.readNationalTeam("NationalTeam.txt");
-    team.runMenu();
+    Menu menu = Menu();
+    menu.runMenu();
 }
 
 int main() {
