@@ -186,7 +186,11 @@ int NationalTeam::createGameOption(ostream &out) {
     newGame->setStadium(askForString("Stadium"));
     newGame->setGameTitle(askForString("Game Title"));
     askForPlayers(out, newGame);
+
+    menuSeparator();
     askForStringVector(out, "EnemyPlayers", newGame);
+
+    menuSeparator();
     askForStringVector(out, "Referee", newGame);
 
     games.push_back(newGame);
@@ -237,19 +241,24 @@ void NationalTeam::askForPlayers(ostream &out, Game * game) {
         playerID = askForValidId(players);
         index = searchByID(players, playerID);
         game->addNationalPlayer(players[index], askForPlayerStatistics(out, playerID));
+
+        menuSeparator();
     }
 }
 
 void NationalTeam::askForStringVector(ostream &out, string what, Game *game) {
+    int counter = 0;
 
-    if(what == "EnemyPlayers"){
-        for(int i = 0; i < 11; i++){
-            game->addEnemyPlayer(askForString("Enemy Player"));
+    if(what == "EnemyPlayers") {
+        for (int i = 0; i < 11; i++) {
+            counter++;
+            game->addEnemyPlayer(askForString("Enemy Player " + to_string(counter)));
         }
     }
     else {
+        counter = 0;
         for(int i=0; i < 5; i++){
-            game->addReferee(askForString("Referee") );
+            game->addReferee(askForString("Referee " + to_string(counter)));
         }
     }
 
