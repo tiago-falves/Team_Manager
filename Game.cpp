@@ -122,10 +122,10 @@ PlayerGameStatistics Game::getSpecificPlayerStatistics(FootballPlayer *player) {
 }
 
 void Game::printIntoFile(ostream &os) const{
-    os << id << endl;
     os << city << endl;
     os << country << endl;
     os << stadium << endl;
+    os << game_title << endl;
 
     for(int i = 0; i < playerStatistics.size(); i++){
         if(i == playerStatistics.size() - 1){

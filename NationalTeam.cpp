@@ -632,6 +632,18 @@ void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string ga
     }
     peopleFile.close();
 
+    ofstream gameFile("../Files/" +gamesFileName);
+
+    for (int i = 0; i < games.size(); i++){
+        games[i]->printIntoFile(gameFile);
+
+        if(i != games.size() - 1){
+            gameFile << "::::::::::" << endl;
+        }
+    }
+
+    gameFile.close();
+
     exit(0);
 }
 
