@@ -276,6 +276,17 @@ public:
      */
     PlayerGameStatistics getSpecificPlayerStatistics(FootballPlayer * player);
 
+
+
+
+
+
+    
+
+    /*****************************
+    *************PRINT************
+    *****************************/
+
     /**
      * @brief function that prints the caller in the file format, given an ostream variable
      * @param - ostream os - Tells where to print the content
@@ -287,6 +298,16 @@ public:
      * @param - ostream os - Tells where to print the content
     */
     void print(ostream &os);
+
+
+
+
+
+
+
+    /***************************************
+     **************OPERATORS****************
+     ***************************************/
 
     /**
      * @brief Outputs a formatted Game
