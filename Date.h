@@ -125,3 +125,13 @@ public:
     ExceptionDate(string date){this->date = date;};
 };
 
+class InvalidDate{
+public:
+    int day, month, year;
+    InvalidDate(int day, int month, int year){
+        this->day = day;
+        this->month = month;
+        this->year = year;
+    }
+};
+
