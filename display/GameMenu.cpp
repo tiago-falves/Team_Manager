@@ -271,12 +271,72 @@ PlayerGameStatistics NationalTeam::askForPlayerStatistics(ostream &out, int play
     PlayerGameStatistics stats;
 
     stats.setPlayerID(playerID);
-    stats.setNumberOfGoals(askForInt("Number of Goals"));
-    stats.setMinutesPlayed(askForInt("Minutes Played"));
-    stats.setKilometers(askForInt("Kilometers"));
-    stats.setNumberOfPasses(askForInt("Passes"));
-    stats.setNumberOfYellowCards(askForInt("Yellow Cards"));
-    stats.setNumberOfRedCards(askForInt("Red Cards"));
+
+    //ASKS FOR NUMBER OF GOALS
+    while (true) {
+        try {
+            stats.setNumberOfGoals(askForInt("Number of Goals"));
+            break;
+        }
+        catch (...) {
+            menuSeparator();
+        }
+    }
+
+    //ASKS FOR MINUTES PLAYED
+    while (true) {
+        try {
+            stats.setMinutesPlayed(askForInt("Minutes Played"));
+            break;
+        }
+        catch (...) {
+            menuSeparator();
+        }
+    }
+
+    //ASKS FOR KILOMETERS
+    while (true) {
+        try {
+            stats.setKilometers(askForInt("Kilometers"));
+            break;
+        }
+        catch (...) {
+            menuSeparator();
+        }
+    }
+
+    //ASKS FOR NUMBER OF PASSES
+    while (true) {
+        try {
+            stats.setNumberOfPasses(askForInt("Passes"));
+            break;
+        }
+        catch (...) {
+            menuSeparator();
+        }
+    }
+
+    //ASKS FOR NUMBER OF YELLOW CARDS
+    while (true) {
+        try {
+            stats.setNumberOfYellowCards(askForInt("Yellow Cards"));
+            break;
+        }
+        catch (...) {
+            menuSeparator();
+        }
+    }
+
+    //ASKS FOR NUMBER OF RED CARDS
+    while (true) {
+        try {
+            stats.setNumberOfRedCards(askForInt("Red Cards"));
+            break;
+        }
+        catch (...) {
+            menuSeparator();
+        }
+    }
 
     return stats;
 }

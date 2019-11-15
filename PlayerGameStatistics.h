@@ -69,5 +69,41 @@ public:
 
 };
 
+//PLAYER STATISTCS EXCEPTIONS
+class NegativeParameter{
+public:
+    int num;
+    NegativeParameter(int num){
+        this->num = num;
+        cout << endl << endl << "Statistics cannot have negative value!" << endl;
+    }
+};
+
+class InvalidMinutes{
+public:
+    int minutes;
+    InvalidMinutes(int minutes){
+        this->minutes = minutes;
+        cout << endl << endl << "Minutes value has to be between 1 and 90!" << endl;
+    }
+};
+
+class InvalidYellowCard{
+public:
+    int yellows;
+    InvalidYellowCard(int yellows){
+        this->yellows = yellows;
+        cout << endl << endl << "Number of yellows has a max value of 2!" << endl;
+    }
+};
+
+class InvalidRedCard{
+public:
+    int reds;
+    InvalidRedCard(int reds){
+        this->reds = reds;
+        cout << endl << endl << "Number of reds cannot be higher than 1 and depends on the number of yellows!" << endl;
+    }
+};
 
 #endif //AEDA_TEAM_MANAGER_CALLUPPLAYER_H
