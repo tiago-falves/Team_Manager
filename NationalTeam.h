@@ -229,7 +229,7 @@ public:
     ********************GAMES FUNCTIONS******************
     *****************************************************/
     bool readGames(string filename);
-    bool readGameStatiscs(string filename);
+    bool readGameStatistics(string filename);
     void saveGames(string filename);
     void printAllGameInfo(ostream& out, Game * game);
 
@@ -755,9 +755,6 @@ public:
      * @param endDate - final date
      */
     void askForDates(Date begDate, Date endDate);
-
-
-
 
 
     void saveAndExit(string fileName,string callUpFileName,string gamesFileName, string etcFileName);

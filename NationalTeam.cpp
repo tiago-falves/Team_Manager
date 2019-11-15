@@ -53,7 +53,7 @@ void NationalTeam::read(string peopleFile,string callUpFile,string gameFile,stri
     readPeople(peopleFile);
     readGames(gameFile);
     readCallUp(callUpFile);
-    readGameStatiscs(statisticsFile);
+    readGameStatistics(statisticsFile);
 }
 
 bool NationalTeam::readNationalTeam(string fileName) {
@@ -551,7 +551,7 @@ bool NationalTeam::readGames(string filename) {
         return true;
     }
 }
-bool NationalTeam::readGameStatiscs(string filename) {
+bool NationalTeam::readGameStatistics(string filename) {
     //VARIABLES TO READ FILE
     ifstream statsFile;
     statsFile.open("..//Files//" + filename);
