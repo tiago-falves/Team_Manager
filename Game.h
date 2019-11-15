@@ -100,7 +100,7 @@ public:
     /** Returns the game's id.
      * @return A Int representing the game’s id
     */
-    int getID() const;
+    int getId() const;
 
     /** Returns the name of the city where the game takes place
      * @return A string representing the name of the city
