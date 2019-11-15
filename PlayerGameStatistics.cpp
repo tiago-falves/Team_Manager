@@ -38,7 +38,7 @@ int PlayerGameStatistics::getPlayerID() const {
     return playerID;
 }
 
-int PlayerGameStatistics::getID() const {
+int PlayerGameStatistics::getId() const {
     return id;
 }
 void PlayerGameStatistics::setPlayerID(int player) {
@@ -50,6 +50,7 @@ int PlayerGameStatistics::getNumberOfGoals() const {
 }
 
 void PlayerGameStatistics::setNumberOfGoals(int numberOfGoals) {
+    if (numberOfGoals < 0) throw NegativeParameter(numberOfGoals);
     PlayerGameStatistics::numberOfGoals = numberOfGoals;
 }
 
@@ -58,6 +59,7 @@ int PlayerGameStatistics::getMinutesPlayed() const {
 }
 
 void PlayerGameStatistics::setMinutesPlayed(int minutesPlayed) {
+    if (minutesPlayed <= 0 || minutesPlayed > 90) throw InvalidMinutes(minutesPlayed);
     PlayerGameStatistics::minutesPlayed = minutesPlayed;
 }
 
@@ -66,6 +68,7 @@ int PlayerGameStatistics::getKilometers() const {
 }
 
 void PlayerGameStatistics::setKilometers(int kilometers) {
+    if (kilometers < 0) throw NegativeParameter(kilometers);
     PlayerGameStatistics::kilometers = kilometers;
 }
 
@@ -74,6 +77,7 @@ int PlayerGameStatistics::getNumberOfPasses() const {
 }
 
 void PlayerGameStatistics::setNumberOfPasses(int numberOfPasses) {
+    if (numberOfPasses < 0) throw NegativeParameter(numberOfPasses);
     PlayerGameStatistics::numberOfPasses = numberOfPasses;
 }
 
@@ -82,6 +86,7 @@ int PlayerGameStatistics::getNumberOfYellowCards() const {
 }
 
 void PlayerGameStatistics::setNumberOfYellowCards(int numberOfYellowCards) {
+    if (numberOfYellowCards > 2 || numberOfYellowCards < 0) throw InvalidYellowCard(numberOfYellowCards);
     PlayerGameStatistics::numberOfYellowCards = numberOfYellowCards;
 }
 
@@ -90,6 +95,8 @@ int PlayerGameStatistics::getNumberOfRedCards() const {
 }
 
 void PlayerGameStatistics::setNumberOfRedCards(int numberOfRedCards) {
+    if (numberOfYellowCards == 2 && numberOfRedCards != 1) throw InvalidRedCard(numberOfRedCards);
+    else if (numberOfRedCards < 0 || numberOfRedCards > 1) throw InvalidRedCard(numberOfRedCards);
     PlayerGameStatistics::numberOfRedCards = numberOfRedCards;
 }
 

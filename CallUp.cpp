@@ -105,7 +105,9 @@ void CallUp::removePlayer(int playerID) {
 
 //UTILITIES
 bool CallUp::gameExists(Game *game) {
-    if (BinarySearch(games, game) == -1) return false;
+    if (BinarySearch(games, game) == -1) {
+        throw GameDontExistsCallUp(game);
+    }
     return true;
 }
 bool CallUp::playerExists(int playerID) {
@@ -151,8 +153,8 @@ void CallUp::printIntoFile(ostream &os) const{
 
     //LIST OF GAME IDS
     for (auto i = 0; i < games.size(); i++){
-        if (i = games.size() - 1) os << games[i]->getID() << endl;
-        else os << games[i]->getID() << ", ";
+        if (i = games.size() - 1) os << games[i]->getId() << endl;
+        else os << games[i]->getId() << ", ";
     }
 
     os << "----------" << endl;

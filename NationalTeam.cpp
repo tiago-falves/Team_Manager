@@ -15,6 +15,42 @@ NationalTeam::NationalTeam() {
 
 }
 
+//Gets People File name
+const string &NationalTeam::getPeopleFile() const {
+    return peopleFile;
+}
+
+//Sets People file name
+void NationalTeam::setPeopleFile(const string &peopleFile) {
+    NationalTeam::peopleFile = peopleFile;
+}
+
+const string &NationalTeam::getGameFile() const {
+    return gameFile;
+}
+
+void NationalTeam::setGameFile(const string &gameFile) {
+    NationalTeam::gameFile = gameFile;
+}
+
+const string &NationalTeam::getCallUpFile() const {
+    return callUpFile;
+}
+
+void NationalTeam::setCallUpFile(const string &callUpFile) {
+    NationalTeam::callUpFile = callUpFile;
+}
+
+const string &NationalTeam::getStatisticsFile() const {
+    return statisticsFile;
+}
+
+void NationalTeam::setStatisticsFile(const string &statisticsFile) {
+    NationalTeam::statisticsFile = statisticsFile;
+}
+
+
+
 bool NationalTeam::readPeople(string fileName) {
     string text;
     string id;
@@ -90,9 +126,6 @@ bool NationalTeam::savePeople(string fileName) {
 }
 
 
-void NationalTeam::sortByID(vector<Person *> &people) {
-    sort(people.begin(),people.end());
-}
 
 bool NationalTeam::nameComparable(const Person* person1, const Person* person2){
     return (person1->getName() < person2->getName());
@@ -100,9 +133,7 @@ bool NationalTeam::nameComparable(const Person* person1, const Person* person2){
 bool NationalTeam::idComparable(const Person* person1, const int id){
     return (person1->getId() < id);
 }
-void NationalTeam::sortByName(vector<Person *> &people) {
-    sort(people.begin(),people.end(),nameComparable);
-}
+
 
 
 vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) { //Devo ordenar duas vezes?? ou mais vale usar a sequencial?
@@ -118,7 +149,7 @@ vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) 
 }
 Game* NationalTeam::getGameWithID(int id){
     for (auto i = games.begin(); i != games.end(); i++){
-        if ((*i)->getID() == id) return *i;
+        if ((*i)->getId() == id) return *i;
     }
     throw InexistentId(id);
 }
@@ -609,17 +640,6 @@ bool NationalTeam::readGameStatistics(string filename) {
     return true;
 }
 
-vector<Game *> NationalTeam::getAllGamesForPlayer(FootballPlayer *player) {
-    vector<Game*> gamesPlayed;
-
-    for(Game *g : this->games){
-        if(g->getID() == player->getId()){
-            gamesPlayed.push_back(g);
-        }
-    }
-
-    return gamesPlayed;
-}
 
 
 //Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
@@ -643,6 +663,15 @@ void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string ga
     }
 
     gameFile.close();
+
+    ofstream callupFile("../Files/" +callupFileName);
+
+    for (int i = 0; i < callUps.size(); i++){
+        callUps[i]->printIntoFile(callupFile);
+        if (i != callUps.size() - 1) callupFile << endl;
+    }
+
+    callupFile.close();
 
     exit(0);
 }

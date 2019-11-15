@@ -1,9 +1,9 @@
-#include "../NationalTeam.h"
+#include "Menu.h"
 #include "../Exceptions.h"
 
 
 //Main Menu with operations to all kinds of people
-void NationalTeam::runPeopleMenu() {
+void Menu::runPeopleMenu() {
 
     int option;
 
@@ -37,14 +37,14 @@ void NationalTeam::runPeopleMenu() {
 }
 
 //Asks for the id of a person and shows the person in the screen
-void NationalTeam::showSpecificPersonOption() {
+void Menu::showSpecificPersonOption() {
     int i = askForValidId(people);
     menuSeparator();
     showSpecificPerson(cout,i);
 }
 
 //asks for the name of a person and shows everyone with that name
-void NationalTeam::showPersonByName() {
+void Menu::showPersonByName() {
     string text;
     cout << "Please Insert Name of the Person: " << endl;
     getline(cin,text);
@@ -59,7 +59,7 @@ void NationalTeam::showPersonByName() {
 }
 
 //Prints to to out a person with a certain id
-void NationalTeam::showSpecificPerson(ostream &out,int i){
+void Menu::showSpecificPerson(ostream &out,int i){
 
     tableHeaderPlayer(out);
     out << people[searchByID(people,i)];
@@ -67,7 +67,7 @@ void NationalTeam::showSpecificPerson(ostream &out,int i){
 }
 
 //Shows everyone in the Database
-void NationalTeam::showEveryone(ostream &out) {
+void Menu::showEveryone(ostream &out) {
 
     tableHeaderPlayer(out);
 
@@ -78,7 +78,7 @@ void NationalTeam::showEveryone(ostream &out) {
 }
 
 //Header of the People table
-void NationalTeam::tableHeaderPlayer(ostream &out){
+void Menu::tableHeaderPlayer(ostream &out){
     out << endl << endl << endl;
     out << setw(117) << setfill('-') << "-" <<  endl;
     out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
@@ -95,12 +95,12 @@ void NationalTeam::tableHeaderPlayer(ostream &out){
 }
 
 //Footer of the people table
-void NationalTeam::tableFooterPlayer(ostream &out){
+void Menu::tableFooterPlayer(ostream &out){
     out << setw(117) << setfill('-') << "-" << endl;
 }
 
 //Asks for all the information about a person
-void NationalTeam::askPersonInformation(string &name, float &salary, Date &birthday){
+void Menu::askPersonInformation(string &name, float &salary, Date &birthday){
     string text;
 
     name = askForString("Name");
@@ -109,7 +109,7 @@ void NationalTeam::askPersonInformation(string &name, float &salary, Date &birth
 }
 
 //Asks the user to insert a string of type what
-string NationalTeam::askForString(const string &what){
+string Menu::askForString(const string &what){
     string name;
     cout << what << ": ";
     getline(cin,name);
@@ -123,7 +123,7 @@ string NationalTeam::askForString(const string &what){
  *****************************************/
 
 //Runs Player's menu with all specific players operations
-void NationalTeam::runPlayersMenu() {
+void Menu::runPlayersMenu() {
     int option;
 
     while(true) {
@@ -152,21 +152,21 @@ void NationalTeam::runPlayersMenu() {
 }
 
 //Asks the user for information of new player and adds it to the databas
-void NationalTeam::createPlayerOption(){
+void Menu::createPlayerOption(){
     FootballPlayer *player = new FootballPlayer();
     askPlayerInformation(player);
-    addPerson(people,player);
-    addPerson(players,player);
+    addtoVector(people,player);
+    addtoVector(players,player);
 
     menuSeparator();
     cout << "Player Added Successfully!";
 }
 
 //Asks for an id of a player and removes it from the database
-void NationalTeam::removePlayerOption(){
+void Menu::removePlayerOption(){
     int id = askForValidId(players);
-    removePerson(people,id);
-    removePerson(players,id);
+    removeById(people,id);
+    removeById(players,id);
     menuSeparator();
     cout << "Player Removed Successfully!" << endl;
 }
@@ -174,7 +174,7 @@ void NationalTeam::removePlayerOption(){
 
 //Asks the user wich player it wats to modify and the new information of the palyer
 //then it modifies it
-void NationalTeam::modifyPlayerOption(){
+void Menu::modifyPlayerOption(){
     int id = askForValidId(players);
     FootballPlayer *player = new FootballPlayer();
     cin.clear();
@@ -187,7 +187,7 @@ void NationalTeam::modifyPlayerOption(){
 }
 
 //Function to ask the user all the informations it wants to attribute to the player
-void NationalTeam::askPlayerInformation(FootballPlayer *player){
+void Menu::askPlayerInformation(FootballPlayer *player){
     string name,position,club,input;
     float salary,weight,height,pass_value;
     Date birthday = Date();
@@ -211,7 +211,7 @@ void NationalTeam::askPlayerInformation(FootballPlayer *player){
 
 
 //Runs Menu with all operations specifc to technicians
-void NationalTeam::runTechnicianMenu() {
+void Menu::runTechnicianMenu() {
     int option;
 
     while(true) {
@@ -237,27 +237,28 @@ void NationalTeam::runTechnicianMenu() {
 }
 
 //Aks the user for information about a technician and adds it to the database
-void NationalTeam::createTechOption(){
+void Menu::createTechOption(){
     Technician *technician = new Technician();
     askTechInformation(technician);
-    addPerson(people,technician);
-    addPerson(technicians,technician);
+    addtoVector(people,technician);
+    addtoVector(technicians,technician);
     menuSeparator();
     cout << "Technician Added Successfully!";
+    menuSeparator();
 }
 
 //Asks the id of the technician it wants to remove and removes it from the database
-void NationalTeam::removeTechOption(){
+void Menu::removeTechOption(){
     int id = askForValidId(technicians);
-    removePerson(people,id);
-    removePerson(technicians,id);
+    removeById(people,id);
+    removeById(technicians,id);
     menuSeparator();
     cout << "Technician Removed Successfully!";
 }
 
 //Asks the user for information about a Technician and the id of the technician it wants to change
 //Then it setts all the information of the technician
-void NationalTeam::modifyTechOption(){
+void Menu::modifyTechOption(){
     int id = askForValidId(technicians);
     Technician *technician = new Technician();
     cin.clear();
@@ -270,7 +271,7 @@ void NationalTeam::modifyTechOption(){
 }
 
 //Asks the user for all the nformation of a technician
-void NationalTeam::askTechInformation(Technician *technician){
+void Menu::askTechInformation(Technician *technician){
     string name,role;
     float salary;
     Date birthday = Date();
@@ -283,18 +284,9 @@ void NationalTeam::askTechInformation(Technician *technician){
     technician->setRole(askForString("Role"));
 }
 
-//Gets People File name
-const string &NationalTeam::getPeopleFile() const {
-    return peopleFile;
-}
-
-//Sets People file name
-void NationalTeam::setPeopleFile(const string &peopleFile) {
-    NationalTeam::peopleFile = peopleFile;
-}
 
 
-void NationalTeam::showPlayerGames(int id) {
+void Menu::showPlayerGames(int id) {
     tableHeaderAllGames(cout);
     for (auto i = games.begin(); i != games.end(); i++){
         for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++){
@@ -306,7 +298,7 @@ void NationalTeam::showPlayerGames(int id) {
     tableFooterAllGames(cout);
 }
 
-void NationalTeam::showPlayerCallUps(int id) {
+void Menu::showPlayerCallUps(int id) {
     headerCallUp(cout);
     for (auto i = callUps.begin(); i != callUps.end(); i++){
         for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++){
@@ -317,7 +309,7 @@ void NationalTeam::showPlayerCallUps(int id) {
     }
 }
 
-void NationalTeam::showGameStats(int id) {
+void Menu::showGameStats(int id) {
     int option, pos, pos_stat;
 
     while (true) {
@@ -358,7 +350,7 @@ void NationalTeam::showGameStats(int id) {
     }
 }
 
-void NationalTeam::showCallUpStats(int id) {
+void Menu::showCallUpStats(int id) {
     int option, pos, pos_stat;
     CallUp* call;
     int numberOfGoals = 0;
@@ -409,7 +401,7 @@ void NationalTeam::showCallUpStats(int id) {
     }
 }
 
-void NationalTeam::playerMenuTransition() {
+void Menu::playerMenuTransition() {
     int id, option;
 
     while (true) {

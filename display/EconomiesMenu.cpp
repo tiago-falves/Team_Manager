@@ -4,10 +4,10 @@
 
 
 #include <iomanip>
-#include "../NationalTeam.h"
+#include "Menu.h"
 
 
-void NationalTeam::runEconomiesMenu() {
+void Menu::runEconomiesMenu() {
     int option;
 
     while (true){
@@ -32,7 +32,7 @@ void NationalTeam::runEconomiesMenu() {
     }
 }
 
-void NationalTeam::playerMenu() {
+void Menu::playerMenu() {
     int option;
 
     while(true){
@@ -52,7 +52,7 @@ void NationalTeam::playerMenu() {
     }
 }
 
-void NationalTeam::playerMonthMenu(){
+void Menu::playerMonthMenu(){
 
     int pID, option, month, year;
     menuSeparator();
@@ -149,7 +149,7 @@ void NationalTeam::playerMonthMenu(){
 
 }
 
-void NationalTeam::playerTimeMenu(){
+void Menu::playerTimeMenu(){
 
     int playerID, option;
     string date1, date2;
@@ -264,7 +264,7 @@ void NationalTeam::playerTimeMenu(){
     }
 }
 
-void NationalTeam::teamMenu() {
+void Menu::teamMenu() {
     int option;
 
     while(true){
@@ -284,7 +284,7 @@ void NationalTeam::teamMenu() {
     }
 }
 
-void NationalTeam::teamTimeMenu(){
+void Menu::teamTimeMenu(){
     string date1, date2;
     Date firstDate;
     Date endDate;
@@ -349,7 +349,7 @@ void NationalTeam::teamTimeMenu(){
     }
 }
 
-void NationalTeam::teamMonthMenu(){
+void Menu::teamMonthMenu(){
     int option, month, year;
     menuSeparator();
 
@@ -397,7 +397,7 @@ void NationalTeam::teamMonthMenu(){
     }
 }
 
-void NationalTeam::staffMenu() {
+void Menu::staffMenu() {
     int option;
 
     while(true){
@@ -417,7 +417,7 @@ void NationalTeam::staffMenu() {
     }
 }
 
-void NationalTeam::staffMonthMenu() {
+void Menu::staffMonthMenu() {
     int option, month, year;
     menuSeparator();
 
@@ -465,7 +465,7 @@ void NationalTeam::staffMonthMenu() {
     }
 }
 
-void NationalTeam::staffTimeMenu() {
+void Menu::staffTimeMenu() {
     string date1, date2;
     Date firstDate;
     Date endDate;
