@@ -71,7 +71,7 @@ void CallUp::changeEndDate(Date end) {
 //ADD / REMOVE GAME
 void CallUp::addGame(Game *game) {
     if (gameExists(game)) throw GameExistsCallUp(game);
-    insert_sorted(games, game);
+    games.push_back(game);
 }
 void CallUp::removeGame(Game *game){
     if (!gameExists(game)) throw GameDontExistsCallUp(game);
