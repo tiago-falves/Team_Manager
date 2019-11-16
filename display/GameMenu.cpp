@@ -112,70 +112,109 @@ void Menu::showAllGames(ostream &out) {
 }
 
 void Menu::showSpecificGame(ostream &out) {
-    out << "Which game do you wish to see?\n";
-    int id = askForId();
+    while(true) {
+        out << "Which game do you wish to see?\n";
+        int id = askForId();
 
-    tableHeaderAllGames(out);
+        try{
+            searchGameByID(games, id);
+        }
+        catch(...){
+            cout << "There id no game with id (" << id << ")!" << endl;
+            menuSeparator();
+            break;
+        }
 
-    games[id - 1]->print(out);
+        tableHeaderAllGames(out);
 
-    tableFooterAllGames(out);
+        games[id - 1]->print(out);
 
-    tableHeaderStatistics(out);
+        tableFooterAllGames(out);
 
-    for(PlayerGameStatistics stat : games[id - 1]->getPlayerStatistics()){
-        stat.print(out);
+        tableHeaderStatistics(out);
+
+        for (PlayerGameStatistics stat : games[id - 1]->getPlayerStatistics()) {
+            stat.print(out);
+        }
+
+        tableFooterStatistics(out);
+
+        tableHeaderPlayer(out);
+
+        for (FootballPlayer *p : games[id - 1]->getNationalPlayers()) {
+            p->print(out);
+        }
+
+        tableFooterPlayer(out);
+
+        tableHeaderEnemyTeam(out);
+
+        for (string s : games[id - 1]->getEnemyPlayers()) {
+            out << left << setw(30) << setfill(' ') << s << "│\n";
+        }
+
+        tableFooterEnemyTeamReferee(out);
+
+        tableHeaderReferee(out);
+
+        for (string s : games[id - 1]->getReferees()) {
+            out << left << setw(30) << setfill(' ') << s << "│\n";
+        }
+
+        tableFooterEnemyTeamReferee(out);
+
+        break;
     }
-
-    tableFooterStatistics(out);
-
-    tableHeaderPlayer(out);
-
-    for(FootballPlayer * p : games[id -1]->getNationalPlayers()){
-        p->print(out);
-    }
-
-    tableFooterPlayer(out);
-
-    tableHeaderEnemyTeam(out);
-
-    for(string s : games[id - 1]->getEnemyPlayers()){
-        out <<  left << setw(30) << setfill(' ') << s  << "│\n";
-    }
-
-    tableFooterEnemyTeamReferee(out);
-
-    tableHeaderReferee(out);
-
-    for(string s : games[id - 1]->getReferees()){
-        out <<  left << setw(30) << setfill(' ') << s  << "│\n";
-    }
-
-    tableFooterEnemyTeamReferee(out);
-
 }
 
 void Menu::showSpecificStats(ostream &out) {
-    out << "Which game do you wish to see?\n";
-    int gameID = askForId();
-    out << "Which player do you wish to see?\n";
-    int playerID = askForId();
+    int game_pos;
+    while(true) {
+        out << "Which game do you wish to see?\n";
+        int gameID = askForId();
 
-    tableHeaderAllGames(out);
-
-    games[gameID - 1]->print(out);
-
-    tableFooterAllGames(out);
-
-    tableHeaderStatistics(out);
-
-    for(PlayerGameStatistics stat : games[gameID - 1]->getPlayerStatistics()) {
-        if (stat.getPlayerID() == playerID) {
-            stat.print(out);
+        try {
+            game_pos = searchGameByID(games, gameID);
+        }
+        catch (...) {
+            cout << "There id no game with id (" << gameID << ")!" << endl;
+            menuSeparator();
             break;
         }
+
+        out << "Which player do you wish to see?\n";
+        int playerID = askForId();
+
+        try {
+            bool error = true;
+            for (auto i = 0; i < games[game_pos]->getNationalPlayers().size(); i++){
+                if (playerID == games[game_pos]->getNationalPlayers()[i]->getId()) error = false;
+            }
+            if (error) throw exception();
+        }
+        catch (...) {
+            cout << "There id no player with id (" << playerID << ") in game with id (" << gameID << ")!" << endl;
+            menuSeparator();
+            break;
+        }
+
+        tableHeaderAllGames(out);
+
+        games[gameID - 1]->print(out);
+
+        tableFooterAllGames(out);
+
+        tableHeaderStatistics(out);
+
+        for (PlayerGameStatistics stat : games[gameID - 1]->getPlayerStatistics()) {
+            if (stat.getPlayerID() == playerID) {
+                stat.print(out);
+                break;
+            }
+        }
+        tableFooterStatistics(out);
+        break;
     }
-    tableFooterStatistics(out);
 }
 
 int Menu::createGameOption(ostream &out) {

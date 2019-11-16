@@ -415,33 +415,42 @@ void Menu::showCallUpStats(int id) {
             break;
         }
 
-        try{
+        try {
             call = getCallUpWithID(option);
         }
-        catch (InexistentId){
+        catch (...) {
             cout << "There is no call up with th given ID!" << endl;
             menuSeparator();
             break;
         }
 
-        for (auto i = 0; i < (call->getGames()).size(); i++){
-            pos_stat = searchStatsByID(call->getGames()[i]->getPlayerStatistics(), id);
+        try {
+            for (auto i = 0; i < (call->getGames()).size(); i++) {
+                pos_stat = searchStatsByID(call->getGames()[i]->getPlayerStatistics(), id);
 
-            numberOfGoals += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfGoals();
-            minutesPlayed += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getMinutesPlayed();
-            kilometers += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getKilometers();
-            numberOfPasses += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfPasses();
-            numberOfYellowCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfYellowCards();
-            numberOfRedCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfRedCards();
+                numberOfGoals += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfGoals();
+                minutesPlayed += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getMinutesPlayed();
+                kilometers += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getKilometers();
+                numberOfPasses += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfPasses();
+                numberOfYellowCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfYellowCards();
+                numberOfRedCards += (call->getGames()[i]->getPlayerStatistics()[pos_stat]).getNumberOfRedCards();
+            }
+
+            tableHeaderStatistics(cout);
+            PlayerGameStatistics p(id, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards,
+                                   numberOfRedCards);
+            p.print(cout);
+            tableFooterStatistics(cout);
+            menuSeparator();
+            break;
         }
-
-        tableHeaderStatistics(cout);
-        PlayerGameStatistics p(id, numberOfGoals, minutesPlayed, kilometers, numberOfPasses, numberOfYellowCards, numberOfRedCards);
-        p.print(cout);
-        tableFooterStatistics(cout);
-        menuSeparator();
-        break;
+        catch(...){
+            cout << endl << endl << "Player does not exist in call up!" << endl;
+            menuSeparator();
+            break;
+        }
     }
+
 }
 
 void Menu::playerMenuTransition() {
