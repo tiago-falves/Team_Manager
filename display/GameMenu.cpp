@@ -48,18 +48,18 @@ void Menu::runGameMenu() {
 void Menu::tableHeaderAllGames(ostream &out) {
     out << endl << endl << endl;
     out << "Games:\n";
-    out << setw(83) << setfill('-') << "-" <<  endl;
+    out << setw(104) << setfill('-') << "-" <<  endl;
     out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
     out <<  left << setw(20) << setfill(' ') << "City"  << "│ ";
-    out <<  left << setw(11) << setfill(' ') <<  "Country"<< "│ ";
-    out <<  left << setw(18)  << setfill(' ') << "Stadium" << "│ ";
+    out <<  left << setw(20) << setfill(' ') <<  "Country"<< "│ ";
+    out <<  left << setw(30)  << setfill(' ') << "Stadium" << "│ ";
     out <<  left << setw(20)  << setfill(' ') << "Game Title" << "│ ";
-    out << endl << setw(82) << setfill('-') << "-" << "│" <<  endl;
+    out << endl << setw(103) << setfill('-') << "-" << "│" <<  endl;
 
 }
 
 void Menu::tableFooterAllGames(ostream &out) {
-    out << setw(83) << setfill('-') << "-" << endl;
+    out << setw(104) << setfill('-') << "-" << endl;
 }
 
 void Menu::tableHeaderStatistics(ostream &out) {
@@ -79,17 +79,17 @@ void Menu::tableHeaderStatistics(ostream &out) {
 void Menu::tableHeaderEnemyTeam(ostream &out) {
     out << endl << endl << endl;
     out << "Enemy Team:\n";
-    out << setw(15) << setfill('-') << "-" <<  endl;
-    out <<  left << setw(15) << setfill(' ') << "Name"  << "│ ";
-    out <<  endl << setw(15) << setfill('-') << "-" << "│" <<  endl;
+    out << setw(30) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(30) << setfill(' ') << "Name"  << "│ ";
+    out <<  endl << setw(30) << setfill('-') << "-" << "│" <<  endl;
 }
 
 void Menu::tableHeaderReferee(ostream &out) {
     out << endl << endl << endl;
     out << "Referees:\n";
-    out << setw(15) << setfill('-') << "-" <<  endl;
-    out <<  left << setw(15) << setfill(' ') << "Name"  << "│ ";
-    out <<  endl << setw(15) << setfill('-') << "-" << "│" <<  endl;
+    out << setw(30) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(30) << setfill(' ') << "Name"  << "│ ";
+    out <<  endl << setw(30) << setfill('-') << "-" << "│" <<  endl;
 }
 
 void Menu::tableFooterStatistics(ostream &out){
@@ -97,7 +97,7 @@ void Menu::tableFooterStatistics(ostream &out){
 }
 
 void Menu::tableFooterEnemyTeamReferee(ostream &out) {
-    out << setw(15) << setfill('-') << "-" << endl;
+    out << setw(30) << setfill('-') << "-" << endl;
 }
 
 void Menu::showAllGames(ostream &out) {
@@ -140,7 +140,7 @@ void Menu::showSpecificGame(ostream &out) {
     tableHeaderEnemyTeam(out);
 
     for(string s : games[id - 1]->getEnemyPlayers()){
-        out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+        out <<  left << setw(30) << setfill(' ') << s  << "│\n";
     }
 
     tableFooterEnemyTeamReferee(out);
@@ -148,7 +148,7 @@ void Menu::showSpecificGame(ostream &out) {
     tableHeaderReferee(out);
 
     for(string s : games[id - 1]->getReferees()){
-        out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+        out <<  left << setw(30) << setfill(' ') << s  << "│\n";
     }
 
     tableFooterEnemyTeamReferee(out);
@@ -427,7 +427,7 @@ void Menu::modifyGameOption(ostream &out, int option) {
         tableHeaderEnemyTeam(out);
 
         for(string s : games[index]->getEnemyPlayers()){
-            out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+            out <<  left << setw(30) << setfill(' ') << s  << "│\n";
         }
 
         tableFooterEnemyTeamReferee(out);
@@ -439,7 +439,7 @@ void Menu::modifyGameOption(ostream &out, int option) {
         tableHeaderReferee(out);
 
         for(string s : games[index]->getReferees()){
-            out <<  left << setw(15) << setfill(' ') << s  << "│\n";
+            out <<  left << setw(30) << setfill(' ') << s  << "│\n";
         }
 
         tableFooterEnemyTeamReferee(out);

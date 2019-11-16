@@ -16,7 +16,7 @@ public:
      */
     void runMenu();
 
-   
+
 private:
     //Menu
 
