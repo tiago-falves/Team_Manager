@@ -37,32 +37,53 @@ public:
     NationalTeam();
 
     /**
-     * Gets the name of the people File
-     * @return  const string representig people file
+     * Returns the name of the people File
+     * @return  const string representing people file
      */
     const string &getPeopleFile() const;
 
     /**
-     * Sets the name of the people's file
+     * Changes the name of the people's file
      * @param peopleFile - Name of the people file
      */
     void setPeopleFile(const string &peopleFile);
 
+    /**
+     * Returns the name of the call up file
+     * @return - const string representing call up file
+     */
     const string &getCallUpFile() const;
 
+    /**
+     * Changes the name of the call up file name
+     * @param callUpFile - New name of Call Up file
+     */
     void setCallUpFile(const string &callUpFile);
 
+    /**
+     * Returns the name of the game file
+     * @return - const string representing game file
+     */
     const string &getGameFile() const;
 
+    /**
+     * Changes the name of the game file name
+     * @param callUpFile - New name of Game file
+     */
     void setGameFile(const string &gameFile);
 
+    /**
+     * Returns the name of the player statistics file
+     * @return - const string representing PlayerGameStatistics file
+     */
     const string &getStatisticsFile() const;
 
+    /**
+     * Changes the name of the PlayerGameStatistics file name
+     * @param callUpFile - New name of PlayerGameStatistics file
+     */
     void setStatisticsFile(const string &statisticsFile);
 
-    vector<Game*> getGames(){
-        return games;
-    }
 
 
     /****************************************************
@@ -208,10 +229,21 @@ public:
     /****************************************************
     ********************GAMES FUNCTIONS******************
     *****************************************************/
+
+    /**
+     * Reads games from file
+     * @param file - file name from which games will be read
+     * @return - true if read was successful, false otherwise
+     */
     bool readGames(string filename);
+
+    /**
+     * Reads PlayerGameStatistics from file
+     * @param file - file name from which PlayerGameStatistics will be read
+     * @return - true if read was successful, false otherwise
+     */
     bool readGameStatistics(string filename);
-    void saveGames(string filename);
-    void printAllGameInfo(ostream& out, Game * game);
+
 
 
     template <class T>
@@ -226,7 +258,12 @@ public:
         return true;
     }
 
-
+    /**
+     * Function used to compare if a id of a game is equal to id
+     * @param game Game we want to compare
+     * @param id to compare
+     * @return True if the id of the game is equal to the second argument
+     */
     static bool idGameComparable(const Game* game, const int id){
         return (game->getId() < id);
     }
@@ -237,6 +274,12 @@ public:
         else throw InexistentId(id);
     }
 
+    /**
+     * Function used to compare if a id of a PlayerGameStatistics is equal to id
+     * @param stats PlayerGameStatistics we want to compare
+     * @param id to compare
+     * @return True if the id of the PlayerGameStatistics is equal to the second argument
+     */
     static bool idStatsComparable(const PlayerGameStatistics stats, const int id){
         return (stats.getPlayerID() < id);
     }
@@ -318,16 +361,67 @@ public:
      */
     void read(string peopleFile,string callUpFile,string gameFile,string statisticsFile);
 
+    /****************************************************
+    ******************HEADERS FUNCTIONS******************
+    *****************************************************/
 
+    /**
+     * Prints the header of the table showing the players
+     * @param out - Tells where to print the header
+     */
     void tableHeaderPlayer(ostream &out);
+
+    /**
+     * Prints the header of the table showing the games
+     * @param out - Tells where to print the header
+     */
     void tableHeaderAllGames(ostream &out);
+
+    /**
+     * Prints the header of the table showing the PlayerGameStatistics
+     * @param out - Tells where to print the header
+     */
     void tableHeaderStatistics(ostream &out);
+
+    /**
+     * Prints the header of the table showing the Enemy Team Players
+     * @param out - Tells where to print the header
+     */
     void tableHeaderEnemyTeam(ostream &out);
+
+    /**
+     * Prints the header of the table showing the Referees
+     * @param out - Tells where to print the header
+     */
     void tableHeaderReferee(ostream &out);
 
+    /****************************************************
+    ******************FOOTERS FUNCTIONS******************
+    *****************************************************/
+
+    /**
+     * Prints the footer of the table showing the players
+     * @param out - Tells where to print the footer
+     */
     void tableFooterPlayer(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the games
+     * @param out - Tells where to print the footer
+     */
     void tableFooterAllGames(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the PlayerGameStatistics
+     * @param out - Tells where to print the footer
+     */
     void tableFooterStatistics(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the Enemy Team players
+     * or the Referees
+     * @param out - Tells where to print the footer
+     */
     void tableFooterEnemyTeamReferee(ostream &out);
 
     /****************************************************
@@ -377,9 +471,20 @@ public:
 
 
 
+    /**
+     * Saves all the information into the specific files and exits the program
+     * @param fileName - name of the file containing the people's information
+     * @param callUpFileName - name of the file containing the call up's information
+     * @param gamesFileName - name of the file containing the game's information
+     * @param statisticsFileName - name of the file containing the PlayerGameStatistics information
+     */
+    void saveAndExit(string fileName,string callUpFileName,string gamesFileName, string statisticsFileName);
 
-    void saveAndExit(string fileName,string callUpFileName,string gamesFileName, string etcFileName);
-
+    /**
+     * Reads National Team from file
+     * @param file - file name from which the National Team will be read
+     * @return - true if read was successful, false otherwise
+     */
     bool readNationalTeam(string fileName);
 
 
