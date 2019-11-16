@@ -127,7 +127,7 @@ Game *NationalTeam::getGameWithID(int id) {
 
 CallUp *NationalTeam::getCallUpWithID(int id) {
     for (auto i = callUps.begin(); i != callUps.end(); i++) {
-        if ((*i)->getId() == id) return *i;
+        if ((*i)->getId() == id) {return *i;}
     }
     throw InexistentId(id);
 }
@@ -232,6 +232,7 @@ bool NationalTeam::readCallUp(string file) {
             counter = -1;
             callUps.push_back(new CallUp(callUpId, dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
             callUpGames = {};
+            playerStatistics = {};
         }
         counter++;
     }

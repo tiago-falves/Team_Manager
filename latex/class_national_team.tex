@@ -3,22 +3,6 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const string \& \mbox{\hyperlink{class_national_team_a7873a579aa077a24836d8cf80fcc7949}{get\+People\+File}} () const
-\item 
-void \mbox{\hyperlink{class_national_team_a8046d7f993e023a8c074d9f45f83391f}{set\+People\+File}} (const string \&\mbox{\hyperlink{class_national_team_aacf01ddc0b318d6f838ebfef02dd97eb}{people\+File}})
-\item 
-const string \& \mbox{\hyperlink{class_national_team_a8aeee75236d87fdeacc07223f9a53fb1}{get\+Call\+Up\+File}} () const
-\item 
-void \mbox{\hyperlink{class_national_team_a915a789920f825f0e8dcef16950a9083}{set\+Call\+Up\+File}} (const string \&\mbox{\hyperlink{class_national_team_aa1bba1377853fb5060b3b11ec9b8ec95}{call\+Up\+File}})
-\item 
-const string \& \mbox{\hyperlink{class_national_team_a6b8e93965dcf9044e04d20793c67dafd}{get\+Game\+File}} () const
-\item 
-void \mbox{\hyperlink{class_national_team_ae4c35578ac976cf0a13d37c239c35519}{set\+Game\+File}} (const string \&\mbox{\hyperlink{class_national_team_a598d659b376e430f1d8f54cbae1f96e6}{game\+File}})
-\item 
-const string \& \mbox{\hyperlink{class_national_team_a84eec9c7285cebf2b128ff97950747cb}{get\+Statistics\+File}} () const
-\item 
-void \mbox{\hyperlink{class_national_team_a7f1e50ded0f6d6e439ac2108b76cc541}{set\+Statistics\+File}} (const string \&\mbox{\hyperlink{class_national_team_ac701106c6728a8d7fc10640c9868d772}{statistics\+File}})
-\item 
 bool \mbox{\hyperlink{class_national_team_a36b5a132fdf89a9e70e7ba46f1c65848}{read\+People}} (string file\+Name)
 \begin{DoxyCompactList}\small\item\em Given the name of the file, reads all the people that are in the file it contains both Football Players and Technicians. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_national_team_ab246b0c4c865dfb18c68d50ab9cf4184}{save\+People}} (string filename)
@@ -27,6 +11,11 @@ vector$<$ Person $\ast$ $>$ \mbox{\hyperlink{class_national_team_a11805b787d886d
 \item 
 {\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{class_national_team_a7aa7c72f11ba8b00ad3e3202193ddaa5}{search\+By\+ID}} (vector$<$ T $\ast$ $>$ \&object, int id)
 \begin{DoxyCompactList}\small\item\em Given a Object$\ast$ vector and an id, Returns the Object with that same id This sort uses Binary search since the ids are always ordered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_national_team_a295ee77fe455e7ce08319e26b61a2050}{sort\+By\+Name}} (vector$<$ Person $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}})
+\begin{DoxyCompactList}\small\item\em Given a vector sorts all people by their name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_national_team_ab910240934bb357f04ba46cd4a1bc726}\label{class_national_team_ab910240934bb357f04ba46cd4a1bc726}} 
+void {\bfseries sort\+By\+ID} (vector$<$ Person $\ast$ $>$ \&\mbox{\hyperlink{class_national_team_a24bccaf3f87264ea8b56630b6fe11039}{people}})
+\item 
 {\footnotesize template$<$class T , class R $>$ }\\bool \mbox{\hyperlink{class_national_team_ae900564d3b6f9683a5ca6e1f673e08c1}{addto\+Vector}} (vector$<$ T $>$ \&objects, R object)
 \item 
 {\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{class_national_team_adbc9463b8c8957bc916e1686b66244ee}{remove\+By\+Id}} (vector$<$ T $>$ \&objects, int id)
@@ -72,13 +61,17 @@ bool \mbox{\hyperlink{class_national_team_acc617266b72cc65e9a640efac7432d99}{sea
 void \mbox{\hyperlink{class_national_team_ae48a2b2f62930086a6040aefde48b46a}{save\+And\+Exit}} (string file\+Name, string call\+Up\+File\+Name, string games\+File\+Name, string statistics\+File\+Name)
 \item 
 bool \mbox{\hyperlink{class_national_team_ac9280d43bef722ab5b46e739edfbcb67}{read\+National\+Team}} (string file\+Name)
+\item 
+int \mbox{\hyperlink{class_national_team_a35a57a94c94265a37e26f6c553c67706}{search\+Call\+Stats\+By\+ID}} (vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$ stats, int id)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{class_national_team_a266f4d5b829629990a25c476a4bc13ef}{name\+Comparable}} (const Person $\ast$person1, const Person $\ast$person2)
-\item 
 static bool \mbox{\hyperlink{class_national_team_a4ef178ac55ce7c00fb754297bef5c69b}{id\+Comparable}} (const Person $\ast$person1, const int id)
+\item 
+static bool \mbox{\hyperlink{class_national_team_a6a01bb38937a8a03ad2ea888e2504a09}{id\+Comparable\+People}} (const Person $\ast$person1, const Person $\ast$person2)
+\item 
+static bool \mbox{\hyperlink{class_national_team_a266f4d5b829629990a25c476a4bc13ef}{name\+Comparable}} (const Person $\ast$person1, const Person $\ast$person2)
 \item 
 static bool \mbox{\hyperlink{class_national_team_a968c8a629aebc48a8bd4c54048639b4e}{id\+Game\+Comparable}} (const \mbox{\hyperlink{class_game}{Game}} $\ast$game, const int id)
 \item 
@@ -124,9 +117,9 @@ Given a person and a vector of people, it adds that person to the end of the vec
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em people} & vector we want to add the object \\
+{\em objects} & vector we want to add the object \\
 \hline
-{\em person} & Object we want to add \\
+{\em object} & Object we want to add \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -143,15 +136,6 @@ Deletes call up
 {\em id} & -\/ id of the call up that will be deleted \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_national_team_a8aeee75236d87fdeacc07223f9a53fb1}\label{class_national_team_a8aeee75236d87fdeacc07223f9a53fb1}} 
-\index{NationalTeam@{NationalTeam}!getCallUpFile@{getCallUpFile}}
-\index{getCallUpFile@{getCallUpFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{getCallUpFile()}{getCallUpFile()}}
-{\footnotesize\ttfamily const string \& National\+Team\+::get\+Call\+Up\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-Returns the name of the call up file \begin{DoxyReturn}{Returns}
--\/ const string representing call up file 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_national_team_a2ded0353cd51a5398d5a19b8e11002e6}\label{class_national_team_a2ded0353cd51a5398d5a19b8e11002e6}} 
 \index{NationalTeam@{NationalTeam}!getCallUpWithID@{getCallUpWithID}}
 \index{getCallUpWithID@{getCallUpWithID}!NationalTeam@{NationalTeam}}
@@ -168,15 +152,6 @@ call up address
 
 call up address 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_national_team_a6b8e93965dcf9044e04d20793c67dafd}\label{class_national_team_a6b8e93965dcf9044e04d20793c67dafd}} 
-\index{NationalTeam@{NationalTeam}!getGameFile@{getGameFile}}
-\index{getGameFile@{getGameFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{getGameFile()}{getGameFile()}}
-{\footnotesize\ttfamily const string \& National\+Team\+::get\+Game\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-Returns the name of the game file \begin{DoxyReturn}{Returns}
--\/ const string representing game file 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_national_team_a37737c4060924836993a699c324b4f2f}\label{class_national_team_a37737c4060924836993a699c324b4f2f}} 
 \index{NationalTeam@{NationalTeam}!getGameWithID@{getGameWithID}}
 \index{getGameWithID@{getGameWithID}!NationalTeam@{NationalTeam}}
@@ -191,24 +166,6 @@ Gets game with id from data base
 \begin{DoxyReturn}{Returns}
 game address 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_national_team_a7873a579aa077a24836d8cf80fcc7949}\label{class_national_team_a7873a579aa077a24836d8cf80fcc7949}} 
-\index{NationalTeam@{NationalTeam}!getPeopleFile@{getPeopleFile}}
-\index{getPeopleFile@{getPeopleFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{getPeopleFile()}{getPeopleFile()}}
-{\footnotesize\ttfamily const string \& National\+Team\+::get\+People\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-Returns the name of the people File \begin{DoxyReturn}{Returns}
-const string representing people file 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_national_team_a84eec9c7285cebf2b128ff97950747cb}\label{class_national_team_a84eec9c7285cebf2b128ff97950747cb}} 
-\index{NationalTeam@{NationalTeam}!getStatisticsFile@{getStatisticsFile}}
-\index{getStatisticsFile@{getStatisticsFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{getStatisticsFile()}{getStatisticsFile()}}
-{\footnotesize\ttfamily const string \& National\+Team\+::get\+Statistics\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-Returns the name of the player statistics file \begin{DoxyReturn}{Returns}
--\/ const string representing \mbox{\hyperlink{class_player_game_statistics}{Player\+Game\+Statistics}} file 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_national_team_a4ef178ac55ce7c00fb754297bef5c69b}\label{class_national_team_a4ef178ac55ce7c00fb754297bef5c69b}} 
 \index{NationalTeam@{NationalTeam}!idComparable@{idComparable}}
 \index{idComparable@{idComparable}!NationalTeam@{NationalTeam}}
@@ -220,6 +177,22 @@ Function used to compare if a id of a person is equal to id
 {\em person1} & Person we want to compare \\
 \hline
 {\em id} & to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the id of the person is equal to the second argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_national_team_a6a01bb38937a8a03ad2ea888e2504a09}\label{class_national_team_a6a01bb38937a8a03ad2ea888e2504a09}} 
+\index{NationalTeam@{NationalTeam}!idComparablePeople@{idComparablePeople}}
+\index{idComparablePeople@{idComparablePeople}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{idComparablePeople()}{idComparablePeople()}}
+{\footnotesize\ttfamily bool National\+Team\+::id\+Comparable\+People (\begin{DoxyParamCaption}\item[{const Person $\ast$}]{person1,  }\item[{const Person $\ast$}]{person2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function used to compare if a id of a person is less than id of second person 
+\begin{DoxyParams}{Parameters}
+{\em person1} & fisrt person we want to compare \\
+\hline
+{\em second} & person we want to compare \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -289,15 +262,15 @@ Given a vector of people, and two people, it sets all the atribbutes from the pe
 \doxysubsubsection{\texorpdfstring{nameComparable()}{nameComparable()}}
 {\footnotesize\ttfamily bool National\+Team\+::name\+Comparable (\begin{DoxyParamCaption}\item[{const Person $\ast$}]{person1,  }\item[{const Person $\ast$}]{person2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Function used to campare People by their name 
+Function that returns true if person1 name is smaller than person\textquotesingle{}s 2 name 
 \begin{DoxyParams}{Parameters}
-{\em person1} & Person to compare \\
+{\em person1} & First person to compare \\
 \hline
-{\em person2} & Person to compare \\
+{\em person2} & second person to compare \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the name of the first Person is smaller than from the second one 
+True if person1-\/$>$name $<$ person2-\/$>$name 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_national_team_aa3e7040d318207d6b38b731a115b2d3c}\label{class_national_team_aa3e7040d318207d6b38b731a115b2d3c}} 
 \index{NationalTeam@{NationalTeam}!playerCostCalculator@{playerCostCalculator}}
@@ -351,9 +324,9 @@ Given a person and a vector of people, it returns the position of the person in 
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em people} & vector where we want to search \\
+{\em objects} & vector where we want to search \\
 \hline
-{\em person} & Person we want to search \\
+{\em object} & Person we want to search \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -464,7 +437,7 @@ Given a id and a vector of people, it removes the person with the id of the vect
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em people} & vector we want to remove the object \\
+{\em objects} & vector we want to remove the object \\
 \hline
 {\em id} & id of the person we want to remove \\
 \hline
@@ -547,7 +520,7 @@ Given a Object$\ast$ vector and an id, Returns the Object with that same id This
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em people} & vector we want to search \\
+{\em objects} & vector we want to search \\
 \hline
 {\em id} & -\/ Id we want to search for \\
 \hline
@@ -570,6 +543,22 @@ Given a Person$\ast$ vector and a name, returns all the people with that same na
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 vector with all the people with that name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_national_team_a35a57a94c94265a37e26f6c553c67706}\label{class_national_team_a35a57a94c94265a37e26f6c553c67706}} 
+\index{NationalTeam@{NationalTeam}!searchCallStatsByID@{searchCallStatsByID}}
+\index{searchCallStatsByID@{searchCallStatsByID}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{searchCallStatsByID()}{searchCallStatsByID()}}
+{\footnotesize\ttfamily int National\+Team\+::search\+Call\+Stats\+By\+ID (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_call_up_player_statistics}{Call\+Up\+Player\+Statistics}} $\ast$ $>$}]{stats,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return position of player with id in vector of his statistics in a call up 
+\begin{DoxyParams}{Parameters}
+{\em stats} & \\
+\hline
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_national_team_acc617266b72cc65e9a640efac7432d99}\label{class_national_team_acc617266b72cc65e9a640efac7432d99}} 
 \index{NationalTeam@{NationalTeam}!searchCallUpByID@{searchCallUpByID}}
@@ -625,48 +614,19 @@ Given a \mbox{\hyperlink{class_player_game_statistics}{Player\+Game\+Statistics}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_national_team_a915a789920f825f0e8dcef16950a9083}\label{class_national_team_a915a789920f825f0e8dcef16950a9083}} 
-\index{NationalTeam@{NationalTeam}!setCallUpFile@{setCallUpFile}}
-\index{setCallUpFile@{setCallUpFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{setCallUpFile()}{setCallUpFile()}}
-{\footnotesize\ttfamily void National\+Team\+::set\+Call\+Up\+File (\begin{DoxyParamCaption}\item[{const string \&}]{call\+Up\+File }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_national_team_a295ee77fe455e7ce08319e26b61a2050}\label{class_national_team_a295ee77fe455e7ce08319e26b61a2050}} 
+\index{NationalTeam@{NationalTeam}!sortByName@{sortByName}}
+\index{sortByName@{sortByName}!NationalTeam@{NationalTeam}}
+\doxysubsubsection{\texorpdfstring{sortByName()}{sortByName()}}
+{\footnotesize\ttfamily void National\+Team\+::sort\+By\+Name (\begin{DoxyParamCaption}\item[{vector$<$ Person $\ast$ $>$ \&}]{people }\end{DoxyParamCaption})}
 
-Changes the name of the call up file name 
-\begin{DoxyParams}{Parameters}
-{\em call\+Up\+File} & -\/ New name of Call Up file \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_national_team_ae4c35578ac976cf0a13d37c239c35519}\label{class_national_team_ae4c35578ac976cf0a13d37c239c35519}} 
-\index{NationalTeam@{NationalTeam}!setGameFile@{setGameFile}}
-\index{setGameFile@{setGameFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{setGameFile()}{setGameFile()}}
-{\footnotesize\ttfamily void National\+Team\+::set\+Game\+File (\begin{DoxyParamCaption}\item[{const string \&}]{game\+File }\end{DoxyParamCaption})}
 
-Changes the name of the game file name 
-\begin{DoxyParams}{Parameters}
-{\em call\+Up\+File} & -\/ New name of \mbox{\hyperlink{class_game}{Game}} file \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_national_team_a8046d7f993e023a8c074d9f45f83391f}\label{class_national_team_a8046d7f993e023a8c074d9f45f83391f}} 
-\index{NationalTeam@{NationalTeam}!setPeopleFile@{setPeopleFile}}
-\index{setPeopleFile@{setPeopleFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{setPeopleFile()}{setPeopleFile()}}
-{\footnotesize\ttfamily void National\+Team\+::set\+People\+File (\begin{DoxyParamCaption}\item[{const string \&}]{people\+File }\end{DoxyParamCaption})}
 
-Changes the name of the people\textquotesingle{}s file 
-\begin{DoxyParams}{Parameters}
-{\em people\+File} & -\/ Name of the people file \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_national_team_a7f1e50ded0f6d6e439ac2108b76cc541}\label{class_national_team_a7f1e50ded0f6d6e439ac2108b76cc541}} 
-\index{NationalTeam@{NationalTeam}!setStatisticsFile@{setStatisticsFile}}
-\index{setStatisticsFile@{setStatisticsFile}!NationalTeam@{NationalTeam}}
-\doxysubsubsection{\texorpdfstring{setStatisticsFile()}{setStatisticsFile()}}
-{\footnotesize\ttfamily void National\+Team\+::set\+Statistics\+File (\begin{DoxyParamCaption}\item[{const string \&}]{statistics\+File }\end{DoxyParamCaption})}
+Given a vector sorts all people by their name. 
 
-Changes the name of the \mbox{\hyperlink{class_player_game_statistics}{Player\+Game\+Statistics}} file name 
+
 \begin{DoxyParams}{Parameters}
-{\em call\+Up\+File} & -\/ New name of \mbox{\hyperlink{class_player_game_statistics}{Player\+Game\+Statistics}} file \\
+{\em people} & vector to order \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_national_team_a20e6ea69f2fdea00ee71b6142f29a520}\label{class_national_team_a20e6ea69f2fdea00ee71b6142f29a520}} 
