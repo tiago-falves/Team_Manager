@@ -53,7 +53,7 @@ void Menu::tableHeaderAllGames(ostream &out) {
     out <<  left << setw(20) << setfill(' ') << "City"  << "│ ";
     out <<  left << setw(20) << setfill(' ') <<  "Country"<< "│ ";
     out <<  left << setw(30)  << setfill(' ') << "Stadium" << "│ ";
-    out <<  left << setw(20)  << setfill(' ') << "Game Title" << "│ ";
+    out <<  left << setw(20 )  << setfill(' ') << "Game Title" << "│ ";
     out << endl << setw(103) << setfill('-') << "-" << "│" <<  endl;
 
 }
