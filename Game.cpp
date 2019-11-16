@@ -169,9 +169,9 @@ void Game::printIntoFile(ostream &os) const{
 void Game::print(ostream &out){
     out <<  left << setw(4)  << setfill(' ') << this->id << "│  ";
     out <<  left << setw(20) << setfill(' ') << this->city  << "│ ";
-    out <<  left << setw(20) << setfill(' ') <<  this->country << " │ ";
-    out <<  left << setw(30) << setfill(' ') << this->stadium << " │ "  ;
-    out << left << setw(20) << setfill(' ') << this->game_title << " │ " ;
+    out <<  left << setw(20) << setfill(' ') <<  this->country << "│ ";
+    out <<  left << setw(30) << setfill(' ') << this->stadium << "│ "  ;
+    out << left << setw(20) << setfill(' ') << this->game_title << "│ " ;
     out << endl;
 }
 
