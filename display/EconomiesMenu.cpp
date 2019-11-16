@@ -60,34 +60,7 @@ void Menu::playerMonthMenu(){
     while (true){
 
         //GET ID OF PLAYER
-        cout << "Insert the ID of the player information will be taken from: ";
-        cin >> pID;
-
-        if (cin.fail()){
-            cout << "Player ID is an integer number!" << endl;
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-
-        try{
-            searchByID(players, pID);
-        }
-        catch(InexistentId){
-            cout << "There is no player with the given ID!";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-
-        if (cin.fail()){
-            cout << "Invalid operation, ID is an integer number!" << endl;
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-        cin.clear();
-        cin.ignore(10000, '\n');
+        askForValidId(players);
 
         //GET MONTH NUMBER
         cout << "Insert the number of the month: ";
@@ -160,34 +133,7 @@ void Menu::playerTimeMenu(){
     while (true){
 
         //GET ID OF PLAYER
-        cout << "Insert the ID of the player information will be taken from: ";
-        cin >> playerID;
-
-        if (cin.fail()){
-            cout << "Player ID is an integer number!" << endl;
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-
-        try{
-            searchByID(players, playerID);
-        }
-        catch(InexistentId){
-            cout << "There is no player with the given ID!";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-
-        if (cin.fail()){
-            cout << "Invalid operation, ID is an integer number!" << endl;
-            cin.clear();
-            cin.ignore(10000, '\n');
-            break;
-        }
-        cin.clear();
-        cin.ignore(10000, '\n');
+        askForValidId(players);
 
         //GET FIRST DATE
         cout << "Insert the first date: ";
