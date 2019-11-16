@@ -507,7 +507,7 @@ bool NationalTeam::readGames(string filename) {
             for (int i = 0; i < splited_int_string.size(); i++) {
                 nationalTeamPlayers.push_back(this->players[splited_int_string[i] - 1]);
             }
-            cout << nationalTeamPlayers.size() << endl;
+
             game->setNationalPlayers(nationalTeamPlayers);
 
             getline(gamesFile, text);

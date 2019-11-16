@@ -16,9 +16,7 @@ public:
      */
     void runMenu();
 
-    /****************************************************
-*******************MENUS*****************************
-*****************************************************/
+
 private:
     //Menu
 
@@ -201,7 +199,7 @@ private:
                 break;
             }
             catch (InexistentId(id)) {
-                cout << "Invalid Input.\n";
+                cout << "The id is not in database.\n";
             }
         }
 
