@@ -56,7 +56,6 @@ void FootballPlayer::printToFile(ostream &os) const {
     if (injury) os << "Injured";
     else os << "Healthy";
     os << endl << "::::::::::";
-    os << endl;
 }
 
 //Gets the position of the player

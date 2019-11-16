@@ -111,7 +111,6 @@ void CallUp::printIntoFile(ostream &os) const{
 
     //LIST OF GAME IDS
     for (auto i = 0; i < games.size(); i++){
-        cout << i << " = " << games.size() - 1 << endl;
         if (i == games.size() - 1) os << games[i]->getId() << endl;
         else os << games[i]->getId() << ", ";
     }
@@ -124,6 +123,6 @@ void CallUp::printIntoFile(ostream &os) const{
         os << (*i)->getEndDate() << endl;
     }
 
-    os << "::::::::::" << endl;
+    os << "::::::::::";
 }
 
