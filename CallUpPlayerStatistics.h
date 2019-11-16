@@ -60,7 +60,6 @@ public:
      * @param endDate
      */
     void setEndDate(const Date &endDate);
-
 };
 
 

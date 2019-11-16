@@ -111,6 +111,12 @@ public:
     int getId() const;
 
     void print(ostream &os);
+
+    /**
+     * Prints Statistics information to correspondent file
+     * @param os
+     */
+    void printIntoFile(ostream &os) const;
 };
 
 //PLAYER STATISTCS EXCEPTIONS

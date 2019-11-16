@@ -301,7 +301,7 @@ void Menu::changeDailyCosts(int id) {
         cin >> cost;
     }
 
-    getCallUpWithID(id)->setId(id);
+    getCallUpWithID(id)->setDailyCost(cost);
 }
 
 void Menu::reduceBegDate(int id) {
@@ -368,7 +368,7 @@ void Menu::extendEndDate(int id){
 void Menu::addGameCallUpMenu(const int& id) {
     menuSeparator();
 
-    int idc, idg;
+    int idc;
     bool error = false;
 
     while (true) {
@@ -394,7 +394,9 @@ void Menu::addGameCallUpMenu(const int& id) {
         }
 
         if (!error) {
-            getCallUpWithID(idc)->addGame(getGameWithID(id));
+            vector<Game*> j = getCallUpWithID(idc)->getGames();
+            j.push_back(getGameWithID(id));
+            getCallUpWithID(idc)->setGames(j);
 
             menuSeparator();
             break;
@@ -435,12 +437,6 @@ void Menu::removeGameCallUpMenu() {
         break;
     }
 }
-
-
-
-
-
-
 
 void Menu::allEqual(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
     int option;
