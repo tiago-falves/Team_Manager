@@ -14,23 +14,25 @@ void Menu::runPeopleMenu() {
         cout << endl << endl;
         cout << "Go back                                                            [0]" << endl;
         cout << "See information from everyone                                      [1]" << endl;
-        cout << "See information from a specific person                             [2]" << endl;
-        cout << "Search Person by name                                              [3]" << endl;
-        cout << "Football Players                                                   [4]" << endl;
-        cout << "Technicians                                                        [5]" << endl;
+        cout << "See information from everyone ordered by name                      [2]" << endl;
+        cout << "See information from a specific person                             [3]" << endl;
+        cout << "Search Person by name                                              [4]" << endl;
+        cout << "Football Players                                                   [5]" << endl;
+        cout << "Technicians                                                        [6]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 5);
+        validOption(option, 6);
 
         menuSeparator();
 
         if (option == 0) { break; }
         if (option == 1) { showEveryone(cout); }
-        if (option == 2) { showSpecificPersonOption(); }
-        if (option == 3) { showPersonByName(); }
-        if (option == 4) { runPlayersMenu(); }
-        if (option == 5) { runTechnicianMenu(); }
+        if (option == 2) { showEveryoneName(cout); }
+        if (option == 3) { showSpecificPersonOption(); }
+        if (option == 4) { showPersonByName(); }
+        if (option == 5) { runPlayersMenu(); }
+        if (option == 6) { runTechnicianMenu(); }
 
 
     }
@@ -45,6 +47,7 @@ void Menu::showSpecificPersonOption() {
 
 //asks for the name of a person and shows everyone with that name
 void Menu::showPersonByName() {
+
     string text;
     cout << "Please Insert Name of the Person: " << endl;
     getline(cin,text);
@@ -56,6 +59,7 @@ void Menu::showPersonByName() {
         cout << peepz[i];
     }
     tableFooterPlayer(cout);
+
 }
 
 //Prints to to out a person with a certain id
@@ -75,6 +79,19 @@ void Menu::showEveryone(ostream &out) {
         out << people[i];
     }
     tableFooterPlayer(out);
+}
+
+//Shows everyone in the Database
+void Menu::showEveryoneName(ostream &out) {
+
+    sortByName(people);
+    tableHeaderPlayer(out);
+
+    for (int i = 0; i < people.size(); ++i) {
+        out << people[i];
+    }
+    tableFooterPlayer(out);
+    sortByID(people);
 }
 
 //Header of the People table

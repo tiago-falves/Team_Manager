@@ -219,8 +219,15 @@ private:
     void showEveryone(ostream& out);
 
     /**
-     * @brief Asks for an id, and prints Person with that id
+     * Prints to the ostream everyone in the database ordered by name
+     * @param out - Where to print the information
      */
+    void showEveryoneName(ostream &out);
+
+
+        /**
+         * @brief Asks for an id, and prints Person with that id
+         */
     void showSpecificPersonOption();
 
     void showPersonByName();

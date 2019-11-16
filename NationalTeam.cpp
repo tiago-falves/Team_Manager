@@ -89,6 +89,21 @@ bool NationalTeam::idComparable(const Person *person1, const int id) {
     return (person1->getId() < id);
 }
 
+bool NationalTeam::idComparablePeople(const Person *person1, const Person *person2) {
+    return (person1->getId() < person2->getId());
+}
+
+bool NationalTeam::nameComparable(const Person* person1, const Person* person2){
+    return (person1->getName() < person2->getName());	    return (person1->getName() < person2->getName());
+}
+
+void NationalTeam::sortByName(vector<Person *> &people) {
+    sort(people.begin(),people.end(),nameComparable);
+}
+
+void NationalTeam::sortByID(vector<Person *> &people) {
+    sort(people.begin(),people.end(),idComparablePeople);
+}
 
 vector<Person *> NationalTeam::searchByName(vector<Person *> people, string name) {
 
@@ -101,6 +116,8 @@ vector<Person *> NationalTeam::searchByName(vector<Person *> people, string name
     return peopleName;
 
 }
+
+
 
 Game *NationalTeam::getGameWithID(int id) {
     for (auto i = games.begin(); i != games.end(); i++) {

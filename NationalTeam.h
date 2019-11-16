@@ -99,6 +99,14 @@ public:
 
 
     /**
+     * Function used to compare if a id of a person is less than id of second person
+     * @param person1 fisrt person we want to compare
+     * @param second person we want to compare
+     * @return True if the id of the person is equal to the second argument
+     */
+    static bool idComparablePeople(const Person *person1, const Person *person2);
+
+    /**
      * Given a Person* vector and a name, returns all the people with that same name
      * @param people vector with all the people
      * @param name -Name we want to search for
@@ -120,6 +128,22 @@ public:
         if (it != object.end() && (*it)->getId() == id) return (it - object.begin());
         else throw InexistentId(id);
     }
+
+    /**
+     * Function that returns true if person1 name is smaller than person's 2 name
+     * @param person1 First person to compare
+     * @param person2 second person to compare
+     * @return True if person1->name < person2->name
+     */
+    static bool nameComparable(const Person* person1, const Person* person2);
+
+    /**
+     *@brief Given a vector sorts all people by their name
+     * @param people vector to order
+     */
+    void sortByName(vector<Person *> &people);
+
+    void sortByID(vector<Person *> &people);
 
     //Vector operations
 
@@ -415,6 +439,7 @@ public:
      * @return - true if read was successful, false otherwise
      */
     bool readNationalTeam(string fileName);
+
 
 
 };
