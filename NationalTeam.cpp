@@ -231,8 +231,8 @@ bool NationalTeam::readCallUp(string file) {
                 playerStatistics.push_back(new CallUpPlayerStatistics(playerID, begDate, endDate));
             }
             counter = -1;
-            insert_sorted(callUps,
-                          new CallUp(callUpId, dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
+            callUps.push_back(new CallUp(callUpId, dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
+            callUpGames = {};
         }
         counter++;
     }
