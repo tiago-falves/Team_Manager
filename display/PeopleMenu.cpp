@@ -181,7 +181,33 @@ void Menu::createPlayerOption(){
 
 //Asks for an id of a player and removes it from the database
 void Menu::removePlayerOption(){
-    int id = askForValidId(players);
+    int id;
+    vector<FootballPlayer*> played;
+    bool error = false;
+    int remove;
+
+    //CHECK IF PLAYER HAS PLAYED ANY GAME
+    while (true){
+        error = false;
+
+        id = askForValidId(players);
+
+        for (int i = 0; i < games.size(); i++){
+            played = games[i]->getNationalPlayers();
+            try{
+                remove = searchByID(played, id);
+                error = true;
+            }
+            catch(...) {
+                continue;
+            }
+        }
+        if (!error) break;
+        else{
+            cout << endl << "The selected ID corresponds to a player that has played in some games. Impossible to remove..." << endl << endl;
+        }
+    }
+
     removeById(people,id);
     removeById(players,id);
     menuSeparator();
