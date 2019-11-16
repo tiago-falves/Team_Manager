@@ -58,58 +58,168 @@ private:
     int numberOfRedCards;
 
     /**
-     * Static variable to keep ID always updated and orderd
+     * Static variable to keep ID always updated and ordered
      */
     static int lastId;
 
 public:
 
     /**
-     * @brief Constructor of the Statistics of a player given all its atributes
-     * @param playerID
-     * @param numberOfGoals
-     * @param minutesPlayed
-     * @param kilometers
-     * @param numberOfPasses
-     * @param numberOfYellowCards
-     * @param numberOfRedCards
+     * @brief Constructor of the Statistics of a player given all its attributes
+     * @param playerID - Represents the ID of the player
+     * @param numberOfGoals - Represents the number of goals by the player
+     * @param minutesPlayed - Represents the minutes played by the player
+     * @param kilometers - Represents the kilometers ran by the player
+     * @param numberOfPasses - Represents the number of passes made by the player
+     * @param numberOfYellowCards - Represents the number of Yellow Cards given to the player
+     * @param numberOfRedCards - Represents the number of Red Cards given ot the player
      */
     PlayerGameStatistics(int playerID, int numberOfGoals, int minutesPlayed, int kilometers, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
 
+    /**
+     * Contructor of the Statistics of a player given his playerID
+     * @param playerID - Represents the ID of the player
+     */
     PlayerGameStatistics(int playerID);
 
+    /**
+     * Default Constructor of PlayerGameStatistics
+     */
     PlayerGameStatistics();
 
-    int getPlayerID() const;
 
-    void setPlayerID(int playerID);
 
-    int getNumberOfGoals() const;
 
-    void setNumberOfGoals(int numberOfGoals);
 
-    int getMinutesPlayed() const;
 
-    void setMinutesPlayed(int minutesPlayed);
 
-    int getKilometers() const;
+    /*****************************
+     **********GETTERS************
+     *****************************/
 
-    void setKilometers(int kilometers);
-
-    int getNumberOfPasses() const;
-
-    void setNumberOfPasses(int numberOfPasses);
-
-    int getNumberOfYellowCards() const;
-
-    void setNumberOfYellowCards(int numberOfYellowCards);
-
-    int getNumberOfRedCards() const;
-
-    void setNumberOfRedCards(int numberOfRedCards);
-
+    /**
+     * Return the Statistics's id
+     * @return - An Int representing the statistics's
+     * id.
+     */
     int getId() const;
 
+    /** Returns the player's id
+     * @return A Int representing the player’s id
+    */
+    int getPlayerID() const;
+
+    /**
+     * Returns the number of goals scored by the player
+     * @return - An Int representing the number of goals
+     */
+    int getNumberOfGoals() const;
+
+    /**
+     * Returns the minutes played by the player
+     * @return - An Int representing the minutes
+     */
+    int getMinutesPlayed() const;
+
+    /**
+     * Returns the kilometers ran by the player
+     * @return - An Int representing the kilometers
+     */
+    int getKilometers() const;
+
+    /**
+     * Returns the number of passes made by the player
+     * @return - An Int representing the number of
+     * passes
+     */
+    int getNumberOfPasses() const;
+
+    /**
+     * Returns the number of yellow cards given to the player
+     * @return - An Int representing the number of
+     * yellow cards.
+     */
+    int getNumberOfYellowCards() const;
+
+    /**
+     * Returns the number of red cards given to the player
+     * @return - An Int representing the number of
+     * red cards.
+     */
+    int getNumberOfRedCards() const;
+
+
+
+
+
+
+
+    /*****************************
+    ***********SETTERS************
+    *****************************/
+
+    /**
+     * Changes the player's id
+     * @param playerID - An integer representing the
+     * new player's id.
+     */
+    void setPlayerID(int playerID);
+
+    /**
+     * Changes the number of goals scored by the player
+     * @param numberOfGoals - An integer representing the
+     * number of goals
+     */
+    void setNumberOfGoals(int numberOfGoals);
+
+    /**
+     * Changes the minutes played by the player
+     * @param minutesPlayed - An integer representing
+     * the minutes played.
+     */
+    void setMinutesPlayed(int minutesPlayed);
+
+    /**
+     * Changes the kilometers ran by the player
+     * @param kilometers - An integer representing
+     * the new kilometers
+     */
+    void setKilometers(int kilometers);
+
+    /**
+     * Changes the number of passes
+     * @param numberOfPasses - An integer representing
+     * the number of passes
+     */
+    void setNumberOfPasses(int numberOfPasses);
+
+    /**
+     * Changes the number of Yellow Cards given to the player
+     * @param numberOfYellowCards - An integer representing
+     * the number of yellow cards.
+     */
+    void setNumberOfYellowCards(int numberOfYellowCards);
+
+    /**
+     * Changes the number of Red Cards given to the player
+     * @param numberOfRedCards - An integer representing
+     * the number of red cards.
+     */
+    void setNumberOfRedCards(int numberOfRedCards);
+
+
+
+    
+
+
+    /*****************************
+    *************PRINT************
+    *****************************/
+
+    /**
+     * @brief function that prints the caller in a table format, given an ostream variable
+     * @param - ostream os - Tells where to print the content
+    */
     void print(ostream &os);
 
     /**
