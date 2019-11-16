@@ -10,7 +10,7 @@ Howard Webb, Pierluigi Collina, Graham Poll
 Paris
 Franca
 Estadio Parc des Princes
-Portugal x França
+Portugal x Franca
 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 Kingsley, Lucas Hernandez, Adil Rami, Ousmane Dembele, Raphael Varane, Benjamin Pavard, Hugo Lloris, Paul Pogba, Antoine Griezmann, Olivier Giroud, Kylian Mbappe
@@ -19,7 +19,7 @@ Pierluigi Collina, Mark Clattenburg, Mike Dean
 Milan
 Italia
 Estadio�dio Giuseppe Meazza
-Portugal x It�lia
+Portugal x Italia
 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33
 2, 4, 7, 9, 8, 11, 13, 16, 17, 19, 22
 Mario Balotelli, Lorenzo Insigne, Andrea Belotti, Jorge Luiz, Gianluigim Donnarumma, Ciro Immobile, Giorgio Chiellini, leonardo Bonucci, Federico Bernardeschi, Francesco Acerbi, Nicol� Barella
@@ -47,8 +47,8 @@ Varsovia
 Polonia
 Estadio Nacional
 Portugal x Polonia
-57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67
-1, 4, 6, 7, 8, 10, 11, 16, 18, 21, 22
+56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66
+1, 4, 6, 7, 10, 12, 14, 15, 18, 19, 21
 Michal Pazdan, Karol Linetty, Bartosz Bereszynski, Tomasz Kedziora, Lukasz Fabianski, Grzegorz Krychowiak, Kamil Glik, Kamil Grosicki, Robert Lewandowski, Maciej Rybus, Kominik Furman
 Alireza Faghani, David Coote, Kevin Friend, Keith Hackett, Andrew Madley
 ::::::::::
