@@ -232,9 +232,26 @@ void Menu::askForPlayers(ostream &out, Game * game) {
     int playerID;
     PlayerGameStatistics stats;
     int index;
+    vector<FootballPlayer*> vec;
+
     for(int i = 0; i < 11; i++){
-        out << "Insert the ID of the player number " << i+1 << " to add.\n";
-        playerID = askForValidId(players);
+
+
+        //CHECK IF PLAYER IS ALREADY IN THIS GAME
+        while (true){
+            out << "Insert the ID of the player number " << i+1 << " to add.\n";
+
+            playerID = askForValidId(players);
+            vec = game->getNationalPlayers();
+
+            try{
+                searchByID(vec, playerID);
+                cout << endl << endl << "Player already exists in game!" << endl << endl << endl;
+            }
+            catch(InexistentId){
+                break;
+            }
+        }
         index = searchByID(players, playerID);
         game->addNationalPlayer(players[index], askForPlayerStatistics(out, playerID));
 
