@@ -230,8 +230,8 @@ bool NationalTeam::readCallUp(string file) {
                 playerStatistics.push_back(new CallUpPlayerStatistics(playerID, begDate, endDate));
             }
             counter = -1;
-            insert_sorted(callUps,
-                          new CallUp(callUpId, dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
+            callUps.push_back(new CallUp(callUpId, dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
+            callUpGames = {};
         }
         counter++;
     }
@@ -245,7 +245,7 @@ bool NationalTeam::readCallUp(string file) {
 float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID) {
 
     //save pass value - wre assumed 1% of the pass value as current player's value has astronomical values
-    float pass = players[playerID - 1]->getPassValue() * 0.01;
+    float pass = players[searchByID(players, playerID)]->getPassValue() * 0.01;
 
     //variable that sums the costs associated with this player
     float val = 0;
@@ -274,11 +274,7 @@ float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID) {
 
                 if (d1 <= beg && d2 >= end) {
                     if (players[playerPos]->isInjury()) {
-                        cout << "PASS: " << pass << endl;
-                        cout << "DATE DIFFERENCE: " << beg.dateToDays() - end.dateToDays() << endl;
-                        cout << "DAILY COST: " << (*i)->getDailyCost() << endl;
                         val += pass * (end.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
-                        cout << "RESULT: " << val << endl;
                     } else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
                 } else if (d1 <= beg) {
                     if (players[playerPos]->isInjury()) {

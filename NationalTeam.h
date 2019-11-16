@@ -440,6 +440,18 @@ public:
      */
     bool readNationalTeam(string fileName);
 
+    /**
+     * Return position of player with id in vector of his statistics in a call up
+     * @param stats
+     * @param id
+     * @return
+     */
+    int searchCallStatsByID(vector<CallUpPlayerStatistics*> stats, int id) {
+        for (auto i = 0;  i < stats.size(); i++){
+            if (stats[i]->getPlayerID() == id) return id;
+        }
+        throw InexistentId(id);
+    }
 
 
 };
