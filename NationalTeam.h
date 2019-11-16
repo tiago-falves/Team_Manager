@@ -244,8 +244,13 @@ public:
      */
     bool readGameStatistics(string filename);
 
-
-
+    /**
+     * Given a id and a vector of games, it removes the game with the id from the vector
+     * @tparam T of type Game or derivatives
+     * @param game - Vector we want to remove the object
+     * @param id - Id of the object to be removed
+     * @return True if it was removed, otherwise false
+     */
     template <class T>
     bool removeGame(vector<T> &game, int id){
         int index;
@@ -268,6 +273,13 @@ public:
         return (game->getId() < id);
     }
 
+    /**
+     * @brief Given a Game* vector and an id, Returns the game with that same id
+     * This sort uses Binary search since the ids are always ordered
+     * @param game vector we want to search
+     * @param id - Id we want to search for
+     * @return
+     */
     int searchGameByID(vector<Game *> &game, int id){
         auto it = lower_bound(game.begin(),game.end(),id,idGameComparable);
         if (it != game.end() && (*it)->getId() == id) return (it-game.begin());
@@ -284,6 +296,13 @@ public:
         return (stats.getPlayerID() < id);
     }
 
+    /**
+     * @brief Given a PlayerGameStatistics vector and an id, Returns the PlayerGameStatistics
+     * with that same id. This sort uses Binary search since the ids are always ordered
+     * @param stats vector we want to search
+     * @param id - Id we want to search for
+     * @return
+     */
     int searchStatsByID(vector<PlayerGameStatistics> stats, int id){
         auto it = lower_bound(stats.begin(), stats.end(),id,idStatsComparable);
         if (it != stats.end() && (*it).getPlayerID() == id) return (it-stats.begin());
