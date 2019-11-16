@@ -361,72 +361,11 @@ public:
      */
     void read(string peopleFile,string callUpFile,string gameFile,string statisticsFile);
 
-    /****************************************************
-    ******************HEADERS FUNCTIONS******************
-    *****************************************************/
-
-    /**
-     * Prints the header of the table showing the players
-     * @param out - Tells where to print the header
-     */
-    void tableHeaderPlayer(ostream &out);
-
-    /**
-     * Prints the header of the table showing the games
-     * @param out - Tells where to print the header
-     */
-    void tableHeaderAllGames(ostream &out);
-
-    /**
-     * Prints the header of the table showing the PlayerGameStatistics
-     * @param out - Tells where to print the header
-     */
-    void tableHeaderStatistics(ostream &out);
-
-    /**
-     * Prints the header of the table showing the Enemy Team Players
-     * @param out - Tells where to print the header
-     */
-    void tableHeaderEnemyTeam(ostream &out);
-
-    /**
-     * Prints the header of the table showing the Referees
-     * @param out - Tells where to print the header
-     */
-    void tableHeaderReferee(ostream &out);
-
-    /****************************************************
-    ******************FOOTERS FUNCTIONS******************
-    *****************************************************/
-
-    /**
-     * Prints the footer of the table showing the players
-     * @param out - Tells where to print the footer
-     */
-    void tableFooterPlayer(ostream &out);
-
-    /**
-     * Prints the footer of the table showing the games
-     * @param out - Tells where to print the footer
-     */
-    void tableFooterAllGames(ostream &out);
-
-    /**
-     * Prints the footer of the table showing the PlayerGameStatistics
-     * @param out - Tells where to print the footer
-     */
-    void tableFooterStatistics(ostream &out);
-
-    /**
-     * Prints the footer of the table showing the Enemy Team players
-     * or the Referees
-     * @param out - Tells where to print the footer
-     */
-    void tableFooterEnemyTeamReferee(ostream &out);
 
     /****************************************************
     *******************HANDLE CALLUPS******************
     *****************************************************/
+
     //READ FROM FILE
     /**
      * Reads call up from file

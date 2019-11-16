@@ -225,29 +225,147 @@ private:
 
     void showPersonByName();
 
-    //Game Menu
+    /****************************************************
+    ********************GAME FUNCTIONS*******************
+    *****************************************************/
+
+    /**
+     * Prints the main Game Menu.
+     */
     void runGameMenu();
+
+    /**
+     * Prints the Create Game Option
+     * @param out - Tells where to print the menu
+     * @return an integer representing the new game ID
+     */
     int createGameOption(ostream &out);
+
+    /**
+     * Prints the Remove Game Option
+     * @param out - Tells where to print the menu
+     * @return an integer. 0 if it failed to removed or
+     * the id of the removed game.
+     */
     int removeGameOption(ostream &out, const int& id);
+
+    /**
+     * Prints the option the user select to modify
+     * @param out - Tells where to print
+     * @param option - Option the user choose
+     */
     void modifyGameOption(ostream &out, int option);
-    void modifyVectorOption(ostream &out, string vectorType);
+
+    /**
+     * Prints All Games made by the National Team
+     * @param out - Tells where to print
+     */
     void showAllGames(ostream &out);
+
+    /**
+     * Prints the information of a specific game
+     * made by the National Team
+     * @param out - Tells where to print
+     */
     void showSpecificGame(ostream &out);
+
+    /**
+     * Prints the Specific Statistics
+     * of a player in a game.
+     * @param out - Tells where to print
+     */
     void showSpecificStats(ostream &out);
+
+    /**
+     * Asks the user the id of the player to be added to a game
+     * @param out - Tells where to print
+     * @param game - Game object where the player will be added
+     */
     void askForPlayers(ostream &out, Game * game);
+
+    /**
+     * Asks the user a string of names to be added to a game
+     * @param out - Tells where to print
+     * @param what - What to ask for
+     * @param game - Game object where the vector will be added
+     */
     void askForStringVector(ostream &out, string what, Game* game);
+
+    /**
+     * Aks the user the statistics of a specific player
+     * @param out - Tells where to print
+     * @param playerID - ID of the player to get the statistics
+     * @return The statistics of the player
+     */
     PlayerGameStatistics askForPlayerStatistics(ostream &out, int playerID);
+
+    /**
+     * Prints the Modify Game Option into the consule
+     * @param out - Tells where to print
+     */
     void showModifyGameOptions(ostream &out);
 
+    /****************************************************
+    ******************HEADERS FUNCTIONS******************
+    *****************************************************/
+
+    /**
+     * Prints the header of the table showing the players
+     * @param out - Tells where to print the header
+     */
     void tableHeaderPlayer(ostream &out);
+
+    /**
+     * Prints the header of the table showing the games
+     * @param out - Tells where to print the header
+     */
     void tableHeaderAllGames(ostream &out);
+
+    /**
+     * Prints the header of the table showing the PlayerGameStatistics
+     * @param out - Tells where to print the header
+     */
     void tableHeaderStatistics(ostream &out);
+
+    /**
+     * Prints the header of the table showing the Enemy Team Players
+     * @param out - Tells where to print the header
+     */
     void tableHeaderEnemyTeam(ostream &out);
+
+    /**
+     * Prints the header of the table showing the Referees
+     * @param out - Tells where to print the header
+     */
     void tableHeaderReferee(ostream &out);
 
+    /****************************************************
+    ******************FOOTERS FUNCTIONS******************
+    *****************************************************/
+
+    /**
+     * Prints the footer of the table showing the players
+     * @param out - Tells where to print the footer
+     */
     void tableFooterPlayer(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the games
+     * @param out - Tells where to print the footer
+     */
     void tableFooterAllGames(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the PlayerGameStatistics
+     * @param out - Tells where to print the footer
+     */
     void tableFooterStatistics(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the Enemy Team players
+     * or the Referees
+     * @param out - Tells where to print the footer
+     */
     void tableFooterEnemyTeamReferee(ostream &out);
 
 
