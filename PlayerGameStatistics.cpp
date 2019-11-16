@@ -112,3 +112,14 @@ void PlayerGameStatistics::print(ostream &os) {
 }
 
 int PlayerGameStatistics::lastId = 1;
+
+//PRINTS STATISTICS TO FILE
+void PlayerGameStatistics::printIntoFile(ostream &os) const {
+    os << playerID << endl;
+    os << numberOfGoals << endl;
+    os << minutesPlayed << endl;
+    os << kilometers << endl;
+    os << numberOfPasses << endl;
+    os << numberOfYellowCards << endl;
+    os << numberOfRedCards << endl;
+}

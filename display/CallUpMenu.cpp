@@ -301,7 +301,7 @@ void Menu::changeDailyCosts(int id) {
         cin >> cost;
     }
 
-    getCallUpWithID(id)->setId(id);
+    getCallUpWithID(id)->setDailyCost(cost);
 }
 
 void Menu::reduceBegDate(int id) {
@@ -437,12 +437,6 @@ void Menu::removeGameCallUpMenu() {
         break;
     }
 }
-
-
-
-
-
-
 
 void Menu::allEqual(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
     int option;

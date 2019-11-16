@@ -118,14 +118,6 @@ public:
      */
     void removeGame(Game *game);
 
-    void addPlayer(int playerID, Date begDate, Date endDate);
-    void removePlayer(int playerID);
-
-    void changeBeginDate(Date beg);
-    void changeEndDate(Date end);
-
-    void changeDailyCost(float dailyCost);
-
     //UTILITIES
     /**
      * Verifies if game exists in call up

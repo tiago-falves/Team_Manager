@@ -54,6 +54,12 @@ public:
 
     void print(ostream &os);
 
+    /**
+     * Prints Statistics information to correspondent file
+     * @param os
+     */
+    void printIntoFile(ostream &os) const;
+
 private:
     int id;
     int playerID;

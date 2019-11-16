@@ -553,8 +553,6 @@ bool NationalTeam::readGames(string filename) {
             getline(gamesFile, text);
             splited_int_string = separateCharacterInt(text, ',');
 
-            //Falta implementar guardar os PlayerGameStatistics
-
             getline(gamesFile, text);
             splited_int_string = separateCharacterInt(text, ',');
 
@@ -642,8 +640,8 @@ bool NationalTeam::readGameStatistics(string filename) {
 
 
 
-//Exists the program and saves the information to new files: "clients.txt" and "packs.txt"
-void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string gamesFileName, string etc) {
+//Exists the program and saves the information to new files
+void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string gamesFileName, string statisticsFileName) {
     string content;
     ofstream peopleFile("../Files/" +peepzFile);
 
@@ -672,6 +670,21 @@ void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string ga
     }
 
     callupFile.close();
+
+    ofstream statisticsFile("../Files/" + statisticsFileName);
+
+    for (int i = 0; i < games.size(); i++){
+
+        for (int j = 0; j < games[i]->getPlayerStatistics().size(); j++){
+            games[i]->getPlayerStatistics()[j].printIntoFile(statisticsFile);
+
+            if (j != games[i]->getPlayerStatistics().size() - 1) statisticsFile << "---------" << endl;
+            else if (i == games.size() - 1) statisticsFile << "::::::::::";
+            else statisticsFile << "::::::::::" << endl;
+        }
+    }
+
+    statisticsFile.close();
 
     exit(0);
 }

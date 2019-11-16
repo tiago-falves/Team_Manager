@@ -55,49 +55,11 @@ void CallUp::setPlayerStatistics(const vector<CallUpPlayerStatistics *> playerSt
     this->playerStatistics = playerStatistics;
 }
 
-//CHANGE CALLUP
-void CallUp::changeDailyCost(float dailyCost) {
-    this->dailyCost = dailyCost;
-}
-
-void CallUp::changeBeginDate(Date beg) {
-    this->begginingDate = beg;
-}
-
-void CallUp::changeEndDate(Date end) {
-    this->endDate = end;
-}
-
 //REMOVE GAME
 void CallUp::removeGame(Game *game){
     if (!gameExists(game)) throw GameDontExistsCallUp(game);
     games.erase(games.begin() + BinarySearch(games, game));
 }
-
-//ADD / REMOVE PLAYER
-void CallUp::addPlayer(int playerID, Date begDate, Date endDate) {
-    if(playerExists(playerID)) throw PlayerExistsCallUp(playerID);
-    CallUpPlayerStatistics player(playerID, begDate, endDate);
-    insert_sorted(playerStatistics, &player);
-}
-
-void CallUp::removePlayer(int playerID) {
-    bool check = false;
-    //FIND PLAYER POSITION
-    vector<CallUpPlayerStatistics*>::const_iterator it;
-    for (auto i = playerStatistics.begin(); i != playerStatistics.end(); i++){
-        if ((*i)->getPlayerID() == playerID) {
-            it = i;
-            check = true;
-            break;
-        }
-    }
-    if (!check) throw PlayerDontExistsCallUp(playerID);
-
-    playerStatistics.erase(it);
-}
-
-
 
 //UTILITIES
 bool CallUp::gameExists(Game *game) {
@@ -149,7 +111,8 @@ void CallUp::printIntoFile(ostream &os) const{
 
     //LIST OF GAME IDS
     for (auto i = 0; i < games.size(); i++){
-        if (i = games.size() - 1) os << games[i]->getId() << endl;
+        cout << i << " = " << games.size() - 1 << endl;
+        if (i == games.size() - 1) os << games[i]->getId() << endl;
         else os << games[i]->getId() << ", ";
     }
 
