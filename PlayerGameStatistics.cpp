@@ -4,7 +4,7 @@
 
 #include "PlayerGameStatistics.h"
 
-PlayerGameStatistics::PlayerGameStatistics(int playerID, int numberOfGoals, int minutesPlayed, int kilometers, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards)/*:id(lastId++)*/ {
+PlayerGameStatistics::PlayerGameStatistics(int playerID, int numberOfGoals, int minutesPlayed, int kilometers, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards):id(lastId++){
     this->numberOfGoals=numberOfGoals;
     this->minutesPlayed=minutesPlayed;
     this->kilometers=kilometers;
@@ -24,7 +24,7 @@ PlayerGameStatistics::PlayerGameStatistics(int playerID):id(lastId++) {
     this->numberOfYellowCards = 0;
     this->numberOfRedCards = 0;
 }
-PlayerGameStatistics::PlayerGameStatistics() {
+PlayerGameStatistics::PlayerGameStatistics():id(lastId++) {
     this->playerID = 0;
     this->numberOfGoals = 0;
     this->minutesPlayed = 0;

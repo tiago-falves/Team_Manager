@@ -480,7 +480,6 @@ bool NationalTeam::readGames(string filename) {
     ifstream gamesFile;
     vector<int> splited_int_string;
     vector<string> splited_str_string;
-    vector<FootballPlayer *> players;
     gamesFile.open("..//Files//" + filename);
 
 
@@ -489,6 +488,7 @@ bool NationalTeam::readGames(string filename) {
         return false;
     } else {
         while (!gamesFile.eof()) {
+            vector<FootballPlayer *> nationalTeamPlayers;
             Game *game = new Game();
 
             getline(gamesFile, text);
@@ -508,12 +508,11 @@ bool NationalTeam::readGames(string filename) {
 
             getline(gamesFile, text);
             splited_int_string = separateCharacterInt(text, ',');
-
             for (int i = 0; i < splited_int_string.size(); i++) {
-                players.push_back(this->players[splited_int_string[i] - 1]);
+                nationalTeamPlayers.push_back(this->players[splited_int_string[i] - 1]);
             }
-
-            game->setNationalPlayers(players);
+            cout << nationalTeamPlayers.size() << endl;
+            game->setNationalPlayers(nationalTeamPlayers);
 
             getline(gamesFile, text);
             splited_str_string = separateCharacterStr(text, ',');

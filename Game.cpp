@@ -132,7 +132,7 @@ void Game::printIntoFile(ostream &os) const{
             os << playerStatistics[i].getId() << endl;
         }
         else {
-            os << playerStatistics[i].getId() << ",";
+            os << playerStatistics[i].getId() << ", ";
         }
     }
 
@@ -141,7 +141,7 @@ void Game::printIntoFile(ostream &os) const{
             os << nationalPlayers[i]->getId() << endl;
         }
         else {
-            os << nationalPlayers[i]->getId() << ",";
+            os << nationalPlayers[i]->getId() << ", ";
         }
     }
 
@@ -150,7 +150,7 @@ void Game::printIntoFile(ostream &os) const{
             os << enemyPlayers[i] << endl;
         }
         else {
-            os << enemyPlayers[i] << ",";
+            os << enemyPlayers[i] << ", ";
         }
     }
 
@@ -159,7 +159,7 @@ void Game::printIntoFile(ostream &os) const{
             os << referees[i] << endl;
         }
         else {
-            os << referees[i] << ",";
+            os << referees[i] << ", ";
         }
     }
 
