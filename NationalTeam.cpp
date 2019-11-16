@@ -3,11 +3,10 @@
 //
 
 #include "NationalTeam.h"
-#include "Date.h"
 #include "Exceptions.h"
-#include "Utilities.h"
 #include <algorithm>
 #include <fstream>
+
 using namespace std;
 
 
@@ -15,64 +14,26 @@ NationalTeam::NationalTeam() {
 
 }
 
-//Gets People File name
-const string &NationalTeam::getPeopleFile() const {
-    return peopleFile;
-}
-
-//Sets People file name
-void NationalTeam::setPeopleFile(const string &peopleFile) {
-    NationalTeam::peopleFile = peopleFile;
-}
-
-const string &NationalTeam::getGameFile() const {
-    return gameFile;
-}
-
-void NationalTeam::setGameFile(const string &gameFile) {
-    NationalTeam::gameFile = gameFile;
-}
-
-const string &NationalTeam::getCallUpFile() const {
-    return callUpFile;
-}
-
-void NationalTeam::setCallUpFile(const string &callUpFile) {
-    NationalTeam::callUpFile = callUpFile;
-}
-
-const string &NationalTeam::getStatisticsFile() const {
-    return statisticsFile;
-}
-
-void NationalTeam::setStatisticsFile(const string &statisticsFile) {
-    NationalTeam::statisticsFile = statisticsFile;
-}
-
-
-
 bool NationalTeam::readPeople(string fileName) {
     string text;
     string id;
     ifstream peopleFile;
     Date birthday = Date();
     peopleFile.open("..//Files//" + fileName);
-    if(peopleFile.fail()){
+    if (peopleFile.fail()) {
         cerr << "Error Opening File";
         return false;
-    }
-    else{
-        while(!peopleFile.eof()){
+    } else {
+        while (!peopleFile.eof()) {
             getline(peopleFile, text);
             //getline(peopleFile,id);
-            if(text == "Football Player"){
+            if (text == "Football Player") {
                 FootballPlayer *player = new FootballPlayer();
                 player->read(&peopleFile);
                 people.push_back((player));
                 players.push_back(player);
                 getline(peopleFile, text);
-            }
-            else if(text == "Technician"){
+            } else if (text == "Technician") {
                 Technician *technician = new Technician();
                 technician->read(&peopleFile);
                 people.push_back((technician));
@@ -85,7 +46,7 @@ bool NationalTeam::readPeople(string fileName) {
     return true;
 }
 
-void NationalTeam::read(string peopleFile,string callUpFile,string gameFile,string statisticsFile) {
+void NationalTeam::read(string peopleFile, string callUpFile, string gameFile, string statisticsFile) {
     readPeople(peopleFile);
     readGames(gameFile);
     readCallUp(callUpFile);
@@ -96,22 +57,21 @@ bool NationalTeam::readNationalTeam(string fileName) {
     string text;
     ifstream teamFile;
     teamFile.open("..//Files//" + fileName);
-    if(teamFile.fail()){
+    if (teamFile.fail()) {
         cerr << "Error Opening National Team File";
         return false;
-    }
-    else{
+    } else {
         getline(teamFile, text);
         callUpFile = text;
-        getline(teamFile,text);
+        getline(teamFile, text);
         gameFile = text;
-        getline(teamFile,text);
+        getline(teamFile, text);
         peopleFile = text;
-        getline(teamFile,text);
+        getline(teamFile, text);
         statisticsFile = text;
     }
     teamFile.close();
-    read(peopleFile,callUpFile,gameFile, statisticsFile);
+    read(peopleFile, callUpFile, gameFile, statisticsFile);
     return true;
 }
 
@@ -125,44 +85,40 @@ bool NationalTeam::savePeople(string fileName) {
     return true;
 }
 
-
-
-bool NationalTeam::nameComparable(const Person* person1, const Person* person2){
-    return (person1->getName() < person2->getName());
-}
-bool NationalTeam::idComparable(const Person* person1, const int id){
+bool NationalTeam::idComparable(const Person *person1, const int id) {
     return (person1->getId() < id);
 }
 
 
+vector<Person *> NationalTeam::searchByName(vector<Person *> people, string name) {
 
-vector<Person*> NationalTeam::searchByName(vector<Person *> people,string name) { //Devo ordenar duas vezes?? ou mais vale usar a sequencial?
-
-    vector<Person*> peopleName;
+    vector<Person *> peopleName;
     for (int i = 0; i < people.size(); ++i) {
-        if (people[i]->getName() == name){
+        if (people[i]->getName() == name) {
             peopleName.push_back(people[i]);
         }
     }
     return peopleName;
 
 }
-Game* NationalTeam::getGameWithID(int id){
-    for (auto i = games.begin(); i != games.end(); i++){
+
+Game *NationalTeam::getGameWithID(int id) {
+    for (auto i = games.begin(); i != games.end(); i++) {
         if ((*i)->getId() == id) return *i;
     }
     throw InexistentId(id);
 }
 
-CallUp* NationalTeam::getCallUpWithID(int id){
-    for (auto i = callUps.begin(); i != callUps.end(); i++){
+CallUp *NationalTeam::getCallUpWithID(int id) {
+    for (auto i = callUps.begin(); i != callUps.end(); i++) {
         if ((*i)->getId() == id) return *i;
     }
     throw InexistentId(id);
 }
-bool NationalTeam::searchCallUpByID(const int &id){
+
+bool NationalTeam::searchCallUpByID(const int &id) {
     bool check = false;
-    for (auto i = callUps.begin(); i != callUps.end(); i++){
+    for (auto i = callUps.begin(); i != callUps.end(); i++) {
         if ((*i)->getId() == id) check = true;
     }
 
@@ -173,8 +129,8 @@ bool NationalTeam::searchCallUpByID(const int &id){
 
 //DELETE CALL UP
 void NationalTeam::deleteCallUp(int id) {
-    for (auto i = callUps.begin(); i != callUps.end(); i++){
-        if ((*i)->getId() == id){
+    for (auto i = callUps.begin(); i != callUps.end(); i++) {
+        if ((*i)->getId() == id) {
             callUps.erase(i);
             return;
         }
@@ -187,7 +143,7 @@ bool NationalTeam::readCallUp(string file) {
     ifstream callUpFile;
     callUpFile.open("..//Files//" + file);
 
-    if(callUpFile.fail()){
+    if (callUpFile.fail()) {
         cerr << "Error Opening File";
         return false;
     }
@@ -200,8 +156,8 @@ bool NationalTeam::readCallUp(string file) {
     int callUpId = 0;
     Date begginingDate, endingDate;
     float dailyCost;
-    vector<Game*> callUpGames;
-    vector<CallUpPlayerStatistics*> playerStatistics;
+    vector<Game *> callUpGames;
+    vector<CallUpPlayerStatistics *> playerStatistics;
 
     //VARIABLES TO CONSTRUCT CALLUPPLAYERSTATISTICS
     int playerID;
@@ -209,10 +165,10 @@ bool NationalTeam::readCallUp(string file) {
 
     unsigned int counter = 0;
 
-    while(getline(callUpFile, text)) {
+    while (getline(callUpFile, text)) {
 
         //ID
-        if(counter == 0){
+        if (counter == 0) {
             callUpId = stoi(text);
         }
 
@@ -236,7 +192,7 @@ bool NationalTeam::readCallUp(string file) {
             game_indexes = separateCharacterInt(text, ',');
             insertionSort(game_indexes);
 
-            for (auto j = game_indexes.begin(); j < game_indexes.end(); j++){
+            for (auto j = game_indexes.begin(); j < game_indexes.end(); j++) {
                 callUpGames.push_back(getGameWithID(*j));
             }
 
@@ -258,7 +214,8 @@ bool NationalTeam::readCallUp(string file) {
                 playerStatistics.push_back(new CallUpPlayerStatistics(playerID, begDate, endDate));
             }
             counter = -1;
-            insert_sorted(callUps, new CallUp(callUpId ,dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
+            insert_sorted(callUps,
+                          new CallUp(callUpId, dailyCost, callUpGames, playerStatistics, begginingDate, endingDate));
         }
         counter++;
     }
@@ -269,10 +226,10 @@ bool NationalTeam::readCallUp(string file) {
 
 //HANDLE COSTS
 //player costs
-float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
+float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID) {
 
     //save pass value - wre assumed 1% of the pass value as current player's value has astronomical values
-    float pass = players[playerID-1]->getPassValue() * 0.01;
+    float pass = players[playerID - 1]->getPassValue() * 0.01;
 
     //variable that sums the costs associated with this player
     float val = 0;
@@ -284,14 +241,14 @@ float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
     Date beg, end;
 
     //iterates over different call ups
-    for (auto i = callUps.begin(); i < callUps.end(); i++){
+    for (auto i = callUps.begin(); i < callUps.end(); i++) {
 
         //iterates over the players that were in that call up
         for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++) {
 
             playerPos = searchByID(players, (*i)->getPlayerStatistics()[j]->getPlayerID());
 
-            if ((*i)->getPlayerStatistics()[j]->getPlayerID() == playerID){
+            if ((*i)->getPlayerStatistics()[j]->getPlayerID() == playerID) {
 
                 beg = (*i)->getPlayerStatistics()[j]->getBegDate();
                 end = (*i)->getPlayerStatistics()[j]->getEndDate();
@@ -299,33 +256,26 @@ float NationalTeam::playerCostCalculator(Date d1, Date d2, int playerID){
                 //found player in this call up
                 //checking number of days player was in call up between the given days
 
-                if (d1 <= beg && d2 >= end){
+                if (d1 <= beg && d2 >= end) {
                     if (players[playerPos]->isInjury()) {
                         cout << "PASS: " << pass << endl;
                         cout << "DATE DIFFERENCE: " << beg.dateToDays() - end.dateToDays() << endl;
                         cout << "DAILY COST: " << (*i)->getDailyCost() << endl;
                         val += pass * (end.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
                         cout << "RESULT: " << val << endl;
-                    }
-                    else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
-                }
-                else if (d1 <= beg){
-                    if (players[playerPos]->isInjury()){
+                    } else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
+                } else if (d1 <= beg) {
+                    if (players[playerPos]->isInjury()) {
                         val += pass * (d2.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
-                    }
-                    else  val += pass * (d2.dateToDays() - beg.dateToDays())  * (*i)->getDailyCost();
-                }
-                else if (d2 >= end) {
+                    } else val += pass * (d2.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
+                } else if (d2 >= end) {
                     if (players[playerPos]->isInjury()) {
                         val += pass * (end.dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
-                    }
-                    else val += pass * (end.dateToDays() - d1.dateToDays())  * (*i)->getDailyCost();
-                }
-                else if (d1 >= beg && d2 <= end){
-                    if (players[playerPos]->isInjury()){
+                    } else val += pass * (end.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
+                } else if (d1 >= beg && d2 <= end) {
+                    if (players[playerPos]->isInjury()) {
                         val += pass * (d2.dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
-                    }
-                    else val += pass * (d2.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
+                    } else val += pass * (d2.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
                 }
             }
         }
@@ -344,7 +294,7 @@ float NationalTeam::teamCostCalculator(Date d1, Date d2) {
     int playerPos;
 
     //iterates over different call ups
-    for (auto i = callUps.begin(); i < callUps.end(); i++){
+    for (auto i = callUps.begin(); i < callUps.end(); i++) {
 
         //iterates over the players that were in that call up
         for (auto j = 0; j < (*i)->getPlayerStatistics().size(); j++) {
@@ -357,29 +307,22 @@ float NationalTeam::teamCostCalculator(Date d1, Date d2) {
             end = (*i)->getPlayerStatistics()[j]->getEndDate();
 
             //checking number of days player was in call up between the given days
-            if (d1 <= beg && d2 >= end){
+            if (d1 <= beg && d2 >= end) {
                 if (players[playerPos]->isInjury()) {
                     val += pass * (end.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
-                }
-                else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
-            }
-            else if (d1 <= beg){
-                if (players[playerPos]->isInjury()){
+                } else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
+            } else if (d1 <= beg) {
+                if (players[playerPos]->isInjury()) {
                     val += pass * (d2.dateToDays() - beg.dateToDays()) * 3 * (*i)->getDailyCost();
-                }
-                else  val += pass * (d2.dateToDays() - beg.dateToDays())  * (*i)->getDailyCost();
-            }
-            else if (d2 >= end) {
+                } else val += pass * (d2.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
+            } else if (d2 >= end) {
                 if (players[playerPos]->isInjury()) {
                     val += pass * (end.dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
-                }
-                else val += pass * (end.dateToDays() - d1.dateToDays())  * (*i)->getDailyCost();
-            }
-            else if (d1 >= beg && d2 <= end){
-                if (players[playerPos]->isInjury()){
+                } else val += pass * (end.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
+            } else if (d1 >= beg && d2 <= end) {
+                if (players[playerPos]->isInjury()) {
                     val += pass * (d2.dateToDays() - d1.dateToDays()) * 3 * (*i)->getDailyCost();
-                }
-                else val += pass * (d2.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
+                } else val += pass * (d2.dateToDays() - d1.dateToDays()) * (*i)->getDailyCost();
             }
         }
     }
@@ -391,7 +334,7 @@ float NationalTeam::staffCostCalculator(Date d1, Date d2) {
     float date_difference;
     float no_months;
     //iterate over technicians menu
-    for (auto i = technicians.begin(); i != technicians.end(); i++){
+    for (auto i = technicians.begin(); i != technicians.end(); i++) {
         //GET DATE DIFERENCE IN DAYS - setting an average of 30.44 days per month
         no_months = (d2.dateToDays() - d1.dateToDays()) / 30.44;
         costs += no_months * (*i)->getSalary();
@@ -426,29 +369,28 @@ float NationalTeam::playerCostCalculatorMonth(int monthNumber, int yearNumber, i
                 beg = (*i)->getPlayerStatistics()[j]->getBegDate();
                 end = (*i)->getPlayerStatistics()[j]->getEndDate();
 
-                if (beg.getMonth() == monthNumber && end.getMonth() == monthNumber && beg.getYear() == yearNumber && end.getYear() == yearNumber){
-                    if (players[playerPos]->isInjury()){
-                        val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost() *3;
-                    }
-                    else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
-                }
-                else if (beg.getMonth() == monthNumber && end.getYear() == yearNumber){
-                    if(players[playerPos]->isInjury()){
-                        val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost() *3;
-                    }
-                    else val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost();
-                }
-                else if (end.getMonth() == monthNumber && end.getYear() == yearNumber){
-                    if(players[playerPos]->isInjury()){
-                        val += pass * (end.getDay()) * (*i)->getDailyCost() *3;
-                    }
-                    else val += pass * (end.getDay()) * (*i)->getDailyCost();
-                }
-                else if (((beg.getMonth() <= monthNumber && beg.getYear() == yearNumber) || (beg.getYear() == yearNumber)) && ((end.getMonth() >= monthNumber && end.getYear() == yearNumber) || (end.getYear() == yearNumber))){
-                    if(players[playerPos]->isInjury()){
-                        val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost() *3;
-                    }
-                    else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
+                if (beg.getMonth() == monthNumber && end.getMonth() == monthNumber && beg.getYear() == yearNumber &&
+                    end.getYear() == yearNumber) {
+                    if (players[playerPos]->isInjury()) {
+                        val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost() * 3;
+                    } else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
+                } else if (beg.getMonth() == monthNumber && end.getYear() == yearNumber) {
+                    if (players[playerPos]->isInjury()) {
+                        val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost() *
+                               3;
+                    } else
+                        val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost();
+                } else if (end.getMonth() == monthNumber && end.getYear() == yearNumber) {
+                    if (players[playerPos]->isInjury()) {
+                        val += pass * (end.getDay()) * (*i)->getDailyCost() * 3;
+                    } else val += pass * (end.getDay()) * (*i)->getDailyCost();
+                } else if (((beg.getMonth() <= monthNumber && beg.getYear() == yearNumber) ||
+                            (beg.getYear() == yearNumber)) &&
+                           ((end.getMonth() >= monthNumber && end.getYear() == yearNumber) ||
+                            (end.getYear() == yearNumber))) {
+                    if (players[playerPos]->isInjury()) {
+                        val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost() * 3;
+                    } else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
                 }
             }
         }
@@ -483,30 +425,25 @@ float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
 
             pass = players[playerPos]->getPassValue() * 0.01;
 
-            if (beg.getMonth() == monthNumber && end.getMonth() == monthNumber && beg.getYear() == yearNumber && end.getYear() == yearNumber){
-                if (players[playerPos]->isInjury()){
-                    val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost() *3;
-                }
-                else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
+            if (beg.getMonth() == monthNumber && end.getMonth() == monthNumber && beg.getYear() == yearNumber &&
+                end.getYear() == yearNumber) {
+                if (players[playerPos]->isInjury()) {
+                    val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost() * 3;
+                } else val += pass * (end.dateToDays() - beg.dateToDays()) * (*i)->getDailyCost();
 
-            }
-            else if (beg.getMonth() == monthNumber && end.getYear() == yearNumber){
-                if(players[playerPos]->isInjury()){
-                    val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost() *3;
-                }
-                else val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost();
-            }
-            else if (end.getMonth() == monthNumber && end.getYear() == yearNumber){
-                if(players[playerPos]->isInjury()){
-                    val += pass * (end.getDay()) * (*i)->getDailyCost() *3;
-                }
-                else val += pass * (end.getDay()) * (*i)->getDailyCost();
-            }
-            else if ((beg.getMonth() <= monthNumber && beg.getYear() <= yearNumber) && ((end.getMonth() >= monthNumber && end.getYear() >= yearNumber) )){
-                if(players[playerPos]->isInjury()){
-                    val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost() *3;
-                }
-                else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
+            } else if (beg.getMonth() == monthNumber && end.getYear() == yearNumber) {
+                if (players[playerPos]->isInjury()) {
+                    val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost() * 3;
+                } else val += pass * (beg.daysInMonth(monthNumber, yearNumber) - beg.getDay()) * (*i)->getDailyCost();
+            } else if (end.getMonth() == monthNumber && end.getYear() == yearNumber) {
+                if (players[playerPos]->isInjury()) {
+                    val += pass * (end.getDay()) * (*i)->getDailyCost() * 3;
+                } else val += pass * (end.getDay()) * (*i)->getDailyCost();
+            } else if ((beg.getMonth() <= monthNumber && beg.getYear() <= yearNumber) &&
+                       ((end.getMonth() >= monthNumber && end.getYear() >= yearNumber))) {
+                if (players[playerPos]->isInjury()) {
+                    val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost() * 3;
+                } else val += pass * (beg.daysInMonth(monthNumber, yearNumber)) * (*i)->getDailyCost();
             }
         }
     }
@@ -515,7 +452,7 @@ float NationalTeam::teamCostCalculatorMonth(int monthNumber, int yearNumber) {
 
 float NationalTeam::staffCostCalculatorMonth(int monthNumber) {
     float costs;
-    for (auto i = technicians.begin(); i != technicians.end(); i++){
+    for (auto i = technicians.begin(); i != technicians.end(); i++) {
         costs += (*i)->getSalary();
     }
     return costs;
@@ -530,11 +467,10 @@ bool NationalTeam::readGames(string filename) {
     gamesFile.open("..//Files//" + filename);
 
 
-    if(gamesFile.fail()){
+    if (gamesFile.fail()) {
         cerr << "Error Opening File";
         return false;
-    }
-    else {
+    } else {
         while (!gamesFile.eof()) {
             Game *game = new Game();
 
@@ -557,7 +493,7 @@ bool NationalTeam::readGames(string filename) {
             splited_int_string = separateCharacterInt(text, ',');
 
             for (int i = 0; i < splited_int_string.size(); i++) {
-                players.push_back(this->players[splited_int_string[i]-1]);
+                players.push_back(this->players[splited_int_string[i] - 1]);
             }
 
             game->setNationalPlayers(players);
@@ -580,13 +516,14 @@ bool NationalTeam::readGames(string filename) {
         return true;
     }
 }
+
 bool NationalTeam::readGameStatistics(string filename) {
     //VARIABLES TO READ FILE
     ifstream statsFile;
     statsFile.open("..//Files//" + filename);
     string text;
 
-    if(statsFile.fail()){
+    if (statsFile.fail()) {
         cerr << "Error Opening File";
         return false;
     }
@@ -594,35 +531,35 @@ bool NationalTeam::readGameStatistics(string filename) {
 
     int gameID;
 
-    while(!statsFile.eof()){
+    while (!statsFile.eof()) {
 
         getline(statsFile, text);
         gameID = stoi(text);
         vector<PlayerGameStatistics> stats = {};
 
-        while(text != "::::::::::"){
+        while (text != "::::::::::") {
             PlayerGameStatistics statistics;
 
             getline(statsFile, text);
             statistics.setPlayerID(stoi(text));
 
             getline(statsFile, text);
-            statistics.setNumberOfGoals( stoi(text) );
+            statistics.setNumberOfGoals(stoi(text));
 
             getline(statsFile, text);
-            statistics.setMinutesPlayed( stoi(text) );
+            statistics.setMinutesPlayed(stoi(text));
 
             getline(statsFile, text);
-            statistics.setKilometers( stoi(text) );
+            statistics.setKilometers(stoi(text));
 
             getline(statsFile, text);
-            statistics.setNumberOfPasses( stoi(text) );
+            statistics.setNumberOfPasses(stoi(text));
 
             getline(statsFile, text);
-            statistics.setNumberOfYellowCards( stoi(text) );
+            statistics.setNumberOfYellowCards(stoi(text));
 
             getline(statsFile, text);
-            statistics.setNumberOfRedCards( stoi(text) );
+            statistics.setNumberOfRedCards(stoi(text));
 
             getline(statsFile, text);
 
@@ -633,38 +570,37 @@ bool NationalTeam::readGameStatistics(string filename) {
     }
 
 
-
     statsFile.close();
     return true;
 }
 
 
-
 //Exists the program and saves the information to new files
-void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string gamesFileName, string statisticsFileName) {
+void
+NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesFileName, string statisticsFileName) {
     string content;
-    ofstream peopleFile("../Files/" +peepzFile);
+    ofstream peopleFile("../Files/" + peepzFile);
 
-    for (int i = 0; i < people.size(); i++){
+    for (int i = 0; i < people.size(); i++) {
         people[i]->printToFile(peopleFile);
     }
     peopleFile.close();
 
-    ofstream gameFile("../Files/" +gamesFileName);
+    ofstream gameFile("../Files/" + gamesFileName);
 
-    for (int i = 0; i < games.size(); i++){
+    for (int i = 0; i < games.size(); i++) {
         games[i]->printIntoFile(gameFile);
 
-        if(i != games.size() - 1){
+        if (i != games.size() - 1) {
             gameFile << "::::::::::" << endl;
         }
     }
 
     gameFile.close();
 
-    ofstream callupFile("../Files/" +callupFileName);
+    ofstream callupFile("../Files/" + callupFileName);
 
-    for (int i = 0; i < callUps.size(); i++){
+    for (int i = 0; i < callUps.size(); i++) {
         callUps[i]->printIntoFile(callupFile);
         if (i != callUps.size() - 1) callupFile << endl;
     }
@@ -673,9 +609,9 @@ void NationalTeam::saveAndExit(string peepzFile,string callupFileName, string ga
 
     ofstream statisticsFile("../Files/" + statisticsFileName);
 
-    for (int i = 0; i < games.size(); i++){
+    for (int i = 0; i < games.size(); i++) {
 
-        for (int j = 0; j < games[i]->getPlayerStatistics().size(); j++){
+        for (int j = 0; j < games[i]->getPlayerStatistics().size(); j++) {
             games[i]->getPlayerStatistics()[j].printIntoFile(statisticsFile);
 
             if (j != games[i]->getPlayerStatistics().size() - 1) statisticsFile << "---------" << endl;

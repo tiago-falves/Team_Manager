@@ -4,9 +4,10 @@
 
 #include "Person.h"
 #include <vector>
+
 using namespace std;
 
-class FootballPlayer: public Person {
+class FootballPlayer : public Person {
 private:
     /**
      * Position of the player in the team,
@@ -48,7 +49,8 @@ public:
      * @param birthdayDate  Represent person's birthday date
      * @param salary  - Represent person's salary
      */
-    FootballPlayer(string name, Date birthDay,float salary,string position, string club, const float weight, const float height,  float pass_value,bool injury);
+    FootballPlayer(string name, Date birthDay, float salary, string position, string club, const float weight,
+                   const float height, float pass_value, bool injury);
 
     /**
      * @brief Construct a default Football Player object with no paramters
@@ -73,7 +75,7 @@ public:
      * @param - ostream os - Tells where to print the content
      * @return void
     */
-    virtual void print(ostream& out) const;
+    virtual void print(ostream &out) const;
 
     /**
      * @brief virtual function that prints the caller in the file format, given an ostream variable
@@ -137,7 +139,6 @@ public:
      * @return true if the player is injured, false otherwise
      */
     bool isInjury() const;
-
 
 
     /**

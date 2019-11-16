@@ -146,7 +146,6 @@ void FootballPlayer::read(ifstream *file) {
     getline(*file,text);
     pass_value = stof(text);
     getline(*file,text);
-    bool isInjured;
-    if(text == "Healthy") isInjured= false;
-    if(text == "Injured") isInjured= true;
+    if(text == "Healthy") injury= false;
+    if(text == "Injured") injury= true;
 }

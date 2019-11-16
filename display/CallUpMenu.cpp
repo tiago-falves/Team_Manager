@@ -158,7 +158,7 @@ void Menu::createCallUpMenu() {
 void Menu::askForDates(Date& begDate, Date& endDate) {
     //GET BEGINNING DATE
     string date;
-    bool isAfter = true;
+    bool isAfter;
 
     while(true) {
         while (true) {
@@ -369,7 +369,7 @@ void Menu::addGameCallUpMenu(const int& id) {
     menuSeparator();
 
     int idc;
-    bool error = false;
+    bool error;
 
     while (true) {
         error = false;
@@ -481,7 +481,7 @@ void Menu::setAllEqual(Date begDate, Date endDate, vector<Game*> call_games, vec
 void Menu::infoManually(Date begDate, Date endDate, vector<Game*> call_games, vector<CallUpPlayerStatistics*> stats) {
     string date;
     Date begPlayerDate, endPlayerDate;
-    bool error = false;
+    bool error;
 
     for (auto i = call_games.begin(); i != call_games.end(); i++) {
         for (auto j = 0; j < (*i)->getNationalPlayers().size(); j++) {
@@ -556,7 +556,7 @@ void Menu::listDifferent(Date begDate, Date endDate, vector<Game *> call_games,
     string indexes, date;
     vector<int> vec_indexes;
     Date begPlayerDate, endPlayerDate;
-    bool error = false;
+    bool error;
 
     //GET INDEX OF GAMES
     cout << "Insert a list of the game's indexes separated by commas: ";
