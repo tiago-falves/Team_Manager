@@ -232,7 +232,14 @@ public:
 //PLAYER STATISTCS EXCEPTIONS
 class NegativeParameter{
 public:
+    /**
+     * negative number inserted by user
+     */
     int num;
+    /**
+     * Constructs object to be thrown when user inserts negative statistics for player
+     * @param num
+     */
     NegativeParameter(int num){
         this->num = num;
         cout << endl << endl << "Statistics cannot have negative value!" << endl;
@@ -241,7 +248,14 @@ public:
 
 class InvalidMinutes{
 public:
+    /**
+     * Invalid number of minutes inserted by user
+     */
     int minutes;
+    /**
+     * Constructs object to be thrown when user inserts invalid playing minutes for player
+     * @param minutes
+     */
     InvalidMinutes(int minutes){
         this->minutes = minutes;
         cout << endl << endl << "Minutes value has to be between 1 and 90!" << endl;
@@ -250,7 +264,14 @@ public:
 
 class InvalidYellowCard{
 public:
+    /**
+     * Invalid number of yellows insertes by user
+     */
     int yellows;
+    /**
+     * Constructs object to be thrown when user inserts invalid number of yellow cards
+     * @param yellows
+     */
     InvalidYellowCard(int yellows){
         this->yellows = yellows;
         cout << endl << endl << "Number of yellows has a max value of 2!" << endl;
@@ -259,7 +280,14 @@ public:
 
 class InvalidRedCard{
 public:
+    /**
+     * Invalid number of reds inserted by user
+     */
     int reds;
+    /**
+     * Constructs object to be thrown when user inserts invalid number of red cards
+     * @param reds
+     */
     InvalidRedCard(int reds){
         this->reds = reds;
         cout << endl << endl << "Number of reds cannot be higher than 1 and depends on the number of yellows!" << endl;

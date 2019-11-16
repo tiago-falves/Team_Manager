@@ -15,8 +15,17 @@ using namespace std;
 
 class Date{
 private:
+    /**
+     * Date's day
+     */
     unsigned short day;
+    /**
+     * Date's month
+     */
     unsigned short month;
+    /**
+     * Date's year
+     */
     unsigned year;
 
 public:
@@ -184,6 +193,9 @@ public:
 
 class ExceptionDate{
 public:
+    /**
+     * Invalid string date
+     */
     string date;
     /**
      * Constructs object to be thrown when date represented by a string is invalid
@@ -194,6 +206,9 @@ public:
 
 class InvalidDate{
 public:
+    /**
+     * Ivalid parameters of date
+     */
     int day, month, year;
     /**
      * Constructs object to be thrown when date does not correspond to a possible value

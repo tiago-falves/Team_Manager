@@ -60,6 +60,7 @@ void Menu::allCallUpMenu() {
 void Menu::callUpMenu() {
     menuSeparator();
     int option;
+    CallUp* call;
 
     while (true){
         cout << "Insert the ID of the call up you want to see: ";
@@ -73,7 +74,12 @@ void Menu::callUpMenu() {
         }
 
         try{
+            //DISPLAYS CALL UP GENERALL INFORMATION
             searchCallUpByID(option);
+            headerCallUp(cout);
+
+            call = getCallUpWithID(option);
+            call->showCallUp(cout);
         }
         catch(...){
             cout << "There are no call ups with such id (" << option << ") !" << endl;
@@ -81,10 +87,16 @@ void Menu::callUpMenu() {
             break;
         }
 
-        headerCallUp(cout);
-        for (auto i = callUps.begin(); i != callUps.end(); i++) {
-            if (option == (*i)->getId()) (*i)->showCallUp(cout);
+        //DISPLAYS PLAYERS IN CALL UP
+        cout  << endl;
+        tableHeaderPlayer(cout);
+
+        for (auto i = 0; i < call->getPlayerStatistics().size(); i++){
+            players[searchByID(players, call->getPlayerStatistics()[i]->getPlayerID())]->print(cout);
         }
+
+        tableFooterPlayer(cout);
+
 
         menuSeparator();
         break;

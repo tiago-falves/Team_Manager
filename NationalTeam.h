@@ -19,14 +19,42 @@
 
 class NationalTeam {
 protected:
-    vector<Person *> people;
-    vector<FootballPlayer *> players;
-    vector<Technician *> technicians;
-    vector<CallUp *> callUps;
-    vector<Game *> games;
+    /**
+     * Vector contaning all people
+     */
+    vector<Person*> people;
+    /**
+     * Vector containing all players
+     */
+    vector<FootballPlayer*> players;
+    /**
+     * Vector containing all technicians
+     */
+    vector<Technician*> technicians;
+    /**
+     * Vector containing all call ups
+     */
+    vector<CallUp*> callUps;
+    /**
+     * Vector containing all games
+     */
+    vector<Game*> games;
+    /**
+     * People file name
+     */
+
     string peopleFile;
+    /**
+     * Game file name
+     */
     string gameFile;
+    /**
+     * Statistics file name
+     */
     string statisticsFile;
+    /**
+     * Call up file name
+     */
     string callUpFile;
 
 

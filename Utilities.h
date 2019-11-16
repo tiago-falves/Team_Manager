@@ -16,6 +16,13 @@ using namespace std;
 //Search Algorithms
 
 //Sequential Search
+/**
+ * Searches element in vector sequentially
+ * @tparam Comparable
+ * @param v
+ * @param x
+ * @return
+ */
 template <class Comparable>
 int sequentialSearch(const vector<Comparable> &v, Comparable x)
 {
@@ -26,6 +33,14 @@ int sequentialSearch(const vector<Comparable> &v, Comparable x)
 }
 
 //Binary Search
+/**
+ * Searches element in vector using "divide and conquer" method
+ * @tparam T
+ * @tparam R
+ * @param v - vector where element will be looked for
+ * @param x - element to look for
+ * @return element position
+ */
 template <class T,class R>
 int BinarySearch(const vector<T> &v, R x)
 {
@@ -47,6 +62,11 @@ int BinarySearch(const vector<T> &v, R x)
 //Ordering Algorithms
 
 //Insertion Sort
+/**
+ * Sorts vector v
+ * @tparam Comparable
+ * @param v
+ */
 template <class Comparable>
 void insertionSort(vector<Comparable> &v)
 {
@@ -61,6 +81,13 @@ void insertionSort(vector<Comparable> &v)
 }
 
 template <class Comparable>
+/**
+ * Sorts vector v, using quick sort method
+ * @tparam Comparable
+ * @param v
+ * @param left
+ * @param right
+ */
 void quickSort(vector<Comparable> &v, int left, int right) {
     if (right - left <= 10) // se vetor pequeno
         insertionSort(v, left, right);
@@ -81,7 +108,13 @@ void quickSort(vector<Comparable> &v, int left, int right) {
     }
 }
 //Vector Operations
-
+/**
+ * Inserts item in vector in ordered position
+ * @tparam T
+ * @param vec
+ * @param item
+ * @return
+ */
 template< typename T >
 typename std::vector<T>::iterator
 insert_sorted( std::vector<T> & vec, T const& item ){
@@ -96,25 +129,51 @@ insert_sorted( std::vector<T> & vec, T const& item ){
 
 
 //String Manipulators
-
+/**
+ * Erases spaces in right postions of s
+ * @param s
+ */
 void trimRight(std::string &s);
-
+/**
+ * Erases spaces in left postions of s
+ * @param s
+ */
 void trimLeft(std::string &s);
-
+/**
+ * Erases spaces in right or left postions of s
+ * @param s
+ */
 void trim(std::string &s);
-
+/**
+ * Returns a vector of the elements of the string s, that are separated by the char ch
+ * @param s
+ * @param ch
+ * @return
+ */
 vector<int> separateCharacterInt(string s, char ch);
-
+/**
+ * Verifies if string number is a number
+ * @param number
+ * @return
+ */
 bool stringIsNumber(string number);
-
+/**
+ * Returns a vector of the elements of the string s, that are separated by the char ch
+ * @param s
+ * @param ch
+ * @return
+ */
 vector<string> separateCharacterStr(string s, char ch);
 
-bool isNumber(const std::string& s);
-
-bool isPositiveNumber(int n);
-
+/**
+ * Checks if num is a valid float
+ * @param num
+ */
 void validFloat(string num);
-
+/**
+ * Checks if num is a valid int
+ * @param num
+ */
 void validInt(string num);
 
 #endif //AEDA_TEAM_MANAGER_UTILITIES_H
