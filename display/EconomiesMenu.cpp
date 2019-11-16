@@ -40,15 +40,17 @@ void Menu::playerMenu() {
         cout << "Go back.                                                           [0]" << endl;
         cout << "Costs associated with one player in a determined month.            [1]" << endl;
         cout << "Costs associated with one player between two dates.                [2]" << endl;
+        cout << "Costs associated with one player in determined call up.            [3]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 2);
+        validOption(option, 3);
         menuSeparator();
 
         if (option == 0) { break; }
         else if (option == 1) {playerMonthMenu();}
         else if (option == 2) {playerTimeMenu();}
+        else if (option == 3) {playerCallUp();}
     }
 }
 
@@ -189,11 +191,12 @@ void Menu::playerTimeMenu(){
         cin.clear();
         cin.ignore(10000, '\n');
 
+
         //GET FIRST DATE
         cout << "Insert the first date: ";
         cin >> date1;
 
-        if (!firstDate.validDateText(date1)){
+        if (!firstDate.validDateText(date1)) {
             cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
@@ -203,7 +206,7 @@ void Menu::playerTimeMenu(){
         firstDate = firstDate.dateTextConverter(date1);
 
 
-        if(cin.fail()){
+        if (cin.fail()) {
             cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
@@ -216,7 +219,7 @@ void Menu::playerTimeMenu(){
         cout << "Insert the final date: ";
         cin >> date2;
 
-        if (!endDate.validDateText(date2)){
+        if (!endDate.validDateText(date2)) {
             cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
@@ -225,12 +228,12 @@ void Menu::playerTimeMenu(){
 
         endDate = endDate.dateTextConverter(date2);
 
-        if (!endDate.isAfter(firstDate)){
+        if (!endDate.isAfter(firstDate)) {
             cout << "Invalid operation, final date cannot be before first date!" << endl;
             break;
         }
 
-        if(cin.fail()){
+        if (cin.fail()) {
             cout << "Invalid operation, DATE was not written properly (DD/MM/YYYY)!" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
@@ -238,6 +241,7 @@ void Menu::playerTimeMenu(){
         }
         cin.clear();
         cin.ignore(10000, '\n');
+
 
         menuSeparator();
 
@@ -264,6 +268,99 @@ void Menu::playerTimeMenu(){
     }
 }
 
+void Menu::playerCallUp() {
+    int playerID;
+    int idc;
+    float val = 0;
+    int playerPos;
+    float pass;
+    int call_pos;
+
+    while(true) {
+        //GET ID OF PLAYER
+        cout << "Insert the ID of the player information will be taken from: ";
+        cin >> playerID;
+
+        if (cin.fail()){
+            cout << "Player ID is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        try{
+            searchByID(players, playerID);
+        }
+        catch(InexistentId){
+            cout << "There is no player with the given ID!";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+
+        if (cin.fail()){
+            cout << "Invalid operation, ID is an integer number!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+        cin.clear();
+        cin.ignore(10000, '\n');
+
+
+
+
+
+        cout << "Insert the ID of the call up: ";
+        cin >> idc;
+
+        if (cin.fail()) {
+            cout << "Invalid operation, ID is an integer number!" << endl;
+            cin >> idc;
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+
+        try {
+            searchCallUpByID(idc);
+        }
+        catch (...) {
+            cout << "There are no call ups with such id (" << idc << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+
+        playerPos = searchByID(players, playerID);
+        pass = players[playerPos]->getPassValue() * 0.01;
+
+
+        call_pos = searchCallStatsByID(getCallUpWithID(idc)->getPlayerStatistics(), playerID);
+        Date beg = getCallUpWithID(idc)->getPlayerStatistics()[call_pos]->getBegDate();
+        Date end = getCallUpWithID(idc)->getPlayerStatistics()[call_pos]->getEndDate();
+        float cost = getCallUpWithID(idc)->getDailyCost();
+
+        if (players[playerPos]->isInjury()) {
+            val += pass * (end.dateToDays() - beg.dateToDays()) * 3 * cost;
+        }
+        else val += pass * (end.dateToDays() - beg.dateToDays()) * cost;
+
+        cout << "Selected player: " << endl;
+        tableHeaderPlayer(cout);
+        players[playerPos]->print(cout);
+        tableFooterPlayer(cout);
+        menuSeparator();
+
+        cout << "Selected call up: " << endl;
+        headerCallUp(cout);
+        getCallUpWithID(idc)->showCallUp(cout);
+        cout << endl << endl;
+
+        cout << "The costs associated with the player with ID: " << playerID << " in call up with ID: " << idc;
+        cout << " were of " << val << " euros." << endl;
+        break;
+    }
+}
+
 void Menu::teamMenu() {
     int option;
 
@@ -272,15 +369,17 @@ void Menu::teamMenu() {
         cout << "Go back.                                                           [0]" << endl;
         cout << "Costs associated with full team in a determined month.             [1]" << endl;
         cout << "Costs associated with full team between two dates.                 [2]" << endl;
+        cout << "Costs associated with full team in a call up                       [3]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 2);
+        validOption(option, 3);
         menuSeparator();
 
         if (option == 0) { break; }
         else if (option == 1) {teamMonthMenu();}
         else if (option == 2) {teamTimeMenu();}
+        else if (option == 3) {teamCallUp();}
     }
 }
 
@@ -393,6 +492,58 @@ void Menu::teamMonthMenu(){
 
         cout << "The costs associated with the national team players in the month " << month << ", year ";
         cout << year << " were of " << teamCostCalculatorMonth(month, year) << " euros." << endl;
+        break;
+    }
+}
+
+void Menu::teamCallUp() {
+    float val = 0;
+    int idc, playerPos;
+    Date end, beg;
+    float cost, pass;
+
+    while(true) {
+        cout << "Insert the ID of the call up: ";
+        cin >> idc;
+
+        if (cin.fail()) {
+            cout << "Invalid operation, ID is an integer number!" << endl;
+            cin >> idc;
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+
+        try {
+            searchCallUpByID(idc);
+        }
+        catch (...) {
+            cout << "There are no call ups with such id (" << idc << ") !" << endl;
+            menuSeparator();
+            break;
+        }
+
+        cost = getCallUpWithID(idc)->getDailyCost();
+        for (auto i = 0; i < getCallUpWithID(idc)->getPlayerStatistics().size(); i++) {
+
+            playerPos = searchByID(players, getCallUpWithID(idc)->getPlayerStatistics()[i]->getPlayerID());
+            pass = players[playerPos]->getPassValue() * 0.01;
+
+            beg = getCallUpWithID(idc)->getPlayerStatistics()[i]->getBegDate();
+            end = getCallUpWithID(idc)->getPlayerStatistics()[i]->getEndDate();
+
+            if (players[playerPos]->isInjury()) {
+                val += pass * (end.dateToDays() - beg.dateToDays()) * 3 * cost;
+            } else val += pass * (end.dateToDays() - beg.dateToDays()) * cost;
+        }
+
+
+        cout << "Selected call up: " << endl;
+        headerCallUp(cout);
+        getCallUpWithID(idc)->showCallUp(cout);
+        cout << endl << endl;
+
+        cout << "The costs associated with the all team in call up with ID: " << idc;
+        cout << " were of " << val << " euros." << endl;
         break;
     }
 }

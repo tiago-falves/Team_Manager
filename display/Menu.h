@@ -391,6 +391,10 @@ private:
      * between two given dates
      */
     void playerTimeMenu();
+    /**
+     * Calculates costs with given player in given call up
+     */
+    void playerCallUp();
 
     /**
      * When called program advances to submenu where user can see costs associated with all National Team
@@ -406,6 +410,10 @@ private:
      * between two given dates
      */
     void teamTimeMenu();
+    /**
+     * Calculates cost for all players in call up
+     */
+    void teamCallUp();
 
     /**
      * When called program advances to submenu where user can see costs associated with all National Team
