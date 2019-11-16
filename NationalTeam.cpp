@@ -480,7 +480,6 @@ bool NationalTeam::readGames(string filename) {
     ifstream gamesFile;
     vector<int> splited_int_string;
     vector<string> splited_str_string;
-    vector<FootballPlayer *> players;
     gamesFile.open("..//Files//" + filename);
 
 
@@ -489,6 +488,7 @@ bool NationalTeam::readGames(string filename) {
         return false;
     } else {
         while (!gamesFile.eof()) {
+            vector<FootballPlayer *> nationalTeamPlayers;
             Game *game = new Game();
 
             getline(gamesFile, text);
@@ -508,12 +508,11 @@ bool NationalTeam::readGames(string filename) {
 
             getline(gamesFile, text);
             splited_int_string = separateCharacterInt(text, ',');
-
             for (int i = 0; i < splited_int_string.size(); i++) {
-                players.push_back(this->players[splited_int_string[i] - 1]);
+                nationalTeamPlayers.push_back(this->players[splited_int_string[i] - 1]);
             }
-
-            game->setNationalPlayers(players);
+            cout << nationalTeamPlayers.size() << endl;
+            game->setNationalPlayers(nationalTeamPlayers);
 
             getline(gamesFile, text);
             splited_str_string = separateCharacterStr(text, ',');
@@ -596,13 +595,16 @@ bool NationalTeam::readGameStatistics(string filename) {
 void
 NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesFileName, string statisticsFileName) {
     string content;
+    //SEND PEOPLE INFORMATION TO FILE
     ofstream peopleFile("../Files/" + peepzFile);
 
     for (int i = 0; i < people.size(); i++) {
         people[i]->printToFile(peopleFile);
+        if (i != people.size() - 1) peopleFile << endl;
     }
     peopleFile.close();
 
+    //SEND GAME INFORMATION TO FILE
     ofstream gameFile("../Files/" + gamesFileName);
 
     for (int i = 0; i < games.size(); i++) {
@@ -611,10 +613,12 @@ NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesF
         if (i != games.size() - 1) {
             gameFile << "::::::::::" << endl;
         }
+        else gameFile << "::::::::::";
     }
 
     gameFile.close();
 
+    //SEND CALL UP INFORMATION TO FILE
     ofstream callupFile("../Files/" + callupFileName);
 
     for (int i = 0; i < callUps.size(); i++) {
@@ -624,9 +628,11 @@ NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesF
 
     callupFile.close();
 
+    //SEND STATISTICS TO FILE
     ofstream statisticsFile("../Files/" + statisticsFileName);
 
     for (int i = 0; i < games.size(); i++) {
+        statisticsFile << games[i]->getId() << endl;
 
         for (int j = 0; j < games[i]->getPlayerStatistics().size(); j++) {
             games[i]->getPlayerStatistics()[j].printIntoFile(statisticsFile);

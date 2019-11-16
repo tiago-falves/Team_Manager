@@ -43,7 +43,7 @@ void Technician::print(ostream &out) const {
 void Technician::printToFile(ostream &out) const {
     Person::printToFile(out);
     out << role << endl;
-    out <<  "::::::::::" << endl;
+    out <<  "::::::::::";
 }
 //Returns type of the person
 string Technician::type() const {
