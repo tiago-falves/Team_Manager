@@ -14,8 +14,66 @@ using namespace std;
 
 class PlayerGameStatistics {
 private:
+
+    /**
+     * ID of the Statistic
+     * Every statistic has an ID so it easy to identify each statistics
+    */
+    int id;
+
+    /**
+     * ID of the Player that the statistic belongs to
+     * Every player has an ID so it easy to identify each player
+    */
+    int playerID;
+
+    /**
+     * Number of Goals Score by the Player
+    */
+    int numberOfGoals;
+
+    /**
+     * Minutes Played but the Player
+     */
+    int minutesPlayed;
+
+    /**
+     * Kilometers the Player ran
+     */
+    int kilometers;
+
+    /**
+     * Number of Passes the Player made
+     */
+    int numberOfPasses;
+
+    /**
+     * Number of Yellow Cards the Player received
+     */
+    int numberOfYellowCards;
+
+    /**
+     * Number of Red Cards the Player received
+     */
+    int numberOfRedCards;
+
+    /**
+     * Static variable to keep ID always updated and orderd
+     */
+    static int lastId;
+
 public:
 
+    /**
+     * @brief Constructor of the Statistics of a player given all its atributes
+     * @param playerID
+     * @param numberOfGoals
+     * @param minutesPlayed
+     * @param kilometers
+     * @param numberOfPasses
+     * @param numberOfYellowCards
+     * @param numberOfRedCards
+     */
     PlayerGameStatistics(int playerID, int numberOfGoals, int minutesPlayed, int kilometers, int numberOfPasses, int numberOfYellowCards, int numberOfRedCards);
 
     PlayerGameStatistics(int playerID);
@@ -53,20 +111,6 @@ public:
     int getId() const;
 
     void print(ostream &os);
-
-private:
-    int id;
-    int playerID;
-    int numberOfGoals;
-    int minutesPlayed;
-    int kilometers;
-    int numberOfPasses;
-    int numberOfYellowCards;
-    int numberOfRedCards;
-    static int lastId;
-
-public:
-
 };
 
 //PLAYER STATISTCS EXCEPTIONS
