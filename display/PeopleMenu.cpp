@@ -19,10 +19,11 @@ void Menu::runPeopleMenu() {
         cout << "Search Person by name                                              [4]" << endl;
         cout << "Football Players                                                   [5]" << endl;
         cout << "Technicians                                                        [6]" << endl;
+        cout << "Coaches                                                            [7]" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 6);
+        validOption(option, 7);
 
         menuSeparator();
 
@@ -33,6 +34,7 @@ void Menu::runPeopleMenu() {
         if (option == 4) { showPersonByName(); }
         if (option == 5) { runPlayersMenu(); }
         if (option == 6) { runTechnicianMenu(); }
+        if (option == 7) { runCoachMenu(); }
 
 
     }
@@ -76,7 +78,7 @@ void Menu::showEveryone(ostream &out) {
     tableHeaderPlayer(out);
 
     for (int i = 0; i < people.size(); ++i) {
-
+        //if (people[i]->type() != "Coach")
         out << people[i];
     }
     tableFooterPlayer(out);
@@ -116,6 +118,24 @@ void Menu::tableHeaderPlayer(ostream &out){
 void Menu::tableFooterPlayer(ostream &out){
     out << setw(117) << setfill('-') << "-" << endl;
 }
+
+void Menu::tableFooterCoach(ostream &out){
+    out << setw(52) << setfill('-') << "-" << endl;
+}
+
+
+void Menu::tableCoachHeader(ostream &out){
+    out << endl << endl << endl;
+    out << setw(52) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
+    out <<  left << setw(20) << setfill(' ') << "Name"  << "│ ";
+    out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "│ ";
+    out <<  left << setw(9) << setfill(' ') << "Salary"<< "│ "  << endl;
+    //out <<  left << setw(20)  << setfill(' ') << "Position" << "│ ";
+    //out <<  left << setw(9) << setfill(' ') << "Titles won"  << " │" << endl;
+    out << setw(50) << setfill('-') << "-" << " │" <<  endl;
+}
+
 
 //Asks for all the information about a person
 void Menu::askPersonInformation(string &name, float &salary, Date &birthday){
@@ -502,3 +522,83 @@ void Menu::playerMenuTransition() {
     }
 }
 
+
+void Menu::runCoachMenu() {
+    int option;
+
+    while(true) {
+
+        menuSeparator();
+        cout << "Welcome to the coaches Menu! Please choose what you want to do: ";
+        cout << endl << endl;
+        cout << "0. Go back" << endl;
+        cout << "1. See all coaches ever" << endl;
+        cout << "2. See specific coach" << endl;
+        cout << "3. Create a new coach." << endl;
+        cout << "4. Set the new coach." << endl;
+        cout << "5. Remove a coach" << endl;
+        cout << "Insert the number correspondent to your option: ";
+        cin >> option;
+
+        validOption(option, 5);
+
+
+        menuSeparator();
+
+        if (option == 0) { break; }
+        if (option == 1) { showAllCoaches(cout); }
+        if (option == 2) { showSpecificCoachOption(); }
+        if (option == 3) { removeTechOption(); }
+        if (option == 4) { removeTechOption(); }
+    }
+}
+
+
+//Shows everyone in the Database
+void Menu::showAllCoaches(ostream &out) {
+
+    tableCoachHeader(out);
+    BSTItrIn<Coach> it(coaches);
+
+    while (!it.isAtEnd()){
+        //out << it.retrieve().ge
+
+        //Coach * coach = new Coach(it.retrieve().getName(),it.retrieve().getBirthday(),it.retrieve().getSalary(),it.retrieve().getTitlesWon(),it.retrieve().getCoachedTeams(),it.retrieve().isActualCoach());
+        out << it.retrieve() << endl;
+        it.advance();
+    }
+
+    tableFooterCoach(out);
+
+}
+
+//Asks for the id of a person and shows the person in the screen
+void Menu::showSpecificCoachOption() {
+
+   Coach coach =  askForValidCoachId(coaches);
+   coach.printCoach(cout);
+
+}
+
+
+Coach Menu::askForValidCoachId(BST<Coach> &coaches){
+
+    int id;
+    BSTItrIn<Coach> it(coaches);
+    Coach coach = Coach();
+
+    while (true)
+    {
+        id = askForId();
+
+        try {
+            coach = searchCoachById(coaches, id);
+            break;
+        }
+        catch (InexistentId(id)) {
+            cout << "The id is not in database.\n";
+        }
+    }
+
+    return coach;
+}

@@ -200,6 +200,8 @@ public:
      */
     friend ostream &operator<<(ostream &os, const Person *person);
 
+    friend ostream &operator<<(ostream &os, const Person person);
+
 
 
 

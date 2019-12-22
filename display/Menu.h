@@ -104,6 +104,11 @@ private:
     void runTechnicianMenu();
 
     /**
+     * Runs the main Coahes's Menu with all coaches coorelated options
+     */
+    void runCoachMenu();
+
+    /**
      *Given an id, it shows the Person with that id
      * @param out where the information is going to be outputted
      * @param i id of the Person that will be printed
@@ -205,6 +210,10 @@ private:
 
         return id;
     }
+
+
+    Coach askForValidCoachId(BST<Coach> &coaches);
+
 
 
 
@@ -534,6 +543,15 @@ private:
      * @param id - id of the call up that will be changed
      */
     void extendEndDate(int id);
+
+
+    void showAllCoaches(ostream &out);
+
+    void tableCoachHeader(ostream &out);
+
+    void tableFooterCoach(ostream &out);
+
+    void showSpecificCoachOption();
 
 };
 

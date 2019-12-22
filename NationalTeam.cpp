@@ -11,6 +11,7 @@ using namespace std;
 
 
 NationalTeam::NationalTeam() : coaches(Coach())  {
+
     readNationalTeam("NationalTeam.txt");
 }
 
@@ -535,6 +536,17 @@ bool NationalTeam::readGames(string filename) {
 
         return true;
     }
+}
+
+Coach NationalTeam::searchCoachById(BST<Coach> coaches, int id) {
+    BSTItrIn<Coach> it(coaches);
+    while(!it.isAtEnd()){
+        if(it.retrieve().getId() == id){
+            return it.retrieve();
+        }
+        it.advance();
+    }
+    throw InexistentId(id);
 }
 
 bool NationalTeam::readGameStatistics(string filename) {

@@ -65,13 +65,32 @@ void Coach::read(ifstream *file) {
 
 void Coach::print(ostream &out) const {
     Person::print(cout);
+    string cc;
+    if (isCurrentCoach){
+        cc = "Is Current Coach";
+    }else{
+        cc = "Old Coach";
+    }
 
-    out <<  left << setw(20) << "role" << "│  ";
-    out <<  left << setw(9) << setfill(' ') << "-------"  << "│ ";
-    out <<  left << setw(5) << setfill(' ')<<  "---" << "│ ";
-    out <<  left << setw(5) << setfill(' ') << "-----" << " │ ";
-    out <<  left << setw(5) << setfill(' ') << "----"<< "│ ";
-    out <<  left << setw(5) << setfill(' ') << "----"<< "  │" << endl;
+    out <<  left << setw(20) << cc << "│  ";
+    out <<  left << setw(9) << to_string(titlesWon) << " │ " << endl;
+
+}
+
+void Coach::printCoach(ostream &out) const {
+
+    out << "ID: " << id << endl;
+    out << "Name " << name << endl;
+    out << "Birthday Date: " << birthdayDate.toString() << endl;
+    out << "Salary: " << salary << endl;
+    out << "Titles won: " << titlesWon << endl;
+    if(isCurrentCoach) out << "Position: Current Coach" << endl;
+    if(!isCurrentCoach) out << "Position: Old Coach" << endl;
+    out << "Teams Trained: " << endl;
+    for (int i = 0; i < coachedTeams.size(); ++i) {
+        out << "        " << coachedTeams[i] << endl;
+    }
+
 }
 
 

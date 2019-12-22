@@ -137,6 +137,8 @@ public:
         else throw InexistentId(id);
     }
 
+    Coach searchCoachById(BST<Coach> coaches, int id);
+
     /**
      * Function that returns true if person1 name is smaller than person's 2 name
      * @param person1 First person to compare

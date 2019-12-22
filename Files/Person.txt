@@ -370,12 +370,12 @@ Coach
 Treinador Zas
 1/2/1950
 600.50
-3
+4
 Porto,Sporting,Benfica
 true
 ::::::::::
 Coach
-37
+38
 Antigo Treinador
 1/2/1950
 600.50

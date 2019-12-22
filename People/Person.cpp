@@ -135,6 +135,11 @@ ostream &operator<<(ostream &os, const Person *person){
     return os;
 }
 
+ostream &operator<<(ostream &os, const Person person){
+    person.print(os);
+    return os;
+}
+
 
 
 
