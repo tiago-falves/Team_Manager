@@ -83,15 +83,22 @@ bool NationalTeam::readNationalTeam(string fileName) {
     return true;
 }
 
-bool NationalTeam::savePeople(string fileName) {
+/*bool NationalTeam::savePeople(string fileName) {
     ofstream content("..//Files//" + fileName);
     for (int i = 0; i < people.size(); ++i) {
         people[i]->printToFile(content);
         content << "::::::::::" << endl;
     }
+    BSTItrIn<Coach> it(coaches);{
+        while (!it.isAtEnd()){
+            it.retrieve().printToFile(content);
+            it.advance();
+            content << "zas";
+        }
+    }
     content.close();
     return true;
-}
+}*/
 
 bool NationalTeam::idComparable(const Person *person1, const int id) {
     return (person1->getId() < id);
@@ -616,8 +623,17 @@ NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesF
 
     for (int i = 0; i < people.size(); i++) {
         people[i]->printToFile(peopleFile);
-        if (i != people.size() - 1) peopleFile << endl;
+        peopleFile << endl;
+        //if (i != people.size() - 1) peopleFile << endl;
     }
+    BSTItrIn<Coach> it(coaches);
+    while (!it.isAtEnd()){
+        it.retrieve().printToFile(peopleFile);
+        peopleFile << endl;
+        it.advance();
+
+    }
+
     peopleFile.close();
 
     //SEND GAME INFORMATION TO FILE

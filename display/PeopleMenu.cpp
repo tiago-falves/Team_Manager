@@ -82,6 +82,8 @@ void Menu::showEveryone(ostream &out) {
         out << people[i];
     }
     tableFooterPlayer(out);
+    cout << "Current Coach: " << endl;
+    currentCoach->printCoach(cout);
 }
 
 //Shows everyone in the Database
@@ -269,7 +271,6 @@ void Menu::askPlayerInformation(FootballPlayer *player){
 
     cout << "Is the player Injured? : ";
     player->setInjury(askYesNoQuestion());
-
 
 }
 
@@ -537,10 +538,11 @@ void Menu::runCoachMenu() {
         cout << "3. Create a new coach." << endl;
         cout << "4. Set the new coach." << endl;
         cout << "5. Remove a coach" << endl;
+        cout << "6. Coach with most titles" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 5);
+        validOption(option, 6);
 
 
         menuSeparator();
@@ -548,8 +550,10 @@ void Menu::runCoachMenu() {
         if (option == 0) { break; }
         if (option == 1) { showAllCoaches(cout); }
         if (option == 2) { showSpecificCoachOption(); }
-        if (option == 3) { removeTechOption(); }
-        if (option == 4) { removeTechOption(); }
+        if (option == 3) { createCoachOption(); }
+        if (option == 4) { setCurrentCoach(); }
+        if (option == 5) { removeCoachOption(); }
+        if (option == 6) { maxCoach(); }
     }
 }
 
@@ -601,4 +605,59 @@ Coach Menu::askForValidCoachId(BST<Coach> &coaches){
     }
 
     return coach;
+}
+
+
+
+//Function to ask the user all the informations it wants to attribute to the player
+void Menu::askCoachInformation(Coach &coach){
+    string name;
+    float salary;
+    Date birthday = Date();
+    bool isCT;
+
+    askPersonInformation(name,salary,birthday);
+    coach.setName(name);
+    coach.setSalary(salary);
+    coach.setBirthday(birthday);
+    //cout << "Is this the current coach?: ";
+    coach.setIfCurrentCoach(false);
+    coach.setTitlesWon(askForInt("Titles won"));
+    coach.setCoachedTeams(askForStringVectorAll("Trained Teams"));
+}
+
+void Menu::createCoachOption(){
+    Coach coach = Coach();
+    askCoachInformation(coach);
+
+    coaches.insert(coach);
+
+    menuSeparator();
+    cout << "Coach Added Successfully!";
+}
+
+void Menu::setCurrentCoach(){
+    cout << "What is the id of the new coach?:" << endl;
+    //coaches.remove(*currentCoach);
+    //currentCoach->setIfCurrentCoach(false);
+    //coaches.insert(*currentCoach);
+    //*currentCoach =  askForValidCoachId(coaches);
+    //coaches.remove(*currentCoach);
+    //currentCoach->setIfCurrentCoach(true);
+    //coaches.insert(*currentCoach);
+
+    cout << "Coach changed successfully!" << endl;
+
+}
+
+void Menu::removeCoachOption(){
+    coaches.remove(askForValidCoachId(coaches));
+
+    cout << "Coach Removed Successfully!";
+}
+
+void Menu::maxCoach(){
+    Coach coach =   coaches.findMax();
+    coach.printCoach(cout);
+
 }

@@ -109,3 +109,15 @@ bool Coach::operator<(const Coach &coach) const {
     }
     return false;
 }
+
+void Coach::printToFile(ostream &os) const {
+    Person::printToFile(os);
+    os << titlesWon << endl;
+    os << coachedTeams[0];
+    for (int i = 1; i < coachedTeams.size() ; ++i) {
+        os << "," << coachedTeams[i];
+    }
+    if (isCurrentCoach) os << endl << "true";
+    else os << endl << "false";
+    os << endl << "::::::::::";
+}

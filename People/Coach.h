@@ -42,6 +42,8 @@ public:
 
     virtual void print(ostream &out) const;
 
+    virtual void printToFile(ostream &os) const;
+
     void printCoach(ostream &out) const;
 
     bool operator<(const Coach* &coach) const;

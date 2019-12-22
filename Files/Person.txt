@@ -370,9 +370,9 @@ Coach
 Treinador Zas
 1/2/1950
 600.50
-4
+2
 Porto,Sporting,Benfica
-true
+false
 ::::::::::
 Coach
 38
@@ -381,5 +381,32 @@ Antigo Treinador
 600.50
 3
 Porto,Sporting,Benfica
+false
+::::::::::
+Coach
+41
+Souto
+12/12/1200
+123334.00
+4
+Porto,Benfica
+false
+::::::::::
+Coach
+39
+Most Titles
+1/2/1950
+600.50
+5
+Porto,Sporting,Benfica
+false
+::::::::::
+Coach
+42
+Joao Diogo
+12/12/3000
+767676.00
+25
+Boavista
 false
 ::::::::::

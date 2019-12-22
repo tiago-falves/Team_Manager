@@ -143,6 +143,17 @@ bool Menu::askYesNoQuestion() {
 
 }
 
+vector<string> Menu::askForStringVectorAll(string what){
+    cout << "Please Insert the " << what << ", click enter to exit" << endl;
+    vector<string> things;
+    while (true){
+        string x =askForString(what);
+        if(x == "") break;
+        things.push_back(x);
+    }
+    return things;
+}
+
 int Menu::askForInt(const string &what) {
     bool exceptionCatched = true;
     string text;

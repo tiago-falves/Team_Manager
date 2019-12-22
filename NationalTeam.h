@@ -92,7 +92,7 @@ public:
      * @param filename - Name of the people's file
      * @return true in case the operation was successfull
      */
-    bool savePeople(string filename);
+    //bool savePeople(string filename);
 
 
     //Search and Sort
@@ -453,6 +453,7 @@ public:
     /**
      * Return position of player with id in vector of his statistics in a call up
      * @param stats
+     * @param id
      * @param id
      * @return
      */

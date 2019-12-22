@@ -214,6 +214,10 @@ private:
 
     Coach askForValidCoachId(BST<Coach> &coaches);
 
+    void askCoachInformation(Coach &coach);
+
+    void createCoachOption();
+
 
 
 
@@ -304,6 +308,8 @@ private:
      * @param game - Game object where the vector will be added
      */
     void askForStringVector(ostream &out, string what, Game* game);
+
+    vector<string> askForStringVectorAll(string what);
 
     /**
      * Aks the user the statistics of a specific player
@@ -544,16 +550,46 @@ private:
      */
     void extendEndDate(int id);
 
-
+    /**
+     * @brief Shows all the coaches ordered by the bumber of titles won
+     * @param out Where to print the table
+     */
     void showAllCoaches(ostream &out);
 
+    /**
+     * @brief Table header for the coaches table
+     * @param out where to print the table
+     */
     void tableCoachHeader(ostream &out);
 
+    /**
+     * @brief Footer of the coaches tables
+     * @param out where to print the footer
+     */
     void tableFooterCoach(ostream &out);
 
+    /**
+     * @brief asks the user for an id and print the coach with that specific id
+     */
     void showSpecificCoachOption();
 
-};
+    /**
+     * @brief Sets the current coach of the team
+     */
+    void setCurrentCoach();
+
+    /**
+     * @brief Asks for an id and removes the coach with that same id
+     */
+    void removeCoachOption();
+
+    /**
+     * @brif Finds the Coach with most won titles in history
+     */
+    void maxCoach();
+
+
+    };
 
 
 #endif //AEDA_TEAM_MANAGER_MENU_H
