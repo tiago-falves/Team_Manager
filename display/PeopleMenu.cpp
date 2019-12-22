@@ -76,6 +76,7 @@ void Menu::showEveryone(ostream &out) {
     tableHeaderPlayer(out);
 
     for (int i = 0; i < people.size(); ++i) {
+
         out << people[i];
     }
     tableFooterPlayer(out);

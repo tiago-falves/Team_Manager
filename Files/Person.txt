@@ -365,3 +365,21 @@ Maria Ribas
 643.50
 Phisical Trainer
 ::::::::::
+Coach
+37
+Treinador Zas
+1/2/1950
+600.50
+3
+Porto,Sporting,Benfica
+true
+::::::::::
+Coach
+37
+Antigo Treinador
+1/2/1950
+600.50
+3
+Porto,Sporting,Benfica
+false
+::::::::::

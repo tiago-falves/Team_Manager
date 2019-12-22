@@ -12,8 +12,10 @@
 #include "Date.h"
 #include "People//Person.h"
 #include "People//FootballPlayer.h"
+#include "People//Coach.h"
 #include "People//Technician.h"
 #include "CallUp.h"
+#include "bst.h"
 #include "Exceptions.h"
 
 
@@ -32,6 +34,10 @@ protected:
      */
     vector<Technician*> technicians;
     /**
+     * Vector containing all coaches
+     */
+    BST<Coach> coaches;
+    /**
      * Vector containing all call ups
      */
     vector<CallUp*> callUps;
@@ -42,6 +48,8 @@ protected:
     /**
      * People file name
      */
+
+    Coach * currentCoach;
 
     string peopleFile;
     /**

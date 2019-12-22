@@ -9,7 +9,7 @@
 using namespace std;
 
 Menu::Menu(){
-    readNationalTeam("NationalTeam.txt");
+
 }
 
 //Runs the main Menu

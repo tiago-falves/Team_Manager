@@ -10,8 +10,8 @@
 using namespace std;
 
 
-NationalTeam::NationalTeam() {
-
+NationalTeam::NationalTeam() : coaches(Coach())  {
+    readNationalTeam("NationalTeam.txt");
 }
 
 bool NationalTeam::readPeople(string fileName) {
@@ -38,9 +38,17 @@ bool NationalTeam::readPeople(string fileName) {
                 people.push_back((technician));
                 technicians.push_back(technician);
                 getline(peopleFile, text);
+            } else if (text == "Coach"){
+                Coach * coach = new Coach();
+                coach->read(&peopleFile);
+                if (coach->isActualCoach()) currentCoach = coach;
+                //people.push_back(coach);
+                coaches.insert(*coach);
+                getline(peopleFile, text);
             }
         }
     }
+
     peopleFile.close();
     return true;
 }
