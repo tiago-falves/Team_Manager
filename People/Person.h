@@ -40,6 +40,11 @@ protected:
      */
     static int lastId;
 
+    /**
+     * Tells if the person is currenly working
+     */
+     bool isWorking;
+
 
 public:
     /**
@@ -85,6 +90,12 @@ public:
      */
     float getSalary() const;
 
+    /**
+     * Gets if the Person is workingy
+     * @return float - Represents if the person is working
+     */
+    bool getIsWorking() const;
+
 
 
     /*****************************
@@ -104,11 +115,16 @@ public:
     void setBirthday(Date birthdayDate);
 
     /** Sets the person’s  salary.
-     * @param name - A float containing the person’s
+     * @param salary - A float containing the person’s
      *   salary.
     */
     void setSalary(float salary);
 
+    /** Sets if the person is working.
+     * @param isWorking - A bool telling if the person is working
+     * or not.
+    */
+    void setIsWorking(bool isWorking);
 
 
     /***************************************

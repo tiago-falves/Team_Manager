@@ -34,6 +34,10 @@ Date Person::getBirthday() const { return birthdayDate;}
 //Gets salary
 float Person::getSalary() const { return salary;}
 
+//Gets isWorking
+bool Person::getIsWorking() const {return isWorking;}
+
+
 
 //Sets Person's name
 void Person::setName(string name) { this->name = name;}
@@ -44,6 +48,9 @@ void Person::setBirthday(Date birthday){ this->birthdayDate = birthday;}
 //sets salary of the persion
 void Person::setSalary(float salary) { Person::salary = salary;
 }
+
+//Gets isWorking
+void Person::setIsWorking(bool isWorking) {this->isWorking = isWorking;}
 
 //Makes a person with a smaller id smaller than the other person
 bool Person::operator<(const Person &person) const {
@@ -91,6 +98,12 @@ void Person::printToFile(ostream &os) const {
     os << name << endl;
     os << birthdayDate <<endl;
     os  << fixed << setprecision(2) << salary << endl;
+    if(isWorking){
+        os << "True" << endl;
+    }
+    else{
+        os << "False" << endl;
+    }
 }
 
 //Reads all the people from it's file and adds it to the database
@@ -113,6 +126,15 @@ void Person::read(ifstream *file) {
     getline(*file,text);
     try {salary = stof(text);}
     catch (std::invalid_argument ia){ cerr << "Invalid salary " << text << " for: " << name; throw;}
+
+    getline(*file,text);
+    if(text == "True"){
+        isWorking = true;
+    }
+    else {
+        isWorking = false;
+    }
+
 
 }
 

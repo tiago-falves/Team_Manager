@@ -17,6 +17,7 @@
 #include "CallUp.h"
 #include "bst.h"
 #include "Exceptions.h"
+#include "HashTable.h"
 
 
 class NationalTeam {
@@ -46,9 +47,12 @@ protected:
      */
     vector<Game*> games;
     /**
+     * Hash Table with all technicians
+     */
+    HashTable technician_table;
+    /**
      * People file name
      */
-
     Coach * currentCoach;
 
     string peopleFile;

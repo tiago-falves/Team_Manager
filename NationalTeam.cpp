@@ -11,7 +11,6 @@ using namespace std;
 
 
 NationalTeam::NationalTeam() : coaches(Coach())  {
-
     readNationalTeam("NationalTeam.txt");
 }
 
