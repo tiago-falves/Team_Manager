@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include "../Utilities.h"
 #include "../Exceptions.h"
 
 
@@ -121,10 +122,23 @@ void Menu::tableFooterPlayer(ostream &out){
     out << setw(117) << setfill('-') << "-" << endl;
 }
 
+void Menu::tableHeaderTech(ostream &out) {
+    out << endl << endl << endl;
+    out << setw(89) << setfill('-') << "-" <<  endl;
+    out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
+    out <<  left << setw(20) << setfill(' ') << "Name"  << "│ ";
+    out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "│ ";
+    out <<  left << setw(9) << setfill(' ') << "Salary"<< "│  "  ;
+    out <<  left << setw(20)  << setfill(' ') << "Role" << "│ ";
+    out << setw(89) << setfill('-') << "-" << "│" <<  endl;
+}
+
+void Menu::tableFooterTechnicians(ostream &out) {
+    out << setw(89) << setfill('-') << "-" << endl;
+}
 void Menu::tableFooterCoach(ostream &out){
     out << setw(52) << setfill('-') << "-" << endl;
 }
-
 
 void Menu::tableCoachHeader(ostream &out){
     out << endl << endl << endl;
@@ -140,12 +154,14 @@ void Menu::tableCoachHeader(ostream &out){
 
 
 //Asks for all the information about a person
-void Menu::askPersonInformation(string &name, float &salary, Date &birthday){
+void Menu::askPersonInformation(string &name, float &salary, Date &birthday, bool &isWorking){
     string text;
 
     name = askForString("Name");
     birthday = askForDate("Birthday",text);
     salary = askForFloat(text,"Salary",0,999999);
+    isWorking = askForBool("Is currently working (Yes or No)");
+
 }
 
 //Asks the user to insert a string of type what
@@ -153,7 +169,30 @@ string Menu::askForString(const string &what){
     string name;
     cout << what << ": ";
     getline(cin,name);
+    trimLeft(name);
     return name;
+}
+
+bool Menu::askForBool(string text){
+    string name;
+    cout << text << ": ";
+    bool validAnswer = false;
+
+    getline(cin, name);
+
+
+    if(name == "Y" || name == "Yes" || name == "T" || name == "True"){
+        return true;
+    }
+    else if(name == "N" || name == "No" || name == "F" || name == "False"){
+            return false;
+    }
+    else{
+        cout << "Please insert a valid input. The options are: True, Yes, T, Y, False, No, N, F.\n";
+        return askForBool(text);
+    }
+
+
 }
 
 
@@ -258,11 +297,13 @@ void Menu::askPlayerInformation(FootballPlayer *player){
     float salary,weight,height,pass_value;
     Date birthday = Date();
     bool injury;
+    bool isWorking;
 
-    askPersonInformation(name,salary,birthday);
+    askPersonInformation(name,salary,birthday, isWorking);
     player->setName(name);
     player->setSalary(salary);
     player->setBirthday(birthday);
+    player->setIsWorking(isWorking);
     player->setPosition(askForString("Position"));
     player->setClub(askForString("Club"));
     player->setWeight(askForFloat(input,"Weight",40,250));
@@ -286,10 +327,11 @@ void Menu::runTechnicianMenu() {
         cout << "1. Create a new Technician." << endl;
         cout << "2. Change a technician information." << endl;
         cout << "3. Remove a technician" << endl;
+        cout << "4. Show technicians" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 3);
+        validOption(option, 4);
 
 
         menuSeparator();
@@ -298,6 +340,7 @@ void Menu::runTechnicianMenu() {
         if (option == 1) { createTechOption(); }
         if (option == 2) { modifyTechOption(); }
         if (option == 3) { removeTechOption(); }
+        if (option == 4) { showTechOption(); }
     }
 }
 
@@ -307,6 +350,7 @@ void Menu::createTechOption(){
     askTechInformation(technician);
     addtoVector(people,technician);
     addtoVector(technicians,technician);
+    technician_table.addItem(technician, technician->getIsWorking());
     menuSeparator();
     cout << "Technician Added Successfully!";
     menuSeparator();
@@ -315,8 +359,10 @@ void Menu::createTechOption(){
 //Asks the id of the technician it wants to remove and removes it from the database
 void Menu::removeTechOption(){
     int id = askForValidId(technicians);
+    Technician * tech = searchTechById(id);
     removeById(people,id);
     removeById(technicians,id);
+    technician_table.removeItem(tech);
     menuSeparator();
     cout << "Technician Removed Successfully!";
 }
@@ -335,16 +381,51 @@ void Menu::modifyTechOption(){
     cout << "Technician Modified Successfully!";
 }
 
+string Menu::askOldorNewTech() {
+    cout << "Do you wish to see the current technicians, the old ones or all of tem?\n";
+    cout << "Write 'Current', 'Old' or 'All' to choose the option you wish.\n";
+    string input = askForString("Input");
+
+    if(input == "Current" || input == "Old" || input == "All"){
+        return input;
+    }
+    else{
+        cout << "Please input a valid option.\n";
+        return askOldorNewTech();
+    }
+
+}
+
+void Menu::showTechOption() {
+    string type = askOldorNewTech();
+
+    tableHeaderTech(cout);
+
+    if(type == "Current"){
+        technician_table.printCurrent();
+    }
+    else if(type == "Old"){
+        technician_table.printOld();
+    }
+    else{
+        technician_table.printAll();
+    }
+
+    tableFooterTechnicians(cout);
+}
+
 //Asks the user for all the nformation of a technician
 void Menu::askTechInformation(Technician *technician){
     string name,role;
     float salary;
     Date birthday = Date();
+    bool isWorking;
 
-    askPersonInformation(name,salary,birthday);
+    askPersonInformation(name,salary,birthday, isWorking);
     technician->setName(name);
     technician->setSalary(salary);
     technician->setBirthday(birthday);
+    technician->setIsWorking(isWorking);
 
     technician->setRole(askForString("Role"));
 }
@@ -614,14 +695,13 @@ void Menu::askCoachInformation(Coach &coach){
     string name;
     float salary;
     Date birthday = Date();
-    bool isCT;
+    bool isWorking;
 
-    askPersonInformation(name,salary,birthday);
+    askPersonInformation(name,salary,birthday, isWorking);
     coach.setName(name);
     coach.setSalary(salary);
     coach.setBirthday(birthday);
-    //cout << "Is this the current coach?: ";
-    coach.setIfCurrentCoach(false);
+    coach.setIsWorking(isWorking);
     coach.setTitlesWon(askForInt("Titles won"));
     coach.setCoachedTeams(askForStringVectorAll("Trained Teams"));
 }
@@ -637,16 +717,23 @@ void Menu::createCoachOption(){
 }
 
 void Menu::setCurrentCoach(){
-    cout << "What is the id of the new coach?:" << endl;
-    //coaches.remove(*currentCoach);
-    //currentCoach->setIfCurrentCoach(false);
-    //coaches.insert(*currentCoach);
-    //*currentCoach =  askForValidCoachId(coaches);
-    //coaches.remove(*currentCoach);
-    //currentCoach->setIfCurrentCoach(true);
-    //coaches.insert(*currentCoach);
+    cout << "What is the id of the coach?" << endl;
 
-    cout << "Coach changed successfully!" << endl;
+    Coach coach = askForValidCoachId(coaches);
+
+    if(coach.getId() ==  currentCoach->getId()){
+        cout << "This coach is already the current coach.\n";
+        return;
+    }
+    else{
+        coaches.remove(*currentCoach);
+        currentCoach->setIsWorking(false);
+        coaches.insert(*currentCoach);
+        coaches.remove(coach);
+        coach.setIsWorking(true);
+        coaches.insert(coach);
+        cout << "Coach changed successfully!" << endl;
+    }
 
 }
 

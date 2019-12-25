@@ -145,6 +145,7 @@ void Person::modify(Person *newPerson){
     name = newPerson->getName();
     salary = newPerson->getSalary();
     birthdayDate= newPerson->getBirthday();
+    isWorking = newPerson->isWorking;
 }
 
 //Sets the first id to one

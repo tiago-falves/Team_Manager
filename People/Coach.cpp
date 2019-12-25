@@ -58,15 +58,13 @@ void Coach::read(ifstream *file) {
     titlesWon = stoi(text);
     getline(*file,text);
     coachedTeams = separateCharacterStr(text,',');
-    getline(*file,text);
-    istringstream(text) >> std::boolalpha >>  isCurrentCoach;
 }
 
 
 void Coach::print(ostream &out) const {
     Person::print(cout);
     string cc;
-    if (isCurrentCoach){
+    if (isWorking){
         cc = "Is Current Coach";
     }else{
         cc = "Old Coach";
@@ -84,8 +82,8 @@ void Coach::printCoach(ostream &out) const {
     out << "Birthday Date: " << birthdayDate.toString() << endl;
     out << "Salary: " << salary << endl;
     out << "Titles won: " << titlesWon << endl;
-    if(isCurrentCoach) out << "Position: Current Coach" << endl;
-    if(!isCurrentCoach) out << "Position: Old Coach" << endl;
+    if(isWorking) out << "Position: Current Coach" << endl;
+    if(!isWorking) out << "Position: Old Coach" << endl;
     out << "Teams Trained: " << endl;
     for (int i = 0; i < coachedTeams.size(); ++i) {
         out << "        " << coachedTeams[i] << endl;
@@ -117,7 +115,5 @@ void Coach::printToFile(ostream &os) const {
     for (int i = 1; i < coachedTeams.size() ; ++i) {
         os << "," << coachedTeams[i];
     }
-    if (isCurrentCoach) os << endl << "true";
-    else os << endl << "false";
     os << endl << "::::::::::";
 }

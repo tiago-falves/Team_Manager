@@ -20,8 +20,6 @@ public:
 private:
     //Menu
 
-
-
     /**
      * Prints to the screen a string used to separate the menus
      */
@@ -50,6 +48,12 @@ private:
      * @return Returns a date of type Date
      */
     Date askForDate(string dateName,string &text);
+
+    /**
+     * Asks the user for a boolean
+     * @return Returns a boolean
+     */
+    bool askForBool(string text);
 
     /**
      * Asks the user a yes or no question
@@ -121,7 +125,7 @@ private:
      * @param salary Salary of the Person
      * @param birthday Birthday Date of the Person
      */
-    void askPersonInformation(string &name,float &salary,Date &birthday);
+    void askPersonInformation(string &name,float &salary,Date &birthday, bool &isWorking);
 
     /**
      * Asks the user for the information of the player
@@ -160,6 +164,10 @@ private:
      * Modifies it in the Database
      */
     void modifyTechOption();
+
+    void showTechOption();
+
+    string askOldorNewTech();
 
     /**
      * Asks the user all the information about a Technician
@@ -359,6 +367,12 @@ private:
      */
     void tableHeaderReferee(ostream &out);
 
+    /**
+     * Prints the header of the table showing the Technicians
+     * @param out - Tells where to print the header
+     */
+    void tableHeaderTech(ostream &out);
+
     /****************************************************
     ******************FOOTERS FUNCTIONS******************
     *****************************************************/
@@ -387,6 +401,13 @@ private:
      * @param out - Tells where to print the footer
      */
     void tableFooterEnemyTeamReferee(ostream &out);
+
+    /**
+     * Prints the footer of the table showing the Enemy Team players
+    * or  the Referees
+    * @param out - Tells where to print the footer
+    */
+    void tableFooterTechnicians(ostream &out);
 
 
     //Economies Menu

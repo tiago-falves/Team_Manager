@@ -72,7 +72,6 @@ protected:
 
 public:
 
-
     NationalTeam();
 
 
@@ -142,6 +141,9 @@ public:
     }
 
     Coach searchCoachById(BST<Coach> coaches, int id);
+
+    Technician * searchTechById(int id);
+
 
     /**
      * Function that returns true if person1 name is smaller than person's 2 name

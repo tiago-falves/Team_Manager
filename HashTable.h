@@ -33,6 +33,9 @@ public:
     void addItem(Person * person, bool currentlyWorking);
     int numberOfItemsInIndex(int index);
     void removeItem(Person * person);
+    void printAll();
+    void printOld();
+    void printCurrent();
 };
 
 

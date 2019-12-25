@@ -37,11 +37,12 @@ bool NationalTeam::readPeople(string fileName) {
                 technician->read(&peopleFile);
                 people.push_back((technician));
                 technicians.push_back(technician);
+                technician_table.addItem(technician, technician->getIsWorking());
                 getline(peopleFile, text);
             } else if (text == "Coach"){
                 Coach * coach = new Coach();
                 coach->read(&peopleFile);
-                if (coach->isActualCoach()) currentCoach = coach;
+                if (coach->getIsWorking()) currentCoach = coach;
                 //people.push_back(coach);
                 coaches.insert(*coach);
                 getline(peopleFile, text);
@@ -50,6 +51,7 @@ bool NationalTeam::readPeople(string fileName) {
     }
 
     peopleFile.close();
+
     return true;
 }
 
@@ -555,6 +557,17 @@ Coach NationalTeam::searchCoachById(BST<Coach> coaches, int id) {
     throw InexistentId(id);
 }
 
+Technician * NationalTeam::searchTechById(int id) {
+
+    for(int i = 0; i < technicians.size(); i++){
+        if(technicians[i]->getId() == id){
+            return technicians[i];
+        }
+    }
+    throw InexistentId(id);
+
+}
+
 bool NationalTeam::readGameStatistics(string filename) {
     //VARIABLES TO READ FILE
     ifstream statsFile;
@@ -678,6 +691,7 @@ NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesF
 
     exit(0);
 }
+
 
 
 

@@ -134,3 +134,66 @@ void HashTable::removeItem(Person *person) {
     }
 
 }
+
+void HashTable::printAll() {
+    item item_to_print;
+    for(int i = 0; i < tableSize; i++){
+        if(hashTable[i]->person == NULL){continue;}
+
+        item_to_print = *hashTable[i];
+        item_to_print.person->print(cout);
+
+        while(item_to_print.next != NULL){
+            item_to_print = *item_to_print.next;
+
+            item_to_print.person->print(cout);
+        }
+    }
+}
+
+void HashTable::printCurrent() {
+    item item_to_print;
+
+    for(int i = 0; i < tableSize; i++){
+        if(hashTable[i]->person == NULL){continue;}
+
+        item_to_print = *hashTable[i];
+
+        if(item_to_print.currentlyWorking){
+            item_to_print.person->print(cout);
+        }
+
+
+        while(item_to_print.next != NULL){
+            item_to_print = *item_to_print.next;
+
+            if(item_to_print.currentlyWorking){
+                item_to_print.person->print(cout);
+            }
+        }
+    }
+
+}
+
+void HashTable::printOld() {
+    item item_to_print;
+
+    for(int i = 0; i < tableSize; i++){
+        if(hashTable[i]->person == NULL){continue;}
+
+        item_to_print = *hashTable[i];
+
+        if(!item_to_print.currentlyWorking){
+            item_to_print.person->print(cout);
+        }
+
+
+        while(item_to_print.next != NULL){
+            item_to_print = *item_to_print.next;
+
+            if(!item_to_print.currentlyWorking){
+                item_to_print.person->print(cout);
+            }
+        }
+    }
+}
