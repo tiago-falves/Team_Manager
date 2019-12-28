@@ -597,7 +597,7 @@ private:
     /**
      * @brief Sets the current coach of the team
      */
-    void setCurrentCoach();
+    void setCurrentCoachOption();
 
     /**
      * @brief Asks for an id and removes the coach with that same id

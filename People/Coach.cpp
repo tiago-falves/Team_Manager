@@ -24,7 +24,7 @@ int Coach::isActualCoach() const {
 }
 
 void Coach::setIfCurrentCoach(const bool &isCurrentCoach){
-    Coach::isCurrentCoach = isCurrentCoach;
+    this->isCurrentCoach = isCurrentCoach;
 }
 
 void Coach::setTitlesWon(int titlesWon) {

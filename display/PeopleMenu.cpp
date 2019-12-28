@@ -137,12 +137,12 @@ void Menu::tableFooterTechnicians(ostream &out) {
     out << setw(89) << setfill('-') << "-" << endl;
 }
 void Menu::tableFooterCoach(ostream &out){
-    out << setw(52) << setfill('-') << "-" << endl;
+    out << setw(51) << setfill('-') << "-" << endl;
 }
 
 void Menu::tableCoachHeader(ostream &out){
     out << endl << endl << endl;
-    out << setw(52) << setfill('-') << "-" <<  endl;
+    out << setw(51) << setfill('-') << "-" <<  endl;
     out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
     out <<  left << setw(20) << setfill(' ') << "Name"  << "│ ";
     out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "│ ";
@@ -160,7 +160,8 @@ void Menu::askPersonInformation(string &name, float &salary, Date &birthday, boo
     name = askForString("Name");
     birthday = askForDate("Birthday",text);
     salary = askForFloat(text,"Salary",0,999999);
-    isWorking = askForBool("Is currently working (Yes or No)");
+    cout << "Is currently working (Yes or No)" << endl;
+    isWorking = askYesNoQuestion();
 
 }
 
@@ -181,10 +182,10 @@ bool Menu::askForBool(string text){
     getline(cin, name);
 
 
-    if(name == "Y" || name == "Yes" || name == "T" || name == "True"){
+    if(name == "Y" || name == "Yes" || name == "T" || name == "True" || name == "yes" || name == "y"){
         return true;
     }
-    else if(name == "N" || name == "No" || name == "F" || name == "False"){
+    else if(name == "N" || name == "No" || name == "F" || name == "False" || name == "no" || name == "n"){
             return false;
     }
     else{
@@ -632,7 +633,7 @@ void Menu::runCoachMenu() {
         if (option == 1) { showAllCoaches(cout); }
         if (option == 2) { showSpecificCoachOption(); }
         if (option == 3) { createCoachOption(); }
-        if (option == 4) { setCurrentCoach(); }
+        if (option == 4) { setCurrentCoachOption(); }
         if (option == 5) { removeCoachOption(); }
         if (option == 6) { maxCoach(); }
     }
@@ -701,14 +702,18 @@ void Menu::askCoachInformation(Coach &coach){
     coach.setName(name);
     coach.setSalary(salary);
     coach.setBirthday(birthday);
-    coach.setIsWorking(isWorking);
+    coach.setIfCurrentCoach(isWorking);
     coach.setTitlesWon(askForInt("Titles won"));
     coach.setCoachedTeams(askForStringVectorAll("Trained Teams"));
+
 }
 
 void Menu::createCoachOption(){
     Coach coach = Coach();
     askCoachInformation(coach);
+    if(coach.isActualCoach()){
+        setCurrentCoach(coach);
+    }
 
     coaches.insert(coach);
 
@@ -716,7 +721,7 @@ void Menu::createCoachOption(){
     cout << "Coach Added Successfully!";
 }
 
-void Menu::setCurrentCoach(){
+void Menu::setCurrentCoachOption(){
     cout << "What is the id of the coach?" << endl;
 
     Coach coach = askForValidCoachId(coaches);
@@ -726,12 +731,7 @@ void Menu::setCurrentCoach(){
         return;
     }
     else{
-        coaches.remove(*currentCoach);
-        currentCoach->setIsWorking(false);
-        coaches.insert(*currentCoach);
-        coaches.remove(coach);
-        coach.setIsWorking(true);
-        coaches.insert(coach);
+        setCurrentCoach(coach);
         cout << "Coach changed successfully!" << endl;
     }
 

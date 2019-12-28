@@ -470,6 +470,8 @@ public:
         throw InexistentId(id);
     }
 
+    void setCurrentCoach(Coach &coach);
+
 
 };
 

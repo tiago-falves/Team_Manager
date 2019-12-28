@@ -557,6 +557,16 @@ Coach NationalTeam::searchCoachById(BST<Coach> coaches, int id) {
     throw InexistentId(id);
 }
 
+void NationalTeam::setCurrentCoach(Coach &coach){
+    coaches.remove(*currentCoach);
+    currentCoach->setIsWorking(false);
+    coaches.insert(*currentCoach);
+    coaches.remove(coach);
+    coach.setIsWorking(true);
+    coaches.insert(coach);
+    *currentCoach = coach;
+}
+
 Technician * NationalTeam::searchTechById(int id) {
 
     for(int i = 0; i < technicians.size(); i++){
