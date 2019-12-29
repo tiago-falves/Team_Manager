@@ -55,11 +55,12 @@ bool NationalTeam::readPeople(string fileName) {
     return true;
 }
 
-void NationalTeam::read(string peopleFile, string callUpFile, string gameFile, string statisticsFile) {
+void NationalTeam::read(string peopleFile, string callUpFile, string gameFile, string statisticsFile, string providersFile) {
     readPeople(peopleFile);
     readGames(gameFile);
     readCallUp(callUpFile);
     readGameStatistics(statisticsFile);
+    readProviders(providersFile);
 }
 
 bool NationalTeam::readNationalTeam(string fileName) {
@@ -78,9 +79,11 @@ bool NationalTeam::readNationalTeam(string fileName) {
         peopleFile = text;
         getline(teamFile, text);
         statisticsFile = text;
+        getline(teamFile, text);
+        providersFile = text;
     }
     teamFile.close();
-    read(peopleFile, callUpFile, gameFile, statisticsFile);
+    read(peopleFile, callUpFile, gameFile, statisticsFile, providersFile);
     return true;
 }
 
@@ -635,10 +638,40 @@ bool NationalTeam::readGameStatistics(string filename) {
     return true;
 }
 
+bool NationalTeam::readProviders(string providersFile) {
+    ifstream provFile;
+    provFile.open("..//Files//" + providersFile);
+    string text;
+
+    string name;
+    float reputation;
+    vector<string> equipement;
+
+    while(!provFile.eof()){
+        getline(provFile, text);
+        name = text;
+
+        getline(provFile, text);
+        reputation = stof(text);
+
+        while(true){
+            getline(provFile, text);
+            if (text == "::::::::::") break;
+            equipement.push_back(text);
+        }
+        Providers provider(name, reputation, equipement);
+        equipement = {};
+        providers.push(provider);
+    }
+
+    provFile.close();
+    return true;
+}
+
 
 //Exists the program and saves the information to new files
 void
-NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesFileName, string statisticsFileName) {
+NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesFileName, string statisticsFileName, string providersFileName) {
     string content;
     //SEND PEOPLE INFORMATION TO FILE
     ofstream peopleFile("../Files/" + peepzFile);
@@ -698,6 +731,24 @@ NationalTeam::saveAndExit(string peepzFile, string callupFileName, string gamesF
     }
 
     statisticsFile.close();
+
+    //SEND PROVIDERS TO FILE
+    ofstream providerFile("../Files/" + providersFileName);
+
+    while (!providers.empty()){
+        Providers p = providers.top();
+        providers.pop();
+
+        providerFile << p.getName() << endl << p.getReputation() << endl;
+
+        for (auto j = 0; j < p.getEquipement().size(); j++){
+            providerFile << p.getEquipement().at(j) << endl;
+        }
+        if(!providers.empty()) providerFile << "::::::::::" << endl;
+        else providerFile << "::::::::::";
+    }
+
+    providerFile.close();
 
     exit(0);
 }

@@ -14,6 +14,7 @@
 #include "People//FootballPlayer.h"
 #include "People//Coach.h"
 #include "People//Technician.h"
+#include "People//Providers.h"
 #include "CallUp.h"
 #include "bst.h"
 #include "Exceptions.h"
@@ -50,11 +51,14 @@ protected:
      * Hash Table with all technicians
      */
     HashTable technician_table;
+
+    Coach * currentCoach;
+
+    priority_queue<Providers> providers;
+
     /**
      * People file name
      */
-    Coach * currentCoach;
-
     string peopleFile;
     /**
      * Game file name
@@ -68,7 +72,10 @@ protected:
      * Call up file name
      */
     string callUpFile;
-
+    /**
+     * Providers file name
+     */
+    string providersFile;
 
 public:
 
@@ -388,8 +395,9 @@ public:
      * @param callUpFile
      * @param gameFile
      * @param statisticsFile
+     * @param providersFile
      */
-    void read(string peopleFile, string callUpFile, string gameFile, string statisticsFile);
+    void read(string peopleFile, string callUpFile, string gameFile, string statisticsFile, string providersFile);
 
 
     /****************************************************
@@ -447,7 +455,7 @@ public:
      * @param gamesFileName - name of the file containing the game's information
      * @param statisticsFileName - name of the file containing the PlayerGameStatistics information
      */
-    void saveAndExit(string fileName, string callUpFileName, string gamesFileName, string statisticsFileName);
+    void saveAndExit(string fileName, string callUpFileName, string gamesFileName, string statisticsFileName, string providersFileName);
 
     /**
      * Reads National Team from file
@@ -472,6 +480,11 @@ public:
 
     void setCurrentCoach(Coach &coach);
 
+    /****************************************************
+    *******************PROVIDERS******************
+    *****************************************************/
+
+    bool readProviders(string providersFile);
 
 };
 
