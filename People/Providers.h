@@ -7,6 +7,9 @@
 
 #include <string>
 #include <vector>
+#include <queue>
+#include <algorithm>
+#include "..//Exceptions.h"
 using namespace std;
 
 

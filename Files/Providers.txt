@@ -1,30 +1,32 @@
 Adidas
-6
-Chuteiras
-Bolas
-Roupa
-Sinalizadores
-Coletes
+80
+Soccer boots
+Balls
+Soccer clothing
+Flags
+Vests
 ::::::::::
 Nike
-5
-Chuteiras
-Bolas
-Roupa
+75
+Soccer boots
+Balls
+Soccer clothing
 ::::::::::
 Puma
-4
-Chuteiras
-Bolas
+66
+Soccer boots
+Balls
+Shin pads
+Gloves
 ::::::::::
 NB
-3
-Chuteiras
-Coletes
-Bolas
+55
+Soccer boots
+Vests
+Balls
 ::::::::::
 Kipsta
-1
-Coletes
-Sinalizadores
+40
+Vests
+Flags
 ::::::::::

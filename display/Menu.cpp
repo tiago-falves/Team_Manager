@@ -21,17 +21,18 @@ void Menu::runMenu() {
         menuSeparator();
 
         cout << "Welcome to the National Football Team Manager! What do you want to do?" << endl << endl;
-        cout << "Please choose what your option:" << endl << endl;
+        cout << "Please choose what is your option:" << endl << endl;
 
         cout << "Exit                                                               [0]" << endl;
         cout << "People                                                             [1]" << endl;
         cout << "Games                                                              [2]" << endl;
         cout << "Call Ups                                                           [3]" << endl;
         cout << "Economies                                                          [4]" << endl;
-        cout << "Save information and Exit                                          [5]" << endl << endl;
+        cout << "Sports equipement                                                  [5]" << endl;
+        cout << "Save information and Exit                                          [6]" << endl << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
-        validOption(option, 5);
+        validOption(option, 6);
 
         menuSeparator();
 
@@ -40,7 +41,8 @@ void Menu::runMenu() {
         else if (option == 2) { runGameMenu(); }
         else if (option == 3) { runCallUpMenu(); }
         else if (option == 4) { runEconomiesMenu(); }
-        else if (option == 5) {saveAndExit(peopleFile,callUpFile,gameFile,statisticsFile,providersFile); }
+        else if (option == 5) { runProvidersMenu(); }
+        else if (option == 6) {saveAndExit(peopleFile,callUpFile,gameFile,statisticsFile,providersFile); }
     }
 }
 

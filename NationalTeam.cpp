@@ -668,6 +668,62 @@ bool NationalTeam::readProviders(string providersFile) {
     return true;
 }
 
+Providers NationalTeam::getProvider(string equipement) {
+    priority_queue<Providers> copy = providers;
+    vector<string> temp;
+
+    while (!copy.empty()){
+        Providers p = copy.top();
+        copy.pop();
+
+        temp = p.getEquipement();
+
+        if (find(temp.begin(),temp.end(), equipement) != temp.end()){
+            return p;
+        }
+    }
+    throw EquipementDontExist(equipement);
+}
+
+void NationalTeam::showAllProvidersName() {
+    priority_queue<Providers> copy = providers;
+    int counter = 0;
+
+    while (!copy.empty()){
+        counter ++;
+
+        Providers p = copy.top();
+        copy.pop();
+
+        cout << left << setw(67) << setfill(' ') << p.getName();
+        cout << "[" << counter << "]" << endl;
+    }
+}
+
+vector<string> NationalTeam::getAvailableEquipement() {
+    vector<string> equipement;
+    priority_queue<Providers> copy = providers;
+
+    while (!copy.empty()){
+        Providers p = copy.top();
+        copy.pop();
+
+        for (auto str:p.getEquipement()){
+            if (find(equipement.begin(), equipement.end(), str) == equipement.end()) equipement.push_back(str);
+        }
+    }
+    return equipement;
+}
+
+void NationalTeam::showAvailableEquipement(vector<string> equipement) {
+    int counter = 0;
+    for (auto str : equipement) {
+        counter++;
+        cout << left << setw(67) << setfill(' ') << str;
+        cout << "[" << counter << "]" << endl;
+    }
+}
+
 
 //Exists the program and saves the information to new files
 void

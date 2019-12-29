@@ -6,6 +6,7 @@
 #define AEDA_TEAM_MANAGER_EXCEPTIONS_H
 
 #include <string>
+#include "Game.h"
 
 using namespace std;
 
@@ -87,6 +88,12 @@ public:
      * @param game
      */
     GameDontExistsCallUp(Game *game) {this->game = game;}
+};
+
+class EquipementDontExist{
+public:
+    string equipement;
+    EquipementDontExist(string equipement) {this->equipement = equipement;}
 };
 
 #endif //AEDA_TEAM_MANAGER_EXCEPTIONS_H

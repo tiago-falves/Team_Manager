@@ -486,6 +486,10 @@ public:
 
     bool readProviders(string providersFile);
 
+    Providers getProvider(string equipement);
+    void showAllProvidersName();
+    vector<string> getAvailableEquipement();
+    void showAvailableEquipement(vector<string> equipement);
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H

@@ -113,6 +113,21 @@ private:
     void runCoachMenu();
 
     /**
+     * Runs the main Provider's Menu with all providers coorelated options
+     */
+    void runProvidersMenu();
+
+    /**
+     * Runs the menu that allows user to chage provider reputation
+     */
+    void changeProviderOption();
+
+    /**
+     * Runs the menu that allows user to buy product from provider
+     */
+    void buyFromProviderOption();
+
+    /**
      *Given an id, it shows the Person with that id
      * @param out where the information is going to be outputted
      * @param i id of the Person that will be printed
