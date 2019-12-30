@@ -37,19 +37,19 @@ int HashTable::hash(Person * key){
     return index;
 }
 
-void HashTable::addItem(Person * person, bool currentlyWorking){
+void HashTable::addItem(Person * person){
     int index = hash(person);
 
     if(hashTable[index]->person == NULL){
         hashTable[index]->person = person;
-        hashTable[index]->currentlyWorking = currentlyWorking;
+        hashTable[index]->currentlyWorking = person->getIsWorking();
         hashTable[index]->next = NULL;
     }
     else{
         item * Ptr = hashTable[index];
         item * newItem = new item;
         newItem->person = person;
-        newItem->currentlyWorking = currentlyWorking;
+        newItem->currentlyWorking = person->getIsWorking();
         newItem->next = NULL;
 
         while(Ptr->next != NULL){

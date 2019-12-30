@@ -37,7 +37,7 @@ bool NationalTeam::readPeople(string fileName) {
                 technician->read(&peopleFile);
                 people.push_back((technician));
                 technicians.push_back(technician);
-                technician_table.addItem(technician, technician->getIsWorking());
+                technician_table.addItem(technician);
                 getline(peopleFile, text);
             } else if (text == "Coach"){
                 Coach * coach = new Coach();

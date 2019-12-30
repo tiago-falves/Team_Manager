@@ -336,7 +336,7 @@ void Menu::createTechOption(){
     askTechInformation(technician);
     addtoVector(people,technician);
     addtoVector(technicians,technician);
-    technician_table.addItem(technician, technician->getIsWorking());
+    technician_table.addItem(technician);
     menuSeparator();
     cout << "Technician Added Successfully!";
     menuSeparator();
