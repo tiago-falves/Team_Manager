@@ -180,9 +180,33 @@ private:
      */
     void modifyTechOption();
 
+    /**
+     * Asks what type of Techinicians to print and
+     * prints then in a table
+     */
     void showTechOption();
 
+    /**
+     * Asks the user whether the user want and old
+     * or new Technician
+     * @return a string which tells if its an old or new Technician
+     */
     string askOldorNewTech();
+
+    /**
+     * Prints the old Technicians in a table
+     * Asks which Techinician the user wants to hire
+     * Modifies it in the Database
+     */
+    void hireTech();
+
+    /**
+     * Prints the current Technicians in a table
+     * Asks which Techinician the user wants to fire
+     * Modifies it in the Database
+     */
+    void fireTech();
+
 
     /**
      * Asks the user all the information about a Technician

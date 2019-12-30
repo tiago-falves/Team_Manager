@@ -122,20 +122,6 @@ void Menu::tableFooterPlayer(ostream &out){
     out << setw(117) << setfill('-') << "-" << endl;
 }
 
-void Menu::tableHeaderTech(ostream &out) {
-    out << endl << endl << endl;
-    out << setw(89) << setfill('-') << "-" <<  endl;
-    out <<  left << setw(4)  << setfill(' ') << "id" << "│  ";
-    out <<  left << setw(20) << setfill(' ') << "Name"  << "│ ";
-    out <<  left << setw(11) << setfill(' ') <<  "Birthday"<< "│ ";
-    out <<  left << setw(9) << setfill(' ') << "Salary"<< "│  "  ;
-    out <<  left << setw(20)  << setfill(' ') << "Role" << "│ ";
-    out << setw(89) << setfill('-') << "-" << "│" <<  endl;
-}
-
-void Menu::tableFooterTechnicians(ostream &out) {
-    out << setw(89) << setfill('-') << "-" << endl;
-}
 void Menu::tableFooterCoach(ostream &out){
     out << setw(51) << setfill('-') << "-" << endl;
 }
@@ -175,12 +161,7 @@ string Menu::askForString(const string &what){
 }
 
 bool Menu::askForBool(string text){
-    string name;
-    cout << text << ": ";
-    bool validAnswer = false;
-
-    getline(cin, name);
-
+    string name = askForString(text);
 
     if(name == "Y" || name == "Yes" || name == "T" || name == "True" || name == "yes" || name == "y"){
         return true;
@@ -329,10 +310,12 @@ void Menu::runTechnicianMenu() {
         cout << "2. Change a technician information." << endl;
         cout << "3. Remove a technician" << endl;
         cout << "4. Show technicians" << endl;
+        cout << "5. Hire technician" << endl;
+        cout << "6. Fire technician" << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
-        validOption(option, 4);
+        validOption(option, 6);
 
 
         menuSeparator();
@@ -342,6 +325,8 @@ void Menu::runTechnicianMenu() {
         if (option == 2) { modifyTechOption(); }
         if (option == 3) { removeTechOption(); }
         if (option == 4) { showTechOption(); }
+        if (option == 5) { hireTech(); }
+        if (option == 6) { fireTech(); }
     }
 }
 
@@ -400,7 +385,7 @@ string Menu::askOldorNewTech() {
 void Menu::showTechOption() {
     string type = askOldorNewTech();
 
-    tableHeaderTech(cout);
+    tableHeaderPlayer(cout);
 
     if(type == "Current"){
         technician_table.printCurrent();
@@ -412,7 +397,7 @@ void Menu::showTechOption() {
         technician_table.printAll();
     }
 
-    tableFooterTechnicians(cout);
+    tableFooterPlayer(cout);
 }
 
 //Asks the user for all the nformation of a technician
@@ -430,6 +415,49 @@ void Menu::askTechInformation(Technician *technician){
 
     technician->setRole(askForString("Role"));
 }
+
+void Menu::hireTech(){
+    technician_table.printOld();
+
+    cout << "Choose one of the above.\n";
+
+    int id;
+
+    id = askForValidId(technicians);
+
+    Technician * tech = searchTechById(id);
+
+    if(tech->getIsWorking()){
+        cout << "The technician is already working for the national team.\n";
+        return;
+    }
+    else{
+        tech->setIsWorking(true);
+        cout << "The technician was hired for the national team with success.\n";
+    }
+}
+
+void Menu::fireTech(){
+    technician_table.printCurrent();
+
+    cout << "Choose one of the above.\n";
+
+    int id;
+
+    id = askForValidId(technicians);
+
+    Technician * tech = searchTechById(id);
+
+    if(tech->getIsWorking()){
+        tech->setIsWorking(false);
+        cout << "The technician was fired of the national team with success.\n";
+    }
+    else{
+        cout << "The technician is already fired of the national team.\n";
+        return;
+    }
+}
+
 
 
 

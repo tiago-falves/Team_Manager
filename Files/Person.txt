@@ -310,7 +310,7 @@ Technician
 Marcelo Rebelo
 1/2/2000
 200.00
-True
+False
 Secondary Coach
 ::::::::::
 Technician
@@ -342,7 +342,7 @@ Technician
 Isaque Camacho
 1/2/2000
 643.50
-True
+False
 Assistant
 ::::::::::
 Technician
@@ -350,7 +350,7 @@ Technician
 Carlos Marques
 1/2/2000
 643.50
-True
+False
 Assistant
 ::::::::::
 Technician
