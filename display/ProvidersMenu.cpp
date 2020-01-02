@@ -15,17 +15,19 @@ void Menu::runProvidersMenu() {
 
         cout << "Go back                                                            [0]" << endl;
         cout << "Change specific provider reputation                                [1]" << endl;
-        cout << "Adquire a product from provider                                    [2]" << endl;
+        cout << "Purchase a product from provider                                   [2]" << endl;
+        cout << "See purchased equipements                                          [3]" << endl << endl;
 
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
-        validOption(option, 2);
+        validOption(option, 3);
 
         menuSeparator();
 
         if (option == 0) break;
         else if (option == 1) changeProviderOption();
         else if (option == 2) buyFromProviderOption();
+        else if (option == 3) displayPurchased();
     }
 }
 
@@ -43,6 +45,7 @@ void Menu::changeProviderOption() {
         cout << "Go back                                                            [0]" << endl;
         showAllProvidersName();
 
+        cout << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
         validOption(option, providers.size());
@@ -76,6 +79,7 @@ void Menu::buyFromProviderOption() {
     vector<string> temp;
     int option, opinion;
     vector<Providers> temp_providers;
+    vector<string> bought;
 
     while (true){
         menuSeparator();
@@ -97,6 +101,9 @@ void Menu::buyFromProviderOption() {
         cout << "The product: " << temp[option-1] << " has successfully been bought from ";
         cout << getProvider(temp[option-1]).getName() << "!" << endl;
 
+        bought = {temp[option-1], getProvider(temp[option-1]).getName(), "1"};
+        addPurchase(bought);
+
         menuSeparator();
 
         cout << "Please leave an opinion about the purchase:" << endl << endl;
@@ -105,7 +112,7 @@ void Menu::buyFromProviderOption() {
         cout << "Good                                                               [3]" << endl;
         cout << "Bad                                                                [2]" << endl;
         cout << "Very bad                                                           [1]" << endl;
-        cout << "No opinion                                                         [0]" << endl;
+        cout << "No opinion                                                         [0]" << endl << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> opinion;
         validOption(opinion, 4);
@@ -143,4 +150,43 @@ void Menu::buyFromProviderOption() {
         }
 
     }
+}
+void NationalTeam::addPurchase(vector<string> purchase) {
+    if (products.size() == 0) {
+        products.push_back(purchase);
+        return;
+    }
+
+    //ALREADY EXISTS IN PRODUCTS
+    for (auto it = products.begin(); it != products.end(); it++){
+        if ((*it).at(0) == purchase[0] && (*it).at(1) == purchase[1]){
+            (*it).at(2) = to_string(stoi((*it).at(2)) + 1);
+            return;
+        }
+    }
+
+    //DOES NOT EXIST IN PRODUCTS
+    products.push_back(purchase);
+}
+
+void NationalTeam::displayPurchased() {
+    if (products.size() == 0){
+        cout << endl << endl << "No products have been bought up until this date!" << endl << endl;
+        return;
+    }
+
+    cout << endl << endl << endl;
+    cout << setw(41) << setfill('-') << "-" <<  endl;
+    cout <<  left << setw(15)  << setfill(' ') << "Equipement" << "│  ";
+    cout <<  left << setw(10) << setfill(' ') << "Brand"  << "│ ";
+    cout <<  left << setw(10) << setfill(' ') <<  "Quantity"<< "│ ";
+    cout << endl << setw(40) << setfill('-') << "-" << "│" <<  endl;
+
+    for (auto product:products){
+        cout <<  left << setw(15)  << setfill(' ') << product[0] << "│  ";
+        cout <<  left << setw(10) << setfill(' ') << product[1]  << "│ ";
+        cout <<  left << setw(10) << setfill(' ') <<  " x" + product[2] << "│ " << endl;
+    }
+
+    cout  << setw(40) << setfill('-') << "-" << "│";
 }

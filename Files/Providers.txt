@@ -1,10 +1,9 @@
 Adidas
-80
+85
 Soccer boots
 Balls
 Soccer clothing
 Flags
-Vests
 ::::::::::
 Nike
 75

@@ -194,7 +194,7 @@ void Menu::runPlayersMenu() {
         cout << "Create a new Football Player.                                      [1]" << endl;
         cout << "Change a player's information.                                     [2]" << endl;
         cout << "Remove a player.                                                   [3]" << endl;
-        cout << "See a specific player statistics.                                  [4]" << endl;
+        cout << "See a specific player statistics.                                  [4]" << endl << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
@@ -303,15 +303,15 @@ void Menu::runTechnicianMenu() {
     int option;
 
     while(true) {
-        cout << "Welcome to the players Menu! Please choose what you want to do: ";
+        cout << "Welcome to the technicians Menu! Please choose what you want to do: ";
         cout << endl << endl;
-        cout << "0. Go back" << endl;
-        cout << "1. Create a new Technician." << endl;
-        cout << "2. Change a technician information." << endl;
-        cout << "3. Remove a technician" << endl;
-        cout << "4. Show technicians" << endl;
-        cout << "5. Hire technician" << endl;
-        cout << "6. Fire technician" << endl;
+        cout << "Go back                                                            [0]" << endl;
+        cout << "Create a new Technician                                            [1]" << endl;
+        cout << "Change a technician information                                    [2]" << endl;
+        cout << "Remove a technician                                                [3]" << endl;
+        cout << "Show technicians                                                   [4]" << endl;
+        cout << "Hire technician                                                    [5]" << endl;
+        cout << "Fire technician                                                    [6]" << endl << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
@@ -615,7 +615,7 @@ void Menu::playerMenuTransition() {
         cout << "See all games played by a specific player.                         [1]" << endl;
         cout << "See all call-ups that a player participated.                       [2]" << endl;
         cout << "See player statistics from a game.                                 [3]" << endl;
-        cout << "See player statistics from call up.                                [4]" << endl;
+        cout << "See player statistics from call up.                                [4]" << endl << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 
@@ -642,13 +642,13 @@ void Menu::runCoachMenu() {
         menuSeparator();
         cout << "Welcome to the coaches Menu! Please choose what you want to do: ";
         cout << endl << endl;
-        cout << "0. Go back" << endl;
-        cout << "1. See all coaches ever" << endl;
-        cout << "2. See specific coach" << endl;
-        cout << "3. Create a new coach." << endl;
-        cout << "4. Set the new coach." << endl;
-        cout << "5. Remove a coach" << endl;
-        cout << "6. Coach with most titles" << endl;
+        cout << "Go back                                                            [0]" << endl;
+        cout << "See all coaches ever                                               [1]" << endl;
+        cout << "See specific coach                                                 [2]" << endl;
+        cout << "Create a new coach                                                 [3]" << endl;
+        cout << "Set the new coach                                                  [4]" << endl;
+        cout << "Remove a coach                                                     [5]" << endl;
+        cout << "Coach with most titles                                             [6]" << endl << endl;
         cout << "Insert the number correspondent to your option: ";
         cin >> option;
 

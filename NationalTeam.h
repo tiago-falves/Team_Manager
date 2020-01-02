@@ -81,6 +81,11 @@ protected:
      */
     string providersFile;
 
+    /**
+     * Products purchased by the National Team
+     */
+    vector<vector<string>> products;
+
 public:
 
     NationalTeam();
@@ -526,6 +531,17 @@ public:
      * @param equipement
      */
     void showAvailableEquipement(vector<string> equipement);
+
+    /**
+     * Adds new purchase to the vector containing all the purchases
+     * @param purchase
+     */
+    void addPurchase(vector<string> purchase);
+
+    /**
+     * Displays purchased equipement
+     */
+     void displayPurchased();
 };
 
 #endif //AEDA_TEAM_MANAGER_NATIONALTEAM_H
