@@ -220,12 +220,33 @@ private:
      */
     void askPlayerInformation(FootballPlayer *footballPlayer);
 
+    /**
+     * Shows the games from a player with the id given as parameter
+     * @param id
+     */
     void showPlayerGames(int id);
+
+    /**
+     * Shows the call ups from a player with the id given as parameter
+     * @param id
+     */
     void showPlayerCallUps(int id);
 
+    /**
+     * Shows the game statistics from a player with the id given as parameter
+     * @param id
+     */
     void showGameStats(int id);
+
+    /**
+     * Shows call up statistics from a player with the id given as parameter
+     * @param id
+     */
     void showCallUpStats(int id);
 
+    /**
+     * Displays transition inside players menu
+     */
     void playerMenuTransition();
 
 
@@ -258,11 +279,22 @@ private:
         return id;
     }
 
-
+    /**
+     * Asks for an id and the returns the coach with the correspondent id
+     * @param coaches
+     * @return
+     */
     Coach askForValidCoachId(BST<Coach> &coaches);
 
+    /**
+     * Asks for information about a coach
+     * @param coach
+     */
     void askCoachInformation(Coach &coach);
 
+    /**
+     * Creates a new coach
+     */
     void createCoachOption();
 
 
@@ -283,11 +315,14 @@ private:
     void showEveryoneName(ostream &out);
 
 
-        /**
-         * @brief Asks for an id, and prints Person with that id
-         */
+    /**
+     * @brief Asks for an id, and prints Person with that id
+     */
     void showSpecificPersonOption();
 
+    /**
+     * Shows person by name
+     */
     void showPersonByName();
 
     /****************************************************

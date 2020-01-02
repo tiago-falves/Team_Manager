@@ -92,7 +92,15 @@ public:
 
 class EquipementDontExist{
 public:
+    /**
+     * Equipement name that does not exist
+     */
     string equipement;
+
+    /**
+     * Constructs object to be thrown when user tries to access equipement that no provider has
+     * @param equipement
+     */
     EquipementDontExist(string equipement) {this->equipement = equipement;}
 };
 

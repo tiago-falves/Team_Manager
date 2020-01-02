@@ -51,9 +51,13 @@ protected:
      * Hash Table with all technicians
      */
     HashTable technician_table;
-
+    /**
+     * National Team's current coach
+     */
     Coach * currentCoach;
-
+    /**
+     * Priority queue containing information from all providers
+     */
     priority_queue<Providers> providers;
 
     /**
@@ -166,6 +170,10 @@ public:
      */
     void sortByName(vector<Person *> &people);
 
+    /**
+     * Given a vector sorts all people by id
+     * @param people vector to order
+     */
     void sortByID(vector<Person *> &people);
 
     //Vector operations
@@ -478,17 +486,45 @@ public:
         throw InexistentId(id);
     }
 
+    /**
+     * Sets the current coach of the National Team
+     * @param coach - coach to be set
+     */
     void setCurrentCoach(Coach &coach);
 
     /****************************************************
     *******************PROVIDERS******************
     *****************************************************/
 
+    /**
+     * Reads information from equipement providers from correspondent text file
+     * @param providersFile - file to be read from
+     * @return true if information from files was read properly
+     */
     bool readProviders(string providersFile);
 
+    /**
+     * Gets the provider with the best reputation that sell the wanted equipement
+     * @param equipement
+     * @return
+     */
     Providers getProvider(string equipement);
+
+    /**
+     * Displays information from all providers
+     */
     void showAllProvidersName();
+
+    /**
+     * Gets a string vector containing all the available equipement from all providers
+     * @return
+     */
     vector<string> getAvailableEquipement();
+
+    /**
+     * Shows the equipement contained in a vector given as parameter
+     * @param equipement
+     */
     void showAvailableEquipement(vector<string> equipement);
 };
 
