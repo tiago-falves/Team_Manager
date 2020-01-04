@@ -719,7 +719,9 @@ void NationalTeam::showAvailableEquipement(vector<string> equipement) {
     int counter = 0;
     for (auto str : equipement) {
         counter++;
-        cout << left << setw(67) << setfill(' ') << str;
+        cout << left << setw(30) << setfill(' ') << str;
+        cout << left << setw(10) << setfill(' ') << "(" + getProvider(str).getName() + ":";
+        cout << left << setw(27) << setfill(' ') << "reputation = " + to_string(int(getProvider(str).getReputation() + 0.5)) + ")";
         cout << "[" << counter << "]" << endl;
     }
 }
